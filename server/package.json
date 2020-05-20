@@ -1,0 +1,82 @@
+{
+    "name": "health-app",
+    "version": "1.0.0",
+    "studioVersion": "7.1.0",
+    "description": "Neutrinos Service Designer - core",
+    "license": "ISC",
+    "readmeFilename": "README.md",
+    "author": {
+        "name": "Neutrinos",
+        "email": "support@neutrinos.co"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://bitbucket.org/bhivedevs/bhive-ssd.git"
+    },
+    "engines": {
+        "node": "12.14.1"
+    },
+    "devDependencies": {
+        "@types/amqplib": "0.5.13",
+        "@types/bcryptjs": "2.4.2",
+        "@types/cors": "2.8.5",
+        "@types/helmet": "0.0.43",
+        "@types/jsonwebtoken": "8.3.2",
+        "@types/body-parser": "1.17.0",
+        "@types/express": "4.16.1",
+        "@types/node": "13.7.7",
+        "grunt": "1.0.4",
+        "grunt-ts": "6.0.0-beta.22",
+        "grunt-contrib-copy": "1.0.0",
+        "typescript": "3.4.5",
+        "ts-node-dev": "1.0.0-pre.39"
+    },
+    "dependencies": {
+        "bcryptjs": "2.4.3",
+        "body-parser": "1.19.0",
+        "class-validator": "0.9.1",
+        "cookie": "0.4.0",
+        "cookie-parser": "1.4.4",
+        "cors": "2.8.5",
+        "cross-env": "6.0.3",
+        "dotenv": "8.0.0",
+        "express": "4.17.1",
+        "express-session": "1.17.0",
+        "fast-safe-stringify": "2.0.7",
+        "hash-sum": "2.0.0",
+        "helmet": "3.18.0",
+        "http-status-codes": "1.4.0",
+        "jsonwebtoken": "8.5.1",
+        "multer": "1.4.2",
+        "openid-client": "3.4.0",
+        "request": "2.88.0",
+        "swagger-ui-express": "4.0.7",
+        "winston": "3.2.1",
+        "winston-daily-rotate-file": "3.9.0",
+        "activedirectory": "0.7.2",
+        "amqplib": "0.5.5",
+        "csv-parse": "4.4.7",
+        "csv-stringify": "5.3.3",
+        "iconv-lite": "0.5.0",
+        "mongodb": "3.5.2",
+        "mongodb-extended-json": "1.10.2",
+        "typeorm": "0.2.17",
+        "typeorm-static": "1.1.1",
+        "xml2js": "0.4.19",
+        "js-yaml": "3.13.1",
+        "poplib": "0.1.7",
+        "nodemailer": "6.3.0",
+        "mailparser": "2.7.1",
+        "imap": "0.8.19"
+    },
+    "scripts": {
+        "tsc": "tsc",
+        "start": "npm run prod",
+        "start-dev": "cross-env NEUTRINOS_APP_ENV=dev npm run startserver",
+        "startserver": "set debug=* && ts-node-dev --inspect --respawn --transpileOnly ./src/index.ts",
+        "prod": "cross-env NEUTRINOS_APP_ENV=prod node ./build/index.js",
+        "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
+        "pm2": "tsc && pm2 start processes.json",
+        "grunt": "node node_modules/grunt/bin/grunt"
+    }
+}
