@@ -1,0 +1,14 @@
+{
+    "appPageId": "c5f65607-a276-7dd6-91a4-88c73ff5830c",
+    "appPageName": "healthinfo",
+    "componentName": "healthinfoComponent",
+    "selectorName": "bh-healthinfo",
+    "htmlFileName": "healthinfo.template.html",
+    "tsFileName": "healthinfo.component.ts",
+    "createDate": "2020-05-22T08:06:14.238Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

@@ -1,4 +1,62 @@
 /*Importing default angular material css theme. */
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import "nDefaults.scss";
+.mat-raised-button{
+    color: white;
+    background-color: #64AD44;
+}
+.row1{
+    background-color:white;
+}
+.row2{
+    background-color:green;
+    
+}
+.row3{
+    background-color:yellow;
+}
+.loginmessage{
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 15px;
+line-height: 24px;
+color:#25282B;
+align-items: center;
+}
+.labelmessage{
+    /* UI / Label */
+
+font-family: Poppins;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+display: flex;
+align-items: center;
+
+/* Text / 01 */
+
+color: #232735;
+}
+.forgotpassword{
+    font-family: Poppins;
+font-style: normal;
+font-weight: normal;
+font-size: 15px;
+line-height: 16px;
+/* identical to box height, or 107% */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.2px;
+
+/* Primary Text - Title texts, captions, input fields */
+
+color: #25282B;
+}

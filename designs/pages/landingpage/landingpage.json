@@ -1,0 +1,14 @@
+{
+    "appPageId": "9756bf71-0aa1-22bf-6ac2-028965d79c67",
+    "appPageName": "landingpage",
+    "componentName": "landingpageComponent",
+    "selectorName": "bh-landingpage",
+    "htmlFileName": "landingpage.template.html",
+    "tsFileName": "landingpage.component.ts",
+    "createDate": "2020-05-22T06:15:49.110Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

@@ -1,9 +1,30 @@
 {
     "routes": [
         {
+            "path": "home",
+            "component": "homeComponent"
+        },
+        {
+            "path": "hrlogin",
+            "component": "hrloginComponent"
+        },
+        {
+            "path": "hrdashboard",
+            "component": "hrdashboardComponent"
+        },
+        {
+            "path": "landingpage",
+            "component": "landingpageComponent"
+        },
+        {
+            "path": "healthinfo",
+            "component": "healthinfoComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "/home",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

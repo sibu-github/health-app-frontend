@@ -1,0 +1,24 @@
+<div fxLayout="column wrap" style="width:100%, height:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" style="width:100%, height:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <mat-card fxLayout="column" fxLayoutAlign="center">
+      <form fxLayout="column" fxLayoutAlign="center center" #form ngForm>
+        <mat-form-field style="font-family: Poppins;font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput name="{{locales.FirstName}}" type="input" required maxLength="5" #{{locales.FirstName}} ngModel>
+          <mat-label>{{locales.FirstName}}</mat-label>
+        </mat-form-field>
+        <mat-form-field style="font-family: Poppins;font-size: 13px; line-height: 19px; letter-spacing: 0.5px;color: #A1A4B1;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput name="{{locales.LastName}}" required>
+          <mat-label>{{locales.LastName}}</mat-label>
+        </mat-form-field>
+        <mat-form-field style="font-family: Poppins;font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput name="{{locales.Location}}" required>
+          <mat-label>{{locales.Location}}</mat-label>
+        </mat-form-field>
+        <mat-form-field style="font-family: Poppins;font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput name="{{locales.ClassifyYourself}}" required>
+          <mat-label>{{locales.ClassifyYourself}}</mat-label>
+        </mat-form-field>
+      </form><button mat-button class="continue" mat-raised-button color="#64AD44" (click)="toggle()">{{locales.Continue}}</button><button mat-button (click)="toggle1()">French</button><button mat-button (click)="toggle2()">Arabic</button><button mat-button (click)="toggle()">English</button>
+    </mat-card>
+  </div>
+</div>

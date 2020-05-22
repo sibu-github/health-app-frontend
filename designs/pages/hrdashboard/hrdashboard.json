@@ -1,0 +1,14 @@
+{
+    "appPageId": "39a942c4-0352-11e3-d6a6-0bf7a212919f",
+    "appPageName": "hrdashboard",
+    "componentName": "hrdashboardComponent",
+    "selectorName": "bh-hrdashboard",
+    "htmlFileName": "hrdashboard.template.html",
+    "tsFileName": "hrdashboard.component.ts",
+    "createDate": "2020-05-21T09:23:48.846Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

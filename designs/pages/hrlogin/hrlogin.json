@@ -1,0 +1,14 @@
+{
+    "appPageId": "c34100fc-c3c3-2c83-c35d-39eb7d3a240e",
+    "appPageName": "hrlogin",
+    "componentName": "hrloginComponent",
+    "selectorName": "bh-hrlogin",
+    "htmlFileName": "hrlogin.template.html",
+    "tsFileName": "hrlogin.component.ts",
+    "createDate": "2020-05-21T09:23:42.281Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

@@ -16,6 +16,16 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-healthinfoComponent
+import { healthinfoComponent } from '../components/healthinfoComponent/healthinfo.component';
+//CORE_REFERENCE_IMPORT-landingpageComponent
+import { landingpageComponent } from '../components/landingpageComponent/landingpage.component';
+//CORE_REFERENCE_IMPORT-hrdashboardComponent
+import { hrdashboardComponent } from '../components/hrdashboardComponent/hrdashboard.component';
+//CORE_REFERENCE_IMPORT-hrloginComponent
+import { hrloginComponent } from '../components/hrloginComponent/hrlogin.component';
+//CORE_REFERENCE_IMPORT-homeComponent
+import { homeComponent } from '../components/homeComponent/home.component';
 
 /**
  * Reads datasource object and injects the datasource object into window object
@@ -51,6 +61,16 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfoComponent
+healthinfoComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingpageComponent
+landingpageComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-hrdashboardComponent
+hrdashboardComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-hrloginComponent
+hrloginComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
+homeComponent,
 
 ];
 
@@ -77,5 +97,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{ path: '', redirectTo: '/', pathMatch: 'full' }, { path: '**', component: PageNotFoundComponent }];
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END
