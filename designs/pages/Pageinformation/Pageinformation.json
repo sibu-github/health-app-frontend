@@ -1,0 +1,14 @@
+{
+    "appPageId": "fbee9a4b-f8f8-f15f-a5ac-cf959fbe5db0",
+    "appPageName": "Pageinformation",
+    "componentName": "pageinformationComponent",
+    "selectorName": "bh-pageinformation",
+    "htmlFileName": "pageinformation.template.html",
+    "tsFileName": "pageinformation.component.ts",
+    "createDate": "2020-05-23T13:10:13.599Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}
