@@ -1,7 +1,10 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-
+interface Language {
+  value: string;
+  viewValue: string;
+}
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -17,7 +20,7 @@ import { HeroService } from '../../services/hero/hero.service';
     templateUrl: './landingpage.template.html'
 })
 
-export class landingpageComponent extends NBaseComponent implements OnInit {
+export class landingpageComponent extends NBaseComponent implements OnInit{
 
     constructor() {
         super();
@@ -26,4 +29,21 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     ngOnInit() {
 
     }
+      languages: any[] = [
+    {value: 'en', viewValue: 'English'},
+    {value: 'es', viewValue: 'Spanish'},
+    {value: 'pt', viewValue: 'Portuguese'},
+    {value: 'ko', viewValue: 'Korean'},
+    {value: 'th', viewValue: 'Thai'},
+    {value: 'zh-CN', viewValue: 'CHINESE (SIMPLIFIED)'},
+    {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
+  ];
+
+doSomething(event){
+  console.log(event.value);
+  this.localeService.language = event.value;
+ 
+}
+    
+ 
 }

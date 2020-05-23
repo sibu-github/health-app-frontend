@@ -21,6 +21,18 @@
             "component": "healthinfoComponent"
         },
         {
+            "path": "thankyou",
+            "component": "thankyouComponent"
+        },
+        {
+            "path": "login",
+            "component": "loginComponent"
+        },
+        {
+            "path": "splash",
+            "component": "splashComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/home",
             "pathMatch": "full",

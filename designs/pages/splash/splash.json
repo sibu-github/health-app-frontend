@@ -1,0 +1,14 @@
+{
+    "appPageId": "d7a715de-abb7-b39c-4397-9edbbcb702e2",
+    "appPageName": "splash",
+    "componentName": "splashComponent",
+    "selectorName": "bh-splash",
+    "htmlFileName": "splash.template.html",
+    "tsFileName": "splash.component.ts",
+    "createDate": "2020-05-22T18:19:01.522Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

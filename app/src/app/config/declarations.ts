@@ -16,6 +16,14 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-languageService
+import { languageService } from '../services/language/language.service';
+//CORE_REFERENCE_IMPORT-splashComponent
+import { splashComponent } from '../components/splashComponent/splash.component';
+//CORE_REFERENCE_IMPORT-loginComponent
+import { loginComponent } from '../components/loginComponent/login.component';
+//CORE_REFERENCE_IMPORT-thankyouComponent
+import { thankyouComponent } from '../components/thankyouComponent/thankyou.component';
 //CORE_REFERENCE_IMPORT-healthinfoComponent
 import { healthinfoComponent } from '../components/healthinfoComponent/healthinfo.component';
 //CORE_REFERENCE_IMPORT-landingpageComponent
@@ -61,6 +69,12 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-splashComponent
+splashComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
+loginComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-thankyouComponent
+thankyouComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfoComponent
 healthinfoComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingpageComponent
@@ -89,6 +103,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-languageService
+languageService,
 
 ];
 
@@ -97,5 +113,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

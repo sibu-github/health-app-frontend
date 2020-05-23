@@ -28,5 +28,23 @@
         "componentName": "healthinfoComponent",
         "isEntry": false,
         "createDate": "2020-05-22T08:06:14.238Z"
+    },
+    "10df45d8-3038-f905-0d03-1bedaa73cd1a": {
+        "appPageName": "thankyou",
+        "componentName": "thankyouComponent",
+        "isEntry": false,
+        "createDate": "2020-05-22T15:57:10.138Z"
+    },
+    "a11a924a-8ffb-446b-7511-44a46a2da5d2": {
+        "appPageName": "login",
+        "componentName": "loginComponent",
+        "isEntry": false,
+        "createDate": "2020-05-22T17:19:00.360Z"
+    },
+    "d7a715de-abb7-b39c-4397-9edbbcb702e2": {
+        "appPageName": "splash",
+        "componentName": "splashComponent",
+        "isEntry": false,
+        "createDate": "2020-05-22T18:19:01.522Z"
     }
 }

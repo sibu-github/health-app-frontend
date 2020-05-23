@@ -1,0 +1,14 @@
+{
+    "appPageId": "10df45d8-3038-f905-0d03-1bedaa73cd1a",
+    "appPageName": "thankyou",
+    "componentName": "thankyouComponent",
+    "selectorName": "bh-thankyou",
+    "htmlFileName": "thankyou.template.html",
+    "tsFileName": "thankyou.component.ts",
+    "createDate": "2020-05-22T15:57:10.138Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

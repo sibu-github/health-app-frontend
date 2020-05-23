@@ -43,8 +43,11 @@
   </div>
   <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="80" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;">No</button><button mat-button style="margin-right:10px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;">Yes</button></div>
+    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="80" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <mat-radio-button required [labelPosition]="Top">YES</mat-radio-button>
+        <mat-radio-button required [labelPosition]="&apos;before&apos;">No</mat-radio-button>
+      </div>
     </div>
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
@@ -61,5 +64,15 @@
     </div>
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
-  <div fxLayout="row wrap" style="width:100%;height:100%;" class="row2" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+  <div fxLayout="row wrap" style="width:100%;height:100%;" class="row2" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+  </div>
+  <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div style="width:100%;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px;text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
+        {{locales.thankyou}}</div>
+    </div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+  </div>
 </div>
