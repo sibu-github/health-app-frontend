@@ -47,7 +47,9 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
             this.datasharingService.openSnackBar('Please select Terms and Conditions', "X");
         }
     }
-
+    onBack(){
+    this.router.navigate(['/hinfonext']);
+    }
     navigatePrev() {
         alert('I am navigating to previous page');
     }

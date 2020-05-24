@@ -11,7 +11,7 @@ import { servicename } from 'app/sd-services/servicename';
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
 */
-
+import {masterdataService} from '../../services/masterdata/masterdata.service';
 @Component({
     selector: 'bh-login',
     templateUrl: './login.template.html'
@@ -19,7 +19,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class loginComponent extends NBaseComponent implements OnInit {
 
-    constructor(private router:Router) {
+    constructor(private router:Router, private masterdata : masterdataService) {
         super();
     }
 
@@ -28,6 +28,9 @@ export class loginComponent extends NBaseComponent implements OnInit {
     }
     login(form){
         console.log(form.value);
-        this.router.navigate['/landingpage'];
+        this.masterdata.username = form.value.username;
+        //this.masterdata.password = form.value.password;
+        console.log(this.masterdata)
+        this.router.navigate(['/healthinfo']);
     }
 }

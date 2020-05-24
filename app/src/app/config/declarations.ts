@@ -16,6 +16,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-masterdataService
+import { masterdataService } from '../services/masterdata/masterdata.service';
 //CORE_REFERENCE_IMPORT-healthinfonextComponent
 import { healthinfonextComponent } from '../components/healthinfonextComponent/healthinfonext.component';
 //CORE_REFERENCE_IMPORT-contactinformationComponent
@@ -125,6 +127,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-masterdataService
+masterdataService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-datasharingService
 datasharingService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-languageService

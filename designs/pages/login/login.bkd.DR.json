@@ -276,7 +276,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:90px; height:70px;",
+                            "_value": "width:71px; height:58px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1190,7 +1190,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "30",
+                        "_value": "20",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1257,7 +1257,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "40",
+                        "_value": "60",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1536,7 +1536,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "30",
+                        "_value": "20",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1907,7 +1907,7 @@
                             "_attrDef": "c"
                         }
                     ],
-                    "2b54f119-1015-789f-5e9e-6f018c784776": {
+                    "748e1e81-110b-f75f-1634-d3eedb2121b1": {
                         "paletteKey": "NG-Input",
                         "parentEditorKey": "1661b703-1931-8e81-c7d6-3e2bbae1a2bb",
                         "isAdvancedComponent": true,
@@ -1920,9 +1920,7 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": [
-                                    "form-control"
-                                ],
+                                "_value": [],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -2083,7 +2081,7 @@
                             }
                         ]
                     },
-                    "bda9e88c-0dce-16d0-037d-bed76c3494ac": {
+                    "9c08d275-398f-6193-283e-93a08d7537f5": {
                         "paletteKey": "NG-Input",
                         "parentEditorKey": "1661b703-1931-8e81-c7d6-3e2bbae1a2bb",
                         "isAdvancedComponent": true,
@@ -2096,9 +2094,7 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": [
-                                    "form-control"
-                                ],
+                                "_value": "",
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -2290,7 +2286,7 @@
                             },
                             {
                                 "_key": "(click)",
-                                "_value": "",
+                                "_value": "login(form)",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

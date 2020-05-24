@@ -26,6 +26,7 @@ answer:string ='';
     ngOnInit() {
 
     }
+
     //question :boolean = false;
     onChangeRadio(e, questionIndex){
         console.log('onChangeRadio called...')
@@ -39,5 +40,8 @@ answer:string ='';
 }
     onBack(){
         this.router.navigate(['/healthinfo']);
+    }
+    onNext(){
+        this.router.navigate(['/certifyinfo']);
     }
 }

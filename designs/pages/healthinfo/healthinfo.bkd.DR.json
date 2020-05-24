@@ -5152,6 +5152,7 @@
                         "a452e4f5-8b74-c059-a269-43ef3fc7e405": {
                             "paletteKey": "NG-button",
                             "parentEditorKey": "5f416cad-3d61-3889-7b85-bcf7b2d89494",
+                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
