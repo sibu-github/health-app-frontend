@@ -1,0 +1,119 @@
+[
+    {
+        "id": "sd_475uFCxWWClXFyYI",
+        "type": "tab",
+        "createdDate": "2020-05-24T19:12:44.204Z",
+        "label": "saveuserresponse",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "saveuserresponse"
+    },
+    {
+        "id": "sd_kBgqCy1h0V1BXjSL",
+        "type": "Start",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "saveUserData",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "formdata",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            },
+            {
+                "key": "apiUrl",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "saveUserData",
+        "category": "General",
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "sd_p4EvIXbAOEeVOVuZ"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "saveuserresponse"
+    },
+    {
+        "id": "sd_p4EvIXbAOEeVOVuZ",
+        "type": "Script",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "apiURL",
+        "script": "bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}}/api/userResponse`;",
+        "category": "Function",
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "sd_FcFvtFytCkN7uU9N"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_FcFvtFytCkN7uU9N",
+        "type": "HttpRequest",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "sendingUserResponse",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "apiURL",
+        "urlMappingObj": {},
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.formdata",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "formdata"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "category": "HTTP",
+        "x": 405,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    }
+]

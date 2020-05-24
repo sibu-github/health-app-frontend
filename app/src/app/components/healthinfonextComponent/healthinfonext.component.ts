@@ -26,6 +26,7 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     ngOnInit() {
 
     }
+    answer='';
     //question :boolean = false;
     onChangeRadio(e, questionIndex){
         console.log('onChangeRadio called...')
@@ -39,5 +40,8 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 }
     onBack(){
         this.router.navigate(['/healthinfo']);
+    }
+    onNext(){
+        this.router.navigate(['/certifyinfo']);
     }
 }

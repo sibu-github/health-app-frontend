@@ -16,6 +16,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-masterdataService
+import { masterdataService } from '../services/masterdata/masterdata.service';
 //CORE_REFERENCE_IMPORT-healthinfonextComponent
 import { healthinfonextComponent } from '../components/healthinfonextComponent/healthinfonext.component';
 //CORE_REFERENCE_IMPORT-contactinformationComponent
@@ -125,6 +127,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-masterdataService
+masterdataService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-datasharingService
 datasharingService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-languageService
@@ -137,9 +141,5 @@ languageService,
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-<<<<<<< HEAD
-export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'healthinfonext', component: healthinfonextComponent},{path: '', redirectTo: '/landingpage', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
-=======
-export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'pageinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
->>>>>>> aditya
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'pageinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: 'hinfonext', component: healthinfonextComponent},{path: '', redirectTo: '/landingpage', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

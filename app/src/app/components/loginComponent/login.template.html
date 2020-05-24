@@ -1,7 +1,7 @@
 <div fxLayout="column wrap" style="display:flex; width:100%;height:700px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
   <div fxLayout="row wrap" style="width:100%;" fxFlex="5" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   <div fxLayout="row wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/image2.png" style="width:90px; height:70px;"></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/image2.png" style="width:71px; height:58px;"></div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="60" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/locod1.png" style="width:80px; height:60px;"></div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/image1.png" style="width:80px; height:30px;"></div>
   </div>
@@ -13,26 +13,26 @@
   </div>
   <div fxLayout="row wrap" style="width:100%;" fxFlex="5" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   <div fxLayout="row wrap" style="color: #282E3A;width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 14px; line-height: 21px; display: flex; align-items: center; text-align: center; letter-spacing: 0.4px;" fxFlex="5" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div>
         {{locales.loginmessage}}</div>
     </div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" style="width:100%" fxFlex="5" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="width:100%;padding:10px;color: #282E3A;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 17px; line-height: 26px; display: flex; align-items: center; text-align: center; letter-spacing: 0.4px;" fxFlex="80" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
       <form #form="ngForm" style="width:100%; height:100%;" class="form-group" (ngSubmit)="login(form)">
-        <mat-form-field style="width:100%;" class="form-control" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
           <input matInput name="username" type="input" required ngModel>
           <mat-label>{{locales.username}}</mat-label>
         </mat-form-field>
-        <mat-form-field style="width:100%;" class="form-control" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
           <input matInput name="password" type="input" required ngModel>
           <mat-label>{{locales.password}}</mat-label>
-        </mat-form-field><button mat-button style="width:150px;height:50px;color: #FFFFFF;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" type="submit" routerLink="/landingpage">{{locales.login}}</button>
+        </mat-form-field><button mat-button style="width:150px;height:50px;color: #FFFFFF;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="login(form)" type="submit">{{locales.login}}</button>
       </form>
     </div>
     <div fxLayout="column wrap" style="width:100%" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
