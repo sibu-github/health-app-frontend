@@ -37,6 +37,6 @@ onBack(){
     this.router.navigate(['/landingpage']);
 }
 onNext(){
-    this.router.navigate(['/healthinfonext']);
+    this.router.navigate(['/hinfonext']);
     }
 }

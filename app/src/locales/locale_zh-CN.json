@@ -62,6 +62,7 @@
         "pnr": "电话号码为必填项",
         "Emailidinvalid": "电邮无效",
         "locationrequire": "必须填写位置",
-        "contactinfo": "联系信息"
+        "contactinfo": "联系信息",
+        "phone": "电话号码"
     }
 }

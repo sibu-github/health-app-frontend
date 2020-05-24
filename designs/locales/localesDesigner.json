@@ -63,7 +63,8 @@
             "pnr": "Phone number is Required",
             "Emailidinvalid": "Email is invalid",
             "locationrequire": "Location is Required",
-            "contactinfo": "Contact Information"
+            "contactinfo": "Contact Information",
+            "phone": "Phone Number"
         }
     },
     "zh-CN": {
@@ -130,7 +131,8 @@
             "pnr": "电话号码为必填项",
             "Emailidinvalid": "电邮无效",
             "locationrequire": "必须填写位置",
-            "contactinfo": "联系信息"
+            "contactinfo": "联系信息",
+            "phone": "电话号码"
         }
     },
     "zh-TW": {
@@ -197,7 +199,8 @@
             "pnr": "電話號碼為必填項",
             "Emailidinvalid": "電郵無效",
             "locationrequire": "必須填寫位置",
-            "contactinfo": "聯繫信息"
+            "contactinfo": "聯繫信息",
+            "phone": "電話號碼"
         }
     },
     "es": {
@@ -264,7 +267,8 @@
             "pnr": "Se requiere número de teléfono",
             "Emailidinvalid": "el correo electrónico es invalido",
             "locationrequire": "Se requiere ubicación",
-            "contactinfo": "Información del contacto"
+            "contactinfo": "Información del contacto",
+            "phone": "Número de teléfono"
         }
     },
     "pt": {
@@ -331,7 +335,8 @@
             "pnr": "O número de telefone é obrigatório",
             "Emailidinvalid": "Email inválido",
             "locationrequire": "O local é obrigatório",
-            "contactinfo": "Informações de Contato"
+            "contactinfo": "Informações de Contato",
+            "phone": "Número de telefone"
         }
     },
     "ko": {
@@ -398,7 +403,8 @@
             "pnr": "전화 번호가 필요합니다",
             "Emailidinvalid": "이메일이 유효하지 않습니다",
             "locationrequire": "위치는 필수입니다",
-            "contactinfo": "연락 정보"
+            "contactinfo": "연락 정보",
+            "phone": "전화 번호"
         }
     },
     "th": {
@@ -465,7 +471,8 @@
             "pnr": "ต้องระบุหมายเลขโทรศัพท์",
             "Emailidinvalid": "อีเมล์ไม่ถูกต้อง",
             "locationrequire": "ต้องระบุตำแหน่ง",
-            "contactinfo": "ข้อมูลติดต่อ"
+            "contactinfo": "ข้อมูลติดต่อ",
+            "phone": "หมายเลขโทรศัพท์"
         }
     }
 }

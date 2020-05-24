@@ -62,6 +62,7 @@
         "pnr": "O número de telefone é obrigatório",
         "Emailidinvalid": "Email inválido",
         "locationrequire": "O local é obrigatório",
-        "contactinfo": "Informações de Contato"
+        "contactinfo": "Informações de Contato",
+        "phone": "Número de telefone"
     }
 }

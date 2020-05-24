@@ -42,7 +42,7 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
           if(data.valid === true){
                 this.validclick = false;
                 console.log('i am success');
-               // this.router.navigate(['/thankyou']);
+               this.router.navigate(['/thankyou']);
         } else {
             this.datasharingService.openSnackBar('Please select Terms and Conditions', "X");
         }

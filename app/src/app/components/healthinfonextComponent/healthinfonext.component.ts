@@ -18,7 +18,7 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
-
+answer:string ='';
     constructor(private router: Router) {
         super();
     }

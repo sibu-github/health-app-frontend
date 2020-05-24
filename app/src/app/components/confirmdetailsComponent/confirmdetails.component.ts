@@ -58,7 +58,7 @@ locationName: any;
 
                 if((this.totallocations[i] && this.totallocations[i].name.toLowerCase() === this.locationName.toLowerCase()) || this.defaultLocationName.toLowerCase() === data.value.locationName.toLowerCase()){
                     console.log('valid success');
-                    // this.router.navigate(['/'])
+                    this.router.navigate(['/healthinfo'])
                     break;
                 }
               }

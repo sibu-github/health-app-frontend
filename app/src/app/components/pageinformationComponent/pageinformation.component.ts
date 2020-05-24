@@ -53,7 +53,7 @@ locationName: any;
               for(let i=0;i<=this.totallocations.length;i++){
                 if((this.totallocations[i] && this.totallocations[i].name.toLowerCase() ===  data.value.locationName.toLowerCase())) {
                     console.log('valid success');
-                    // this.router.navigate(['/'])
+                     this.router.navigate(['/contactinfo']);
                     break;
                 }
               }
