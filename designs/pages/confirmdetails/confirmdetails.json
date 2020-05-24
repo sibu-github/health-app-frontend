@@ -1,0 +1,14 @@
+{
+    "appPageId": "ac13bb52-caaa-6130-5176-85e12748ed48",
+    "appPageName": "confirmdetails",
+    "componentName": "confirmdetailsComponent",
+    "selectorName": "bh-confirmdetails",
+    "htmlFileName": "confirmdetails.template.html",
+    "tsFileName": "confirmdetails.component.ts",
+    "createDate": "2020-05-24T10:55:58.115Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

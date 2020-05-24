@@ -1,6 +1,7 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
+
 interface Language {
   value: string;
   viewValue: string;
@@ -44,6 +45,6 @@ doSomething(event){
   this.localeService.language = event.value;
  
 }
-    
+
  
 }

@@ -60,3 +60,85 @@ letter-spacing: 0.2px;
 
 color: #25282B;
 }
+
+.personal-info{
+  margin-left:15px;font-family: Poppins; font-style: normal; 
+    font-weight: 600; font-size: 22px; 
+    line-height: 30px;letter-spacing: 0.5px; 
+    text-transform: capitalize;color: #283552;
+}
+
+.image1{
+    position: absolute;
+    left: 76.65%;
+    right: -3.43%;
+    top: 193.29%;
+    bottom: -144.7%;
+    }
+    .locod1{
+         position: absolute; 
+         left: 38.4%; 
+         right: 35.73%; 
+         top: 147.73%; 
+         bottom: -184.09%;  
+    }
+    
+    .image2{
+        position: absolute; 
+        left: 5.07%; 
+        right: 77.87%; 
+        top: 8.13%; 
+        bottom: 85.34%; 
+    }
+    .conf{
+        margin-top:20px;
+        margin-left:15px;
+        
+    }
+    .contact-info{
+        margin-left:15px;font-family: Poppins; font-style: normal; 
+        font-weight: 600; font-size: 22px; 
+        line-height: 30px;letter-spacing: 0.5px; 
+        text-transform: capitalize;color: #283552;
+    }
+    
+    .certify-info{
+    margin-left:15px;font-family: Poppins;font-style: normal;
+    font-weight: 600;font-size: 22px;line-height: 30px;letter-spacing: 0.5px;
+    text-transform: capitalize;color: #283552;
+    }
+    .continuebutton {
+        color: #FFFFFF;
+        margin-right: 13px;
+        height: 60px;
+        width: 134px;
+        font-family: Poppins; 
+        font-style: normal; 
+        font-weight: 600;
+        background: #5EA73E; 
+        box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); 
+        border-radius: 44px;
+    }
+    
+    .modalstyle {
+    
+        /* padding-bottom: 105px; */
+        /* padding-right: 20px; */
+        padding: 125px 20px 105px 4px;
+    }
+    
+    .buttonstyle{
+    margin-left: 20px;font-family: Poppins;font-style: normal;font-weight: 500;font-size: 18px;line-height: 24px;display: flex;align-items: center;letter-spacing: 0.5px;text-transform: capitalize;color: #A1A4B1;
+    }
+
+    /* Set a style for all buttons */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+  }
+  

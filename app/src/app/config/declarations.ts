@@ -16,6 +16,14 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-contactinformationComponent
+import { contactinformationComponent } from '../components/contactinformationComponent/contactinformation.component';
+//CORE_REFERENCE_IMPORT-confirmdetailsComponent
+import { confirmdetailsComponent } from '../components/confirmdetailsComponent/confirmdetails.component';
+//CORE_REFERENCE_IMPORT-certifyinformationComponent
+import { certifyinformationComponent } from '../components/certifyinformationComponent/certifyinformation.component';
+//CORE_REFERENCE_IMPORT-datasharingService
+import { datasharingService } from '../services/datasharing/datasharing.service';
 //CORE_REFERENCE_IMPORT-pageinformationComponent
 import { pageinformationComponent } from '../components/pageinformationComponent/pageinformation.component';
 //CORE_REFERENCE_IMPORT-languageService
@@ -71,6 +79,12 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-contactinformationComponent
+contactinformationComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirmdetailsComponent
+confirmdetailsComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-certifyinformationComponent
+certifyinformationComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pageinformationComponent
 pageinformationComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-splashComponent
@@ -107,6 +121,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-datasharingService
+datasharingService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-languageService
 languageService,
 
@@ -117,5 +133,5 @@ languageService,
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'pageinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

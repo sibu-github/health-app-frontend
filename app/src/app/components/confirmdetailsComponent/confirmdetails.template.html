@@ -1,0 +1,57 @@
+<div fxLayout="column wrap" style="width:100%;height:700px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%;" fxFlex="25" fxLayoutAlign="space-between stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="height: 20px; width: 80px;" width="50px;"></div>
+        </div>
+        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div style="margin-top:15px;margin-left:15px;margin-top:10px;font-family:Poppins;font-style:normal;color: #283552;" class="contact-info">
+                {{locales.cd}}</div>
+            </div>
+            <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <div style="margin-left:15px;color: #52575C;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 15px; line-height: 19px; letter-spacing: 0.5px;max-height:49%;">
+                {{locales.pclph}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <form #ConfirmdetailsForm="ngForm" style="width:100%;height:100%;">
+          <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.confirmlocation}}"
+             required #location="ngModel" 
+             pattern="[a-zA-Z\s]+$" 
+             [ngModelOptions]="{updateOn: &apos;change&apos;}" 
+             (ngModelChange)="locationFilter()" 
+             [matAutocomplete]="auto"
+             >
+  
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let location of updatelocations" [value]="location.name">
+              {{location.name}}
+            </mat-option>
+          </mat-autocomplete>
+          <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick)">
+            <span *ngIf="location.errors.required">
+                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
+                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
+          <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="phone" name="phone" type="text" placeholder="phone number" required #mobilenumber="ngModel" pattern="(^\+?[0-9]{5,12})$">
+  
+          </mat-form-field>
+          <div *ngIf="mobilenumber.errors &amp;&amp; (mobilenumber.dirty || mobilenumber.touched || validclick)">
+            <span *ngIf="mobilenumber.errors.required">
+                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnr}}</small></span><span *ngIf="mobilenumber.errors.pattern">
+                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnrl}}</small></span></div>
+          <div fxLayout="row wrap" style="width:100%;height:20%;margin-top:70px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;margin-top: 0px;margin-left:185px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="onSubmit(ConfirmdetailsForm)">{{locales.cont}}</button></div>
+        </form>
+      </div>
+      <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    </div>
+  </div>

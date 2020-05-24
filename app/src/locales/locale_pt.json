@@ -30,6 +30,23 @@
         "thankyoumessage": "Por fornecer suas informações de saúde! Agradecemos o seu esforço.",
         "thankyou": "Obrigado",
         "developedby": "Desenvolvido por",
-        "login": "Conecte-se"
+        "login": "Conecte-se",
+        "Personalinformation": "Informação pessoal",
+        "firstname": "Primeiro nome",
+        "pocs": "Somente caracteres alfabéticos são permitidos",
+        "lir": "O sobrenome é obrigatório",
+        "lastname": "Último nome",
+        "cont": "Continuar",
+        "sir": "é necessário fazer login",
+        "Signatureinvalid": "Assinatura inválida",
+        "certconf": "Certifico que as informações enviadas nesta inscrição são verdadeiras e corretas da melhor forma possível e aceito as informações da Ingredion",
+        "terms": "Termos e Condições",
+        "termsmessage": "Se a resposta para QUALQUER uma das perguntas acima for SIM, notifique a pessoa que lhe forneceu este formulário. Ele explicará como você pode fornecer informações adicionais. Dependendo das informações adicionais fornecidas, você ainda poderá ter permissão no local. Se você deseja fornecer informações adicionais, forneça suas informações de contato no verso deste formulário. Como parte desses procedimentos de triagem, coletaremos informações sobre viagens e saúde, incluindo sua temperatura e informações sobre qualquer sintoma semelhante à COVID-19 ou exposição que você ou sua família tenham experimentado, e as usaremos para esses fins. garantir um local de trabalho seguro, cumprir nossas obrigações de saúde pública e / ou administrar os benefícios de saúde",
+        "back": "De volta",
+        "Submit": "Enviar",
+        "confirmlocation": "Confirmar Localização",
+        "Signature": "Assinatura",
+        "certifyinfo": "Informações de certificação",
+        "eir": "EmailId é obrigatório"
     }
 }
