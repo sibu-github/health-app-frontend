@@ -16,6 +16,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-healthinfonextComponent
+import { healthinfonextComponent } from '../components/healthinfonextComponent/healthinfonext.component';
 //CORE_REFERENCE_IMPORT-contactinformationComponent
 import { contactinformationComponent } from '../components/contactinformationComponent/contactinformation.component';
 //CORE_REFERENCE_IMPORT-confirmdetailsComponent
@@ -79,6 +81,8 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfonextComponent
+healthinfonextComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-contactinformationComponent
 contactinformationComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-confirmdetailsComponent
@@ -133,5 +137,9 @@ languageService,
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
+<<<<<<< HEAD
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'healthinfonext', component: healthinfonextComponent},{path: '', redirectTo: '/landingpage', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+=======
 export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'pageinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+>>>>>>> aditya
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

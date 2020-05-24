@@ -61,6 +61,56 @@ letter-spacing: 0.2px;
 color: #25282B;
 }
 
+.mat-radio-label{
+  flex-direction: column-reverse;
+}
+
+.mat-label{
+border: 1.80943px solid #5EA73E;
+box-sizing: border-box;
+border-radius: 5.42829px;
+}
+
+.label1{
+    border: 1.80943px solid #5EA73E;
+box-sizing: border-box;
+border-radius: 5.42829px;
+
+}
+.question3{
+    color:#25282B;
+    width:100%;
+    font-family: Poppins; 
+    font-style: normal; 
+    font-weight: 600; 
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: 0.5px;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.text{
+text-align:left;
+margin-left:10px;
+margin-bottom: 12px;
+color: #52575C;
+}
+.text2{
+    font-family: Poppins;
+    margin-left:10px;
+    margin-bottom: 12px;
+    color: #25282B;
+    font-weight: 600;
+    font-size: 13px;
+
+}
 .personal-info{
   margin-left:15px;font-family: Poppins; font-style: normal; 
     font-weight: 600; font-size: 22px; 

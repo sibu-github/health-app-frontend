@@ -1,5 +1,5 @@
 <div fxLayout="column wrap" style="display:flex; width:100%; height:700px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <div fxLayout="row wrap" style="width:100%; height:100px;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="width:100%; height:100px;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
@@ -19,60 +19,57 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row wrap" style="color: #25282B;width:100%; height:300px;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" fxFlex="30" fxLayoutGap="10px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%; height:100%;margin-left:10px;" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="color: #25282B;width:100%; height:200px;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" fxLayoutAlign="start none" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%; height:100%;margin-left:10px;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="15" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
         <div style="margin-left:10px;width:100%; height:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;color: #25282B;">
           {{locales.question1}}</div>
       </div>
-      <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="50" fxLayoutGap="5px;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="margin-bottoom:10px;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 12px; line-height: 18px; text-align: center; letter-spacing: 0.5px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div style="text-align: left;">
-            {{locales.fever}}</div>
-          <div style="text-align: left;">
-            {{locales.cough}}</div>
-          <div style="text-align: center;">
-            {{locales.chills}}</div>
-        </div>
+      <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="40" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="width:100%; height:100%;" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false"><label class="text">
+            {{locales.fever}}</label><label class="text">
+            {{locales.cough}}</label><label class="text">
+            {{locales.chills}}</label></div>
       </div>
-      <div fxLayout="row wrap" style="width:100%;height:100px;test-align:left;margin-top:10px;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div style="width:100%;height:100%;color: #52575C;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 12px; line-height: 18px; text-align: center; letter-spacing: 0.5px;">
-          {{locales.choose}}</div>
-      </div>
+      <div fxLayout="row wrap" style="width:100%;height:100px;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="width:100%;height:100%;">
+          {{locales.choose}}</label></div>
     </div>
   </div>
   <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="80" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-        <mat-radio-button required [labelPosition]="Top">YES</mat-radio-button>
-        <mat-radio-button required [labelPosition]="&apos;before&apos;">No</mat-radio-button>
+    <div fxLayout="column wrap" style="margin-top:15px;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
+        <mat-radio-group style="margin: 0 10px 0 10px; display:flex ;   width:100%;   justify-content: center;" [(ngModel)]="answer" (change)="onChangeRadio($event, 1)">
+          <mat-radio-button value="NO" required [labelPosition]="&apos;after&apos;">NO</mat-radio-button>
+          <mat-radio-button value="YES" required [labelPosition]="&apos;after&apos;">YES</mat-radio-button>
+        </mat-radio-group>
       </div>
     </div>
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" style="width:100%;height:100px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-      <div style="color: #25282B;width:100%; height:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;">
-        {{locales.question2}}</div>
-    </div>
+    <div fxLayout="column wrap" style="width:100%;height:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><label style="color: #25282B;" class="text2">
+        {{locales.question2}}</label></div>
   </div>
   <div fxLayout="row wrap" style="width:100%; height:100%" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="margin-right:10px;" fxFlex="80" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;">{{locales.no}}</button><button mat-button style="margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;">{{locales.yes}}</button></div>
+      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
+        <mat-radio-group (change)="onChangeRadio($event, 2)">
+          <mat-radio-button value="NO" required>NO</mat-radio-button>
+          <mat-radio-button value="YES" required color="#5EA73E">YES</mat-radio-button>
+        </mat-radio-group>
+      </div>
     </div>
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
-  <div fxLayout="row wrap" style="width:100%;height:100%;" class="row2" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-  </div>
-  <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div style="width:100%;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px;text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
-        {{locales.thankyou}}</div>
+  <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false"><label style="margin-right:130px;margin-top:20px;align:left;">
+          <button mat-button (click)="onBack()">
+            <mat-icon>keyboard_arrow_left</mat-icon>{{locales.back}}
+          </button></label><label style="margin-left:20px;margin-right:10px;">
+          <button mat-button style="width:100px;height:50px;color: #FFFFFF;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="onNext()">{{locales.continue}}</button></label></div>
     </div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
 </div>

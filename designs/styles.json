@@ -7,6 +7,14 @@
         "loginmessage",
         "labelmessage",
         "forgotpassword",
+        "mat-radio-label",
+        "mat-label",
+        "label1",
+        "question3",
+        "example-form",
+        "example-full-width",
+        "text",
+        "text2",
         "personal-info"
     ]
 }

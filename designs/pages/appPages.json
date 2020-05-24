@@ -53,6 +53,12 @@
         "isEntry": false,
         "createDate": "2020-05-23T13:10:13.599Z"
     },
+    "ce6710ee-aa4e-c5fb-c8ab-1c394a2ebdd9": {
+        "appPageName": "healthinfonext",
+        "componentName": "healthinfonextComponent",
+        "isEntry": false,
+        "createDate": "2020-05-23T19:27:07.438Z"
+    },
     "32bb1e73-0e90-6d13-6f49-3abfa59e8b30": {
         "appPageName": "certifyinformation",
         "componentName": "certifyinformationComponent",

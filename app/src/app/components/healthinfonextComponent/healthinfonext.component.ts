@@ -13,30 +13,31 @@ import { HeroService } from '../../services/hero/hero.service';
 */
 
 @Component({
-    selector: 'bh-healthinfo',
-    templateUrl: './healthinfo.template.html'
+    selector: 'bh-healthinfonext',
+    templateUrl: './healthinfonext.template.html'
 })
 
-export class healthinfoComponent extends NBaseComponent implements OnInit {
+export class healthinfonextComponent extends NBaseComponent implements OnInit {
 
     constructor(private router: Router) {
         super();
     }
-answer:string ='';
+
     ngOnInit() {
 
     }
+    //question :boolean = false;
     onChangeRadio(e, questionIndex){
         console.log('onChangeRadio called...')
         console.log("Question Index", questionIndex)
         let val = e.value
         this.answer = val
+        // if(this.answer == YES){
+        //     this.question = true;
+        // }
         console.log({val})
 }
-onBack(){
-    this.router.navigate(['/landingpage']);
-}
-onNext(){
-    this.router.navigate(['/healthinfonext']);
+    onBack(){
+        this.router.navigate(['/healthinfo']);
     }
 }

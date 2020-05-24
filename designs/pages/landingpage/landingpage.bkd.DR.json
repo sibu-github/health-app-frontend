@@ -1488,7 +1488,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "35",
+                        "_value": "30",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1555,7 +1555,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "30",
+                        "_value": "40",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1615,10 +1615,11 @@
                         },
                         {
                             "_key": "htmlElement",
-                            "_value": "div",
+                            "_value": "Label",
                             "_type": "dav",
                             "_attrDef": "p",
-                            "_useAsLabel": true
+                            "_useAsLabel": true,
+                            "_customAttributeFlag": true
                         },
                         {
                             "_key": "tagType",
@@ -1807,8 +1808,69 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "{{locales.start}}",
+                                "_value": "",
                                 "_type": "a",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    },
+                    "6603fb4e-b6c5-f5ef-4ff3-ef0c60b68d25": {
+                        "paletteKey": "NG-button",
+                        "parentEditorKey": "d30c1756-1fce-8b7e-25cd-ef39fcb776ab",
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "buttonname",
+                                "_value": "{{locales.start}}<mat-icon>keyboard_arrow_right</mat-icon>",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "color",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "letStart()",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disabled]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disableRipple]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "type",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "routerLink",
+                                "_value": "",
+                                "_type": "kv",
                                 "_attrDef": "p"
                             }
                         ]
@@ -1840,7 +1902,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "35",
+                        "_value": "30",
                         "_type": "kv",
                         "_attrDef": "p"
                     },

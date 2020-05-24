@@ -1,7 +1,7 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit, AfterViewInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-
+import {Router} from '@angular/router';
 interface Language {
   value: string;
   viewValue: string;
@@ -23,7 +23,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class landingpageComponent extends NBaseComponent implements OnInit{
 
-    constructor() {
+    constructor(private router: Router) {
         super();
     }
 
@@ -36,15 +36,22 @@ export class landingpageComponent extends NBaseComponent implements OnInit{
     {value: 'pt', viewValue: 'Portuguese'},
     {value: 'ko', viewValue: 'Korean'},
     {value: 'th', viewValue: 'Thai'},
-    {value: 'zh-CN', viewValue: 'CHINESE (SIMPLIFIED)'},
-    {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
+    {value: 'zh-CN', viewValue: 'CHINESE'}
+    
+    // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
   ];
 
 doSomething(event){
   console.log(event.value);
   this.localeService.language = event.value;
+  
  
 }
-
+letStart(){
+    console.log('Lets Starts is working');
+    this.router.navigate(['/login']);
+    
+}
+    
  
 }
