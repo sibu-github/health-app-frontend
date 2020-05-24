@@ -30,6 +30,11 @@
         "thankyoumessage": "¡Por proporcionar su información de salud! Agradecemos su esfuerzo.",
         "thankyou": "Gracias",
         "developedby": "Desarrollado por",
-        "login": "Iniciar sesión"
+        "login": "Iniciar sesión",
+        "travel": "Divulgación de viaje",
+        "question3": "¿Usted o alguien con quien haya tenido contacto personal cercano ha viajado en los últimos 14 días? Si es así, indique qué ubicaciones",
+        "inputhelp": "Washington, Springfield, Franklin y Greenville",
+        "back": "atrás",
+        "continue": "Seguir"
     }
 }

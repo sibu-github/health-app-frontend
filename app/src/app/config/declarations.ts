@@ -16,6 +16,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-healthinfonextComponent
+import { healthinfonextComponent } from '../components/healthinfonextComponent/healthinfonext.component';
 //CORE_REFERENCE_IMPORT-pageinformationComponent
 import { pageinformationComponent } from '../components/pageinformationComponent/pageinformation.component';
 //CORE_REFERENCE_IMPORT-languageService
@@ -71,6 +73,8 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfonextComponent
+healthinfonextComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-pageinformationComponent
 pageinformationComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-splashComponent
@@ -117,5 +121,5 @@ languageService,
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'healthinfonext', component: healthinfonextComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

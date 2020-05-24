@@ -30,6 +30,11 @@
         "thankyoumessage": "为了提供您的健康信息！感谢您的努力。",
         "thankyou": "谢谢",
         "developedby": "由开发",
-        "login": "登录"
+        "login": "登录",
+        "travel": "旅行信息披露",
+        "question3": "您或您与之有密切私人联系的任何人在过去14天内是否旅行过？如果是这样，请列出哪些位置",
+        "inputhelp": "华盛顿，斯普林菲尔德，富兰克林和格林维尔",
+        "back": "背部",
+        "continue": "继续"
     }
 }

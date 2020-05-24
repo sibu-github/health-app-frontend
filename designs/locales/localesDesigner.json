@@ -31,7 +31,12 @@
             "thankyoumessage": "For providing your Health Information!  We Appreciate your Effort.",
             "thankyou": "Thank You",
             "developedby": "Developed By",
-            "login": "Login"
+            "login": "Login",
+            "travel": "Travel disclosure",
+            "question3": "Have you, or anyone with whom you have had close personal contact, travelled within the last 14 days? If so, please list what locations",
+            "inputhelp": "Washington, Springfield, Franklin and Greenville",
+            "back": "Back",
+            "continue": "Continue"
         }
     },
     "zh-CN": {
@@ -66,7 +71,12 @@
             "thankyoumessage": "为了提供您的健康信息！感谢您的努力。",
             "thankyou": "谢谢",
             "developedby": "由开发",
-            "login": "登录"
+            "login": "登录",
+            "travel": "旅行信息披露",
+            "question3": "您或您与之有密切私人联系的任何人在过去14天内是否旅行过？如果是这样，请列出哪些位置",
+            "inputhelp": "华盛顿，斯普林菲尔德，富兰克林和格林维尔",
+            "back": "背部",
+            "continue": "继续"
         }
     },
     "zh-TW": {
@@ -101,7 +111,12 @@
             "thankyoumessage": "為了提供您的健康信息！感謝您的努力。",
             "thankyou": "謝謝",
             "developedby": "由開發",
-            "login": "登錄"
+            "login": "登錄",
+            "travel": "旅行信息披露",
+            "question3": "您或您與之有密切私人聯繫的任何人在過去14天內是否旅行過？如果是這樣，請列出哪些位置",
+            "inputhelp": "華盛頓，斯普林菲爾德，富蘭克林和格林維爾",
+            "back": "背部",
+            "continue": "繼續"
         }
     },
     "es": {
@@ -136,7 +151,12 @@
             "thankyoumessage": "¡Por proporcionar su información de salud! Agradecemos su esfuerzo.",
             "thankyou": "Gracias",
             "developedby": "Desarrollado por",
-            "login": "Iniciar sesión"
+            "login": "Iniciar sesión",
+            "travel": "Divulgación de viaje",
+            "question3": "¿Usted o alguien con quien haya tenido contacto personal cercano ha viajado en los últimos 14 días? Si es así, indique qué ubicaciones",
+            "inputhelp": "Washington, Springfield, Franklin y Greenville",
+            "back": "atrás",
+            "continue": "Seguir"
         }
     },
     "pt": {
@@ -171,7 +191,12 @@
             "thankyoumessage": "Por fornecer suas informações de saúde! Agradecemos o seu esforço.",
             "thankyou": "Obrigado",
             "developedby": "Desenvolvido por",
-            "login": "Conecte-se"
+            "login": "Conecte-se",
+            "travel": "Divulgação de viagens",
+            "question3": "Você ou alguém com quem teve contato pessoal próximo viajou nos últimos 14 dias? Em caso afirmativo, liste quais locais",
+            "inputhelp": "Washington, Springfield, Franklin e Greenville",
+            "back": "De volta",
+            "continue": "Continuar"
         }
     },
     "ko": {
@@ -206,7 +231,12 @@
             "thankyoumessage": "건강 정보를 제공합니다! 우리는 당신의 노력을 감사합니다.",
             "thankyou": "감사합니다",
             "developedby": "에 의해 개발",
-            "login": "로그인"
+            "login": "로그인",
+            "travel": "여행 공개",
+            "question3": "지난 14 일 이내에 귀하 또는 귀하와 친밀한 관계를 유지 한 사람이 여행 했습니까? 그렇다면 어떤 위치를 기재하십시오",
+            "inputhelp": "워싱턴, 스프링 필드, 프랭클린 및 그린빌",
+            "back": "뒤",
+            "continue": "계속하다"
         }
     },
     "th": {
@@ -241,7 +271,12 @@
             "thankyoumessage": "สำหรับการให้ข้อมูลด้านสุขภาพของคุณ! เราชื่นชมความพยายามของคุณ",
             "thankyou": "ขอบคุณ",
             "developedby": "พัฒนาโดย",
-            "login": "เข้าสู่ระบบ"
+            "login": "เข้าสู่ระบบ",
+            "travel": "เปิดเผยการเดินทาง",
+            "question3": "คุณหรือใครก็ตามที่คุณติดต่ออย่างใกล้ชิดเดินทางภายใน 14 วันที่ผ่านมา? ถ้าเป็นเช่นนั้นกรุณาระบุสถานที่ใด",
+            "inputhelp": "วอชิงตันสปริงฟิลด์แฟรงคลินและกรีนวิลล์",
+            "back": "กลับ",
+            "continue": "ต่อ"
         }
     }
 }

@@ -33,6 +33,10 @@
             "component": "splashComponent"
         },
         {
+            "path": "healthinfonext",
+            "component": "healthinfonextComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/home",
             "pathMatch": "full",

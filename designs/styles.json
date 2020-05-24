@@ -6,6 +6,14 @@
         "row3",
         "loginmessage",
         "labelmessage",
-        "forgotpassword"
+        "forgotpassword",
+        "mat-radio-label",
+        "mat-label",
+        "label1",
+        "question3",
+        "example-form",
+        "example-full-width",
+        "text",
+        "text2"
     ]
 }

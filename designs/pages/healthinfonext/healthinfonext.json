@@ -1,0 +1,14 @@
+{
+    "appPageId": "ce6710ee-aa4e-c5fb-c8ab-1c394a2ebdd9",
+    "appPageName": "healthinfonext",
+    "componentName": "healthinfonextComponent",
+    "selectorName": "bh-healthinfonext",
+    "htmlFileName": "healthinfonext.template.html",
+    "tsFileName": "healthinfonext.component.ts",
+    "createDate": "2020-05-23T19:27:07.438Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}
