@@ -48,7 +48,18 @@
             "confirmlocation": "Confirm Location",
             "Signature": "Signature",
             "certifyinfo": "Certify Information",
-            "eir": "EmailId is required"
+            "eir": "EmailId is required",
+            "pclph": "Please update your current location and phone number",
+            "cd": "Confirm Details",
+            "gcn": "Ingredion Name is Required",
+            "cn": "Company Name is Required",
+            "poc": "Please enter only characters",
+            "lr": "Location is required",
+            "pnrl": "Phone number should only contain numbers minimum 5 digits and maximum 12 digits",
+            "pnr": "Phone number is Required",
+            "Emailidinvalid": "Email is invalid",
+            "locationrequire": "Location is Required",
+            "contactinfo": "Contact Information"
         }
     },
     "zh-CN": {
@@ -100,7 +111,18 @@
             "confirmlocation": "确认位置",
             "Signature": "签名",
             "certifyinfo": "认证信息",
-            "eir": "EmailId为必填项"
+            "eir": "EmailId为必填项",
+            "pclph": "请更新您的当前位置和电话号码",
+            "cd": "确认详情",
+            "gcn": "必须输入名称",
+            "cn": "公司名称为必填项",
+            "poc": "请仅输入字符",
+            "lr": "必须填写位置",
+            "pnrl": "电话号码只能包含至少5位数字和最多12位数字的号码",
+            "pnr": "电话号码为必填项",
+            "Emailidinvalid": "电邮无效",
+            "locationrequire": "必须填写位置",
+            "contactinfo": "联系信息"
         }
     },
     "zh-TW": {
@@ -152,7 +174,18 @@
             "confirmlocation": "確認位置",
             "Signature": "簽名",
             "certifyinfo": "認證信息",
-            "eir": "EmailId為必填項"
+            "eir": "EmailId為必填項",
+            "pclph": "請更新您的當前位置和電話號碼",
+            "cd": "確認詳情",
+            "gcn": "必須輸入名稱",
+            "cn": "公司名稱為必填項",
+            "poc": "請僅輸入字符",
+            "lr": "必須填寫位置",
+            "pnrl": "電話號碼只能包含至少5位數字和最多12位數字的號碼",
+            "pnr": "電話號碼為必填項",
+            "Emailidinvalid": "電郵無效",
+            "locationrequire": "必須填寫位置",
+            "contactinfo": "聯繫信息"
         }
     },
     "es": {
@@ -204,7 +237,18 @@
             "confirmlocation": "Confirmar ubicación",
             "Signature": "Firma",
             "certifyinfo": "Certificar información",
-            "eir": "EmailId es requerido"
+            "eir": "EmailId es requerido",
+            "pclph": "Actualiza tu ubicación y número de teléfono actuales",
+            "cd": "Confirmar detalles",
+            "gcn": "El nombre del ingrediente es obligatorio",
+            "cn": "Nombre de la empresa es obligatorio",
+            "poc": "Por favor ingrese solo caracteres",
+            "lr": "Se requiere ubicación",
+            "pnrl": "El número de teléfono solo debe contener números con un mínimo de 5 dígitos y un máximo de 12 dígitos",
+            "pnr": "Se requiere número de teléfono",
+            "Emailidinvalid": "el correo electrónico es invalido",
+            "locationrequire": "Se requiere ubicación",
+            "contactinfo": "Información del contacto"
         }
     },
     "pt": {
@@ -256,7 +300,18 @@
             "confirmlocation": "Confirmar Localização",
             "Signature": "Assinatura",
             "certifyinfo": "Informações de certificação",
-            "eir": "EmailId é obrigatório"
+            "eir": "EmailId é obrigatório",
+            "pclph": "Atualize sua localização e número de telefone atuais",
+            "cd": "Confirmar detalhes",
+            "gcn": "O nome da ingrediente é obrigatório",
+            "cn": "O nome da empresa é obrigatório",
+            "poc": "Digite apenas caracteres",
+            "lr": "O local é obrigatório",
+            "pnrl": "O número de telefone deve conter apenas números com no mínimo 5 dígitos e no máximo 12 dígitos",
+            "pnr": "O número de telefone é obrigatório",
+            "Emailidinvalid": "Email inválido",
+            "locationrequire": "O local é obrigatório",
+            "contactinfo": "Informações de Contato"
         }
     },
     "ko": {
@@ -308,7 +363,18 @@
             "confirmlocation": "위치 확인",
             "Signature": "서명",
             "certifyinfo": "인증 정보",
-            "eir": "EmailId는 필수입니다"
+            "eir": "EmailId는 필수입니다",
+            "pclph": "현재 위치와 전화 번호를 업데이트하십시오",
+            "cd": "세부 사항 확인",
+            "gcn": "인 그리 디언 이름이 필요합니다",
+            "cn": "회사 명은 필수입니다",
+            "poc": "문자 만 입력하십시오",
+            "lr": "위치가 필요합니다",
+            "pnrl": "전화 번호는 5 자리 이상 12 자리 이하의 숫자 만 포함해야합니다.",
+            "pnr": "전화 번호가 필요합니다",
+            "Emailidinvalid": "이메일이 유효하지 않습니다",
+            "locationrequire": "위치는 필수입니다",
+            "contactinfo": "연락 정보"
         }
     },
     "th": {
@@ -360,7 +426,18 @@
             "confirmlocation": "ยืนยันตำแหน่ง",
             "Signature": "ลายเซ็น",
             "certifyinfo": "รับรองข้อมูล",
-            "eir": "ต้องระบุ EmailId"
+            "eir": "ต้องระบุ EmailId",
+            "pclph": "โปรดอัปเดตตำแหน่งปัจจุบันและหมายเลขโทรศัพท์ของคุณ",
+            "cd": "ยืนยันรายละเอียด",
+            "gcn": "ต้องระบุชื่อส่วนผสม",
+            "cn": "ต้องระบุชื่อ บริษัท",
+            "poc": "กรุณาใส่อักขระเท่านั้น",
+            "lr": "ต้องระบุตำแหน่ง",
+            "pnrl": "หมายเลขโทรศัพท์ควรมีตัวเลขอย่างน้อย 5 หลักและสูงสุด 12 หลัก",
+            "pnr": "ต้องระบุหมายเลขโทรศัพท์",
+            "Emailidinvalid": "อีเมล์ไม่ถูกต้อง",
+            "locationrequire": "ต้องระบุตำแหน่ง",
+            "contactinfo": "ข้อมูลติดต่อ"
         }
     }
 }

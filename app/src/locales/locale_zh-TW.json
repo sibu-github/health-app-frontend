@@ -47,6 +47,17 @@
         "confirmlocation": "確認位置",
         "Signature": "簽名",
         "certifyinfo": "認證信息",
-        "eir": "EmailId為必填項"
+        "eir": "EmailId為必填項",
+        "pclph": "請更新您的當前位置和電話號碼",
+        "cd": "確認詳情",
+        "gcn": "必須輸入名稱",
+        "cn": "公司名稱為必填項",
+        "poc": "請僅輸入字符",
+        "lr": "必須填寫位置",
+        "pnrl": "電話號碼只能包含至少5位數字和最多12位數字的號碼",
+        "pnr": "電話號碼為必填項",
+        "Emailidinvalid": "電郵無效",
+        "locationrequire": "必須填寫位置",
+        "contactinfo": "聯繫信息"
     }
 }

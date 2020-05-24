@@ -47,6 +47,17 @@
         "confirmlocation": "Confirmar ubicación",
         "Signature": "Firma",
         "certifyinfo": "Certificar información",
-        "eir": "EmailId es requerido"
+        "eir": "EmailId es requerido",
+        "pclph": "Actualiza tu ubicación y número de teléfono actuales",
+        "cd": "Confirmar detalles",
+        "gcn": "El nombre del ingrediente es obligatorio",
+        "cn": "Nombre de la empresa es obligatorio",
+        "poc": "Por favor ingrese solo caracteres",
+        "lr": "Se requiere ubicación",
+        "pnrl": "El número de teléfono solo debe contener números con un mínimo de 5 dígitos y un máximo de 12 dígitos",
+        "pnr": "Se requiere número de teléfono",
+        "Emailidinvalid": "el correo electrónico es invalido",
+        "locationrequire": "Se requiere ubicación",
+        "contactinfo": "Información del contacto"
     }
 }

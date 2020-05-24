@@ -47,6 +47,17 @@
         "confirmlocation": "위치 확인",
         "Signature": "서명",
         "certifyinfo": "인증 정보",
-        "eir": "EmailId는 필수입니다"
+        "eir": "EmailId는 필수입니다",
+        "pclph": "현재 위치와 전화 번호를 업데이트하십시오",
+        "cd": "세부 사항 확인",
+        "gcn": "인 그리 디언 이름이 필요합니다",
+        "cn": "회사 명은 필수입니다",
+        "poc": "문자 만 입력하십시오",
+        "lr": "위치가 필요합니다",
+        "pnrl": "전화 번호는 5 자리 이상 12 자리 이하의 숫자 만 포함해야합니다.",
+        "pnr": "전화 번호가 필요합니다",
+        "Emailidinvalid": "이메일이 유효하지 않습니다",
+        "locationrequire": "위치는 필수입니다",
+        "contactinfo": "연락 정보"
     }
 }
