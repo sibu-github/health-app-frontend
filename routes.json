@@ -37,6 +37,22 @@
             "component": "healthinfonextComponent"
         },
         {
+            "path": "pageinfo",
+            "component": "pageinformationComponent"
+        },
+        {
+            "path": "contactinfo",
+            "component": "contactinformationComponent"
+        },
+        {
+            "path": "certifyinfo",
+            "component": "certifyinformationComponent"
+        },
+        {
+            "path": "confirmdetails",
+            "component": "confirmdetailsComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/landingpage",
             "pathMatch": "full",

@@ -1,9 +1,11 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
+
 import { Router } from '@angular/router';
 
-import { datasharingService } from '../../services/datasharing/datasharing.service';
+import { datasharingService } from 'app/services/datasharing/datasharing.service';
+
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -15,11 +17,12 @@ import { HeroService } from '../../services/hero/hero.service';
 */
 
 @Component({
-    selector: 'bh-pageinformation',
-    templateUrl: './pageinformation.template.html'
+    selector: 'bh-confirmdetails',
+    templateUrl: './confirmdetails.template.html'
 })
 
-export class pageinformationComponent extends NBaseComponent implements OnInit {
+export class confirmdetailsComponent extends NBaseComponent implements OnInit {
+
 validclick:Boolean;
 defaultLocationName='India';
 phone;
@@ -32,34 +35,41 @@ locationName: any;
     }
 
     ngOnInit() {
+        this.locationName=this.defaultLocationName.slice(0);
+        this.phone='817930010987';
         this.updatelocations= this.datash.getlocationdata();
         this.totallocations=this.updatelocations;
         console.log(this.totallocations);
     }
-
+    
     /**
-     * Function name: personalInfoSubmit
-     * @Input: JSON data 
+     * Function name: onSubmit
+     * @Input: JSON data {locationName, phone}
      * @Output:JSON data { response 201 / error}
-     * @Desc: This function collects the data from user and posts into Information Collection db
+     * @Desc: This function collects the locationname and phonenumber from user and posts into db
      * @error: 500 Internal server error / 404 - method not found
      */
-
-    personalInfoSubmit(data){
-        this.validclick=true;
+    onSubmit(data){
+            this.validclick=true;
         console.log(data.value);
         console.log(this.defaultLocationName, data.value.locationName);
           if(data.valid === true){
               for(let i=0;i<=this.totallocations.length;i++){
-                if((this.totallocations[i] && this.totallocations[i].name.toLowerCase() ===  data.value.locationName.toLowerCase())) {
+
+                if((this.totallocations[i] && this.totallocations[i].name.toLowerCase() === this.locationName.toLowerCase()) || this.defaultLocationName.toLowerCase() === data.value.locationName.toLowerCase()){
                     console.log('valid success');
                     // this.router.navigate(['/'])
                     break;
                 }
               }
+            //   this.totallocations.forEach(element => {
+            //     if(element.name.includes(this.locationName) || this.locationName == data.value.locationName){
+            //         console.log('valid success');
+            //         // this.router.navigate(['/'])
+            //     }
+            //   });
                 this.validclick = false;
-               // this.router.navigate(['/thankyou']);
-        } 
+        }
     }
 
    locationFilter(){
@@ -68,7 +78,6 @@ locationName: any;
 
   filter(values){
   console.log(values);
-  return values.filter(location => location.name.toLowerCase())
+  return values.filter(location => location.name.toLowerCase().includes(this.locationName))
 }
-
 }

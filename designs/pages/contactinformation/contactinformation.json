@@ -1,0 +1,14 @@
+{
+    "appPageId": "722eedfb-9c8b-720c-447a-26c47892e891",
+    "appPageName": "contactinformation",
+    "componentName": "contactinformationComponent",
+    "selectorName": "bh-contactinformation",
+    "htmlFileName": "contactinformation.template.html",
+    "tsFileName": "contactinformation.component.ts",
+    "createDate": "2020-05-24T10:56:26.743Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}
