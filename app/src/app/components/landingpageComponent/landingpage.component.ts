@@ -36,18 +36,20 @@ export class landingpageComponent extends NBaseComponent implements OnInit{
     {value: 'pt', viewValue: 'Portuguese'},
     {value: 'ko', viewValue: 'Korean'},
     {value: 'th', viewValue: 'Thai'},
-    {value: 'zh-CN', viewValue: 'CHINESE (SIMPLIFIED)'},
-    {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
+    {value: 'zh-CN', viewValue: 'CHINESE'}
+    
+    // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
   ];
 
 doSomething(event){
   console.log(event.value);
   this.localeService.language = event.value;
+  
  
 }
 letStart(){
     console.log('Lets Starts is working');
-    this.router.navigate(['/healthinfo']);
+    this.router.navigate(['/login']);
     
 }
     

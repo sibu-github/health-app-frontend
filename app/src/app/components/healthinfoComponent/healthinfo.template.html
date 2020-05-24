@@ -39,7 +39,7 @@
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="margin-top:15px;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
-        <mat-radio-group style="margin: 0 10px 0 10px; display:flex ;   width:100%;   justify-content: center;" [(ngModel)]="answer" (change)="onChangeRadio($event, 0)">
+        <mat-radio-group style="margin: 0 10px 0 10px; display:flex ;   width:100%;   justify-content: center;" [(ngModel)]="answer" (change)="onChangeRadio($event, 1)">
           <mat-radio-button value="NO" required [labelPosition]="&apos;after&apos;">NO</mat-radio-button>
           <mat-radio-button value="YES" required [labelPosition]="&apos;after&apos;">YES</mat-radio-button>
         </mat-radio-group>
@@ -55,7 +55,10 @@
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="margin-right:10px;" fxFlex="80" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
-        <mat-radio-group><button mat-button style="margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;">{{locales.no}}</button><button mat-button style="margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;">{{locales.yes}}</button></mat-radio-group>
+        <mat-radio-group (change)="onChangeRadio($event, 2)">
+          <mat-radio-button value="NO" required>NO</mat-radio-button>
+          <mat-radio-button value="YES" required color="#5EA73E">YES</mat-radio-button>
+        </mat-radio-group>
       </div>
     </div>
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>

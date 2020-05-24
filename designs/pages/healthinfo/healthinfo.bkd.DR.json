@@ -2957,7 +2957,7 @@
                             },
                             {
                                 "_key": "(change)",
-                                "_value": "onChangeRadio($event, 0)",
+                                "_value": "onChangeRadio($event, 1)",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -4089,7 +4089,7 @@
                             },
                             {
                                 "_key": "(change)",
-                                "_value": "",
+                                "_value": "onChangeRadio($event, 2)",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -4115,6 +4115,7 @@
                         "7ca8b417-e6a6-350a-c3f1-45b91536168d": {
                             "paletteKey": "NG-button",
                             "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
+                            "isCommented": "true",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -4176,6 +4177,7 @@
                         "e556b9fc-6721-5c53-e5e7-b790d26af4b5": {
                             "paletteKey": "NG-button",
                             "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
+                            "isCommented": "true",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -4231,6 +4233,189 @@
                                     "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                }
+                            ]
+                        },
+                        "ddd0f7fe-08a8-6f53-4757-548a80d2b652": {
+                            "paletteKey": "NG-Radio",
+                            "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "NO-RadioButton",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "value",
+                                    "_value": "NO",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "required",
+                                    "_value": "required",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "label",
+                                    "_value": "NO",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "id",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "name",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "checked",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(change)",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[labelPosition]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[disabled]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[disableRipple]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "color",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        },
+                        "441c7c7b-c1c2-6a6c-b247-ae3471b0bfee": {
+                            "paletteKey": "NG-Radio",
+                            "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "YES-RadioButton",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "value",
+                                    "_value": "YES",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "required",
+                                    "_value": "required",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "label",
+                                    "_value": "YES",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "id",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "name",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "checked",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "(change)",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[labelPosition]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[disabled]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "[disableRipple]",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "color",
+                                    "_value": "#5EA73E",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_customAttributeFlag": true
                                 }
                             ]
                         }

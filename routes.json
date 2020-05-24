@@ -38,7 +38,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/home",
+            "redirectTo": "/landingpage",
             "pathMatch": "full",
             "default": true
         },
