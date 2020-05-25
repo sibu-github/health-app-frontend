@@ -1781,12 +1781,6 @@
                             "_type": "kv",
                             "_attrDef": "p",
                             "_visibility": false
-                        },
-                        {
-                            "_key": "(click)",
-                            "_value": "navigateTo()",
-                            "_type": "kv",
-                            "_attrDef": "c"
                         }
                     ],
                     "b15430bd-3208-bace-ddcd-35de3230b667": {

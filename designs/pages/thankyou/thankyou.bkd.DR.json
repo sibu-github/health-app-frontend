@@ -582,7 +582,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%;height:60px;",
+                    "_value": "width:100%;height:100px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -2010,6 +2010,73 @@
                 }
             ]
         },
+        "c38145e9-e099-09ff-5dc4-ff95714a5383": {
+            "paletteKey": "FlexLayoutRow",
+            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "Row",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "width:100%;height:80px;",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fxFlex",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fxLayoutGap",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "wrap",
+                    "_value": "wrap",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "layoutAlign",
+                    "_value": "start",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "pLayoutAlign",
+                    "_value": "stretch",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[fxShow]",
+                    "_value": "true",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[fxHide]",
+                    "_value": "false",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                }
+            ]
+        },
         "42346a37-1309-f775-74b4-909aea55c1eb": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
@@ -2702,7 +2769,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:100px; height:80px;",
+                            "_value": "width:100px; height:50px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

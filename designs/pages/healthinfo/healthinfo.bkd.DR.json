@@ -3005,7 +3005,7 @@
                                 },
                                 {
                                     "_key": "value",
-                                    "_value": "NO",
+                                    "_value": "false",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -3096,7 +3096,7 @@
                                 },
                                 {
                                     "_key": "value",
-                                    "_value": "YES",
+                                    "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -4071,7 +4071,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "answer2",
+                                "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -4112,130 +4112,6 @@
                                 "_attrDef": "p"
                             }
                         ],
-                        "7ca8b417-e6a6-350a-c3f1-45b91536168d": {
-                            "paletteKey": "NG-button",
-                            "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
-                            "isCommented": "true",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "buttonname",
-                                    "_value": "{{locales.no}}",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
-                                    "_key": "color",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "(click)",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[disabled]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[disableRipple]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "type",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "routerLink",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        },
-                        "e556b9fc-6721-5c53-e5e7-b790d26af4b5": {
-                            "paletteKey": "NG-button",
-                            "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
-                            "isCommented": "true",
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "margin-right:20px;border: 1.80943px solid #5EA73E; box-sizing: border-box; border-radius: 5.42829px;",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "buttonname",
-                                    "_value": "{{locales.yes}}",
-                                    "_type": "a",
-                                    "_attrDef": "p",
-                                    "_useAsLabel": true
-                                },
-                                {
-                                    "_key": "color",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "(click)",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[disabled]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "[disableRipple]",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "type",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "routerLink",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        },
                         "ddd0f7fe-08a8-6f53-4757-548a80d2b652": {
                             "paletteKey": "NG-Radio",
                             "parentEditorKey": "67385fa5-400b-2072-5ff4-d63cffdd94ff",
@@ -4261,7 +4137,7 @@
                                 },
                                 {
                                     "_key": "value",
-                                    "_value": "NO",
+                                    "_value": "false",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -4352,7 +4228,7 @@
                                 },
                                 {
                                     "_key": "value",
-                                    "_value": "YES",
+                                    "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },

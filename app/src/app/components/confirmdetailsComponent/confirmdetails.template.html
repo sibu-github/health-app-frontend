@@ -23,12 +23,12 @@
     <div fxLayout="column wrap" style="width:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <form #ConfirmdetailsForm="ngForm" style="width:100%;height:100%;">
         <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.confirmlocation}}" required #location="ngModel" pattern="[a-zA-Z0-9\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}" (ngModelChange)="locationFilter()" [matAutocomplete]="auto" oninput="this.value = this.value.toLowerCase()">
+          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.confirmlocation}}" required #location="ngModel" pattern="[a-zA-Z0-9\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}" (ngModelChange)="locationFilter()" [matAutocomplete]="auto">
 
         </mat-form-field>
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let location of updatelocations" [value]="location.name">
-            {{location.name}}
+          <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+            {{location.locationName}}
           </mat-option>
         </mat-autocomplete>
         <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick)">

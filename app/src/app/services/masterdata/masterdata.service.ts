@@ -5,18 +5,25 @@ import { saveuserresponse } from 'app/sd-services/saveuserresponse';
 @Injectable()
 export class masterdataService {
 public username:string
+
 public password:string
 public answer1:string
 public answer2:string
 public answer3:string
 public questionId:string
+public questionId2:string
+public questionId3:string
 public certifyInfoName: string
 public certifyInfoChecked:string
 public locationName:string;
 public phone:string;
+public shortTextOne:string;
+public shortTextTwo:string;
+public shortTextThree:string;
+public addlInfo:string;
 
 // creating serverurl variable we can define it env.json and access here
-serverurl = 'http://localhost:8081';
+
 
 
 constructor(private http: HttpClient,private saveuserService:saveuserresponse) {}
@@ -24,18 +31,18 @@ constructor(private http: HttpClient,private saveuserService:saveuserresponse) {
 
 async userSubmit(){
     console.log(JSON.parse(localStorage.getItem('answer1')));
-    let answer1  = JSON.parse(localStorage.getItem('answer1'));
-    let answer2  = JSON.parse(localStorage.getItem('answer2'));
-    let answer3  = JSON.parse(localStorage.getItem('answer3'));
-    let UpdatedlocationName = localStorage.getItem('locationName');
-    let UcertifyInfoName = localStorage.getItem('certifyInfoName');
-    let UcertifyInfoCheck = localStorage.getItem('certifyInfoChecked')
+    let answer1  = this.answer1;
+    let answer2  = this.answer2;
+    let answer3  = this.answer3;
+    let UpdatedlocationName = this.locationName;
+    let UcertifyInfoName = this.certifyInfoName;
+    let UcertifyInfoCheck = this.certifyInfoChecked;
     try {
-
+        console.log(this.username);
           let formdata = {
                 type:"employee",
                 locationName: UpdatedlocationName,
-                email:"bharat@gmail.com",
+                email:this.username,
                 phone:localStorage.getItem('phone'),
                 firstName:"st peter",
                 lastName:"henry",
@@ -44,26 +51,18 @@ async userSubmit(){
                 certifyInfoName:UcertifyInfoName,
                 certifyInfoChecked:UcertifyInfoCheck,
                   response:[{
-                            'answer':answer1
+                             "questionId": this.questionId, "answer": this.answer1,  "shortText": this.shortTextOne
                         },{
-                            'answer':answer2
+                            "questionId": this.questionId2, "answer": this.answer2,  "shortText": this.shortTextTwo
                         },{
-                            'answer':answer3
+                            "questionId": this.questionId3, "answer": this.answer3,  "shortText": this.shortTextThree
                         }
                     ],
             };
-
         console.log(formdata);
-        let bh = this.saveuserService.saveUserData(formdata).then((Response) => {
-                    if(Response) {
-                        console.log('Response ',Response , Response.local);
-                        localStorage.setItem('USER_RESPONSE', JSON.stringify(Response.local))
-                    }
-                }).catch((error) => {
-                    console.log(error);
-                });
-        
-         return bh;
+        let bh = await this.saveuserService.saveUserData(formdata)
+        console.log(bh.local.result);
+       return bh.local.result;
 
     } catch(err){
         // this.isLoading = false

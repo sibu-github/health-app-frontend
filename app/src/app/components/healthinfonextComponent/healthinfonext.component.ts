@@ -20,6 +20,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
 answer:string ='';
+shortTextThree ="Travelled or Personal Contact";
     constructor(private router: Router,private masterdata : masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
@@ -42,11 +43,17 @@ answer:string ='';
         // }
         console.log({val});
          if(questionIndex == '3'){
-            this.masterdata.answer3 = val;
-             this.masterdata.questionId =questionIndex;
-             
-             localStorage.setItem('answer3',JSON.stringify({"answer":this.masterdata.answer3,"questionId":this.masterdata.questionId}));
-        }
+             this.masterdata.answer3 = val;
+             this.masterdata.questionId3 =questionIndex;
+            this.masterdata.shortTextThree = this.shortTextThree;
+             this.masterdata.addlInfo ="additional info";
+              localStorage.setItem('answer3', 
+            JSON.stringify(
+                { "questionId": this.masterdata.questionId3,
+                    "answer": this.masterdata.answer1, 
+                    "shortText": this.shortTextThree,
+                    "addlInfo": "additional info"
+                }));}
 }
     onBack(){
         this.router.navigate(['/healthinfo']);

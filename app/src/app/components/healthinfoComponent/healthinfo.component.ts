@@ -27,6 +27,8 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
          console.log(language);
     }
     answer: string = '';
+       shortTextOne = "had fever";
+    shortTextTwo = "had Personal Contact";
     ngOnInit() { }
 
     onChangeRadio(e, questionIndex) {
@@ -38,13 +40,24 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
         if (questionIndex == '1') {
             this.masterdata.answer1 = val;
             this.masterdata.questionId = questionIndex;
-            localStorage.setItem('answer1', JSON.stringify({ "answer": this.masterdata.answer1, "questionId": this.masterdata.questionId }));
+            this.masterdata.shortTextOne = this.shortTextOne;
+             localStorage.setItem('answer1', 
+            JSON.stringify(
+                { "questionId": this.masterdata.questionId,
+                    "answer": this.masterdata.answer1, 
+                    "shortText": this.shortTextOne
+                }));
         }
         if (questionIndex == '2') {
             this.masterdata.answer2 = val;
-            this.masterdata.questionId = questionIndex;
-            localStorage.setItem('answer2', JSON.stringify({ "answer": this.masterdata.answer2, "questionId": this.masterdata.questionId }));
-        }
+            this.masterdata.questionId2 = questionIndex;
+            this.masterdata.shortTextTwo = this.shortTextTwo;
+               localStorage.setItem('answer2', 
+               JSON.stringify(
+                { "questionId": this.masterdata.questionId2,
+                    "answer": this.masterdata.answer2, 
+                    "shortText": this.shortTextTwo
+                })); }
 
     }
     onBack() {

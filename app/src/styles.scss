@@ -193,4 +193,64 @@ color: #52575C;
     cursor: pointer;
     width: auto;
   }
-  
+  // for radio button style
+
+.mat-radio-label {
+
+    display: flex;
+
+    flex-direction: column-reverse;
+
+    padding: 0;
+
+ 
+
+}
+
+ 
+
+.mat-radio-label-content {
+
+    width: 120px;
+
+    height: 40px;
+
+    text-align: center;
+
+    line-height: 40px !important;
+
+    border: 1px solid #d3d3d3;
+
+    border-radius: 5px;
+
+    margin-bottom: 2px;
+
+    padding: 0!important;
+
+}
+
+ 
+
+.mat-radio-button.mat-radio-checked >.mat-radio-label>.mat-radio-label-content{
+
+    border-color: #5ea73e!important;
+
+}
+
+ 
+
+.mat-radio-button.mat-radio-checked >.mat-radio-label > .mat-radio-container > .mat-radio-outer-circle {
+
+    border-color: #5ea73e!important;
+
+}
+
+ 
+
+.mat-radio-button.mat-radio-checked >.mat-radio-label > .mat-radio-container > .mat-radio-inner-circle {
+
+    background-color: #5ea73e!important;
+
+}
+
+ 

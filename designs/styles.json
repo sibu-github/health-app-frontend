@@ -25,6 +25,12 @@
         "continuebutton",
         "modalstyle1",
         "buttonstyle",
-        "button"
+        "button",
+        "mat-radio-label-content",
+        "mat-radio-button",
+        "mat-radio-checked",
+        "mat-radio-container",
+        "mat-radio-outer-circle",
+        "mat-radio-inner-circle"
     ]
 }

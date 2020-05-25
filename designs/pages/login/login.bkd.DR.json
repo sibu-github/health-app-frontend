@@ -839,6 +839,7 @@
             "43ac27eb-1dc2-174a-0478-2c08d0068767": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "ed9ac87c-cd39-f55a-008e-b3ee9a637a74",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -905,6 +906,7 @@
                 "82eb45df-74b8-3e76-377f-4da79c62686b": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "43ac27eb-1dc2-174a-0478-2c08d0068767",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",

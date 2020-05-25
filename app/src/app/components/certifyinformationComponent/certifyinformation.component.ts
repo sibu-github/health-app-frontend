@@ -51,7 +51,8 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
 
                 let certifyInfoName =data.value.signature;
                 let certifyInfoChecked = data.value.accept;
-
+                this.masterdata.certifyInfoName = data.value.signature;
+                 this.masterdata.certifyInfoChecked = data.value.accept;
                 localStorage.setItem('certifyInfoName', data.value.signature);
                 localStorage.setItem('certifyInfoChecked', data.value.accept);
 

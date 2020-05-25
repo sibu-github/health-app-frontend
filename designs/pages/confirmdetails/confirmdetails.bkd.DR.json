@@ -1559,12 +1559,6 @@
                                 "_value": "auto",
                                 "_type": "kv",
                                 "_attrDef": "c"
-                            },
-                            {
-                                "_key": "oninput",
-                                "_value": "this.value = this.value.toLowerCase()",
-                                "_type": "kv",
-                                "_attrDef": "c"
                             }
                         ]
                     },
@@ -1661,13 +1655,13 @@
                             },
                             {
                                 "_key": "optionView",
-                                "_value": "{{location.name}}",
+                                "_value": "{{location.locationName}}",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "[value]",
-                                "_value": "location.name",
+                                "_value": "location.locationName",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

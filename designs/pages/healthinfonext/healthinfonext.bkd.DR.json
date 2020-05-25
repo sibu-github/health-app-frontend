@@ -1884,7 +1884,7 @@
                             },
                             {
                                 "_key": "value",
-                                "_value": "NO",
+                                "_value": "false",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1975,7 +1975,7 @@
                             },
                             {
                                 "_key": "value",
-                                "_value": "YES",
+                                "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
