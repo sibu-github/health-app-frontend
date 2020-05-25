@@ -63,6 +63,9 @@
         "Emailidinvalid": "อีเมล์ไม่ถูกต้อง",
         "locationrequire": "ต้องระบุตำแหน่ง",
         "contactinfo": "ข้อมูลติดต่อ",
-        "phone": "หมายเลขโทรศัพท์"
+        "phone": "หมายเลขโทรศัพท์",
+        "Email": "ที่อยู่อีเมล",
+        "companyname": "ชื่อ บริษัท",
+        "ingredoncontact": "ติดต่อ Ingredon"
     }
 }

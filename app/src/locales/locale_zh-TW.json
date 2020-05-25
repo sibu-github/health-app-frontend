@@ -63,6 +63,9 @@
         "Emailidinvalid": "電郵無效",
         "locationrequire": "必須填寫位置",
         "contactinfo": "聯繫信息",
-        "phone": "電話號碼"
+        "phone": "電話號碼",
+        "Email": "電子郵件地址",
+        "companyname": "公司名",
+        "ingredoncontact": "Ingredon聯繫人"
     }
 }

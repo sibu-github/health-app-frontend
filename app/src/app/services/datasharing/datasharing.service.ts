@@ -13,13 +13,13 @@ locations:any;
         // sample json data
         return this.locations = [
                     {
-                    name:  "America",
+                    name:  "Tokyo12",
                     },
                     {
-                    name: "San Francisco",
+                    name: "Westchester",
                     },
                     {
-                    name: "England",
+                    name: "West Lane",
                     }
                 ];
                 console.log("location name", this.locations[0].name);

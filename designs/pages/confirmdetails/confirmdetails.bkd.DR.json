@@ -1538,7 +1538,7 @@
                             },
                             {
                                 "_key": "pattern",
-                                "_value": "[a-zA-Z\\s]+$",
+                                "_value": "[a-zA-Z0-9\\s]+$",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             },
@@ -1557,6 +1557,12 @@
                             {
                                 "_key": "[matAutocomplete]",
                                 "_value": "auto",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "oninput",
+                                "_value": "this.value = this.value.toLowerCase()",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             }

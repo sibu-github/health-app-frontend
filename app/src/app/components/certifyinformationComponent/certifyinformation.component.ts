@@ -15,6 +15,8 @@ Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
 */
 
+import {masterdataService} from '../../services/masterdata/masterdata.service';
+import { saveuserresponse } from 'app/sd-services/saveuserresponse';
 @Component({
     selector: 'bh-certifyinformation',
     templateUrl: './certifyinformation.template.html'
@@ -22,7 +24,9 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class certifyinformationComponent extends NBaseComponent implements OnInit {
  validclick:Boolean; // For Form validaton
-    constructor( private router: Router,private datasharingService:datasharingService) {
+ signature:any; // kept for build error
+ accept:any; // kept for build error
+    constructor( private router: Router,private masterdata : masterdataService,private saveuserService:saveuserresponse,private datasharingService:datasharingService) {
         super();
          let language = window.localStorage.getItem('language');
        
@@ -44,8 +48,21 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
         console.log(data.value);
           if(data.valid === true){
                 this.validclick = false;
-                console.log('i am success');
-               this.router.navigate(['/thankyou']);
+
+                let certifyInfoName =data.value.signature;
+                let certifyInfoChecked = data.value.accept;
+
+                localStorage.setItem('certifyInfoName', data.value.signature);
+                localStorage.setItem('certifyInfoChecked', data.value.accept);
+
+                this.masterdata.userSubmit().then((resp)=>{
+                    console.log('certt resp', resp);
+                    this.router.navigate(['/thankyou']);
+                }).catch((err)=>{
+                    console.log('cert err',err);
+                });
+
+
         } else {
             this.datasharingService.openSnackBar('Please select Terms and Conditions', "X");
         }

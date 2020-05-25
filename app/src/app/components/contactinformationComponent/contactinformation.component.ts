@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 
+import { Router } from '@angular/router';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -20,7 +21,13 @@ import { HeroService } from '../../services/hero/hero.service';
 export class contactinformationComponent extends NBaseComponent implements OnInit {
     validclick:Boolean; // For Form validaton
     emailvalidation:Boolean;// For Email validation
-    constructor() {
+    email:any; // kept for build error
+    change:any; // kept for build error
+    phone:any; // kept for build error
+    companyname:any; // kept for build error
+    ingredoncontact:any; // kept for build error
+
+    constructor(private router:Router) {
         super();
          let language = window.localStorage.getItem('language');
        
@@ -61,7 +68,9 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
         this.validclick=true;
         console.log(data.value);
           if(data.valid === true){
+              this.router.navigate(['/landingpage']);
                 this.validclick = false;
+
         }
     }
 

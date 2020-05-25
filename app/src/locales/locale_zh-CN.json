@@ -63,6 +63,9 @@
         "Emailidinvalid": "电邮无效",
         "locationrequire": "必须填写位置",
         "contactinfo": "联系信息",
-        "phone": "电话号码"
+        "phone": "电话号码",
+        "Email": "电子邮件地址",
+        "companyname": "公司名",
+        "ingredoncontact": "Ingredon联系人"
     }
 }

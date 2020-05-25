@@ -63,6 +63,9 @@
         "Emailidinvalid": "Email inválido",
         "locationrequire": "O local é obrigatório",
         "contactinfo": "Informações de Contato",
-        "phone": "Número de telefone"
+        "phone": "Número de telefone",
+        "Email": "Endereço de e-mail",
+        "companyname": "Nome da empresa",
+        "ingredoncontact": "Ingredon Contato"
     }
 }
