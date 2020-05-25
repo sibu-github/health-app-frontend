@@ -63,6 +63,9 @@
         "Emailidinvalid": "이메일이 유효하지 않습니다",
         "locationrequire": "위치는 필수입니다",
         "contactinfo": "연락 정보",
-        "phone": "전화 번호"
+        "phone": "전화 번호",
+        "Email": "이메일 주소",
+        "companyname": "회사 이름",
+        "ingredoncontact": "Ingredon 연락처"
     }
 }

@@ -1,74 +1,68 @@
 <div fxLayout="column wrap" style="width:100%;height:600px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="width: 80px;height: 20px;" width="100px;"></div>
-        </div>
-        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-            <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-              <div class="contact-info">
-                {{locales.contactinfo}}</div>
-            </div>
-            <div fxLayout="row wrap" style="width:100%; height:100%;margin-left:15px;" fxFlex="60" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step.png"></div>
+  <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="width:80px;height:20px;" width="100px;"></div>
+      </div>
+      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div class="contact-info">
+              {{locales.contactinfo}}</div>
           </div>
+          <div fxLayout="row wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img style="Images\step.png"></div>
         </div>
       </div>
-    </div>
-    <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" style="width:100%;height:100%;margin-left: 15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <form #contactInfo="ngForm" style="width:100%;height:100%;">
-          <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="email" name="email" type="text" placeholder="Email Address" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" pattern="([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+\.)+[a-z]{2,})" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)">
-  
-          </mat-form-field>
-          <div *ngIf="EmailId.errors &amp;&amp; (EmailId.dirty || EmailId.touched || validclick)">
-            <span *ngIf="EmailId.errors.required">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.eir}}</small></span><span *ngIf="EmailId.errors.pattern">
-                  <small style="color:red;">{{locales.Emailidinvalid}}</small>
-  </span></div>
-          <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="phone" name="phone" type="text" placeholder="Phone number" required #mobilenumber="ngModel" pattern="(^\+?[0-9]{5,12})$">
-            <span matPrefix>+&#xA0;</span>
-          </mat-form-field>
-          <div *ngIf="mobilenumber.errors &amp;&amp; (mobilenumber.dirty || mobilenumber.touched || validclick)">
-            <span *ngIf="mobilenumber.errors.required">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnr}}</small></span><span *ngIf="mobilenumber.errors.pattern">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnrl}}</small></span></div>
-          <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="companyname" name="companyname" type="text" 
-            placeholder="Company Name" required 
-            #company="ngModel" 
-            [ngModelOptions]="{updateOn: &apos;change&apos;}" 
-            pattern="[a-zA-Z\s]+$">
-  
-          </mat-form-field>
-          <div *ngIf="company.errors &amp;&amp; (company.dirty || company.touched || validclick)">
-            <span *ngIf="company.errors.required">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.cr}}</small></span>
-                  <span *ngIf="company.errors.pattern">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
-          <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="ingredoncontact" name="ingredoncontact" type="text" placeholder="Ingredion Contact" required #gc="ngModel" pattern="[a-zA-Z\s]+$" [ngModelOptions]="{updateOn: &apos;change&apos;}">
-  
-          </mat-form-field>
-          <div *ngIf="gc.errors &amp;&amp; (gc.dirty || gc.touched || validclick)">
-            <span *ngIf="gc.errors.required">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.gcn}}</small></span><span *ngIf="gc.errors.pattern">
-                  <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
-        </form>
-      </div>
-      <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    </div>
-    <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div>
-          <mat-icon style="position: absolute;top: 486px;bottom: 24%;margin-left: 4px;" (click)="navigatePrev()">arrow_back_ios</mat-icon>
-          <button mat-flat-button style="margin-top: 67px;margin-left: 16px;font-family: Poppins;font-style: normal;font-weight: 500;font-size: 18px;line-height: 24px;display: flex;align-items: center;letter-spacing: 0.5px;text-transform: capitalize;color: #A1A4B1;
-  " type="submit" (click)="navigatePrev()">{{locales.back}}</button>
-        </div>
-      </div>
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="70" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top: 50px;margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="contactSubmit(contactInfo)">{{locales.cont}}</button></div>
     </div>
   </div>
+  <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <form #contactInfo="ngForm" style="width:100%;height:100%;">
+        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" pattern="([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+\.)+[a-z]{2,})" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)">
+
+        </mat-form-field>
+        <div *ngIf="EmailId.errors &amp;&amp; (EmailId.dirty || EmailId.touched || validclick)">
+          <span *ngIf="EmailId.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.eir}}</small></span><span *ngIf="EmailId.errors.pattern">
+                <small style="color:red;">{{locales.Emailidinvalid}}</small></span></div>
+        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="phone" name="phone" type="text" placeholder="{{locales.phone}}" required #mobilenumber="ngModel">
+
+        </mat-form-field>
+        <div *ngIf="mobilenumber.errors &amp;&amp; (mobilenumber.dirty || mobilenumber.touched || validclick)">
+          <span *ngIf="mobilenumber.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnr}}</small></span><span *ngIf="mobilenumber.errors.pattern">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnrl}}</small></span></div>
+        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="companyname" name="companyname" type="text" placeholder="{{locales.companyname}}" required #company="ngModel">
+
+        </mat-form-field>
+        <div *ngIf=" company.errors &amp;&amp; (company.dirty || company.touched || validclick)">
+          <span *ngIf="company.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.cr}}</small></span><span *ngIf="company.errors.pattern">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
+        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="ingredoncontact" name="ingredoncontact" type="text" placeholder="{{locales.ingredoncontact}}" required #gc="ngModel" pattern="[a-zA-Z\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}">
+
+        </mat-form-field>
+        <div *ngIf="gc.errors &amp;&amp; (gc.dirty || gc.touched || validclick)">
+          <span *ngIf="gc.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.gcn}}</small></span><span *ngIf="gc.errors.pattern">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
+      </form>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+  </div>
+  <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div>
+        <mat-icon style="position: absolute;top: 486px;bottom: 24%;margin-left: 4px;" (click)="navigatePrev()">arrow_back_ios</mat-icon>
+        <button mat-flat-button style="margin-top: 67px;margin-left: 16px;font-family: Poppins;font-style: normal;font-weight: 500;font-size: 18px;line-height: 24px;display: flex;align-items: center;letter-spacing: 0.5px;text-transform: capitalize;color: #A1A4B1;
+" type="submit" (click)="navigatePrev()">{{locales.back}}</button>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;margin-top: 50px;margin-left:105px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#5EA73E;border-radius: 44px;" (click)="contactSubmit(contactInfo)">{{locales.cont}}</button></div>
+  </div>
+</div>

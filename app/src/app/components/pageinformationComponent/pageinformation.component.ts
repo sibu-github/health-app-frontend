@@ -26,7 +26,8 @@ phone;
 updatelocations:any;
 totallocations:any;
 locationName: any;
-
+firstName:any; // kept for build error
+lastname:any; // kept for build error
     constructor(private router:Router, private datash:datasharingService) {
         super();
     }

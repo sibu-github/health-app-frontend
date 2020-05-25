@@ -63,6 +63,9 @@
         "Emailidinvalid": "el correo electrónico es invalido",
         "locationrequire": "Se requiere ubicación",
         "contactinfo": "Información del contacto",
-        "phone": "Número de teléfono"
+        "phone": "Número de teléfono",
+        "Email": "Dirección de correo electrónico",
+        "companyname": "nombre de empresa",
+        "ingredoncontact": "Contacto con ingredientes"
     }
 }

@@ -63,6 +63,9 @@
         "Emailidinvalid": "Email is invalid",
         "locationrequire": "Location is Required",
         "contactinfo": "Contact Information",
-        "phone": "Phone Number"
+        "phone": "Phone Number",
+        "Email": "Email Address",
+        "companyname": "Company Name",
+        "ingredoncontact": "Ingredon Contact"
     }
 }

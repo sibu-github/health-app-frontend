@@ -48,7 +48,7 @@ export class saveuserresponse {
 
   async sd_p4EvIXbAOEeVOVuZ(bh) {
     try {
-      bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}}/api/userResponse`;
+      bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}/api/userResponse`;
       bh = await this.sd_FcFvtFytCkN7uU9N(bh);
       //appendnew_next_sd_p4EvIXbAOEeVOVuZ
       return bh;
@@ -59,8 +59,8 @@ export class saveuserresponse {
   async sd_FcFvtFytCkN7uU9N(bh) {
     try {
       let requestOptions = {
-        url: 'apiURL',
-        method: 'get',
+        url: bh.local.apiUrl,
+        method: 'post',
         responseType: 'json',
         reportProgress: undefined,
         headers: {},

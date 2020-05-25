@@ -4102,7 +4102,7 @@
                 },
                 {
                     "_key": "fxFlex",
-                    "_value": "20",
+                    "_value": "30",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -4395,37 +4395,10 @@
                             "_visibility": false
                         }
                     ],
-                    "a6415e17-b030-bf98-82cc-77b06654bc6c": {
-                        "paletteKey": "html-editor",
-                        "parentEditorKey": "659f4706-1dbd-7687-dfd1-b8c329809b19",
-                        "isAdvancedChildComponent": true,
-                        "isCommented": "true",
-                        "designerReference": [
-                            {
-                                "_key": "style",
-                                "_value": "",
-                                "_type": "kv",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "class",
-                                "_value": "",
-                                "_type": "dav",
-                                "_attrDef": "p"
-                            },
-                            {
-                                "_key": "html",
-                                "_value": "locaon",
-                                "_type": "a",
-                                "_attrDef": "p"
-                            }
-                        ]
-                    },
                     "6af6d2f7-c924-7b1d-24f1-69fc5b350d6b": {
                         "paletteKey": "NG-Select",
                         "parentEditorKey": "659f4706-1dbd-7687-dfd1-b8c329809b19",
                         "isAdvancedComponent": true,
-                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "style",

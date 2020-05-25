@@ -7,6 +7,7 @@ Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
 */
 
+import {masterdataService} from '../../services/masterdata/masterdata.service';
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -19,7 +20,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
 answer:string ='';
-    constructor(private router: Router) {
+    constructor(private router: Router,private masterdata : masterdataService) {
         super();
     }
 
@@ -36,7 +37,13 @@ answer:string ='';
         // if(this.answer == YES){
         //     this.question = true;
         // }
-        console.log({val})
+        console.log({val});
+         if(questionIndex == '3'){
+            this.masterdata.answer3 = val;
+             this.masterdata.questionId =questionIndex;
+             
+             localStorage.setItem('answer3',JSON.stringify({"answer":this.masterdata.answer3,"questionId":this.masterdata.questionId}));
+        }
 }
     onBack(){
         this.router.navigate(['/healthinfo']);
