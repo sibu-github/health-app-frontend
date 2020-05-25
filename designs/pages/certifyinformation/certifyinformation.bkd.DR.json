@@ -2785,7 +2785,6 @@
                     "f84a68f5-5c37-1484-3bb6-10efc35978fc": {
                         "paletteKey": "NG-button",
                         "parentEditorKey": "63d96d76-f330-60fa-150d-f7bba99a3944",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",

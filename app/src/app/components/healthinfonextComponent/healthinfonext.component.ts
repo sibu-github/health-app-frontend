@@ -21,6 +21,9 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 answer:string ='';
     constructor(private router: Router) {
         super();
+         let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {

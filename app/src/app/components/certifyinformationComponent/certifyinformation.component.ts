@@ -24,6 +24,9 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
  validclick:Boolean; // For Form validaton
     constructor( private router: Router,private datasharingService:datasharingService) {
         super();
+         let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {}

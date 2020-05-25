@@ -32,6 +32,9 @@ locationName: any;
 
     constructor(private router:Router, private datash:datasharingService) {
         super();
+         let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {

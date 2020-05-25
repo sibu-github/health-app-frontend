@@ -25,6 +25,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit{
 
     constructor(private router: Router) {
         super();
+        let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {
@@ -42,8 +45,11 @@ export class landingpageComponent extends NBaseComponent implements OnInit{
   ];
 
 doSomething(event){
-  console.log(event.value);
-  this.localeService.language = event.value;
+  //console.log(event.value);
+  window.localStorage.setItem('language', event.value);
+  let language = window.localStorage.getItem('language');
+  console.log(language);
+  this.localeService.language = language;
   
  
 }

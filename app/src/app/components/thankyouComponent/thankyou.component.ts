@@ -21,6 +21,9 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
 
     constructor() {
         super();
+         let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {

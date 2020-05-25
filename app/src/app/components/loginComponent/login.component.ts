@@ -21,9 +21,13 @@ export class loginComponent extends NBaseComponent implements OnInit {
 
     constructor(private router:Router, private masterdata : masterdataService) {
         super();
+        let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {
+        
 
     }
     login(form){

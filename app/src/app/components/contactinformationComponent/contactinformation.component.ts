@@ -22,6 +22,9 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
     emailvalidation:Boolean;// For Email validation
     constructor() {
         super();
+         let language = window.localStorage.getItem('language');
+       
+        this.localeService.language = language;
     }
 
     ngOnInit() {
