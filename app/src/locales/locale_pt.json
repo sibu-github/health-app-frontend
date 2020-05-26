@@ -66,6 +66,8 @@
         "phone": "Número de telefone",
         "Email": "Endereço de e-mail",
         "companyname": "Nome da empresa",
-        "ingredoncontact": "Ingredon Contato"
+        "ingredoncontact": "Ingredon Contato",
+        "classifyyourself": "Classifique-se",
+        "personalinformation": "Informação pessoal"
     }
 }

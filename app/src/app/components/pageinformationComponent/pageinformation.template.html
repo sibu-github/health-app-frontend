@@ -1,29 +1,23 @@
-<div fxLayout="column wrap" style="width:100px;height:600px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+<div fxLayout="column wrap" style="width:100px;height:560px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
   <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100px;height:100%;" fxFlex="25" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-        <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="width:80px;height:20px;" width="100px;"></div>
+      <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="margin-top:5px;"></div>
       </div>
-      <div fxLayout="row wrap" style="width:100px;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-            <div style="width:100%;" class="personal-info">
-              Personal Information </div>
-          </div>
-          <div fxLayout="row wrap" style="width:100px;height:77%;margin-left:15px;margin-top:-15px;" fxFlex="60" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png"></div>
-        </div>
-      </div>
+      <div fxLayout="row wrap" style="width:100%;heiht:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; /* identical to box height */  letter-spacing: 0.5px; text-transform: capitalize;">
+          {{locales.personalinformation}}</label></div>
+      <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png" style="margin-left:15px;"></div>
     </div>
   </div>
   <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <form #personalInfo="ngForm" style="width:100%;height:100%;">
-        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="firstName" name="firstName" type="text" placeholder="{{locales.firstname}}" required #FirstName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
+        <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="firstname" name="firstname" type="text" placeholder="{{locales.firstname}}" required #FirstName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
 
         </mat-form-field>
-        <div *ngIf="FirstName.errors  &amp;&amp;  (FirstName.dirty || FirstName.touched || validclick)">
+        <div *ngIf="FirstName.errors  &amp;&amp;  (FirstName.dirty || FirstName.touched || validclick)" style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;">
           <span *ngIf="FirstName.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small>
 
@@ -35,41 +29,36 @@
 
         </mat-form-field>
         <div *ngIf="LastName.errors  &amp;&amp;  (LastName.dirty || LastName.touched || validclick)">
-          <span>
-                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span>
+          <span *ngIf="LastName.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
         <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$" [matAutocomplete]="auto">
+          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z0-9\s]+$" [matAutocomplete]="auto">
 
         </mat-form-field>
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let location of updatelocations" [value]="location.name">
-            {{location.name}}
+          <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+            {{location.locationName}}
           </mat-option>
         </mat-autocomplete>
         <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick)">
           <span *ngIf="location.errors.required">
           {{locales.lr}}</span><span *ngIf="location.errors.pattern">
           {{locales.pocs}}</span></div>
-        <div>
-        </div>
+        <mat-form-field style="width:100%;">
+          <mat-label>Classify User</mat-label>
+          <mat-select (selectionChange)="selectUser($event)" [(ngModel)]="type" name="type">
+            <mat-option *ngFor="let user of usertypes" [value]="user.type">
+              {{user.type}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </form>
     </div>
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div>
-        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
-          <mat-select placeholder="Select" required>
-            <ng-template ngFor let-option [ngForOf] let-i="index">
-              <mat-option [value]></mat-option>
-            </ng-template>
-          </mat-select>
-
-        </mat-form-field>
-      </div>
-    </div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="70" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top: 50px;margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top: 50px;margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
   </div>
 </div>

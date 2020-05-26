@@ -900,7 +900,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "width:100%;margin-left:10px;",
+                                    "_value": "width:90%;margin-left:10px;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -912,7 +912,7 @@
                                 },
                                 {
                                     "_key": "fxFlex",
-                                    "_value": "50",
+                                    "_value": "20",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -966,7 +966,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "width:300px; ",
+                                        "_value": "width:100%;",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -978,7 +978,7 @@
                                     },
                                     {
                                         "_key": "imgSrc",
-                                        "_value": "Web/Stepper4.png",
+                                        "_value": "Images/Stepper4.png",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -2196,7 +2196,7 @@
                     },
                     {
                         "_key": "htmlElement",
-                        "_value": "form class=\"example-form\"",
+                        "_value": "form class=\"example-form\" #healthForm=\"ngForm\"",
                         "_type": "dav",
                         "_attrDef": "p",
                         "_useAsLabel": true,
@@ -2362,6 +2362,12 @@
                         "_type": "kv",
                         "_attrDef": "p",
                         "_visibility": false
+                    },
+                    {
+                        "_key": "[hidden]",
+                        "_value": "!enableTextArea",
+                        "_type": "kv",
+                        "_attrDef": "c"
                     }
                 ],
                 "04f39aab-d352-b237-d4f9-19a08d447172": {
@@ -2383,7 +2389,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "<mat-form-field class=\"example-full-width\">\r\n    <input  matInput #message maxlength=\"256\" placeholder=\"{{locales.inputhelp}}\">\r\n    <mat-hint align=\"end\">{{message.value.length}} / 256</mat-hint>\r\n  </mat-form-field>",
+                            "_value": "<mat-form-field class=\"example-full-width\">\r\n    <input name=\"addlinfo\" [(ngModel)]=\"addlinfo\" matInput #message maxlength=\"256\" placeholder=\"{{locales.inputhelp}}\">\r\n    <mat-hint align=\"end\">{{message.value.length}} / 256</mat-hint>\r\n  </mat-form-field>",
                             "_type": "a",
                             "_attrDef": "p"
                         }
@@ -2962,7 +2968,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "onNext()",
+                            "_value": "onNext(healthForm)",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -2980,7 +2986,7 @@
                         },
                         {
                             "_key": "type",
-                            "_value": "",
+                            "_value": "submit",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

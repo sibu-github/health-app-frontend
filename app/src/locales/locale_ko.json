@@ -66,6 +66,8 @@
         "phone": "전화 번호",
         "Email": "이메일 주소",
         "companyname": "회사 이름",
-        "ingredoncontact": "Ingredon 연락처"
+        "ingredoncontact": "Ingredon 연락처",
+        "classifyyourself": "자신을 분류하십시오",
+        "personalinformation": "개인 정보"
     }
 }

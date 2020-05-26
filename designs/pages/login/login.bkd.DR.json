@@ -1904,8 +1904,8 @@
                         },
                         {
                             "_key": "#form",
-                            "_value": "#form=\"ngForm\"",
-                            "_type": "a",
+                            "_value": "ngForm",
+                            "_type": "kv",
                             "_attrDef": "c"
                         }
                     ],
@@ -2145,7 +2145,7 @@
                             },
                             {
                                 "_key": "type",
-                                "_value": "input",
+                                "_value": "password",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

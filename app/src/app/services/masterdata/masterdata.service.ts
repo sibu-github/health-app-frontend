@@ -21,7 +21,13 @@ public shortTextOne:string;
 public shortTextTwo:string;
 public shortTextThree:string;
 public addlInfo:string;
-
+public firstName:string;
+public lastName:string;
+public locationNameTwo:string;
+public userType:string;
+public email:string;
+public company:string;
+public ingredionContact:string;
 // creating serverurl variable we can define it env.json and access here
 
 
@@ -40,14 +46,14 @@ async userSubmit(){
     try {
         console.log(this.username);
           let formdata = {
-                type:"employee",
+                type:this.userType,
                 locationName: UpdatedlocationName,
-                email:this.username,
+                email:this.email,
                 phone:localStorage.getItem('phone'),
-                firstName:"st peter",
-                lastName:"henry",
-                company:"blucocondigital",
-                ingredionContact:"none",
+                firstName:this.firstName,
+                lastName:this.lastName,
+                company:this.company,
+                ingredionContact:this.ingredionContact,
                 certifyInfoName:UcertifyInfoName,
                 certifyInfoChecked:UcertifyInfoCheck,
                   response:[{
@@ -55,7 +61,7 @@ async userSubmit(){
                         },{
                             "questionId": this.questionId2, "answer": this.answer2,  "shortText": this.shortTextTwo
                         },{
-                            "questionId": this.questionId3, "answer": this.answer3,  "shortText": this.shortTextThree
+                            "questionId": this.questionId3, "answer": this.answer3,  "shortText": this.shortTextThree,"addlInfo":this.addlInfo
                         }
                     ],
             };
@@ -69,6 +75,8 @@ async userSubmit(){
         console.log(err)
     }
 }
+
+
 }
  console.log(localStorage.getItem('answer1'),localStorage.getItem('answer2'),localStorage.getItem('answer3'));
  var confirmdetailsObj = JSON.parse(localStorage.getItem('confirmdetails'));

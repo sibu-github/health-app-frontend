@@ -66,6 +66,8 @@
         "phone": "Número de teléfono",
         "Email": "Dirección de correo electrónico",
         "companyname": "nombre de empresa",
-        "ingredoncontact": "Contacto con ingredientes"
+        "ingredoncontact": "Contacto con ingredientes",
+        "classifyyourself": "Clasifícate",
+        "personalinformation": "Informacion personal"
     }
 }

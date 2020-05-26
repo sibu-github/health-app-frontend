@@ -66,6 +66,8 @@
         "phone": "Phone Number",
         "Email": "Email Address",
         "companyname": "Company Name",
-        "ingredoncontact": "Ingredon Contact"
+        "ingredoncontact": "Ingredon Contact",
+        "classifyyourself": "Classify Yourself",
+        "personalinformation": "Personal Information"
     }
 }

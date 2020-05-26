@@ -22,7 +22,7 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 
 export class landingpageComponent extends NBaseComponent implements OnInit{
-
+  public href: string = "";
     constructor(private router: Router) {
         super();
         let language = window.localStorage.getItem('language');
@@ -31,7 +31,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit{
     }
 
     ngOnInit() {
-
+        
     }
       languages: any[] = [
     {value: 'en', viewValue: 'English'},
@@ -55,7 +55,14 @@ doSomething(event){
 }
 letStart(){
     console.log('Lets Starts is working');
-    this.router.navigate(['/login']);
+    this.href = this.router.url;
+    console.log(this.router.url);
+    if(this.router.url == '/landingpage') {
+        this.router.navigate(['/login']);
+    } else {
+        this.router.navigate(['/personalinfo']);
+    }
+   
     
 }
     

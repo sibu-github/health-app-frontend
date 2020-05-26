@@ -14,9 +14,6 @@ import { HeroService } from '../../services/hero/hero.service';
 import { masterdataService } from '../../services/masterdata/masterdata.service';
 import { saveuserresponse } from 'app/sd-services/saveuserresponse';
 
-// we can encrypt password using bcrypt and cryptojs also , for testing i am using cryptojs
-import * as CryptoJS from 'crypto-js';
-
 @Component({
     selector: 'bh-login',
     templateUrl: './login.template.html'
@@ -38,7 +35,7 @@ export class loginComponent extends NBaseComponent implements OnInit {
    async login(form) {
         console.log(form.value);
         this.masterdata.username = form.value.username;
-        this.masterdata.password = await this.encrypt(form.value.password);
+        this.masterdata.password = form.value.password;
         console.log(this.masterdata);
         let formdata = {
                username: form.value.username,
@@ -46,27 +43,7 @@ export class loginComponent extends NBaseComponent implements OnInit {
         }
         localStorage.setItem('username', this.masterdata.username);
         localStorage.setItem('password', this.masterdata.password);
-
-        this.saveuserService.saveUserData(this.masterdata).then((Response) => {
-            if (Response) {
-                console.log('Response ', Response);
-                // this.router.navigate(['dashboard']);
-            }
-        }).catch((error) => {
-            console.log(error);
-        });
-
         this.router.navigate(['/confirmdetails']);
     }
 
-    encrypt(password) {
-        // password will encrypt with AES/RSA algorithm and make some salt
-        // The best way is to encrypt password in backend.
-        try {
-            return CryptoJS.AES.encrypt(JSON.stringify(password), '12345').toString();
-        } catch (e) {
-            console.log(e);
-        }
-
-    }
 }

@@ -2921,7 +2921,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "margin: 0 10px 0 10px; display:flex ;   width:100%;   justify-content: center;",
+                                "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -3089,7 +3089,7 @@
                                 },
                                 {
                                     "_key": "componentLabel",
-                                    "_value": "Radio Button",
+                                    "_value": "YES-RadioButton",
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "_useAsLabel": true

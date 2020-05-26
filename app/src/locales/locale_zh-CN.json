@@ -66,6 +66,8 @@
         "phone": "电话号码",
         "Email": "电子邮件地址",
         "companyname": "公司名",
-        "ingredoncontact": "Ingredon联系人"
+        "ingredoncontact": "Ingredon联系人",
+        "classifyyourself": "自我分类",
+        "personalinformation": "个人信息"
     }
 }

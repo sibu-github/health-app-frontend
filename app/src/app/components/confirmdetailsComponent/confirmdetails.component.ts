@@ -32,8 +32,10 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     updatelocations: any;
     totallocations: any;
     locationName: any;
-
-    constructor(private router: Router,private userdataservice: userdetails, private getlocation: saveuserresponse, private datash: datasharingService, private masterdata: masterdataService,private datasharingService:datasharingService) {
+    type:any;
+    constructor(private router: Router,private userdataservice: userdetails, private getlocation: saveuserresponse, 
+    private datash: datasharingService,
+     private masterdata: masterdataService,private datasharingService:datasharingService) {
         super();
          let language = window.localStorage.getItem('language');
        
@@ -43,7 +45,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     async ngOnInit() {
         this.locationName = this.defaultLocationName.slice(0);
         this.phone = '817930010987';
-        this.updatelocations = this.datash.getlocationdata();
+        // this.updatelocations = this.datash.getlocationdata();
        
        // console.log(this.totallocations);
         try {
@@ -76,6 +78,8 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
 
                     this.masterdata.locationName = data.value.locationName;
                     this.masterdata.phone = data.value.phone;
+                    this.masterdata.locationNameTwo = data.value.locationName;
+                    this.masterdata.userType = data.value.type;
                     let confirmdetailsObj = {
                         email:'bhsarat@gmail.com',
                         locationName: this.masterdata.locationName,
@@ -94,8 +98,6 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
                     localStorage.setItem('phone', confirmdetailsObj.phone);
                     
                     break;
-                } else {
-                    this.datasharingService.openSnackBar('Invalid Location Input', "X");
                 }
             }
             this.validclick = false;

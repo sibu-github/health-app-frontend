@@ -20,7 +20,8 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
 answer:string ='';
-shortTextThree ="Travelled or Personal Contact";
+shortTextThree ="Travelled Outside Country";
+enableTextArea:Boolean = false;
     constructor(private router: Router,private masterdata : masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
@@ -43,22 +44,29 @@ shortTextThree ="Travelled or Personal Contact";
         // }
         console.log({val});
          if(questionIndex == '3'){
+             if(e.value == 'true') {
+                 this.enableTextArea = true;
+             }else {
+                 this.enableTextArea=false;
+             }
              this.masterdata.answer3 = val;
              this.masterdata.questionId3 =questionIndex;
             this.masterdata.shortTextThree = this.shortTextThree;
-             this.masterdata.addlInfo ="additional info";
+             
               localStorage.setItem('answer3', 
             JSON.stringify(
                 { "questionId": this.masterdata.questionId3,
                     "answer": this.masterdata.answer1, 
                     "shortText": this.shortTextThree,
-                    "addlInfo": "additional info"
+                    "addlInfo": this.masterdata.addlInfo
                 }));}
 }
     onBack(){
         this.router.navigate(['/healthinfo']);
     }
-    onNext(){
+    onNext(form){
+        console.log("addlinfo",form.value);
+        this.masterdata.addlInfo = form.value.addlinfo;
         this.router.navigate(['/certifyinfo']);
     }
 }

@@ -8,7 +8,8 @@ import { datasharingService } from '../../services/datasharing/datasharing.servi
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
 */
-
+import {saveuserresponse} from 'app/sd-services/saveuserresponse';
+import { masterdataService } from '../../services/masterdata/masterdata.service';
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -27,19 +28,52 @@ updatelocations:any;
 totallocations:any;
 locationName: any;
 firstName:any; // kept for build error
-lastname:any; // kept for build error
-    constructor(private router:Router, private datash:datasharingService) {
+lastName:any; // kept for build error
+usertypes:any;// list of user types data
+
+    constructor(private router:Router, private datash:datasharingService,
+    private getlocation: saveuserresponse,private masterdata: masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
        
         this.localeService.language = language;
     }
+languages: any[] = [
+    {value: 'en', viewValue: 'English'},
+    {value: 'es', viewValue: 'Spanish'},
+    {value: 'pt', viewValue: 'Portuguese'},
+    {value: 'ko', viewValue: 'Korean'},
+    {value: 'th', viewValue: 'Thai'},
+    {value: 'zh-CN', viewValue: 'CHINESE'}
+    
+    // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
+  ];
 
-    ngOnInit() {
-        this.updatelocations= this.datash.getlocationdata();
-        this.totallocations=this.updatelocations;
-        console.log(this.totallocations);
+doSomething(event){
+  //console.log(event.value);
+  window.localStorage.setItem('language', event.value);
+  let language = window.localStorage.getItem('language');
+  console.log(language);
+  this.localeService.language = language;
+  
+ 
+}
+    async ngOnInit() {
+          try {
+            this.usertypes = this.datash.getusertypes();
+            console.log("uts",this.usertypes);
+            let bh = await this.getlocation.getLocations()
+            console.log(bh)
+            console.log(bh.local.result);
+             this.updatelocations = bh.local.result;
+             this.totallocations = this.updatelocations;
+          
+        }catch(err) {
+            console.error(err);
+        }
+      
     }
+
 
     /**
      * Function name: personalInfoSubmit
@@ -53,10 +87,14 @@ lastname:any; // kept for build error
         this.validclick=true;
         console.log(data.value);
         console.log(this.defaultLocationName, data.value.locationName);
+        this.masterdata.firstName = data.value.firstname;
+        this.masterdata.lastName = data.value.lastname;
+        this.masterdata.locationName = data.value.locationName;
+        this.masterdata.userType = data.value.type;
           if(data.valid === true){
               for(let i=0;i<=this.totallocations.length;i++){
-                if((this.totallocations[i] && this.totallocations[i].name.toLowerCase() ===  data.value.locationName.toLowerCase())) {
-                    console.log('valid success');
+                if ((this.totallocations[i] && this.totallocations[i].locationName === this.locationName) || this.defaultLocationName === data.value.locationName) {
+                        console.log('valid success');
                      this.router.navigate(['/contactinfo']);
                     break;
                 }
@@ -66,13 +104,18 @@ lastname:any; // kept for build error
         } 
     }
 
-   locationFilter(){
-    this.updatelocations = this.filter(this.totallocations);
-  }
+    locationFilter() {
+        this.updatelocations = this.filter(this.totallocations);
+    }
 
-  filter(values){
-  console.log(values);
-  return values.filter(location => location.name.toLowerCase())
+    filter(values) {
+        return values.filter(location => location.locationName.includes(this.locationName))
+    }
+
+    selectUser(event){
+  //console.log(event.value);
+  window.localStorage.setItem('usertype', event.value);
+  let usertype = window.localStorage.getItem('usertype');
+  console.log(usertype);  
 }
-
 }

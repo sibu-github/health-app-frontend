@@ -29,7 +29,7 @@
           <mat-label>{{locales.username}}</mat-label>
         </mat-form-field>
         <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput name="password" type="input" required ngModel>
+          <input matInput name="password" type="password" required ngModel>
           <mat-label>{{locales.password}}</mat-label>
         </mat-form-field><button mat-button style="width:150px;height:50px;color: #FFFFFF;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="login(form)" type="submit" routerLink="/confirmdetails">{{locales.login}}</button>
       </form>
