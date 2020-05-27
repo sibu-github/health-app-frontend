@@ -179,7 +179,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "none",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -209,7 +209,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "",
+                            "_value": "width:60px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -279,6 +279,7 @@
             "f4cfd98d-9187-0fca-aed4-7a25d120ebef": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "45cfd01d-d923-edb3-d19e-8719b740b5f4",
+                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -345,6 +346,7 @@
                 "6d539b35-e79b-8775-ad28-b08662406137": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "f4cfd98d-9187-0fca-aed4-7a25d120ebef",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
