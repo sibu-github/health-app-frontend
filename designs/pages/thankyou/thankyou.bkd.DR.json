@@ -11,7 +11,7 @@
             },
             {
                 "_key": "style",
-                "_value": "display:flex; width:100%; height:100%;",
+                "_value": "min-height:100vh;",
                 "_type": "kv",
                 "_attrDef": "p"
             },
@@ -23,7 +23,7 @@
             },
             {
                 "_key": "fxFlex",
-                "_value": "100",
+                "_value": "",
                 "_type": "kv",
                 "_attrDef": "p"
             },
@@ -77,7 +77,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%; height:80px;",
+                    "_value": "margin-top:10px;padding-left:10px;padding-right:10px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -95,7 +95,7 @@
                 },
                 {
                     "_key": "fxLayoutGap",
-                    "_value": "5px;",
+                    "_value": "",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -107,13 +107,13 @@
                 },
                 {
                     "_key": "layoutAlign",
-                    "_value": "start",
+                    "_value": "space-between",
                     "_type": "a",
                     "_attrDef": "p"
                 },
                 {
                     "_key": "pLayoutAlign",
-                    "_value": "stretch",
+                    "_value": "center",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -209,7 +209,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:100px;",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -355,7 +355,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:80px; height:60px;margin-top:20px;",
+                            "_value": "width:80px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -501,7 +501,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:100px;",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -569,20 +569,20 @@
                 }
             }
         },
-        "8f08e921-2580-236e-064f-0111882313b2": {
-            "paletteKey": "FlexLayoutRow",
+        "b3cc2270-94ef-2950-f650-43019301be52": {
+            "paletteKey": "FlexLayoutCol",
             "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
             "designerReference": [
                 {
                     "_key": "componentLabel",
-                    "_value": "Row",
+                    "_value": "Column",
                     "_type": "kv",
                     "_attrDef": "p",
                     "_useAsLabel": true
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%;height:100px;",
+                    "_value": "margin:auto;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -618,74 +618,7 @@
                 },
                 {
                     "_key": "pLayoutAlign",
-                    "_value": "stretch",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxShow]",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxHide]",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ]
-        },
-        "fda6a924-5de0-f05a-fb22-f01237b4c00e": {
-            "paletteKey": "FlexLayoutRow",
-            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "width:100%; height:100px;",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": [],
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "start",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "stretch",
+                    "_value": "center",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -702,20 +635,20 @@
                     "_attrDef": "p"
                 }
             ],
-            "74f3996a-27cf-0f0d-275d-fb385b494862": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "fda6a924-5de0-f05a-fb22-f01237b4c00e",
+            "8f08e921-2580-236e-064f-0111882313b2": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b3cc2270-94ef-2950-f650-43019301be52",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
-                        "_value": "Column",
+                        "_value": "Row",
                         "_type": "kv",
                         "_attrDef": "p",
                         "_useAsLabel": true
                     },
                     {
                         "_key": "style",
-                        "_value": "width:100%;",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -727,7 +660,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "20",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -745,7 +678,7 @@
                     },
                     {
                         "_key": "layoutAlign",
-                        "_value": "start",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -767,161 +700,107 @@
                         "_type": "kv",
                         "_attrDef": "p"
                     }
-                ]
-            },
-            "c8f8d511-9606-7912-f84a-05fcc344a8a5": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "fda6a924-5de0-f05a-fb22-f01237b4c00e",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "60",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "center",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "center",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
                 ],
-                "5e0d629f-1f8f-13c1-96d2-af29c2ecee37": {
-                    "paletteKey": "NG-image",
-                    "parentEditorKey": "c8f8d511-9606-7912-f84a-05fcc344a8a5",
+                "93fb9237-56a8-41d2-4ce3-7090e08ac540": {
+                    "paletteKey": "NG-icon",
+                    "parentEditorKey": "8f08e921-2580-236e-064f-0111882313b2",
                     "designerReference": [
                         {
-                            "_key": "componentLabel",
-                            "_value": "Image",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
-                        },
-                        {
                             "_key": "style",
-                            "_value": "width:110px;height:100px;",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "bg-green",
+                                "done-icon"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
                         {
-                            "_key": "imgSrc",
-                            "_value": "Web/Group29.png",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "alt",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "[src]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "imgSecure",
-                            "_value": "",
+                            "_key": "IconName",
+                            "_value": "done",
                             "_type": "a",
-                            "_attrDef": "p"
+                            "_attrDef": "p",
+                            "_useAsLabel": true
                         },
                         {
-                            "_key": "[collectionName]",
+                            "_key": "[inline]",
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
-                            "_key": "[imageFilter]",
+                            "_key": "color",
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
-                            "_key": "width",
+                            "_key": "*ngIf",
+                            "_value": "!isAmber",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                },
+                "da6891d8-9e58-d849-53d0-9a1810b75525": {
+                    "paletteKey": "NG-icon",
+                    "parentEditorKey": "8f08e921-2580-236e-064f-0111882313b2",
+                    "designerReference": [
+                        {
+                            "_key": "style",
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
-                            "_key": "srcset",
+                            "_key": "class",
+                            "_value": [
+                                "bg-amber",
+                                "done-icon"
+                            ],
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "IconName",
+                            "_value": "done",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "[inline]",
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
                         {
-                            "_key": "sizes",
+                            "_key": "color",
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "isAmber",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ]
                 }
             },
-            "d9bca97b-69f4-0f36-5938-475229607c8a": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "fda6a924-5de0-f05a-fb22-f01237b4c00e",
+            "c8a0a6b2-d519-63e2-3a8e-3e3b97a810c8": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b3cc2270-94ef-2950-f650-43019301be52",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
-                        "_value": "Column",
+                        "_value": "Row",
                         "_type": "kv",
                         "_attrDef": "p",
                         "_useAsLabel": true
@@ -940,7 +819,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "20",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -958,208 +837,7 @@
                     },
                     {
                         "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            }
-        },
-        "c8a0a6b2-d519-63e2-3a8e-3e3b97a810c8": {
-            "paletteKey": "FlexLayoutRow",
-            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "width:100%;",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "",
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "10",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "start",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "stretch",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxShow]",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxHide]",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ],
-            "98a72cdb-717d-090b-aeb4-5f9b68a1f008": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "c8a0a6b2-d519-63e2-3a8e-3e3b97a810c8",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "10",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
-            "0231ead1-9feb-26b7-2e5f-325cd77a7241": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "c8a0a6b2-d519-63e2-3a8e-3e3b97a810c8",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "80",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -1182,14 +860,20 @@
                         "_attrDef": "p"
                     }
                 ],
-                "0996a993-adde-ba42-7f34-91884ea64374": {
-                    "paletteKey": "Html5",
-                    "parentEditorKey": "0231ead1-9feb-26b7-2e5f-325cd77a7241",
-                    "isAdvancedComponent": true,
+                "0231ead1-9feb-26b7-2e5f-325cd77a7241": {
+                    "paletteKey": "FlexLayoutCol",
+                    "parentEditorKey": "c8a0a6b2-d519-63e2-3a8e-3e3b97a810c8",
                     "designerReference": [
                         {
+                            "_key": "componentLabel",
+                            "_value": "Column",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
                             "_key": "style",
-                            "_value": "color: #283552;text-align: center; letter-spacing: 0.5px; text-transform: capitalize;width:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px;",
+                            "_value": "width:100%;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1200,182 +884,56 @@
                             "_attrDef": "p"
                         },
                         {
-                            "_key": "htmlElement",
-                            "_value": "div",
-                            "_type": "dav",
-                            "_attrDef": "p",
-                            "_useAsLabel": true
+                            "_key": "fxFlex",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
                         },
                         {
-                            "_key": "tagType",
+                            "_key": "fxLayoutGap",
                             "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "wrap",
+                            "_value": "wrap",
                             "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
+                            "_attrDef": "p"
                         },
                         {
-                            "_key": "name",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "sandbox",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "src",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "srcdoc",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "width",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "[autoplay]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "[loop]",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "data",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "audioSource",
-                            "_value": [],
+                            "_key": "layoutAlign",
+                            "_value": "start",
                             "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
+                            "_attrDef": "p"
                         },
                         {
-                            "_key": "videoSource",
-                            "_value": [],
+                            "_key": "pLayoutAlign",
+                            "_value": "stretch",
                             "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
+                            "_attrDef": "p"
                         },
                         {
-                            "_key": "audioDatasource",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "audioSrc",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "audioType",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "videoDatasource",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "videoSrc",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "videoType",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "(audioplay)",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "(videoplay)",
-                            "_value": "",
-                            "_type": "a",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "(audiopause)",
-                            "_value": "",
+                            "_key": "[fxShow]",
+                            "_value": "true",
                             "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
+                            "_attrDef": "p"
                         },
                         {
-                            "_key": "(videopause)",
-                            "_value": "",
+                            "_key": "[fxHide]",
+                            "_value": "false",
                             "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "(audioended)",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
-                        },
-                        {
-                            "_key": "(videoended)",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p",
-                            "_visibility": false
+                            "_attrDef": "p"
                         }
                     ],
-                    "50e837fb-5b32-76ab-e7d7-1f851347ea09": {
-                        "paletteKey": "html-editor",
-                        "parentEditorKey": "0996a993-adde-ba42-7f34-91884ea64374",
-                        "isAdvancedChildComponent": true,
+                    "0996a993-adde-ba42-7f34-91884ea64374": {
+                        "paletteKey": "Html5",
+                        "parentEditorKey": "0231ead1-9feb-26b7-2e5f-325cd77a7241",
+                        "isAdvancedComponent": true,
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "",
+                                "_value": "color: #283552;text-align: center; letter-spacing: 0.5px; text-transform: capitalize;width:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1386,22 +944,209 @@
                                 "_attrDef": "p"
                             },
                             {
-                                "_key": "html",
-                                "_value": "{{locales.thankyou}}",
+                                "_key": "htmlElement",
+                                "_value": "div",
+                                "_type": "dav",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "tagType",
+                                "_value": "",
                                 "_type": "a",
-                                "_attrDef": "p"
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "name",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "sandbox",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "src",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "srcdoc",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "width",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "[autoplay]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "[loop]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "data",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "audioSource",
+                                "_value": [],
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "videoSource",
+                                "_value": [],
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "audioDatasource",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "audioSrc",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "audioType",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "videoDatasource",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "videoSrc",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "videoType",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(audioplay)",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(videoplay)",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(audiopause)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(videopause)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(audioended)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "(videoended)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
                             }
-                        ]
+                        ],
+                        "50e837fb-5b32-76ab-e7d7-1f851347ea09": {
+                            "paletteKey": "html-editor",
+                            "parentEditorKey": "0996a993-adde-ba42-7f34-91884ea64374",
+                            "isAdvancedChildComponent": true,
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "html",
+                                    "_value": "{{locales.thankyou}}",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        }
                     }
                 }
             },
-            "2419df99-a825-3214-7ec3-0792c4e39bdc": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "c8a0a6b2-d519-63e2-3a8e-3e3b97a810c8",
+            "d649e6bd-c566-a81d-9691-9ae206777a27": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b3cc2270-94ef-2950-f650-43019301be52",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
-                        "_value": "Column",
+                        "_value": "Row",
                         "_type": "kv",
                         "_attrDef": "p",
                         "_useAsLabel": true
@@ -1420,7 +1165,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "10",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1438,208 +1183,7 @@
                     },
                     {
                         "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            }
-        },
-        "d649e6bd-c566-a81d-9691-9ae206777a27": {
-            "paletteKey": "FlexLayoutRow",
-            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "width:100%;",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "",
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "20",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "start",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "stretch",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxShow]",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxHide]",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ],
-            "98141ac5-015e-7a9f-bf9c-54940371c4e4": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "d649e6bd-c566-a81d-9691-9ae206777a27",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "20",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
-            "98983ebb-948d-b8b5-e691-fc483a422a4e": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "d649e6bd-c566-a81d-9691-9ae206777a27",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "60",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -1664,12 +1208,12 @@
                 ],
                 "b0d93057-339e-9591-d036-9dee63553557": {
                     "paletteKey": "Html5",
-                    "parentEditorKey": "98983ebb-948d-b8b5-e691-fc483a422a4e",
+                    "parentEditorKey": "d649e6bd-c566-a81d-9691-9ae206777a27",
                     "isAdvancedComponent": true,
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "color: #283552;width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; text-transform: capitalize;",
+                            "_value": "color: #283552;width:60%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; text-transform: capitalize;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1874,89 +1418,22 @@
                         ]
                     }
                 }
-            },
-            "e570a195-8b35-3c26-bd1f-c957fb4911f2": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "d649e6bd-c566-a81d-9691-9ae206777a27",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "20",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
             }
         },
-        "247dce70-ebbd-9952-725a-037bb22b849a": {
-            "paletteKey": "FlexLayoutRow",
+        "dd8df341-8458-e26a-0a55-d159d9bb842d": {
+            "paletteKey": "FlexLayoutCol",
             "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
             "designerReference": [
                 {
                     "_key": "componentLabel",
-                    "_value": "Row",
+                    "_value": "Column",
                     "_type": "kv",
                     "_attrDef": "p",
                     "_useAsLabel": true
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%;height:100px;",
+                    "_value": "margin-top:auto;margin-bottom:30px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -1969,140 +1446,6 @@
                 {
                     "_key": "fxFlex",
                     "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "start",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "stretch",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxShow]",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxHide]",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ]
-        },
-        "c38145e9-e099-09ff-5dc4-ff95714a5383": {
-            "paletteKey": "FlexLayoutRow",
-            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "width:100%;height:80px;",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "",
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "start",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "stretch",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxShow]",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxHide]",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ]
-        },
-        "42346a37-1309-f775-74b4-909aea55c1eb": {
-            "paletteKey": "FlexLayoutRow",
-            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "width:100%;",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "",
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "10",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -2143,76 +1486,9 @@
                     "_attrDef": "p"
                 }
             ],
-            "e6fc41a7-a21a-4bfc-1ae7-54c886eee2f4": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "42346a37-1309-f775-74b4-909aea55c1eb",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "20",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
             "a3ca7362-b734-3b14-b79f-230a4b06a67b": {
                 "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "42346a37-1309-f775-74b4-909aea55c1eb",
+                "parentEditorKey": "dd8df341-8458-e26a-0a55-d159d9bb842d",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -2235,7 +1511,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "60",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -2489,210 +1765,9 @@
                     }
                 }
             },
-            "adc9ef7e-6f43-be90-f3e7-fe040c7c5dde": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "42346a37-1309-f775-74b4-909aea55c1eb",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "20",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            }
-        },
-        "1ddee131-f660-1628-053b-7c9627f6097f": {
-            "paletteKey": "FlexLayoutRow",
-            "parentEditorKey": "1a50554a-cecd-e729-952c-60bb5d71dd88",
-            "designerReference": [
-                {
-                    "_key": "componentLabel",
-                    "_value": "Row",
-                    "_type": "kv",
-                    "_attrDef": "p",
-                    "_useAsLabel": true
-                },
-                {
-                    "_key": "style",
-                    "_value": "width:100%;",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "class",
-                    "_value": "",
-                    "_type": "dav",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxFlex",
-                    "_value": "20",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "fxLayoutGap",
-                    "_value": "",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "wrap",
-                    "_value": "wrap",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "layoutAlign",
-                    "_value": "start",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "pLayoutAlign",
-                    "_value": "stretch",
-                    "_type": "a",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxShow]",
-                    "_value": "true",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                },
-                {
-                    "_key": "[fxHide]",
-                    "_value": "false",
-                    "_type": "kv",
-                    "_attrDef": "p"
-                }
-            ],
-            "ad2f8be0-5374-3615-b62c-cf25d660d86f": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "1ddee131-f660-1628-053b-7c9627f6097f",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "20",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
-            },
             "cf2af35f-54a3-6fa8-57f1-5e2e64c9867b": {
                 "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "1ddee131-f660-1628-053b-7c9627f6097f",
+                "parentEditorKey": "dd8df341-8458-e26a-0a55-d159d9bb842d",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -2715,7 +1790,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "60",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -2835,73 +1910,6 @@
                         }
                     ]
                 }
-            },
-            "def48f3f-81ba-f088-5465-f931792f2237": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "1ddee131-f660-1628-053b-7c9627f6097f",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "20",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
             }
         }
     }

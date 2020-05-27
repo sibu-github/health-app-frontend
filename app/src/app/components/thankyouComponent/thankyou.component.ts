@@ -19,11 +19,22 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class thankyouComponent extends NBaseComponent implements OnInit {
 
+    // this property determine the background color of the tick mark icon circle
+    // when this property is set to true
+    // the backround color of the circle will change to amber otherwise green
+    isAmber:boolean = false
+
+
     constructor() {
         super();
-         let language = window.localStorage.getItem('language');
-       
+
+        // set selected language in locale
+        let language = window.localStorage.getItem('language');
         this.localeService.language = language;
+
+        // get the color code from localstorage
+        let color = window.localStorage.getItem('colorCode');
+        this.isAmber = color === 'AMBER';
     }
 
     ngOnInit() {
