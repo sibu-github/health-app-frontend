@@ -19,27 +19,23 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row wrap" style="color: #25282B;width:100%; height:200px;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" fxLayoutAlign="start none" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="color: #25282B;width:100%; font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" fxFlex="35" fxLayoutAlign="start none" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%; height:100%;margin-left:10px;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="15" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-        <div style="margin-left:10px;width:100%; height:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;color: #25282B;">
-          {{locales.question1}}</div>
-      </div>
-      <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="40" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="width:100%; height:100%;" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false"><label class="text">
+      <div fxLayout="row wrap" style="width:100%; height:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" style="width:100%; height:100%;" fxLayoutAlign="  none" [fxShow]="true" [fxHide]="false"><label style="margin-left:10px;color: #25282B;">
+            {{locales.question1}}</label><label class="text">
             {{locales.fever}}</label><label class="text">
             {{locales.cough}}</label><label class="text">
-            {{locales.chills}}</label></div>
+            {{locales.chills}}</label><label class="text">
+            {{locales.choose}}</label></div>
       </div>
-      <div fxLayout="row wrap" style="width:100%;height:100px;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="width:100%;height:100%;">
-          {{locales.choose}}</label></div>
     </div>
   </div>
-  <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="width:100%;height:100%;margin-bottom:10px;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="margin-top:15px;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
-        <mat-radio-group style="margin: 0 10px 0 10px; display:flex ;   width:100%;   justify-content: center;" [(ngModel)]="answer" (change)="onChangeRadio($event, 1)">
+        <mat-radio-group (change)="onChangeRadio($event, 1)">
           <mat-radio-button value="false" required [labelPosition]="&apos;after&apos;">NO</mat-radio-button>
           <mat-radio-button value="true" required [labelPosition]="&apos;after&apos;">YES</mat-radio-button>
         </mat-radio-group>
@@ -55,7 +51,7 @@
     <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="margin-right:10px;" fxFlex="80" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
-        <mat-radio-group (change)="onChangeRadio($event, 2)">
+        <mat-radio-group (change)="onChangeRadioTwo($event, 2)">
           <mat-radio-button value="false" required>NO</mat-radio-button>
           <mat-radio-button value="true" required color="#5EA73E">YES</mat-radio-button>
         </mat-radio-group>
