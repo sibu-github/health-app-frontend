@@ -279,7 +279,6 @@
             "f4cfd98d-9187-0fca-aed4-7a25d120ebef": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "45cfd01d-d923-edb3-d19e-8719b740b5f4",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -346,7 +345,6 @@
                 "6d539b35-e79b-8775-ad28-b08662406137": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "f4cfd98d-9187-0fca-aed4-7a25d120ebef",
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1413,7 +1411,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": "{{locales.thankyoumessage}}",
+                                "_value": "{{locales.thankyoumessage}}\n\n<div style=\"font-size: 20px; margin-top: 30px; font-weight: 600;\">{{today}}</div>\n",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }

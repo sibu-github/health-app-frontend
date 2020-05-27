@@ -22,7 +22,38 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     // this property determine the background color of the tick mark icon circle
     // when this property is set to true
     // the backround color of the circle will change to amber otherwise green
-    isAmber:boolean = false
+    isAmber:boolean = false;
+    today:string = '';
+
+
+
+    // returns today's date in DD-MMM-YYYY format
+    // which can be shown in the UI
+    getDay(){
+        const dt = new Date();
+        const date = dt.getDate();
+        const month = dt.getMonth();
+        const year = dt.getFullYear();
+        const dateStr = date < 10 ? '0' + date : date + ''; 
+        const monthStr = month === 0 ? 'JAN' :
+                            month === 1 ? 'FEB' :
+                            month === 2 ? 'MAR' :
+                            month === 3 ? 'APR' : 
+                            month === 4 ? 'MAY' :
+                            month === 5 ? 'JUN' :
+                            month === 6 ? 'JUL' :
+                            month === 7 ? 'AUG' :
+                            month === 8 ? 'SEP' :
+                            month === 9 ? 'OCT' :
+                            month === 10 ? 'NOV' :
+                            month === 11 ? 'DEC' :
+                            '';
+        const dayStr = dateStr + '-' + monthStr + '-' + year;
+        return dayStr;
+
+    }
+
+
 
 
     constructor() {
@@ -38,6 +69,8 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     }
 
     ngOnInit() {
-
+        // set today 
+        this.today = this.getDay();
+        console.log(this.today);
     }
 }
