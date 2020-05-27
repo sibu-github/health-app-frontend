@@ -209,7 +209,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:100px; height:80px;",
+                            "_value": "width:60px; height:45px;margin-top:17px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -355,7 +355,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:100px;height:75px;margin-top:5px;",
+                            "_value": "width:60px;height:42px;margin-top:1px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1063,7 +1063,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%; height:400px;",
+                    "_value": "width:100%; height:380px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },

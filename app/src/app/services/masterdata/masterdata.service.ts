@@ -21,7 +21,13 @@ public shortTextOne:string;
 public shortTextTwo:string;
 public shortTextThree:string;
 public addlInfo:string;
-
+public firstName:string;
+public lastName:string;
+public locationNameTwo:string;
+public userType:string;
+public email:string;
+public company:string;
+public ingredionContact:string
 // creating serverurl variable we can define it env.json and access here
 
 
@@ -29,6 +35,46 @@ public addlInfo:string;
 constructor(private http: HttpClient,private saveuserService:saveuserresponse) {}
 
 
+// async userSubmit(){
+//     console.log(JSON.parse(localStorage.getItem('answer1')));
+//     let answer1  = this.answer1;
+//     let answer2  = this.answer2;
+//     let answer3  = this.answer3;
+//     let UpdatedlocationName = this.locationName;
+//     let UcertifyInfoName = this.certifyInfoName;
+//     let UcertifyInfoCheck = this.certifyInfoChecked;
+//     try {
+//         console.log(this.username);
+//           let formdata = {
+//                 type:"employee",
+//                 locationName: UpdatedlocationName,
+//                 email:this.username,
+//                 phone:localStorage.getItem('phone'),
+//                 firstName:"st peter",
+//                 lastName:"henry",
+//                 company:"blucocondigital",
+//                 ingredionContact:"none",
+//                 certifyInfoName:UcertifyInfoName,
+//                 certifyInfoChecked:UcertifyInfoCheck,
+//                   response:[{
+//                              "questionId": this.questionId, "answer": this.answer1,  "shortText": this.shortTextOne
+//                         },{
+//                             "questionId": this.questionId2, "answer": this.answer2,  "shortText": this.shortTextTwo
+//                         },{
+//                             "questionId": this.questionId3, "answer": this.answer3,  "shortText": this.shortTextThree
+//                         }
+//                     ],
+//             };
+//         console.log(formdata);
+//         let bh = await this.saveuserService.saveUserData(formdata)
+//         console.log(bh.local.result);
+//        return bh.local.result;
+
+//     } catch(err){
+//         // this.isLoading = false
+//         console.log(err)
+//     }
+// }
 async userSubmit(){
     console.log(JSON.parse(localStorage.getItem('answer1')));
     let answer1  = this.answer1;
@@ -40,14 +86,14 @@ async userSubmit(){
     try {
         console.log(this.username);
           let formdata = {
-                type:"employee",
+                type:this.userType,
                 locationName: UpdatedlocationName,
-                email:this.username,
+                email:this.email,
                 phone:localStorage.getItem('phone'),
-                firstName:"st peter",
-                lastName:"henry",
-                company:"blucocondigital",
-                ingredionContact:"none",
+                firstName:this.firstName,
+                lastName:this.lastName,
+                company:this.company,
+                ingredionContact:this.ingredionContact,
                 certifyInfoName:UcertifyInfoName,
                 certifyInfoChecked:UcertifyInfoCheck,
                   response:[{
@@ -55,7 +101,7 @@ async userSubmit(){
                         },{
                             "questionId": this.questionId2, "answer": this.answer2,  "shortText": this.shortTextTwo
                         },{
-                            "questionId": this.questionId3, "answer": this.answer3,  "shortText": this.shortTextThree
+                            "questionId": this.questionId3, "answer": this.answer3,  "shortText": this.shortTextThree,"addlInfo":this.addlInfo
                         }
                     ],
             };
@@ -70,8 +116,8 @@ async userSubmit(){
     }
 }
 }
- console.log(localStorage.getItem('answer1'),localStorage.getItem('answer2'),localStorage.getItem('answer3'));
- var confirmdetailsObj = JSON.parse(localStorage.getItem('confirmdetails'));
+//  console.log(localStorage.getItem('answer1'),localStorage.getItem('answer2'),localStorage.getItem('answer3'));
+//  var confirmdetailsObj = JSON.parse(localStorage.getItem('confirmdetails'));
 
 
 

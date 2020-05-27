@@ -2,7 +2,7 @@
   <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+        <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/image1.png" width="70px"></div>
       </div>
       <div fxLayout="row wrap" style="width:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -11,7 +11,7 @@
             <div style="width:100%;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; /* identical to box height */  letter-spacing: 0.5px; text-transform: capitalize;">
               {{locales.travel}}</div>
           </div>
-          <div fxLayout="row wrap" style="width:100%;margin-left:10px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Stepper4.png" style="width:300px; "></div>
+          <div fxLayout="row wrap" style="width:100%;margin-left:10px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images/Stepper4.png"></div>
         </div>
       </div>
     </div>
@@ -36,9 +36,9 @@
     <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" style="width:100%;padding-top:10px;" fxFlex="20" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
-    <form class="example-form" style="width:85%;">
+    <form class="example-form" #healthForm="ngForm" [hidden]="!enableTextArea" style="width:85%;">
       <mat-form-field class="example-full-width">
-        <input matInput #message maxlength="256" placeholder="{{locales.inputhelp}}">
+        <input name="addlinfo" [(ngModel)]="addlinfo" matInput #message maxlength="256" placeholder="{{locales.inputhelp}}">
         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
       </mat-form-field>
     </form>
@@ -49,6 +49,6 @@
           <mat-icon>keyboard_arrow_left</mat-icon>{{locales.back}}
         </button></label></div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="margin-right:10px;" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><button mat-button style="width:100px;height:50px;color: #FFFFFF;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="onNext()" routerLink="/certifyinfo">{{locales.continue}}</button></div>
+    <div fxLayout="column wrap" style="margin-right:10px;" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><button mat-button style="width:100px;height:50px;color: #FFFFFF;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="onNext(healthForm)">{{locales.continue}}</button></div>
   </div>
 </div>

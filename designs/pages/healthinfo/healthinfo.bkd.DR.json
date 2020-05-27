@@ -1196,7 +1196,7 @@
                 },
                 {
                     "_key": "fxFlex",
-                    "_value": "35",
+                    "_value": "32",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -2543,7 +2543,7 @@
                 },
                 {
                     "_key": "fxFlex",
-                    "_value": "10",
+                    "_value": "8",
                     "_type": "kv",
                     "_attrDef": "p"
                 },

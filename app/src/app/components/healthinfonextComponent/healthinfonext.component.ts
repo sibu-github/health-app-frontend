@@ -8,6 +8,8 @@ import { servicename } from 'app/sd-services/servicename';
 */
 
 import {masterdataService} from '../../services/masterdata/masterdata.service';
+import { datasharingService } from 'app/services/datasharing/datasharing.service';
+
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -20,8 +22,11 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
 answer:string ='';
-shortTextThree ="Travelled or Personal Contact";
-    constructor(private router: Router,private masterdata : masterdataService) {
+addlinfo:any;
+  shortTextThree = "Travelled Outside Country";
+    enableTextArea: Boolean = false;
+    val3: any;
+    constructor(private router: Router,private masterdata : masterdataService,private datasharingService: datasharingService) {
         super();
          let language = window.localStorage.getItem('language');
        
@@ -33,32 +38,57 @@ shortTextThree ="Travelled or Personal Contact";
     }
 
     //question :boolean = false;
-    onChangeRadio(e, questionIndex){
+   onChangeRadio(e, questionIndex) {
         console.log('onChangeRadio called...')
         console.log("Question Index", questionIndex)
-        let val = e.value
-        this.answer = val
+        this.val3 = e.value;
+        this.answer = this.val3;
         // if(this.answer == YES){
         //     this.question = true;
         // }
-        console.log({val});
-         if(questionIndex == '3'){
-             this.masterdata.answer3 = val;
-             this.masterdata.questionId3 =questionIndex;
+        console.log(this.val3);
+        if (questionIndex == '3') {
+            if (e.value == 'true') {
+                this.enableTextArea = true;
+            } else {
+                this.enableTextArea = false;
+            }
+            this.masterdata.answer3 = this.val3;
+            this.masterdata.questionId3 = questionIndex;
             this.masterdata.shortTextThree = this.shortTextThree;
-             this.masterdata.addlInfo ="additional info";
-              localStorage.setItem('answer3', 
-            JSON.stringify(
-                { "questionId": this.masterdata.questionId3,
-                    "answer": this.masterdata.answer1, 
-                    "shortText": this.shortTextThree,
-                    "addlInfo": "additional info"
-                }));}
-}
-    onBack(){
+
+            localStorage.setItem('answer3',
+                JSON.stringify(
+                    {
+                        "questionId": this.masterdata.questionId3,
+                        "answer": this.masterdata.answer1,
+                        "shortText": this.shortTextThree,
+                        "addlInfo": this.masterdata.addlInfo
+                    }));
+        }
+    }
+    onBack() {
         this.router.navigate(['/healthinfo']);
     }
-    onNext(){
-        this.router.navigate(['/certifyinfo']);
+    onNext(form) {
+        console.log(this.val3);
+        this.masterdata.addlInfo = form.value.addlinfo;
+     
+        if (this.val3 !=undefined && ( this.val3 || !this.val3)) {
+            console.log(this.val3);
+            if(this.val3 == 'true'){
+                   console.log(form.value.addlinfo, typeof(this.val3))
+                if(this.val3 == 'true' && form.value.addlinfo != undefined){
+            this.router.navigate(['/certifyinfo']);
+                }else if(form.value.addlinfo == undefined) {
+                    this.datasharingService.openSnackBar('Please answer locations', 'X');
+                }
+            } else{
+                console.log('im here ');
+            this.router.navigate(['/certifyinfo']);
+            }
+        } else{
+            this.datasharingService.openSnackBar('Please select option ', 'X');
+        }
     }
 }

@@ -266,6 +266,7 @@
                 "5d0af466-262f-77c0-ad3b-d401cffcb7c0": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "b4812a93-55f7-0e6c-1326-e252e99ddd54",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -422,7 +423,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:80px; height:60px;",
+                            "_value": "width:80px; height:55px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1965,13 +1966,13 @@
                             },
                             {
                                 "_key": "name",
-                                "_value": "username",
+                                "_value": "email",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "type",
-                                "_value": "input",
+                                "_value": "text",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2145,7 +2146,7 @@
                             },
                             {
                                 "_key": "type",
-                                "_value": "input",
+                                "_value": "password",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

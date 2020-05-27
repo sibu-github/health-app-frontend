@@ -125,20 +125,6 @@ export class saveuserresponse {
       return await this.errorHandler(bh, e, 'sd_edbqgcUOheevvEDW');
     }
   }
-  async sd_pqpa2i6ZNAJjfwpC(bh) {
-    try {
-      this.matSnackBar.open('Error at Backend', '', {
-        duration: 3000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom'
-      });
-      //appendnew_next_sd_pqpa2i6ZNAJjfwpC
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_pqpa2i6ZNAJjfwpC');
-    }
-  }
   async sd_chnzbvsmBYvG8poP(bh) {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation`;
@@ -198,7 +184,6 @@ export class saveuserresponse {
 
   async sd_JvVnSwB12u0QvrzM(bh) {
     this.sd_edbqgcUOheevvEDW(bh);
-    bh = await this.sd_pqpa2i6ZNAJjfwpC(bh);
     //appendnew_next_sd_JvVnSwB12u0QvrzM
     return true;
   }

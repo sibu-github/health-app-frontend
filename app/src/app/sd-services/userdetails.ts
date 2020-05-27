@@ -85,21 +85,6 @@ export class userdetails {
       return await this.errorHandler(bh, e, 'sd_K3ODbZQfLJ4SsrAR');
     }
   }
-  async sd_pdZvOYcto7hjEMEh(bh) {
-    try {
-      this.matSnackBar.open('Error in Backend for ConfirmDetails', '', {
-        duration: 2000,
-        direction: 'ltr',
-        horizontalPosition: 'center',
-        verticalPosition: 'bottom'
-      });
-      this.sd_9bNLEihqbGQ8hBkz(bh);
-      //appendnew_next_sd_pdZvOYcto7hjEMEh
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_pdZvOYcto7hjEMEh');
-    }
-  }
   async sd_9bNLEihqbGQ8hBkz(bh) {
     try {
       console.log(new Date().toLocaleTimeString(), bh);
@@ -129,7 +114,7 @@ export class userdetails {
   }
 
   async sd_fppaVeWTVfJkSBcU(bh) {
-    bh = await this.sd_pdZvOYcto7hjEMEh(bh);
+    this.sd_9bNLEihqbGQ8hBkz(bh);
     //appendnew_next_sd_fppaVeWTVfJkSBcU
     return true;
   }
