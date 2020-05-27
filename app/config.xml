@@ -36,8 +36,8 @@
         <splash density="xhdpi" src="src/assets/Android/res/drawable-xhdpi/screen2.png" />
         <splash density="land-xhdpi" src="src/assets/Android/res/drawable-land-xhdpi/screen2.png" />
         <splash density="xxhdpi" src="src/assets/Android/res/drawable-xxhdpi/screen2.png" />
-        <splash density="land-xxhdpi" src="src/assets/Android/res/drawable-land-xxhdpi/screen.png" />
-        <splash density="xxxhdpi" src="src/assets/Android/res/drawable-xxxhdpi/screen.png" />
+        <splash density="land-xxhdpi" src="src/assets/Android/res/drawable-land-xxhdpi/screen2.png" />
+        <splash density="xxxhdpi" src="src/assets/Android/res/drawable-xxxhdpi/screen2.png" />
         <splash density="land-xxxhdpi" src="src/assets/Android/res/drawable-land-xxxhdpi/screen2.png" />
         <resource-file src="google-services.json" target="app/google-services.json" />
         <hook src="scripts/beforeBuild.js" type="before_build" />
