@@ -66,6 +66,8 @@
         "phone": "電話號碼",
         "Email": "電子郵件地址",
         "companyname": "公司名",
-        "ingredoncontact": "Ingredon聯繫人"
+        "ingredoncontact": "Ingredon聯繫人",
+        "fir": "必須填寫名字",
+        "personalinformation": "個人信息"
     }
 }

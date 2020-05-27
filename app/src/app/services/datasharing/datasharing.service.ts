@@ -5,24 +5,24 @@ import { MatSnackBar } from '@angular/material';
 
 @Injectable()
 export class datasharingService {
-locations:any;
+usertypes:any;
 
     constructor(private http: HttpClient,private snackBar: MatSnackBar) {}
 
-       getlocationdata() {     
+           getusertypes() {     
         // sample json data
-        return this.locations = [
+        return this.usertypes = [
                     {
-                    name:  "Tokyo12",
+                    type:  "vendor",
                     },
                     {
-                    name: "Westchester",
+                    type: "customer",
                     },
                     {
-                    name: "West Lane",
+                    type: "visitor",
                     }
                 ];
-                console.log("location name", this.locations[0].name);
+                console.log("user name", this.usertypes[0].name);
         }
 
     openSnackBar(message: string, action: string){

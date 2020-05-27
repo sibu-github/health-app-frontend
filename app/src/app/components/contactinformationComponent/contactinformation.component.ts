@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
 */
+import { masterdataService } from '../../services/masterdata/masterdata.service';
 
 /*
 Legacy Service import Example :
@@ -24,10 +25,10 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
     email:any; // kept for build error
     change:any; // kept for build error
     phone:any; // kept for build error
-    companyname:any; // kept for build error
-    ingredoncontact:any; // kept for build error
+    company:any; // kept for build error
+    ingredioncontact:any; // kept for build error
 
-    constructor(private router:Router) {
+    constructor(private router:Router,private masterdata: masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
        
@@ -68,15 +69,19 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
         this.validclick=true;
         console.log(data.value);
           if(data.valid === true){
-              this.router.navigate(['/landingpage']);
-                this.validclick = false;
+            this.masterdata.email = data.value.email;
+            this.masterdata.phone = data.value.phone;
+            this.masterdata.company = data.value.company;
+            this.masterdata.ingredionContact = data.value.ingredionContact;
+            this.router.navigate(['/healthinfo']);
+            this.validclick = false;
 
         }
     }
 
     
     navigatePrev() {
-        alert('I am navigating to previous page');
+        this.router.navigate(['/personalinfo']);
     }
 
 

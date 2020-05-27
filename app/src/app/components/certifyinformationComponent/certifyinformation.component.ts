@@ -64,8 +64,12 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
                 });
 
 
-        } else {
-            this.datasharingService.openSnackBar('Please select Terms and Conditions', "X");
+        }  else {
+            if(this.accept == undefined) {
+                this.datasharingService.openSnackBar('Please select Terms and Conditions', "X");
+            } else{
+                this.datasharingService.openSnackBar('Please provide required information', "X");
+            }
         }
     }
     onBack(){

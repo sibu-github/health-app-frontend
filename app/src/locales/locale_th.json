@@ -66,6 +66,8 @@
         "phone": "หมายเลขโทรศัพท์",
         "Email": "ที่อยู่อีเมล",
         "companyname": "ชื่อ บริษัท",
-        "ingredoncontact": "ติดต่อ Ingredon"
+        "ingredoncontact": "ติดต่อ Ingredon",
+        "fir": "ต้องระบุชื่อ",
+        "personalinformation": "ข้อมูลส่วนบุคคล"
     }
 }

@@ -43,7 +43,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     async ngOnInit() {
         this.locationName = this.defaultLocationName.slice(0);
         this.phone = '817930010987';
-        this.updatelocations = this.datash.getlocationdata();
+        //this.updatelocations = this.datash.getlocationdata();
        
        // console.log(this.totallocations);
         try {
@@ -76,6 +76,8 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
 
                     this.masterdata.locationName = data.value.locationName;
                     this.masterdata.phone = data.value.phone;
+                     this.masterdata.locationNameTwo = data.value.locationName;
+                    this.masterdata.userType = data.value.type;
                     let confirmdetailsObj = {
                         email:'bhsarat@gmail.com',
                         locationName: this.masterdata.locationName,

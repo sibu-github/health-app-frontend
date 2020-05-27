@@ -67,7 +67,9 @@
             "phone": "Phone Number",
             "Email": "Email Address",
             "companyname": "Company Name",
-            "ingredoncontact": "Ingredon Contact"
+            "ingredoncontact": "Ingredon Contact",
+            "fir": "First Name is required",
+            "personalinformation": "Personal Information"
         }
     },
     "zh-CN": {
@@ -138,7 +140,9 @@
             "phone": "电话号码",
             "Email": "电子邮件地址",
             "companyname": "公司名",
-            "ingredoncontact": "Ingredon联系人"
+            "ingredoncontact": "Ingredon联系人",
+            "fir": "必须填写名字",
+            "personalinformation": "个人信息"
         }
     },
     "zh-TW": {
@@ -209,7 +213,9 @@
             "phone": "電話號碼",
             "Email": "電子郵件地址",
             "companyname": "公司名",
-            "ingredoncontact": "Ingredon聯繫人"
+            "ingredoncontact": "Ingredon聯繫人",
+            "fir": "必須填寫名字",
+            "personalinformation": "個人信息"
         }
     },
     "es": {
@@ -280,7 +286,9 @@
             "phone": "Número de teléfono",
             "Email": "Dirección de correo electrónico",
             "companyname": "nombre de empresa",
-            "ingredoncontact": "Contacto con ingredientes"
+            "ingredoncontact": "Contacto con ingredientes",
+            "fir": "Se requiere el primer nombre",
+            "personalinformation": "Informacion personal"
         }
     },
     "pt": {
@@ -351,7 +359,9 @@
             "phone": "Número de telefone",
             "Email": "Endereço de e-mail",
             "companyname": "Nome da empresa",
-            "ingredoncontact": "Ingredon Contato"
+            "ingredoncontact": "Ingredon Contato",
+            "fir": "O primeiro nome é necessário",
+            "personalinformation": "Informação pessoal"
         }
     },
     "ko": {
@@ -422,7 +432,9 @@
             "phone": "전화 번호",
             "Email": "이메일 주소",
             "companyname": "회사 이름",
-            "ingredoncontact": "Ingredon 연락처"
+            "ingredoncontact": "Ingredon 연락처",
+            "fir": "이름이 필요합니다",
+            "personalinformation": "개인 정보"
         }
     },
     "th": {
@@ -493,7 +505,9 @@
             "phone": "หมายเลขโทรศัพท์",
             "Email": "ที่อยู่อีเมล",
             "companyname": "ชื่อ บริษัท",
-            "ingredoncontact": "ติดต่อ Ingredon"
+            "ingredoncontact": "ติดต่อ Ingredon",
+            "fir": "ต้องระบุชื่อ",
+            "personalinformation": "ข้อมูลส่วนบุคคล"
         }
     }
 }

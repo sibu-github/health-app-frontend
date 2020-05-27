@@ -11,7 +11,7 @@
             <div class="contact-info">
               {{locales.contactinfo}}</div>
           </div>
-          <div fxLayout="row wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img style="Images\step.png"></div>
+          <div fxLayout="row wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step.png"></div>
         </div>
       </div>
     </div>
@@ -36,15 +36,15 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnr}}</small></span><span *ngIf="mobilenumber.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnrl}}</small></span></div>
         <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="companyname" name="companyname" type="text" placeholder="{{locales.companyname}}" required #company="ngModel">
+          <input matInput [(ngModel)]="company" name="company" type="text" placeholder="{{locales.companyname}}" required #companyName="ngModel">
 
         </mat-form-field>
-        <div *ngIf=" company.errors &amp;&amp; (company.dirty || company.touched || validclick)">
-          <span *ngIf="company.errors.required">
-                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.cr}}</small></span><span *ngIf="company.errors.pattern">
+        <div *ngIf=" companyName.errors &amp;&amp; (companyName.dirty || companyName.touched || validclick)">
+          <span *ngIf="companyName.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.cn}}</small></span><span *ngIf="companyName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
         <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="ingredoncontact" name="ingredoncontact" type="text" placeholder="{{locales.ingredoncontact}}" required #gc="ngModel" pattern="[a-zA-Z\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}">
+          <input matInput [(ngModel)]="ingredioncontact" name="ingredioncontact" type="text" placeholder="{{locales.ingredoncontact}}" required #gc="ngModel" pattern="[a-zA-Z\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}">
 
         </mat-form-field>
         <div *ngIf="gc.errors &amp;&amp; (gc.dirty || gc.touched || validclick)">
