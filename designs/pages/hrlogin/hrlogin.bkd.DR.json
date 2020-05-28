@@ -64,9 +64,35 @@
                 "_attrDef": "p"
             }
         ],
+        "21fa3bc3-f56e-e63f-a281-1c77cab666a3": {
+            "paletteKey": "NEUTRINOS_VIEW_logo",
+            "parentEditorKey": "a290d01e-ee14-841f-c25a-020e4ccd48d1",
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "logo",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                }
+            ]
+        },
         "15abd809-873f-4c2d-b3d0-cd9bf99ddc24": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "a290d01e-ee14-841f-c25a-020e4ccd48d1",
+            "isCommented": "true",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -133,6 +159,7 @@
             "abc6c3ab-5eef-01b0-65d0-c608116fb383": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "15abd809-873f-4c2d-b3d0-cd9bf99ddc24",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -199,6 +226,7 @@
                 "15e1a616-1800-a21a-ab52-0045094cec73": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "abc6c3ab-5eef-01b0-65d0-c608116fb383",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -279,6 +307,7 @@
             "3537a3fc-f810-7f9a-a69a-e3bfa9d199eb": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "15abd809-873f-4c2d-b3d0-cd9bf99ddc24",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -346,6 +375,7 @@
             "620ab52a-9dbd-f191-a2d2-cba3a72599ce": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "15abd809-873f-4c2d-b3d0-cd9bf99ddc24",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -412,6 +442,7 @@
                 "640ef5e3-08b8-5997-d215-83f3f3241536": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "620ab52a-9dbd-f191-a2d2-cba3a72599ce",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1806,7 +1837,7 @@
                             },
                             {
                                 "_key": "type",
-                                "_value": "input",
+                                "_value": "password",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1967,7 +1998,7 @@
                             },
                             {
                                 "_key": "routerLink",
-                                "_value": "",
+                                "_value": "/hrdashboard",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             }

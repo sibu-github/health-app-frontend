@@ -25,10 +25,8 @@ export class loginComponent extends NBaseComponent implements OnInit {
     private saveuserService: saveuserresponse
   ) {
     super();
-
-    // get the previously selected language from local storage
-    // set the language if selected
     let language = window.localStorage.getItem("language");
+
     if (language) {
       this.localeService.language = language;
     }
@@ -46,7 +44,12 @@ export class loginComponent extends NBaseComponent implements OnInit {
     };
     localStorage.setItem("username", this.masterdata.email);
     localStorage.setItem("password", this.masterdata.password);
-
-    this.router.navigate(["/confirmdetails"]);
+    console.log(form.email);
+    if (form.value.email == "craig.shirley@ingredion.com") {
+      this.router.navigate(["/hrdashboard"]);
+      console.log("craig");
+    } else {
+      this.router.navigate(["/confirmdetails"]);
+    }
   }
 }

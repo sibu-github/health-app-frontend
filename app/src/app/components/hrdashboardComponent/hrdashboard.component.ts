@@ -28,25 +28,31 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
   q3negative: number;
   constructor(private hrdashboard: hrdashboard) {
     super();
+    let language = window.localStorage.getItem("language");
+
+    if (language) {
+      this.localeService.language = language;
+    }
   }
 
   async ngOnInit() {
     try {
       let dashboard = await this.hrdashboard.hrDashboard();
-      this.q1postive = dashboard.local.result.q1_count.postive[0].postive.toString();
-      this.q1negative = dashboard.local.result.q1_count.negative[0].negative;
+      this.q2postive = dashboard.local.result.q1_count.postive[0].postive.toString();
+      this.q2negative = dashboard.local.result.q1_count.negative[0].negative;
 
       //q2
-      this.q2postive = dashboard.local.result.q2_count.positive[0].postive;
-      this.q2negative = dashboard.local.result.q2_count.negative[0].negative;
+      this.q3postive = dashboard.local.result.q2_count.positive[0].postive;
+      this.q3negative = dashboard.local.result.q2_count.negative[0].negative;
 
       //q3
-      this.q3postive = dashboard.local.result.q3_count.positive[0].postive;
-      this.q3negative = dashboard.local.result.q3_count.negative[0].negative;
+      this.q1postive = dashboard.local.result.q3_count.positive[0].postive;
+      this.q1negative = dashboard.local.result.q3_count.negative[0].negative;
     } catch (err) {
       console.error(err);
     }
   }
+
   foods: any[] = [
     { value: "steak-0", viewValue: "Steak" },
     { value: "pizza-1", viewValue: "Pizza" },
