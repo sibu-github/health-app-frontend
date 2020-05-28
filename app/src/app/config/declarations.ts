@@ -16,6 +16,8 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-logoComponent
+import { logoComponent } from '../components/logoComponent/logo.component';
 //CORE_REFERENCE_IMPORT-thankyouduplicateComponent
 import { thankyouduplicateComponent } from '../components/thankyouduplicateComponent/thankyouduplicate.component';
 //CORE_REFERENCE_IMPORT-masterdataService
@@ -85,6 +87,8 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-logoComponent
+logoComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-thankyouduplicateComponent
 thankyouduplicateComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfonextComponent

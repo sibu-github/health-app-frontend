@@ -131,9 +131,35 @@
                 }
             ]
         },
+        "41e2fc53-4ef7-26a5-29a9-3ded3e85fbe5": {
+            "paletteKey": "NEUTRINOS_VIEW_logo",
+            "parentEditorKey": "45f9560f-9bac-67de-9ed1-fecb341a7fb8",
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "logo",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                }
+            ]
+        },
         "cdd0b39e-371a-bb29-a056-717d432cae10": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "45f9560f-9bac-67de-9ed1-fecb341a7fb8",
+            "isCommented": "true",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -200,6 +226,7 @@
             "b4812a93-55f7-0e6c-1326-e252e99ddd54": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "cdd0b39e-371a-bb29-a056-717d432cae10",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -266,7 +293,7 @@
                 "5d0af466-262f-77c0-ad3b-d401cffcb7c0": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "b4812a93-55f7-0e6c-1326-e252e99ddd54",
-                    "isCommented": "false",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -289,7 +316,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "Web/image2.png",
+                            "_value": "Web/ingredionlogo.png",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -347,6 +374,7 @@
             "7f047b82-ed83-c5d3-04d7-6e453ab1cc20": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "cdd0b39e-371a-bb29-a056-717d432cae10",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -413,6 +441,7 @@
                 "727f3393-d77d-baf6-78dc-9f9adeb89063": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "7f047b82-ed83-c5d3-04d7-6e453ab1cc20",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -435,7 +464,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "Web/locod1.png",
+                            "_value": "Web/Carefirst.jpg",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -493,6 +522,7 @@
             "67ec2dea-9af7-603c-fd83-7851b7074cba": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "cdd0b39e-371a-bb29-a056-717d432cae10",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -559,6 +589,7 @@
                 "23213ce6-e84a-3a93-d2db-35899c2bf8ea": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "67ec2dea-9af7-603c-fd83-7851b7074cba",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -581,7 +612,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "Web/image1.png",
+                            "_value": "Web/Fit4digital.png",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
