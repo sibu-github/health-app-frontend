@@ -1,0 +1,14 @@
+{
+    "appPageId": "5d831264-4f53-bf1e-e4bb-d67c40e0d697",
+    "appPageName": "thankyouduplicate",
+    "componentName": "thankyouduplicateComponent",
+    "selectorName": "bh-thankyouduplicate",
+    "htmlFileName": "thankyouduplicate.template.html",
+    "tsFileName": "thankyouduplicate.component.ts",
+    "createDate": "2020-05-28T08:35:36.458Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}
