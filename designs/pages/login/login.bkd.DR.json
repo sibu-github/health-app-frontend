@@ -67,6 +67,7 @@
         "528c6b9c-c03b-d044-28e3-0a41df9493e5": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "45f9560f-9bac-67de-9ed1-fecb341a7fb8",
+            "isCommented": "true",
             "designerReference": [
                 {
                     "_key": "componentLabel",

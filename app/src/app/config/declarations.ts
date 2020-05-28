@@ -18,8 +18,6 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-logoComponent
 import { logoComponent } from '../components/logoComponent/logo.component';
-//CORE_REFERENCE_IMPORT-thankyouduplicateComponent
-import { thankyouduplicateComponent } from '../components/thankyouduplicateComponent/thankyouduplicate.component';
 //CORE_REFERENCE_IMPORT-masterdataService
 import { masterdataService } from '../services/masterdata/masterdata.service';
 //CORE_REFERENCE_IMPORT-healthinfonextComponent
@@ -89,8 +87,6 @@ export const appDeclarations = [
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-logoComponent
 logoComponent,
-//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-thankyouduplicateComponent
-thankyouduplicateComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfonextComponent
 healthinfonextComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-contactinformationComponent

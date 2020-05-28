@@ -77,12 +77,6 @@
         "isEntry": false,
         "createDate": "2020-05-24T10:56:26.743Z"
     },
-    "5d831264-4f53-bf1e-e4bb-d67c40e0d697": {
-        "appPageName": "thankyouduplicate",
-        "componentName": "thankyouduplicateComponent",
-        "isEntry": false,
-        "createDate": "2020-05-28T08:35:36.458Z"
-    },
     "22c2b86d-ac09-033b-24b6-e633c4c3c46a": {
         "appPageName": "logo",
         "componentName": "logoComponent",
