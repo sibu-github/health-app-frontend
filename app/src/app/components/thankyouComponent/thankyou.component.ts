@@ -59,9 +59,12 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     constructor() {
         super();
 
-        // set selected language in locale
+        // get the previously selected language from local storage
+        // set the language if selected
         let language = window.localStorage.getItem('language');
-        this.localeService.language = language;
+        if(language){
+            this.localeService.language = language;
+        }
 
         // get the color code from localstorage
         let color = window.localStorage.getItem('colorCode');

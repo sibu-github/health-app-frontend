@@ -29,9 +29,13 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
 
     constructor(private router:Router) {
         super();
-         let language = window.localStorage.getItem('language');
-       
-        this.localeService.language = language;
+        
+        // get the previously selected language from local storage
+        // set the language if selected
+        let language = window.localStorage.getItem('language');
+        if(language){
+            this.localeService.language = language;
+        }
     }
 
     ngOnInit() {

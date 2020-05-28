@@ -28,9 +28,13 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
  accept:any; // kept for build error
     constructor( private router: Router,private masterdata : masterdataService,private saveuserService:saveuserresponse,private datasharingService:datasharingService) {
         super();
-         let language = window.localStorage.getItem('language');
-       
-        this.localeService.language = language;
+        
+        // get the previously selected language from local storage
+        // set the language if selected
+        let language = window.localStorage.getItem('language');
+        if(language){
+            this.localeService.language = language;
+        }
     }
 
     ngOnInit() {}
