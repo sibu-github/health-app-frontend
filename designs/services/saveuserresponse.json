@@ -68,7 +68,7 @@
         "name": "apiURL",
         "script": "bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}/api/userResponse`;",
         "category": "Function",
-        "x": 245,
+        "x": 265,
         "y": 80,
         "wires": [
             [
@@ -117,15 +117,16 @@
         "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
-        "x": 465,
-        "y": 80,
+        "x": 565,
+        "y": 120,
         "wires": [
             [
                 "sd_xpG8uIqE7dWEgS0F"
             ]
         ],
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "saveuserresponse"
     },
     {
         "id": "sd_xpG8uIqE7dWEgS0F",
@@ -137,8 +138,8 @@
         "outputs": 0,
         "logObject": "bh",
         "category": "General",
-        "x": 565,
-        "y": 80,
+        "x": 745,
+        "y": 180,
         "wires": [],
         "generateNext": false,
         "generated": true
@@ -181,8 +182,8 @@
                 "constant": false
             }
         },
-        "x": 405,
-        "y": 220,
+        "x": 425,
+        "y": 260,
         "wires": [],
         "generateNext": false,
         "generated": true
@@ -196,8 +197,8 @@
         "name": "formdatahttprequest",
         "script": "console.log('httpformdata', bh.input.formdata);",
         "category": "Function",
-        "x": 365,
-        "y": 80,
+        "x": 405,
+        "y": 100,
         "wires": [
             [
                 "sd_FcFvtFytCkN7uU9N"
@@ -266,18 +267,14 @@
         "nodeType": "flow",
         "name": "locationData",
         "method": "get",
-        "methodMapping": "",
         "methodMappingObj": {},
-        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
-        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -289,11 +286,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 460,
@@ -323,8 +318,134 @@
                 "constant": false
             }
         },
-        "x": 560,
-        "y": 520,
+        "x": 605,
+        "y": 540,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_UT6P090uRaDXp7Bs",
+        "type": "Start",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getIfUserSubmitted",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getIfUserSubmitted",
+        "category": "General",
+        "x": 160,
+        "y": 680,
+        "wires": [
+            [
+                "sd_Og123zKXVRzX2ldq"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "saveuserresponse"
+    },
+    {
+        "id": "sd_Og123zKXVRzX2ldq",
+        "type": "Script",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "apiUrlIfUserSubmitted",
+        "script": "const email = bh.input.email\nbh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;",
+        "category": "Function",
+        "x": 325,
+        "y": 720,
+        "wires": [
+            [
+                "sd_DIoisxysFNjLhDvY"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_DIoisxysFNjLhDvY",
+        "type": "HttpRequest",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "callAPIForUserSubmitted",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.apiURL",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "apiURL"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "category": "HTTP",
+        "x": 525,
+        "y": 780,
+        "wires": [
+            [
+                "sd_OhLN2vw7EWihaLcR"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_OhLN2vw7EWihaLcR",
+        "type": "Log",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "log Result",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "x": 705,
+        "y": 840,
         "wires": [],
         "generateNext": false,
         "generated": true

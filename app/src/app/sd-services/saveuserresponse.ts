@@ -64,6 +64,26 @@ export class saveuserresponse {
       return await this.errorHandler(bh, e, 'sd_KvTvemnknfk5F5U8');
     }
   }
+
+  public async getIfUserSubmitted(email = '', ...others) {
+    let bh = { input: { email: email }, local: { result: undefined } };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_Og123zKXVRzX2ldq(bh);
+      //appendnew_next_getIfUserSubmitted
+      //Start formatting output variables
+      let outputVariables = {
+        input: {},
+        local: {
+          result: bh.local.result
+        }
+      };
+      //End formatting output variables
+      return outputVariables;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_UT6P090uRaDXp7Bs');
+    }
+  }
   //appendnew_flow_saveuserresponse_Start
 
   async sd_p4EvIXbAOEeVOVuZ(bh) {
@@ -162,6 +182,46 @@ export class saveuserresponse {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_i2UZMf57vKvaRxeM');
+    }
+  }
+  async sd_Og123zKXVRzX2ldq(bh) {
+    try {
+      const email = bh.input.email;
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;
+      bh = await this.sd_DIoisxysFNjLhDvY(bh);
+      //appendnew_next_sd_Og123zKXVRzX2ldq
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_Og123zKXVRzX2ldq');
+    }
+  }
+  async sd_DIoisxysFNjLhDvY(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.apiURL,
+        method: 'get',
+        responseType: 'json',
+        reportProgress: undefined,
+        headers: {},
+        params: {},
+        body: undefined
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_OhLN2vw7EWihaLcR(bh);
+      //appendnew_next_sd_DIoisxysFNjLhDvY
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_DIoisxysFNjLhDvY');
+    }
+  }
+  async sd_OhLN2vw7EWihaLcR(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.local.result);
+
+      //appendnew_next_sd_OhLN2vw7EWihaLcR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_OhLN2vw7EWihaLcR');
     }
   }
   //appendnew_node

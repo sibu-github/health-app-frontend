@@ -33,7 +33,7 @@
             "component": "splashComponent"
         },
         {
-            "path": "personalinfo",
+            "path": "pageinfo",
             "component": "pageinformationComponent"
         },
         {
@@ -53,12 +53,8 @@
             "component": "healthinfonextComponent"
         },
         {
-            "path": "landpage",
-            "component": "landingpageComponent"
-        },
-        {
             "path": "''",
-            "redirectTo": "/landingpage",
+            "redirectTo": "/home",
             "pathMatch": "full",
             "default": true
         },

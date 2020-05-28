@@ -62,6 +62,15 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
 
                 this.masterdata.userSubmit().then((resp)=>{
                     console.log('certt resp', resp);
+
+                    // get the color code for thank you page
+                    let isGreen = resp.response.every(v => v.answer === false);
+                    if(isGreen){
+                        localStorage.setItem('colorCode', 'green');
+                    } else {
+                        localStorage.setItem('colorCode', 'amber');
+                    }
+                    // navigate to the thankyou page
                     this.router.navigate(['/thankyou']);
                 }).catch((err)=>{
                     console.log('cert err',err);

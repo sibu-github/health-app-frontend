@@ -68,7 +68,7 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
 
         // get the color code from localstorage
         let color = window.localStorage.getItem('colorCode');
-        this.isAmber = color === 'AMBER';
+        this.isAmber = color === 'amber';
     }
 
     ngOnInit() {
