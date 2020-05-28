@@ -40,7 +40,10 @@ export class homeComponent extends NBaseComponent implements OnInit {
     async fetchUserResponse(){
         try {
             const username = localStorage.getItem('username')
-            console.log({username})
+            if(!username){
+                return
+            }
+            
             const bh = await this.userService.getIfUserSubmitted(username);
             console.log(bh);
 
