@@ -31,6 +31,10 @@
         "mat-radio-checked",
         "mat-radio-container",
         "mat-radio-outer-circle",
-        "mat-radio-inner-circle"
+        "mat-radio-inner-circle",
+        "filters",
+        "hrtextbutton",
+        "hrqrtest",
+        "positive"
     ]
 }

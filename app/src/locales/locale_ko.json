@@ -68,6 +68,11 @@
         "companyname": "회사 이름",
         "ingredoncontact": "Ingredon 연락처",
         "fir": "이름이 필요합니다",
-        "personalinformation": "개인 정보"
+        "personalinformation": "개인 정보",
+        "hrq1": "최근 열이 있었다",
+        "hrq2": "후견인 용의자와 접촉했다",
+        "hrq3": "해외 여행",
+        "positive": "양",
+        "negative": "부정"
     }
 }
