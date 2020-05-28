@@ -33,7 +33,7 @@
             "component": "splashComponent"
         },
         {
-            "path": "pageinfo",
+            "path": "personalinfo",
             "component": "pageinformationComponent"
         },
         {
@@ -51,6 +51,10 @@
         {
             "path": "hinfonext",
             "component": "healthinfonextComponent"
+        },
+        {
+            "path": "landpage",
+            "component": "landingpageComponent"
         },
         {
             "path": "''",

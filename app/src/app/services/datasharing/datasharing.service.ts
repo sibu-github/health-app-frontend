@@ -1,36 +1,36 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { MatSnackBar } from '@angular/material';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { MatSnackBar } from "@angular/material";
 
 @Injectable()
 export class datasharingService {
-usertypes:any;
+  usertypes: any;
 
-    constructor(private http: HttpClient,private snackBar: MatSnackBar) {}
+  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
-           getusertypes() {     
-        // sample json data
-        return this.usertypes = [
-                    {
-                    type:  "vendor",
-                    },
-                    {
-                    type: "customer",
-                    },
-                    {
-                    type: "visitor",
-                    }
-                ];
-                console.log("user name", this.usertypes[0].name);
-        }
+  getusertypes() {
+    // sample json data
+    return (this.usertypes = [
+      {
+        type: "vendor",
+      },
+      {
+        type: "customer",
+      },
+      {
+        type: "visitor",
+      },
+    ]);
+    console.log("user name", this.usertypes[0].name);
+  }
 
-    openSnackBar(message: string, action: string){
-        this.snackBar.open(message, action, {
-        duration: 3000,
-        panelClass: ['bar-color'],
-        horizontalPosition: 'right',
-        verticalPosition: 'top',
-        });
-    }
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+      panelClass: ["bar-color"],
+      horizontalPosition: "right",
+      verticalPosition: "top",
+    });
+  }
 }

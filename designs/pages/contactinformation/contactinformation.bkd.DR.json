@@ -908,7 +908,7 @@
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -955,7 +955,7 @@
                                     "_attrDef": "p"
                                 }
                             ],
-                            "9d9a5ef0-ffcd-7c1a-7b63-6f2c5b0f736b": {
+                            "290eff35-a534-3d37-1a66-134b95844210": {
                                 "paletteKey": "NG-image",
                                 "parentEditorKey": "67117e37-2864-bf18-1af1-56032ac31ae0",
                                 "designerReference": [
