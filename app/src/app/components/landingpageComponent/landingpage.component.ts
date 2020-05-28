@@ -26,9 +26,13 @@ public href: string = "";
     constructor(private router: Router) {
         super();
         let language = window.localStorage.getItem('language');
-       if(language){
-        this.localeService.language = language;
-       }
+     if(language){
+
+            this.localeService.language = language;
+
+        }
+
+ 
     }
 
     ngOnInit() {

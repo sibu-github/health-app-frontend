@@ -28,7 +28,13 @@ export class loginComponent extends NBaseComponent implements OnInit {
         super();
         let language = window.localStorage.getItem('language');
        
-        this.localeService.language = language;
+        if(language){
+
+            this.localeService.language = language;
+
+        }
+
+ 
     }
 
     ngOnInit() {
@@ -46,11 +52,14 @@ export class loginComponent extends NBaseComponent implements OnInit {
         }
         localStorage.setItem('username', this.masterdata.email);
         localStorage.setItem('password', this.masterdata.password);
-
-       
-
+console.log(form.email);
+       if(form.value.email == 'craig.shirley@ingredion.com'){
+           this.router.navigate(['/hrdashboard']);
+           console.log('craig');
+       }
+else{
         this.router.navigate(['/confirmdetails']);
- 
+}
    }
  
 }

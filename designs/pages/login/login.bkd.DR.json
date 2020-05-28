@@ -266,7 +266,6 @@
                 "5d0af466-262f-77c0-ad3b-d401cffcb7c0": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "b4812a93-55f7-0e6c-1326-e252e99ddd54",
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",

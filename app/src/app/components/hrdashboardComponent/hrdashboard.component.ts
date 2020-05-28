@@ -29,6 +29,13 @@ q3postive:number
 q3negative:number
   constructor(private hrdashboard: hrdashboard) {
          super();
+         let language = window.localStorage.getItem('language');
+       
+        if(language){
+
+            this.localeService.language = language;
+
+        }
         
     }
   
