@@ -68,6 +68,11 @@
         "companyname": "公司名",
         "ingredoncontact": "Ingredon联系人",
         "fir": "必须填写名字",
-        "personalinformation": "个人信息"
+        "personalinformation": "个人信息",
+        "hrq1": "最近发烧",
+        "hrq2": "与covid嫌疑人接触",
+        "hrq3": "出国旅行",
+        "positive": "正",
+        "negative": "负"
     }
 }

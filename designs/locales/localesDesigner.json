@@ -69,7 +69,12 @@
             "companyname": "Company Name",
             "ingredoncontact": "Ingredon Contact",
             "fir": "First Name is required",
-            "personalinformation": "Personal Information"
+            "personalinformation": "Personal Information",
+            "hrq1": "Had fever recently",
+            "hrq2": "Had contact with covid suspect",
+            "hrq3": "Travelled outside country",
+            "positive": "Positive",
+            "negative": "Negative"
         }
     },
     "zh-CN": {
@@ -142,7 +147,12 @@
             "companyname": "公司名",
             "ingredoncontact": "Ingredon联系人",
             "fir": "必须填写名字",
-            "personalinformation": "个人信息"
+            "personalinformation": "个人信息",
+            "hrq1": "最近发烧",
+            "hrq2": "与covid嫌疑人接触",
+            "hrq3": "出国旅行",
+            "positive": "正",
+            "negative": "负"
         }
     },
     "zh-TW": {
@@ -215,7 +225,12 @@
             "companyname": "公司名",
             "ingredoncontact": "Ingredon聯繫人",
             "fir": "必須填寫名字",
-            "personalinformation": "個人信息"
+            "personalinformation": "個人信息",
+            "hrq1": "最近發燒",
+            "hrq2": "與covid嫌疑人接觸",
+            "hrq3": "出國旅行",
+            "positive": "正",
+            "negative": "負"
         }
     },
     "es": {
@@ -288,7 +303,12 @@
             "companyname": "nombre de empresa",
             "ingredoncontact": "Contacto con ingredientes",
             "fir": "Se requiere el primer nombre",
-            "personalinformation": "Informacion personal"
+            "personalinformation": "Informacion personal",
+            "hrq1": "Tuvo fiebre recientemente",
+            "hrq2": "Tuve contacto con un sospechoso covid",
+            "hrq3": "Viajado fuera del pais",
+            "positive": "Positivo",
+            "negative": "Negativo"
         }
     },
     "pt": {
@@ -361,7 +381,12 @@
             "companyname": "Nome da empresa",
             "ingredoncontact": "Ingredon Contato",
             "fir": "O primeiro nome é necessário",
-            "personalinformation": "Informação pessoal"
+            "personalinformation": "Informação pessoal",
+            "hrq1": "Teve febre recentemente",
+            "hrq2": "Teve contato com suspeita secreta",
+            "hrq3": "Viajou para fora do país",
+            "positive": "Positivo",
+            "negative": "Negativo"
         }
     },
     "ko": {
@@ -434,7 +459,12 @@
             "companyname": "회사 이름",
             "ingredoncontact": "Ingredon 연락처",
             "fir": "이름이 필요합니다",
-            "personalinformation": "개인 정보"
+            "personalinformation": "개인 정보",
+            "hrq1": "최근 열이 있었다",
+            "hrq2": "후견인 용의자와 접촉했다",
+            "hrq3": "해외 여행",
+            "positive": "양",
+            "negative": "부정"
         }
     },
     "th": {
@@ -507,7 +537,12 @@
             "companyname": "ชื่อ บริษัท",
             "ingredoncontact": "ติดต่อ Ingredon",
             "fir": "ต้องระบุชื่อ",
-            "personalinformation": "ข้อมูลส่วนบุคคล"
+            "personalinformation": "ข้อมูลส่วนบุคคล",
+            "hrq1": "มีไข้เมื่อเร็ว ๆ นี้",
+            "hrq2": "มีการติดต่อกับผู้ต้องสงสัยโควิด",
+            "hrq3": "เดินทางไปต่างประเทศ",
+            "positive": "บวก",
+            "negative": "เชิงลบ"
         }
     }
 }

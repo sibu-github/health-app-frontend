@@ -1,453 +1,409 @@
 [
-    {
-        "id": "sd_475uFCxWWClXFyYI",
-        "type": "tab",
-        "createdDate": "2020-05-24T19:12:44.204Z",
-        "label": "saveuserresponse",
-        "disabled": false,
-        "info": "",
-        "generateNext": true,
-        "serviceName": "saveuserresponse"
-    },
-    {
-        "id": "sd_kBgqCy1h0V1BXjSL",
-        "type": "Start",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "saveUserData",
-        "outputs": 1,
-        "noerr": 0,
-        "inputVariables": [
-            {
-                "key": "formdata",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": false
-            }
-        ],
-        "localVariables": [
-            {
-                "key": "result",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": true
-            },
-            {
-                "key": "apiUrl",
-                "defaultValue": {
-                    "type": "str",
-                    "value": ""
-                },
-                "output": false
-            }
-        ],
-        "accept_bh": false,
-        "functionName": "saveUserData",
-        "category": "General",
-        "x": 140,
-        "y": 80,
-        "wires": [
-            [
-                "sd_p4EvIXbAOEeVOVuZ"
-            ]
-        ],
-        "generateNext": true,
-        "serviceName": "saveuserresponse"
-    },
-    {
-        "id": "sd_p4EvIXbAOEeVOVuZ",
-        "type": "Script",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "apiURL",
-        "script": "bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}/api/userResponse`;",
-        "category": "Function",
-        "x": 265,
-        "y": 80,
-        "wires": [
-            [
-                "sd_yHzOyr3hOiBVBVi3"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true,
-        "serviceName": "saveuserresponse"
-    },
-    {
-        "id": "sd_FcFvtFytCkN7uU9N",
-        "type": "HttpRequest",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "sendingUserResponse",
-        "method": "post",
-        "methodMapping": "",
-        "methodMappingObj": {},
-        "urlValue": "",
-        "urlMapping": "bh.local.apiUrl",
-        "urlMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "apiUrl"
+  {
+    "id": "sd_475uFCxWWClXFyYI",
+    "type": "tab",
+    "createdDate": "2020-05-24T19:12:44.204Z",
+    "label": "saveuserresponse",
+    "disabled": false,
+    "info": "",
+    "generateNext": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_kBgqCy1h0V1BXjSL",
+    "type": "Start",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "start",
+    "name": "saveUserData",
+    "outputs": 1,
+    "noerr": 0,
+    "inputVariables": [
+      {
+        "key": "formdata",
+        "defaultValue": {
+          "type": "any",
+          "value": ""
         },
-        "ret": "json",
-        "retMapping": "",
-        "retMappingObj": {},
-        "reqBody": "bh.input.formdata",
-        "reqBodyObj": {
-            "mapVarType": "bh.input",
-            "mapVarValue": "formdata"
+        "output": false
+      }
+    ],
+    "localVariables": [
+      {
+        "key": "result",
+        "defaultValue": {
+          "type": "any",
+          "value": ""
         },
-        "resultMapping": "bh.local.result",
-        "resultMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "result"
+        "output": true
+      },
+      {
+        "key": "apiUrl",
+        "defaultValue": {
+          "type": "str",
+          "value": ""
         },
-        "headers": {},
-        "headersObj": [],
-        "headerMapping": "",
-        "headerMappingObj": {},
-        "params": {},
-        "paramsObj": [],
-        "paramMapping": "",
-        "paramMappingObj": {},
-        "category": "HTTP",
-        "x": 565,
-        "y": 120,
-        "wires": [
-            [
-                "sd_xpG8uIqE7dWEgS0F"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true,
-        "serviceName": "saveuserresponse"
+        "output": false
+      }
+    ],
+    "accept_bh": false,
+    "functionName": "saveUserData",
+    "category": "General",
+    "x": 140,
+    "y": 80,
+    "wires": [["sd_p4EvIXbAOEeVOVuZ"]],
+    "generateNext": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_p4EvIXbAOEeVOVuZ",
+    "type": "Script",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "flow",
+    "name": "apiURL",
+    "script": "bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}/api/userResponse`;",
+    "category": "Function",
+    "x": 265,
+    "y": 80,
+    "wires": [["sd_yHzOyr3hOiBVBVi3"]],
+    "generateNext": false,
+    "generated": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_FcFvtFytCkN7uU9N",
+    "type": "HttpRequest",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "sendingUserResponse",
+    "method": "post",
+    "methodMapping": "",
+    "methodMappingObj": {},
+    "urlValue": "",
+    "urlMapping": "bh.local.apiUrl",
+    "urlMappingObj": {
+      "mapVarType": "bh.local",
+      "mapVarValue": "apiUrl"
     },
-    {
-        "id": "sd_xpG8uIqE7dWEgS0F",
-        "type": "Log",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "",
-        "outputs": 0,
-        "logObject": "bh",
-        "category": "General",
-        "x": 745,
-        "y": 180,
-        "wires": [],
-        "generateNext": false,
-        "generated": true
+    "ret": "json",
+    "retMapping": "",
+    "retMappingObj": {},
+    "reqBody": "bh.input.formdata",
+    "reqBodyObj": {
+      "mapVarType": "bh.input",
+      "mapVarValue": "formdata"
     },
-    {
-        "id": "sd_JvVnSwB12u0QvrzM",
-        "type": "Catch",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "userResponse",
-        "selectedNodes": "all-nodes",
-        "selectCatchType": "allnodes",
-        "masternodeList": "",
-        "category": "General",
-        "x": 245,
-        "y": 220,
-        "wires": [
-            [
-                "sd_edbqgcUOheevvEDW"
-            ]
-        ],
-        "generateNext": true,
-        "serviceName": "saveuserresponse"
+    "resultMapping": "bh.local.result",
+    "resultMappingObj": {
+      "mapVarType": "bh.local",
+      "mapVarValue": "result"
     },
-    {
-        "id": "sd_edbqgcUOheevvEDW",
-        "type": "Log",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "userResponse",
-        "outputs": 0,
-        "logObject": "bh.error",
-        "category": "General",
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "bh",
-                "value": "error",
-                "constant": false
-            }
+    "headers": {},
+    "headersObj": [],
+    "headerMapping": "",
+    "headerMappingObj": {},
+    "params": {},
+    "paramsObj": [],
+    "paramMapping": "",
+    "paramMappingObj": {},
+    "category": "HTTP",
+    "x": 505,
+    "y": 80,
+    "wires": [["sd_xpG8uIqE7dWEgS0F"]],
+    "generateNext": false,
+    "generated": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_xpG8uIqE7dWEgS0F",
+    "type": "Log",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "",
+    "outputs": 0,
+    "logObject": "bh",
+    "category": "General",
+    "x": 605,
+    "y": 80,
+    "wires": [],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_JvVnSwB12u0QvrzM",
+    "type": "Catch",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "start",
+    "name": "userResponse",
+    "selectedNodes": "all-nodes",
+    "selectCatchType": "allnodes",
+    "masternodeList": "",
+    "category": "General",
+    "x": 245,
+    "y": 220,
+    "wires": [["sd_edbqgcUOheevvEDW"]],
+    "generateNext": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_edbqgcUOheevvEDW",
+    "type": "Log",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "userResponse",
+    "outputs": 0,
+    "logObject": "bh.error",
+    "category": "General",
+    "__ssdTypeInputs__": {
+      "logObject": {
+        "type": "bh",
+        "value": "error",
+        "constant": false
+      }
+    },
+    "x": 425,
+    "y": 260,
+    "wires": [],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_yHzOyr3hOiBVBVi3",
+    "type": "Script",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "flow",
+    "name": "formdatahttprequest",
+    "script": "console.log('httpformdata', bh.input.formdata);",
+    "category": "Function",
+    "x": 405,
+    "y": 100,
+    "wires": [["sd_FcFvtFytCkN7uU9N"]],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_KvTvemnknfk5F5U8",
+    "type": "Start",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "start",
+    "name": "getLocations",
+    "outputs": 1,
+    "noerr": 0,
+    "inputVariables": [],
+    "localVariables": [
+      {
+        "key": "result",
+        "defaultValue": {
+          "type": "any",
+          "value": ""
         },
-        "x": 425,
-        "y": 260,
-        "wires": [],
-        "generateNext": false,
-        "generated": true
+        "output": true
+      }
+    ],
+    "accept_bh": false,
+    "functionName": "getLocations",
+    "category": "General",
+    "x": 180,
+    "y": 460,
+    "wires": [["sd_chnzbvsmBYvG8poP"]],
+    "generateNext": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_chnzbvsmBYvG8poP",
+    "type": "Script",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "flow",
+    "name": "apiURL",
+    "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation`;",
+    "category": "Function",
+    "x": 320,
+    "y": 480,
+    "wires": [["sd_CrsIy7P6IOcKj3sX"]],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_CrsIy7P6IOcKj3sX",
+    "type": "HttpRequest",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "locationData",
+    "method": "get",
+    "methodMappingObj": {},
+    "urlMapping": "bh.local.apiURL",
+    "urlMappingObj": {
+      "mapVarType": "bh.local",
+      "mapVarValue": "apiURL"
     },
-    {
-        "id": "sd_yHzOyr3hOiBVBVi3",
-        "type": "Script",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "formdatahttprequest",
-        "script": "console.log('httpformdata', bh.input.formdata);",
-        "category": "Function",
-        "x": 405,
-        "y": 100,
-        "wires": [
-            [
-                "sd_FcFvtFytCkN7uU9N"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true
+    "ret": "json",
+    "retMappingObj": {},
+    "reqBodyObj": {
+      "mapVarType": "bh",
+      "mapVarValue": ""
     },
-    {
-        "id": "sd_KvTvemnknfk5F5U8",
-        "type": "Start",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "getLocations",
-        "outputs": 1,
-        "noerr": 0,
-        "inputVariables": [],
-        "localVariables": [
-            {
-                "key": "result",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": true
-            }
-        ],
-        "accept_bh": false,
-        "functionName": "getLocations",
-        "category": "General",
-        "x": 180,
-        "y": 460,
-        "wires": [
-            [
-                "sd_chnzbvsmBYvG8poP"
-            ]
-        ],
-        "generateNext": true,
-        "serviceName": "saveuserresponse"
+    "resultMapping": "bh.local.result",
+    "resultMappingObj": {
+      "mapVarType": "bh.local",
+      "mapVarValue": "result"
     },
-    {
-        "id": "sd_chnzbvsmBYvG8poP",
-        "type": "Script",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "apiURL",
-        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation`;",
-        "category": "Function",
-        "x": 320,
-        "y": 480,
-        "wires": [
-            [
-                "sd_CrsIy7P6IOcKj3sX"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true
+    "headers": {},
+    "headersObj": [],
+    "headerMappingObj": {},
+    "params": {},
+    "paramsObj": [],
+    "paramMappingObj": {},
+    "category": "HTTP",
+    "x": 460,
+    "y": 500,
+    "wires": [["sd_i2UZMf57vKvaRxeM"]],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_i2UZMf57vKvaRxeM",
+    "type": "Log",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "loggetlocation",
+    "outputs": 0,
+    "logObject": "bh.local.result",
+    "category": "General",
+    "__ssdTypeInputs__": {
+      "logObject": {
+        "type": "bh.local",
+        "value": "result",
+        "constant": false
+      }
     },
-    {
-        "id": "sd_CrsIy7P6IOcKj3sX",
-        "type": "HttpRequest",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "locationData",
-        "method": "get",
-        "methodMappingObj": {},
-        "urlMapping": "bh.local.apiURL",
-        "urlMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "apiURL"
+    "x": 605,
+    "y": 540,
+    "wires": [],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_UT6P090uRaDXp7Bs",
+    "type": "Start",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "start",
+    "name": "getIfUserSubmitted",
+    "outputs": 1,
+    "noerr": 0,
+    "inputVariables": [
+      {
+        "key": "email",
+        "defaultValue": {
+          "type": "str",
+          "value": ""
         },
-        "ret": "json",
-        "retMappingObj": {},
-        "reqBodyObj": {
-            "mapVarType": "bh",
-            "mapVarValue": ""
+        "output": false
+      }
+    ],
+    "localVariables": [
+      {
+        "key": "result",
+        "defaultValue": {
+          "type": "any",
+          "value": ""
         },
-        "resultMapping": "bh.local.result",
-        "resultMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "result"
-        },
-        "headers": {},
-        "headersObj": [],
-        "headerMappingObj": {},
-        "params": {},
-        "paramsObj": [],
-        "paramMappingObj": {},
-        "category": "HTTP",
-        "x": 460,
-        "y": 500,
-        "wires": [
-            [
-                "sd_i2UZMf57vKvaRxeM"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true
+        "output": true
+      }
+    ],
+    "accept_bh": false,
+    "functionName": "getIfUserSubmitted",
+    "category": "General",
+    "x": 160,
+    "y": 680,
+    "wires": [["sd_Og123zKXVRzX2ldq"]],
+    "generateNext": true,
+    "serviceName": "saveuserresponse"
+  },
+  {
+    "id": "sd_Og123zKXVRzX2ldq",
+    "type": "Script",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "common",
+    "nodeType": "flow",
+    "name": "apiUrlIfUserSubmitted",
+    "script": "const email = bh.input.email\nbh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;",
+    "category": "Function",
+    "x": 325,
+    "y": 720,
+    "wires": [["sd_DIoisxysFNjLhDvY"]],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_DIoisxysFNjLhDvY",
+    "type": "HttpRequest",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "callAPIForUserSubmitted",
+    "method": "get",
+    "methodMappingObj": {},
+    "urlMapping": "bh.local.apiURL",
+    "urlMappingObj": {
+      "mapVarType": "bh.local",
+      "mapVarValue": "apiURL"
     },
-    {
-        "id": "sd_i2UZMf57vKvaRxeM",
-        "type": "Log",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "loggetlocation",
-        "outputs": 0,
-        "logObject": "bh.local.result",
-        "category": "General",
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "bh.local",
-                "value": "result",
-                "constant": false
-            }
-        },
-        "x": 605,
-        "y": 540,
-        "wires": [],
-        "generateNext": false,
-        "generated": true
+    "ret": "json",
+    "retMappingObj": {},
+    "reqBodyObj": {
+      "mapVarType": "bh",
+      "mapVarValue": ""
     },
-    {
-        "id": "sd_UT6P090uRaDXp7Bs",
-        "type": "Start",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "start",
-        "name": "getIfUserSubmitted",
-        "outputs": 1,
-        "noerr": 0,
-        "inputVariables": [
-            {
-                "key": "email",
-                "defaultValue": {
-                    "type": "str",
-                    "value": ""
-                },
-                "output": false
-            }
-        ],
-        "localVariables": [
-            {
-                "key": "result",
-                "defaultValue": {
-                    "type": "any",
-                    "value": ""
-                },
-                "output": true
-            }
-        ],
-        "accept_bh": false,
-        "functionName": "getIfUserSubmitted",
-        "category": "General",
-        "x": 160,
-        "y": 680,
-        "wires": [
-            [
-                "sd_Og123zKXVRzX2ldq"
-            ]
-        ],
-        "generateNext": true,
-        "serviceName": "saveuserresponse"
+    "resultMapping": "bh.local.result",
+    "resultMappingObj": {
+      "mapVarType": "bh.local",
+      "mapVarValue": "result"
     },
-    {
-        "id": "sd_Og123zKXVRzX2ldq",
-        "type": "Script",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "apiUrlIfUserSubmitted",
-        "script": "const email = bh.input.email\nbh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;",
-        "category": "Function",
-        "x": 325,
-        "y": 720,
-        "wires": [
-            [
-                "sd_DIoisxysFNjLhDvY"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true
+    "headers": {},
+    "headersObj": [],
+    "headerMappingObj": {},
+    "params": {},
+    "paramsObj": [],
+    "paramMappingObj": {},
+    "category": "HTTP",
+    "x": 525,
+    "y": 780,
+    "wires": [["sd_OhLN2vw7EWihaLcR"]],
+    "generateNext": false,
+    "generated": true
+  },
+  {
+    "id": "sd_OhLN2vw7EWihaLcR",
+    "type": "Log",
+    "z": "sd_475uFCxWWClXFyYI",
+    "viewType": "client",
+    "nodeType": "flow",
+    "name": "log Result",
+    "outputs": 0,
+    "logObject": "bh.local.result",
+    "category": "General",
+    "__ssdTypeInputs__": {
+      "logObject": {
+        "type": "bh.local",
+        "value": "result",
+        "constant": false
+      }
     },
-    {
-        "id": "sd_DIoisxysFNjLhDvY",
-        "type": "HttpRequest",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "callAPIForUserSubmitted",
-        "method": "get",
-        "methodMappingObj": {},
-        "urlMapping": "bh.local.apiURL",
-        "urlMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "apiURL"
-        },
-        "ret": "json",
-        "retMappingObj": {},
-        "reqBodyObj": {
-            "mapVarType": "bh",
-            "mapVarValue": ""
-        },
-        "resultMapping": "bh.local.result",
-        "resultMappingObj": {
-            "mapVarType": "bh.local",
-            "mapVarValue": "result"
-        },
-        "headers": {},
-        "headersObj": [],
-        "headerMappingObj": {},
-        "params": {},
-        "paramsObj": [],
-        "paramMappingObj": {},
-        "category": "HTTP",
-        "x": 525,
-        "y": 780,
-        "wires": [
-            [
-                "sd_OhLN2vw7EWihaLcR"
-            ]
-        ],
-        "generateNext": false,
-        "generated": true
-    },
-    {
-        "id": "sd_OhLN2vw7EWihaLcR",
-        "type": "Log",
-        "z": "sd_475uFCxWWClXFyYI",
-        "viewType": "client",
-        "nodeType": "flow",
-        "name": "log Result",
-        "outputs": 0,
-        "logObject": "bh.local.result",
-        "category": "General",
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "bh.local",
-                "value": "result",
-                "constant": false
-            }
-        },
-        "x": 705,
-        "y": 840,
-        "wires": [],
-        "generateNext": false,
-        "generated": true
-    }
+    "x": 705,
+    "y": 840,
+    "wires": [],
+    "generateNext": false,
+    "generated": true
+  }
 ]

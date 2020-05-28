@@ -68,6 +68,11 @@
         "companyname": "nombre de empresa",
         "ingredoncontact": "Contacto con ingredientes",
         "fir": "Se requiere el primer nombre",
-        "personalinformation": "Informacion personal"
+        "personalinformation": "Informacion personal",
+        "hrq1": "Tuvo fiebre recientemente",
+        "hrq2": "Tuve contacto con un sospechoso covid",
+        "hrq3": "Viajado fuera del pais",
+        "positive": "Positivo",
+        "negative": "Negativo"
     }
 }

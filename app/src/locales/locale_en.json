@@ -68,6 +68,11 @@
         "companyname": "Company Name",
         "ingredoncontact": "Ingredon Contact",
         "fir": "First Name is required",
-        "personalinformation": "Personal Information"
+        "personalinformation": "Personal Information",
+        "hrq1": "Had fever recently",
+        "hrq2": "Had contact with covid suspect",
+        "hrq3": "Travelled outside country",
+        "positive": "Positive",
+        "negative": "Negative"
     }
 }

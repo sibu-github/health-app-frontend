@@ -1,0 +1,137 @@
+[
+    {
+        "id": "sd_i5xOfsSufyw0d4lF",
+        "type": "tab",
+        "createdDate": "2020-05-28T09:31:38.361Z",
+        "label": "hrdashboard",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "hrdashboard"
+    },
+    {
+        "id": "sd_Jztg3nB5PDL8fsTd",
+        "type": "Start",
+        "z": "sd_i5xOfsSufyw0d4lF",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "hrDashboard",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            },
+            {
+                "key": "apiURL",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "hrDashboard",
+        "category": "General",
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "sd_kamBbrZpnMvR8rdb"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "hrdashboard"
+    },
+    {
+        "id": "sd_kamBbrZpnMvR8rdb",
+        "type": "Script",
+        "z": "sd_i5xOfsSufyw0d4lF",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "apiURL",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/dashboard`;",
+        "category": "Function",
+        "x": 245,
+        "y": 80,
+        "wires": [
+            [
+                "sd_WgjyYUaFO0rOcUFb"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_WgjyYUaFO0rOcUFb",
+        "type": "HttpRequest",
+        "z": "sd_i5xOfsSufyw0d4lF",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "hrdashnoard",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.apiURL",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "apiURL"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "category": "HTTP",
+        "x": 365,
+        "y": 80,
+        "wires": [
+            [
+                "sd_YpkWzoDaVvv9eMUU"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_YpkWzoDaVvv9eMUU",
+        "type": "Log",
+        "z": "sd_i5xOfsSufyw0d4lF",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "dashboard",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "x": 500,
+        "y": 100,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    }
+]

@@ -68,6 +68,11 @@
         "companyname": "Nome da empresa",
         "ingredoncontact": "Ingredon Contato",
         "fir": "O primeiro nome é necessário",
-        "personalinformation": "Informação pessoal"
+        "personalinformation": "Informação pessoal",
+        "hrq1": "Teve febre recentemente",
+        "hrq2": "Teve contato com suspeita secreta",
+        "hrq3": "Viajou para fora do país",
+        "positive": "Positivo",
+        "negative": "Negativo"
     }
 }

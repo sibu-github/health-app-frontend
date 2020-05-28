@@ -68,6 +68,11 @@
         "companyname": "ชื่อ บริษัท",
         "ingredoncontact": "ติดต่อ Ingredon",
         "fir": "ต้องระบุชื่อ",
-        "personalinformation": "ข้อมูลส่วนบุคคล"
+        "personalinformation": "ข้อมูลส่วนบุคคล",
+        "hrq1": "มีไข้เมื่อเร็ว ๆ นี้",
+        "hrq2": "มีการติดต่อกับผู้ต้องสงสัยโควิด",
+        "hrq3": "เดินทางไปต่างประเทศ",
+        "positive": "บวก",
+        "negative": "เชิงลบ"
     }
 }
