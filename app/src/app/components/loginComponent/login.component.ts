@@ -26,9 +26,13 @@ export class loginComponent extends NBaseComponent implements OnInit {
 
     constructor(private router: Router, private masterdata: masterdataService, private saveuserService: saveuserresponse) {
         super();
+        
+        // get the previously selected language from local storage
+        // set the language if selected
         let language = window.localStorage.getItem('language');
-       
-        this.localeService.language = language;
+        if(language){
+            this.localeService.language = language;
+        }
     }
 
     ngOnInit() {

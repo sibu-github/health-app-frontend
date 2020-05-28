@@ -21,6 +21,13 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
 
     constructor() {
         super();
+
+        // get the previously selected language from local storage
+        // set the language if selected
+        let language = window.localStorage.getItem('language');
+        if(language){
+            this.localeService.language = language;
+        }
     }
 
     ngOnInit() {

@@ -1439,7 +1439,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "047adaf3-b6ce-ca12-19e0-bb3f425b8dbb",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1627,7 +1626,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "f3690270-4241-335a-c1e9-ab18631b4c8c",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2084,7 +2082,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "047adaf3-b6ce-ca12-19e0-bb3f425b8dbb",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2274,7 +2271,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "763dbf97-02f8-5135-ecea-b1f60b4b9379",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2301,7 +2297,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "047adaf3-b6ce-ca12-19e0-bb3f425b8dbb",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2491,7 +2486,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "5b10c52a-cf3a-819a-2df8-05f3edb6103e",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2720,7 +2714,6 @@
                 "fdab8a7f-d3b4-b5a0-1b3a-c1c0673f89a8": {
                     "paletteKey": "FlexLayoutRow",
                     "parentEditorKey": "272f8081-5cce-fc51-bc07-c9748c98c5db",
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -2787,7 +2780,6 @@
                     "7141ed03-fced-a83e-7f40-ee479f51ace7": {
                         "paletteKey": "NG-RadioGroup",
                         "parentEditorKey": "fdab8a7f-d3b4-b5a0-1b3a-c1c0673f89a8",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -2860,7 +2852,6 @@
                         "7d84503e-6b1e-5cfa-7599-3be4eb3128ad": {
                             "paletteKey": "NG-Radio",
                             "parentEditorKey": "7141ed03-fced-a83e-7f40-ee479f51ace7",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2952,7 +2943,6 @@
                         "ac4be8e7-aa00-1ad5-ff20-9e54998a6fb6": {
                             "paletteKey": "NG-Radio",
                             "parentEditorKey": "7141ed03-fced-a83e-7f40-ee479f51ace7",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",

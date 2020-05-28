@@ -36,9 +36,13 @@ type:any; // data bind variable
     constructor(private router:Router, private datash:datasharingService,
     private getlocation: saveuserresponse,private masterdata: masterdataService) {
         super();
-         let language = window.localStorage.getItem('language');
-       
-        this.localeService.language = language;
+        
+        // get the previously selected language from local storage
+        // set the language if selected
+        let language = window.localStorage.getItem('language');
+        if(language){
+            this.localeService.language = language;
+        }
     }
 languages: any[] = [
     {value: 'en', viewValue: 'English'},

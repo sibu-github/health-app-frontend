@@ -24,9 +24,13 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
 
     constructor(private router: Router, private masterdata: masterdataService, private datasharingService:datasharingService) {
         super();
-         let language = window.localStorage.getItem('language');
-         this.localeService.language = language;
-        //  console.log(language);
+        
+        // get the previously selected language from local storage
+        // set the language if selected
+        let language = window.localStorage.getItem('language');
+        if(language){
+            this.localeService.language = language;
+        }
     }
     answer: string = '';
        shortTextOne = "had fever";
