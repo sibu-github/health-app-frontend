@@ -29,36 +29,49 @@ totallocations:any;
 locationName: any;
 firstName:any; // kept for build error
 lastName:any; // kept for build error
+firstname:any; // data binding
+lastname:any; // data binding
 usertypes:any;// list of user types data
-
+localdata:any;
+type:any;
     constructor(private router:Router, private datash:datasharingService,
     private getlocation: saveuserresponse,private masterdata: masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
-       
         this.localeService.language = language;
-    }
-languages: any[] = [
-    {value: 'en', viewValue: 'English'},
-    {value: 'es', viewValue: 'Spanish'},
-    {value: 'pt', viewValue: 'Portuguese'},
-    {value: 'ko', viewValue: 'Korean'},
-    {value: 'th', viewValue: 'Thai'},
-    {value: 'zh-CN', viewValue: 'CHINESE'}
-    
-    // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
-  ];
+        this.localdata = JSON.parse(localStorage.getItem('userResponse')); 
 
-doSomething(event){
-  //console.log(event.value);
-  window.localStorage.setItem('language', event.value);
-  let language = window.localStorage.getItem('language');
-  console.log(language);
-  this.localeService.language = language;
-  
- 
-}
+    }
+    languages: any[] = [
+        {value: 'en', viewValue: 'English'},
+        {value: 'es', viewValue: 'Spanish'},
+        {value: 'pt', viewValue: 'Portuguese'},
+        {value: 'ko', viewValue: 'Korean'},
+        {value: 'th', viewValue: 'Thai'},
+        {value: 'zh-CN', viewValue: 'Chinese (Mandarian)'},
+        // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
+    ];
+
+    doSomething(event){
+    //console.log(event.value);
+    window.localStorage.setItem('language', event.value);
+    let language = window.localStorage.getItem('language');
+    console.log(language);
+    this.localeService.language = language;
+    
+    }
     async ngOnInit() {
+           if(this.localdata && this.localdata.firstName){
+            this.firstname = this.localdata.firstName;
+            this.lastname = this.localdata.lastName;
+            this.locationName = this.localdata.locationName;
+            this.type = this.localdata.type;
+        } else {
+             this.firstname = '';
+            this.lastname =  '';
+            this.locationName = '';
+            this.type = '';
+        }
           try {
             this.usertypes = this.datash.getusertypes();
             console.log("uts",this.usertypes);

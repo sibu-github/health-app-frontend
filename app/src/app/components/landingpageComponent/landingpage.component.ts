@@ -39,7 +39,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit{
     {value: 'pt', viewValue: 'Portuguese'},
     {value: 'ko', viewValue: 'Korean'},
     {value: 'th', viewValue: 'Thai'},
-    {value: 'zh-CN', viewValue: 'CHINESE'}
+    {value: 'zh-CN', viewValue: 'Chinese (Mandarian)'}
     
     // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
   ];

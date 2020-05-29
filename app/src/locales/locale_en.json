@@ -47,8 +47,7 @@
         "certconf": "I certify that the information submitted in this application is true and correct to the best of my knowledge and I accept Ingredion’s",
         "terms": "Term's and Conditions",
         "termsmessage": "If the answer to ANY of the above questions is YES, notify the person who gave you this form. He or she will explain how you can provide additional information. Depending on the additional information you provide, you may still be permitted onsite. If you wish to provide additional information, please provide your contact information on the back of this form. As part of these screening procedures, we will collect travel and health-related information from you, including your temperature and information about any COVID-19-like symptoms or exposure you or your family have experienced, and we will use that information for the purposes of ensuring a safe work place, fulfilling our public health obligations, and/or the administration of health benefits",
-        "Submit": "Submit",
-        "confirmlocation": "Confirm Location",
+        "Submit": "I Certify & Submit",
         "Signature": "Signature",
         "certifyinfo": "Certify Information",
         "eir": "EmailId is required",
@@ -68,6 +67,11 @@
         "companyname": "Company Name",
         "ingredoncontact": "Ingredon Contact",
         "classifyyourself": "Classify Yourself",
-        "personalinformation": "Personal Information"
+        "personalinformation": "Personal Information",
+        "bno": "Building Number",
+        "flno": "Floor Number",
+        "scno": "Section Number",
+        "cuno": "Cube Numberr",
+        "confirmlocation": "Confirm Location"
     }
 }

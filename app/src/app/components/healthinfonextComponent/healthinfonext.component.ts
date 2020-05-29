@@ -22,15 +22,27 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 answer:string ='';
 shortTextThree ="Travelled Outside Country";
 enableTextArea:Boolean = false;
+addlinfo: string ='';
+localdata:any;
+
     constructor(private router: Router,private masterdata : masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
-       
         this.localeService.language = language;
+             // for prepopulating the data
+        this.localdata = JSON.parse(localStorage.getItem('userResponse')); 
     }
 
     ngOnInit() {
+        if(this.localdata && this.localdata.response.length>0){
+            
+            this.answer = this.localdata.response[2].answer;
+            this.addlinfo = this.localdata.response[2].addlnfo;
 
+        } else {
+             this.answer = 'false';
+               this.addlinfo = ''
+        }
     }
 
     //question :boolean = false;

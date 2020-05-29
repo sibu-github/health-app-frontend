@@ -1235,6 +1235,7 @@
                         "paletteKey": "NG-Input",
                         "parentEditorKey": "ccf94a1d-10a7-96b2-b14e-e95633455e61",
                         "isAdvancedComponent": true,
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1421,6 +1422,7 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "ccf94a1d-10a7-96b2-b14e-e95633455e61",
                         "isAdvancedComponent": true,
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1613,6 +1615,7 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "53e8a395-0397-259f-9e5b-2497f5ec3e5f",
                             "isAdvancedComponent": true,
+                            "isCommented": "true",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1805,6 +1808,7 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "ddbc9663-5e1b-fda3-c5c2-c48631f4d526",
                                 "isAdvancedChildComponent": true,
+                                "isCommented": "true",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -1831,6 +1835,7 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "53e8a395-0397-259f-9e5b-2497f5ec3e5f",
                             "isAdvancedComponent": true,
+                            "isCommented": "true",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2023,6 +2028,7 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "2356373c-ae0a-7b00-2c75-d16715e83a1d",
                                 "isAdvancedChildComponent": true,
+                                "isCommented": "true",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2049,6 +2055,7 @@
                     "b1eb29e7-3ab0-2437-201e-01f56c0cab2a": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "ccf94a1d-10a7-96b2-b14e-e95633455e61",
+                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -2115,6 +2122,7 @@
                         "65d89030-cc83-fc0a-8d82-c436bda11495": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "b1eb29e7-3ab0-2437-201e-01f56c0cab2a",
+                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -2183,6 +2191,7 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b1eb29e7-3ab0-2437-201e-01f56c0cab2a",
                             "isAdvancedComponent": true,
+                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2370,6 +2379,7 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "0f7e209b-b8f3-23e7-e028-65a202f4ca06",
                                 "isAdvancedChildComponent": true,
+                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2385,7 +2395,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": " <label>\r\n   <input type=\"checkbox\" [(ngModel)]=\"accept\" name=\"accept\" #Accepted=\"ngModel\" [checked]=\"false\" required> &nbsp;\r\n{{locales.certconf}} &nbsp; \r\n<a style=\"color:green;\" data-toggle=\"modal\" data-target=\"#myModal\">{{locales.terms}}</a>\r\n</label>\r\n  <!-- Modal -->\r\n  <div class=\"modal fade modalstyle1\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n    \r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\">{{locales.terms}}</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>\r\n          {{locales.termsmessage}}\r\n          </p>\r\n        </div>\r\n      \r\n      </div>\r\n    </div>\r\n  </div>",
+                                        "_value": " <label>\r\n   <!-- <input type=\"checkbox\" [(ngModel)]=\"accept\" name=\"accept\" #Accepted=\"ngModel\" [checked]=\"false\" required> &nbsp; -->\r\n{{locales.certconf}} &nbsp; \r\n<a style=\"color:green;\" data-toggle=\"modal\" data-target=\"#myModal\">{{locales.terms}}</a>\r\n</label>\r\n  <!-- Modal -->\r\n  <div class=\"modal fade modalstyle1\" id=\"myModal\" role=\"dialog\">\r\n    <div class=\"modal-dialog\">\r\n    \r\n      <!-- Modal content-->\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n          <h4 class=\"modal-title\">{{locales.terms}}</h4>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <p>\r\n          {{locales.termsmessage}}\r\n          </p>\r\n        </div>\r\n      \r\n      </div>\r\n    </div>\r\n  </div>",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
@@ -2917,7 +2927,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "color: #FFFFFF;margin-top: 50px;margin-left:105px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#52575C;border-radius: 44px;",
+                            "_value": "color: #FFFFFF;margin-top: 50px;margin-left:90px;height: 60px;width: 150px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#52575C;border-radius: 44px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

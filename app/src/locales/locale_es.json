@@ -47,8 +47,7 @@
         "certconf": "Certifico que la información presentada en esta solicitud es verdadera y correcta a mi leal saber y entender.",
         "terms": "Términos y Condiciones",
         "termsmessage": "Si la respuesta a ALGUNA de las preguntas anteriores es SÍ, notifique a la persona que le entregó este formulario. Él o ella le explicarán cómo puede proporcionar información adicional. Dependiendo de la información adicional que proporcione, es posible que aún se le permita en el sitio. Si desea proporcionar información adicional, proporcione su información de contacto en el reverso de este formulario. Como parte de estos procedimientos de detección, recopilaremos su información relacionada con viajes y salud, incluida su temperatura e información sobre cualquier síntoma o exposición similar a COVID-19 que usted o su familia hayan experimentado, y utilizaremos esa información para los fines de garantizar un lugar de trabajo seguro, cumplir con nuestras obligaciones de salud pública y / o administrar los beneficios de salud",
-        "Submit": "Enviar",
-        "confirmlocation": "Confirmar ubicación",
+        "Submit": "Certifico y presento",
         "Signature": "Firma",
         "certifyinfo": "Certificar información",
         "eir": "EmailId es requerido",
@@ -68,6 +67,11 @@
         "companyname": "nombre de empresa",
         "ingredoncontact": "Contacto con ingredientes",
         "classifyyourself": "Clasifícate",
-        "personalinformation": "Informacion personal"
+        "personalinformation": "Informacion personal",
+        "bno": "Número de edificio",
+        "flno": "Numero de piso",
+        "scno": "Numero de sección",
+        "cuno": "Numerador de cubos",
+        "confirmlocation": "Confirmar ubicación"
     }
 }

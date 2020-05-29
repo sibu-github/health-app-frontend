@@ -19,17 +19,35 @@ import { masterdataService } from '../../services/masterdata/masterdata.service'
 })
 
 export class healthinfoComponent extends NBaseComponent implements OnInit {
+    localdata:any;
+    // addlinfo= any;
 
     constructor(private router: Router, private masterdata: masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
          this.localeService.language = language;
          console.log(language);
+          // for prepopulating the data
+        this.localdata = JSON.parse(localStorage.getItem('userResponse')); 
     }
     answer: string = '';
-       shortTextOne = "had fever";
+    answer2: string = '';
+    //answer3: string = '';
+    shortTextOne = "had fever";
     shortTextTwo = "had Personal Contact";
-    ngOnInit() { }
+    ngOnInit() {
+         if(this.localdata && this.localdata.response.length>0){
+            this.answer = this.localdata.response[0].answer;
+            this.answer2 = this.localdata.response[1].answer;
+           // this.answer3 = this.localdata.response[2].answer;
+            //this.addlinfo = this.localdata.response[2].addlnfo;
+
+        } else {
+             this.answer = 'false';
+             this.answer2 = 'false';
+           //  this.answer3 = 'false';
+        }
+     }
 
     onChangeRadio(e, questionIndex) {
         console.log('onChangeRadio called...')
@@ -57,13 +75,16 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
                 { "questionId": this.masterdata.questionId2,
                     "answer": this.masterdata.answer2, 
                     "shortText": this.shortTextTwo
-                })); }
+                })); 
+        }
 
     }
     onBack() {
         this.router.navigate(['/landingpage']);
     }
     onNext() {
+        console.log(this.answer, this.answer2);
+        // if()
         this.router.navigate(['/hinfonext']);
     }
 }

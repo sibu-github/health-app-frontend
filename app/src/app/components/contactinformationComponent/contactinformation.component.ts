@@ -27,16 +27,27 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
     phone:any; // kept for build error
     company:any; // kept for build error
     ingredioncontact:any; // kept for build error
-
+    localdata:any;
     constructor(private router:Router,private masterdata: masterdataService) {
         super();
          let language = window.localStorage.getItem('language');
-       
-        this.localeService.language = language;
+         this.localeService.language = language;
+        // for prepopulating the data
+         this.localdata = JSON.parse(localStorage.getItem('userResponse')); 
     }
 
     ngOnInit() {
-
+         if(this.localdata && this.localdata.firstName) {
+        this.email  = this.localdata.email;
+        this.phone = this.localdata.phone;
+        this.company = this.localdata.company;
+        this.ingredioncontact = this.localdata.ingredionContact;
+         } else {
+             this.email  ='';
+             this.phone = '';
+             this.company = '';
+              this.ingredioncontact = '';
+         }
     }
 
     /**
@@ -72,7 +83,7 @@ export class contactinformationComponent extends NBaseComponent implements OnIni
             this.masterdata.email = data.value.email;
             this.masterdata.phone = data.value.phone;
             this.masterdata.company = data.value.company;
-            this.masterdata.ingredionContact = data.value.ingredionContact;
+            this.masterdata.ingredionContact = data.value.ingredioncontact;
             this.router.navigate(['/healthinfo']);
             this.validclick = false;
 

@@ -33,18 +33,38 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     totallocations: any;
     locationName: any;
     type:any;
+    buildingNo:string;
+    floorNo:string;
+    sectionNo:string;
+    cubeNo:string;
+    localdata:any;
     constructor(private router: Router,private userdataservice: userdetails, private getlocation: saveuserresponse, 
     private datash: datasharingService,
      private masterdata: masterdataService,private datasharingService:datasharingService) {
         super();
          let language = window.localStorage.getItem('language');
-       
+
         this.localeService.language = language;
+        // for prepopulating the data
+        this.localdata = JSON.parse(localStorage.getItem('userResponse'));
+        console.log(this.localdata);
     }
 
     async ngOnInit() {
-        this.locationName = this.defaultLocationName.slice(0);
-        this.phone = '817930010987';
+        if(this.localdata && this.localdata.locationName){
+            this.locationName = this.localdata.locationName;
+            this.phone = this.localdata.phone;
+            this.buildingNo = this.localdata.buildingNo;
+            this.sectionNo = this.localdata.sectionNo;
+            this.floorNo = this.localdata.floorNo;
+            this.cubeNo = this.localdata.cubeNo;
+
+        } else {
+             this.locationName = this.defaultLocationName.slice(0);
+             this.phone = '';
+        }
+      
+        
         // this.updatelocations = this.datash.getlocationdata();
        
        // console.log(this.totallocations);
@@ -80,10 +100,16 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
                     this.masterdata.phone = data.value.phone;
                     this.masterdata.locationNameTwo = data.value.locationName;
                     this.masterdata.userType = data.value.type;
+                    this.masterdata.buildingNo= data.value.buildingNo;
+                    this.masterdata.floorNo= data.value.floorNo;
+                    this.masterdata.sectionNo= data.value.sectionNo;
+                    this.masterdata.cubeNo= data.value.cubeNo;
+                    console.log(this.masterdata.buildingNo,this.masterdata.floorNo,this.masterdata.sectionNo,this.masterdata.cubeNo)
                     let confirmdetailsObj = {
                         email:'bhsarat@gmail.com',
                         locationName: this.masterdata.locationName,
-                        phone: this.masterdata.phone
+                        phone: this.masterdata.phone,
+
                     };
 
                     //calling confirm details api
@@ -92,7 +118,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
                     this.router.navigate(['/healthinfo']);
                 }).catch((err)=> {
                     console.log('error', err);
-                })
+                });
                  
                     localStorage.setItem('locationName', confirmdetailsObj.locationName);
                     localStorage.setItem('phone', confirmdetailsObj.phone);

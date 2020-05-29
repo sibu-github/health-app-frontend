@@ -47,8 +47,7 @@
         "certconf": "Certifico que as informações enviadas nesta inscrição são verdadeiras e corretas da melhor forma possível e aceito as informações da Ingredion",
         "terms": "Termos e Condições",
         "termsmessage": "Se a resposta para QUALQUER uma das perguntas acima for SIM, notifique a pessoa que lhe forneceu este formulário. Ele explicará como você pode fornecer informações adicionais. Dependendo das informações adicionais fornecidas, você ainda poderá ter permissão no local. Se você deseja fornecer informações adicionais, forneça suas informações de contato no verso deste formulário. Como parte desses procedimentos de triagem, coletaremos informações sobre viagens e saúde, incluindo sua temperatura e informações sobre qualquer sintoma semelhante à COVID-19 ou exposição que você ou sua família tenham experimentado, e as usaremos para esses fins. garantir um local de trabalho seguro, cumprir nossas obrigações de saúde pública e / ou administrar os benefícios de saúde",
-        "Submit": "Enviar",
-        "confirmlocation": "Confirmar Localização",
+        "Submit": "Certifico e envio",
         "Signature": "Assinatura",
         "certifyinfo": "Informações de certificação",
         "eir": "EmailId é obrigatório",
@@ -68,6 +67,11 @@
         "companyname": "Nome da empresa",
         "ingredoncontact": "Ingredon Contato",
         "classifyyourself": "Classifique-se",
-        "personalinformation": "Informação pessoal"
+        "personalinformation": "Informação pessoal",
+        "bno": "Número do edifício",
+        "flno": "Número do andar",
+        "scno": "Número da seção",
+        "cuno": "Número do cubor",
+        "confirmlocation": "Confirmar Localização"
     }
 }

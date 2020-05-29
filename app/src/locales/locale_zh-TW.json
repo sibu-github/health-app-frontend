@@ -47,8 +47,7 @@
         "certconf": "我保證，據我所知，此應用程序中提交的信息是真實且正確的，並且我接受Ingredion的",
         "terms": "條款和條件",
         "termsmessage": "如果以上任何一個問題的答案為是，請通知給您此表格的人。他或她將解釋您如何提供其他信息。根據您提供的其他信息，仍然可能會允許您在現場。如果您想提供其他信息，請在此表格的背面提供您的聯繫信息。作為這些篩查程序的一部分，我們將向您收集與旅行和健康相關的信息，包括您的體溫以及有關您或您的家人經歷過的任何類似於COVID-19的症狀或暴露的信息，我們將這些信息用於目的確保安全的工作場所，履行我們的公共衛生義務和/或管理健康福利",
-        "Submit": "提交",
-        "confirmlocation": "確認位置",
+        "Submit": "我認證並提交",
         "Signature": "簽名",
         "certifyinfo": "認證信息",
         "eir": "EmailId為必填項",
@@ -68,6 +67,11 @@
         "companyname": "公司名",
         "ingredoncontact": "Ingredon聯繫人",
         "classifyyourself": "自我分類",
-        "personalinformation": "個人信息"
+        "personalinformation": "個人信息",
+        "bno": "樓號",
+        "flno": "樓層號",
+        "scno": "部門編號",
+        "cuno": "多維數據集編號器",
+        "confirmlocation": "確認位置"
     }
 }
