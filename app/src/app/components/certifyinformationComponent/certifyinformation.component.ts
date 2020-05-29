@@ -64,7 +64,10 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
                     console.log('certt resp', resp);
 
                     // get the color code for thank you page
-                    let isGreen = resp.response.every(v => v.answer === false);
+                    let isGreen = true
+                    if(resp && resp.response){
+                        isGreen = resp.response.every(v => v.answer === false);
+                    }
                     if(isGreen){
                         localStorage.setItem('colorCode', 'green');
                     } else {

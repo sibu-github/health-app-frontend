@@ -2055,7 +2055,6 @@
                     "b1eb29e7-3ab0-2437-201e-01f56c0cab2a": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "ccf94a1d-10a7-96b2-b14e-e95633455e61",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -2122,7 +2121,6 @@
                         "65d89030-cc83-fc0a-8d82-c436bda11495": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "b1eb29e7-3ab0-2437-201e-01f56c0cab2a",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -2191,7 +2189,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b1eb29e7-3ab0-2437-201e-01f56c0cab2a",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2379,7 +2376,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "0f7e209b-b8f3-23e7-e028-65a202f4ca06",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",

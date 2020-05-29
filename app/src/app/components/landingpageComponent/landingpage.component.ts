@@ -37,6 +37,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   languages: any[] = [
     { value: "en", viewValue: "English" },
     { value: "es", viewValue: "Spanish" },
+    { value: "de", viewValue: "German" },
     { value: "pt", viewValue: "Portuguese" },
     { value: "ko", viewValue: "Korean" },
     { value: "th", viewValue: "Thai" },

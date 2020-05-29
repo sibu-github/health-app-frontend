@@ -209,7 +209,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "align-self:center;width:60px;margin-top:5px;",
+                            "_value": "align-self:center;width:80px;margin-top:10px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -221,7 +221,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "Web/ingredionlogo.png",
+                            "_value": "Web/locod1.png",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

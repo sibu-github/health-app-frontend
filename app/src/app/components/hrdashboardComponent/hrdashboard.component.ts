@@ -19,6 +19,7 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 export class hrdashboardComponent extends NBaseComponent implements OnInit {
   dashboard: any;
+  dashboarddata:any;
   name = "Angular";
   q1postive: number;
   q1negative: number;
