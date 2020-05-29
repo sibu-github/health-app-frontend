@@ -30,6 +30,11 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   totallocations: any;
   locationName: any;
   type: any;
+  buildingNo: string;
+  floorNo: string;
+  sectionNo: string;
+  cubeNo: string;
+  localdata: any;
   constructor(
     private router: Router,
     private userdataservice: userdetails,
@@ -39,19 +44,34 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     private datasharingService: datasharingService
   ) {
     super();
-
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
     }
+    // for prepopulating the data
+    let uResp = localStorage.getItem("userResponse");
+    if (uResp) {
+      this.localdata = JSON.parse(uResp);
+    }
+    console.log(this.localdata);
   }
 
   async ngOnInit() {
-    this.locationName = this.defaultLocationName.slice(0);
-    this.phone = "817930010987";
-    //this.updatelocations = this.datash.getlocationdata();
+    if (this.localdata && this.localdata.locationName) {
+      this.locationName = this.localdata.locationName;
+      this.phone = this.localdata.phone;
+      this.buildingNo = this.localdata.buildingNo;
+      this.sectionNo = this.localdata.sectionNo;
+      this.floorNo = this.localdata.floorNo;
+      this.cubeNo = this.localdata.cubeNo;
+    } else {
+      this.locationName = this.defaultLocationName.slice(0);
+      this.phone = "";
+    }
+
+    // this.updatelocations = this.datash.getlocationdata();
 
     // console.log(this.totallocations);
     try {
@@ -90,6 +110,16 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
           this.masterdata.phone = data.value.phone;
           this.masterdata.locationNameTwo = data.value.locationName;
           this.masterdata.userType = data.value.type;
+          this.masterdata.buildingNo = data.value.buildingNo;
+          this.masterdata.floorNo = data.value.floorNo;
+          this.masterdata.sectionNo = data.value.sectionNo;
+          this.masterdata.cubeNo = data.value.cubeNo;
+          console.log(
+            this.masterdata.buildingNo,
+            this.masterdata.floorNo,
+            this.masterdata.sectionNo,
+            this.masterdata.cubeNo
+          );
           let confirmdetailsObj = {
             email: "bhsarat@gmail.com",
             locationName: this.masterdata.locationName,

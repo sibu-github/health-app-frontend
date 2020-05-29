@@ -28,6 +28,10 @@ export class masterdataService {
   public email: string;
   public company: string;
   public ingredionContact: string;
+  public buildingNo: string;
+  public floorNo: string;
+  public sectionNo: string;
+  public cubeNo: string;
   // creating serverurl variable we can define it env.json and access here
 
   constructor(
@@ -83,19 +87,25 @@ export class masterdataService {
     let UpdatedlocationName = this.locationName;
     let UcertifyInfoName = this.certifyInfoName;
     let UcertifyInfoCheck = this.certifyInfoChecked;
+    console.log(this.buildingNo, this.floorNo, this.sectionNo, this.cubeNo);
+
     try {
       console.log(this.username);
       let formdata = {
         type: this.userType,
-        locationName: UpdatedlocationName,
+        locationName: this.locationName,
         email: this.email,
         phone: localStorage.getItem("phone"),
         firstName: this.firstName,
         lastName: this.lastName,
         company: this.company,
         ingredionContact: this.ingredionContact,
-        certifyInfoName: UcertifyInfoName,
-        certifyInfoChecked: UcertifyInfoCheck,
+        certifyInfoName: this.certifyInfoName,
+        certifyInfoChecked: this.certifyInfoChecked,
+        buildingNo: this.buildingNo,
+        floorNo: this.floorNo,
+        sectionNo: this.sectionNo,
+        cubeNo: this.cubeNo,
         response: [
           {
             questionId: this.questionId,
@@ -116,6 +126,7 @@ export class masterdataService {
         ],
       };
       console.log(formdata);
+      localStorage.setItem("userResponse", JSON.stringify(formdata));
       let bh = await this.saveuserService.saveUserData(formdata);
       console.log(bh.local.result);
       return bh.local.result;

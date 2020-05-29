@@ -25,6 +25,7 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
   shortTextThree = "Travelled Outside Country";
   enableTextArea: Boolean = false;
   val3: any;
+  localdata: any;
   constructor(
     private router: Router,
     private masterdata: masterdataService,
@@ -38,9 +39,22 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     if (language) {
       this.localeService.language = language;
     }
+
+    let uResp = localStorage.getItem("userResponse");
+    if (uResp) {
+      this.localdata = JSON.parse(uResp);
+    }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.localdata && this.localdata.response.length > 0) {
+      this.answer = this.localdata.response[2].answer;
+      this.addlinfo = this.localdata.response[2].addlnfo;
+    } else {
+      this.answer = "false";
+      this.addlinfo = "";
+    }
+  }
 
   //question :boolean = false;
   onChangeRadio(e, questionIndex) {

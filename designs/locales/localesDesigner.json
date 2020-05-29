@@ -75,8 +75,7 @@
       "hrq3": "Travelled outside country",
       "positive": "Positive",
       "negative": "Negative",
-      "classifyyourself": "Classify Yourself",
-      "personalinformation": "Personal Information"
+      "classifyyourself": "Classify Yourself"
     }
   },
   "zh-CN": {
@@ -155,8 +154,7 @@
       "hrq3": "出国旅行",
       "positive": "正",
       "negative": "负",
-      "classifyyourself": "自我分类",
-      "personalinformation": "个人信息"
+      "classifyyourself": "自我分类"
     }
   },
   "zh-TW": {
@@ -235,8 +233,7 @@
       "hrq3": "出國旅行",
       "positive": "正",
       "negative": "負",
-      "classifyyourself": "自我分類",
-      "personalinformation": "個人信息"
+      "classifyyourself": "自我分類"
     }
   },
   "es": {
@@ -315,8 +312,7 @@
       "hrq3": "Viajado fuera del pais",
       "positive": "Positivo",
       "negative": "Negativo",
-      "classifyyourself": "Clasifícate",
-      "personalinformation": "Informacion personal"
+      "classifyyourself": "Clasifícate"
     }
   },
   "pt": {
@@ -395,8 +391,7 @@
       "hrq3": "Viajou para fora do país",
       "positive": "Positivo",
       "negative": "Negativo",
-      "classifyyourself": "Classifique-se",
-      "personalinformation": "Informação pessoal"
+      "classifyyourself": "Classifique-se"
     }
   },
   "ko": {
@@ -475,8 +470,7 @@
       "hrq3": "해외 여행",
       "positive": "양",
       "negative": "부정",
-      "classifyyourself": "자신을 분류하십시오",
-      "personalinformation": "개인 정보"
+      "classifyyourself": "자신을 분류하십시오"
     }
   },
   "th": {
@@ -555,8 +549,7 @@
       "hrq3": "เดินทางไปต่างประเทศ",
       "positive": "บวก",
       "negative": "เชิงลบ",
-      "classifyyourself": "แบ่งประเภทของตัวเอง",
-      "personalinformation": "ข้อมูลส่วนบุคคล"
+      "classifyyourself": "แบ่งประเภทของตัวเอง"
     }
   }
 }

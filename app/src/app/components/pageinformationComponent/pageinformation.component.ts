@@ -28,11 +28,11 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   locationName: any;
   firstName: any; // kept for build error
   lastName: any; // kept for build error
+  firstname: any; // data binding
+  lastname: any; // data binding
   usertypes: any; // list of user types data
-  firstname: any; // data bind variable
-  lastname: any; // data bind variable
-  type: any; // data bind variable
-
+  localdata: any;
+  type: any;
   constructor(
     private router: Router,
     private datash: datasharingService,
@@ -40,12 +40,15 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     private masterdata: masterdataService
   ) {
     super();
-
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
+    }
+    let uResp = localStorage.getItem("userResponse");
+    if (uResp) {
+      this.localdata = JSON.parse(uResp);
     }
   }
   languages: any[] = [
@@ -54,8 +57,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     { value: "pt", viewValue: "Portuguese" },
     { value: "ko", viewValue: "Korean" },
     { value: "th", viewValue: "Thai" },
-    { value: "zh-CN", viewValue: "CHINESE" },
-
+    { value: "zh-CN", viewValue: "Chinese (Mandarian)" },
     // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
   ];
 
@@ -67,6 +69,17 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     this.localeService.language = language;
   }
   async ngOnInit() {
+    if (this.localdata && this.localdata.firstName) {
+      this.firstname = this.localdata.firstName;
+      this.lastname = this.localdata.lastName;
+      this.locationName = this.localdata.locationName;
+      this.type = this.localdata.type;
+    } else {
+      this.firstname = "";
+      this.lastname = "";
+      this.locationName = "";
+      this.type = "";
+    }
     try {
       this.usertypes = this.datash.getusertypes();
       console.log("uts", this.usertypes);
