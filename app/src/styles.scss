@@ -266,7 +266,7 @@ text-transform: capitalize;
 color: #52575C;
 }
 .hrtextbutton{
-    
+    max-width: 100% !important;
 font-family: Poppins;
 font-style: normal;
 font-weight: 500;
@@ -293,9 +293,6 @@ font-size: 18px;
 line-height: 27px;
 letter-spacing: 0.715116px;
 text-transform: uppercase;
-
-
-
 color: #52575C;
 }
 .positive{
@@ -307,4 +304,7 @@ line-height: 27px;
 letter-spacing: 0.575093px;
 text-transform: capitalize;
 color: #52575C;
+}
+.test {
+  background-color: #A1A4B1;
 }
