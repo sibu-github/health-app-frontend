@@ -76,5 +76,11 @@
         "componentName": "contactinformationComponent",
         "isEntry": false,
         "createDate": "2020-05-24T10:56:26.743Z"
+    },
+    "677fbd23-5c42-c549-eeda-e03e111c77ac": {
+        "appPageName": "test",
+        "componentName": "testComponent",
+        "isEntry": false,
+        "createDate": "2020-05-31T16:18:04.143Z"
     }
 }

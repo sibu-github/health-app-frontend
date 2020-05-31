@@ -73,6 +73,12 @@
         "hrq2": "Had contact with covid suspect",
         "hrq3": "Travelled outside country",
         "positive": "Positive",
-        "negative": "Negative"
+        "negative": "Negative",
+        "fromdate": "From Date",
+        "todate": "To Date",
+        "byregion": "By Region",
+        "countrywise": "Country Wise",
+        "plantlocation": "Plant + Location",
+        "global": "Global"
     }
 }

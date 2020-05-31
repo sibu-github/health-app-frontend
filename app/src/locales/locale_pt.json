@@ -73,6 +73,12 @@
         "hrq2": "Teve contato com suspeita secreta",
         "hrq3": "Viajou para fora do país",
         "positive": "Positivo",
-        "negative": "Negativo"
+        "negative": "Negativo",
+        "fromdate": "Da data",
+        "todate": "Até a presente data",
+        "byregion": "Por região",
+        "countrywise": "País Sábio",
+        "plantlocation": "Planta + Localização",
+        "global": "Global"
     }
 }

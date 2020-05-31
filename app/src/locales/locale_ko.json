@@ -73,6 +73,12 @@
         "hrq2": "후견인 용의자와 접촉했다",
         "hrq3": "해외 여행",
         "positive": "양",
-        "negative": "부정"
+        "negative": "부정",
+        "fromdate": "날짜부터",
+        "todate": "현재까지",
+        "byregion": "지역별",
+        "countrywise": "국가 현명한",
+        "plantlocation": "플랜트 + 위치",
+        "global": "글로벌"
     }
 }

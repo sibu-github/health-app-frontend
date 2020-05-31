@@ -75,12 +75,12 @@
             "hrq3": "Travelled outside country",
             "positive": "Positive",
             "negative": "Negative",
-            "global": "Global",
             "fromdate": "From Date",
             "todate": "To Date",
             "byregion": "By Region",
             "countrywise": "Country Wise",
-            "plantlocation": "Plant + Location"
+            "plantlocation": "Plant + Location",
+            "global": "Global"
         }
     },
     "zh-CN": {
@@ -159,12 +159,12 @@
             "hrq3": "出国旅行",
             "positive": "正",
             "negative": "负",
-            "global": "全球",
             "fromdate": "从日期",
             "todate": "至今",
             "byregion": "按地区",
             "countrywise": "乡村智者",
-            "plantlocation": "工厂+位置"
+            "plantlocation": "工厂+位置",
+            "global": "全球"
         }
     },
     "zh-TW": {
@@ -243,12 +243,12 @@
             "hrq3": "出國旅行",
             "positive": "正",
             "negative": "負",
-            "global": "全球",
             "fromdate": "從日期",
             "todate": "至今",
             "byregion": "按地區",
             "countrywise": "鄉村智者",
-            "plantlocation": "工廠+位置"
+            "plantlocation": "工廠+位置",
+            "global": "全球"
         }
     },
     "es": {
@@ -327,12 +327,12 @@
             "hrq3": "Viajado fuera del pais",
             "positive": "Positivo",
             "negative": "Negativo",
-            "global": "Global",
             "fromdate": "Partir de la fecha",
             "todate": "Hasta la fecha",
             "byregion": "Por región",
             "countrywise": "País sabio",
-            "plantlocation": "Planta + Ubicación"
+            "plantlocation": "Planta + Ubicación",
+            "global": "Global"
         }
     },
     "pt": {
@@ -411,12 +411,12 @@
             "hrq3": "Viajou para fora do país",
             "positive": "Positivo",
             "negative": "Negativo",
-            "global": "Global",
             "fromdate": "Da data",
             "todate": "Até a presente data",
             "byregion": "Por região",
             "countrywise": "País Sábio",
-            "plantlocation": "Planta + Localização"
+            "plantlocation": "Planta + Localização",
+            "global": "Global"
         }
     },
     "ko": {
@@ -495,12 +495,12 @@
             "hrq3": "해외 여행",
             "positive": "양",
             "negative": "부정",
-            "global": "글로벌",
             "fromdate": "날짜부터",
             "todate": "현재까지",
             "byregion": "지역별",
             "countrywise": "국가 현명한",
-            "plantlocation": "플랜트 + 위치"
+            "plantlocation": "플랜트 + 위치",
+            "global": "글로벌"
         }
     },
     "th": {
@@ -579,12 +579,12 @@
             "hrq3": "เดินทางไปต่างประเทศ",
             "positive": "บวก",
             "negative": "เชิงลบ",
-            "global": "ทั่วโลก",
             "fromdate": "จากวันที่",
             "todate": "ถึงวันที่",
             "byregion": "ตามภูมิภาค",
             "countrywise": "ประเทศที่ฉลาด",
-            "plantlocation": "โรงงาน + ที่ตั้ง"
+            "plantlocation": "โรงงาน + ที่ตั้ง",
+            "global": "ทั่วโลก"
         }
     },
     "de": {
@@ -663,12 +663,12 @@
             "hrq3": "Reiste ins Ausland",
             "positive": "Positiv",
             "negative": "Negativ",
-            "global": "Global",
             "fromdate": "Ab Datum",
             "todate": "Miteinander ausgehen",
             "byregion": "Nach Region",
             "countrywise": "Länderweise",
-            "plantlocation": "Werk + Standort"
+            "plantlocation": "Werk + Standort",
+            "global": "Global"
         }
     }
 }

@@ -73,6 +73,12 @@
         "hrq2": "與covid嫌疑人接觸",
         "hrq3": "出國旅行",
         "positive": "正",
-        "negative": "負"
+        "negative": "負",
+        "fromdate": "從日期",
+        "todate": "至今",
+        "byregion": "按地區",
+        "countrywise": "鄉村智者",
+        "plantlocation": "工廠+位置",
+        "global": "全球"
     }
 }
