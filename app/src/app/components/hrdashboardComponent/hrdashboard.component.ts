@@ -1,7 +1,9 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-
+import { Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -29,6 +31,13 @@ q2postive:number
 q2negative:number
 q3postive:number 
 q3negative:number
+location:array[];
+
+
+ myControl:FormControl;
+  
+  filteredOptions: Observable<string[]>;
+
   constructor(private hrdashboard: hrdashboard, private getlocation: saveuserresponse) {
          super();
     //      let language = window.localStorage.getItem('language');
@@ -43,6 +52,12 @@ q3negative:number
   
 
     async ngOnInit() {
+      // this.myControl = new FormControl();
+      // this.filteredOptions = this.myControl.valueChanges
+      // .pipe(
+      //   startWith(''),
+      //   map(value => this._filter(value))
+      // );
         try{
         let dashboard = await this.hrdashboard.hrDashboard()
          this.q2postive = dashboard.local.result.q1_count.postive[0].postive.toString();
@@ -64,19 +79,33 @@ q3negative:number
             this.locationname = bh.local.result;         
             // console.log(bh.local.result.length);
          console.log('locationlist',this.locationname);
+         
+        // for(let i = 0; i < this.locationname.length; i++){
+        //  console.log('forloop',this.locationname[i].locationName);
+        //  //this.location[i] = this.locationname[i].locationName
+        //    //await this.location.push(this.locationname[i].locationName);
+           
+        //  }
+        this.locationname.forEach((item)=>{
+          console.log(item.locationName);
+    this.location =item.locationName;
+        })
+         console.log('locations', this.location);
         }
         catch(err){
             console.error(err)
         }
-                 
+      
 
-    }
+  }
+
+  // private _filter(value: string): string[] {
+  //   const filterValue = value.toLowerCase();
+
+  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  // } 
    
-    foods: any[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+    
  
 
  

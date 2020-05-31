@@ -30,13 +30,20 @@
       </button><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="hrtextbutton" (click)="dashboarddata()">{{locales.todate}}
         <mat-icon>keyboard_arrow_down</mat-icon>
       </button></div>
-    <div fxLayout="row wrap" fxLayoutGap="3px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="2"><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="hrtextbutton" (click)="dashboarddata()">{{locales.byregion}}
+    <div fxLayout="row wrap" fxLayoutGap="3px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="2"><button mat-button style="background: #5EA73E;border-radius: 40.5882px; height:40px;" class="hrtextbutton" [matMenuTriggerFor]="tabledriven">{{locales.plantlocation}}
         <mat-icon>keyboard_arrow_down</mat-icon>
-      </button><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="hrtextbutton" (click)="dashboarddata()">{{locales.countrywise}}
-        <mat-icon>keyboard_arrow_down</mat-icon>
-      </button><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="hrtextbutton" [matMenuTriggerFor]="tabledriven">{{locales.plantlocation}}
-        <mat-icon>keyboard_arrow_down</mat-icon>
-      </button></div>
+      </button>
+      <form>
+        <mat-form-field class="example-full-width">
+          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of locationname" [value]="option">
+              {{option.locationName}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+    </div>
   </div>
   <div fxLayout="row wrap" style="width:100%;" fxFlex="50" fxLayoutGap="10px" fxLayoutAlign="space-around center" [fxShow]="true" [fxHide]="false" fxLayout.xs="column">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1">
@@ -107,9 +114,7 @@
     <div>
 
       <mat-menu #tabledriven="matMenu">
-        <mat-list-item *ngFor="let location of locationname">
-          {{ location.locationName }}
-        </mat-list-item>
+        <button mat-menu-item *ngFor="let location of locationname">{{ location.locationName }}</button>
       </mat-menu>
 
 

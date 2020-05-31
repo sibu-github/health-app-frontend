@@ -2581,6 +2581,7 @@
                 "4c00994a-3890-c789-e13c-bc0b62b4846d": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "df9fd2d2-de50-01cf-b1c3-3cb8e779fb29",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2644,6 +2645,7 @@
                 "ba273095-452c-b14e-0a2c-6e44ef935e0b": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "df9fd2d2-de50-01cf-b1c3-3cb8e779fb29",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2710,7 +2712,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;",
+                            "_value": "background: #5EA73E;border-radius: 40.5882px; height:40px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -2772,6 +2774,219 @@
                             "_attrDef": "c"
                         }
                     ]
+                },
+                "e0f9479b-9986-bc7d-d72f-debe47156988": {
+                    "paletteKey": "Html5",
+                    "parentEditorKey": "df9fd2d2-de50-01cf-b1c3-3cb8e779fb29",
+                    "isAdvancedComponent": true,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "htmlElement",
+                            "_value": "form",
+                            "_type": "dav",
+                            "_attrDef": "p",
+                            "_useAsLabel": true,
+                            "_customAttributeFlag": true
+                        },
+                        {
+                            "_key": "tagType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "sandbox",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "src",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "srcdoc",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "width",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "[autoplay]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "[loop]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "data",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioSource",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoSource",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioDatasource",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioSrc",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "audioType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoDatasource",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoSrc",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "videoType",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audioplay)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videoplay)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audiopause)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videopause)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(audioended)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        },
+                        {
+                            "_key": "(videoended)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_visibility": false
+                        }
+                    ],
+                    "e1aa618b-9dde-746a-b22d-63c8fb49b158": {
+                        "paletteKey": "html-editor",
+                        "parentEditorKey": "e0f9479b-9986-bc7d-d72f-debe47156988",
+                        "isAdvancedChildComponent": true,
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "html",
+                                "_value": " <mat-form-field class=\"example-full-width\">\r\n    <input type=\"text\"\r\n           placeholder=\"Pick one\"\r\n           aria-label=\"Number\"\r\n           matInput\r\n           [formControl]=\"myControl\"\r\n           [matAutocomplete]=\"auto\">\r\n    <mat-autocomplete #auto=\"matAutocomplete\">\r\n      <mat-option *ngFor=\"let option of locationname\" [value]=\"option\">\r\n        {{option.locationName}}\r\n      </mat-option>\r\n    </mat-autocomplete>\r\n  </mat-form-field>",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            }
+                        ]
+                    }
                 }
             }
         },
@@ -8627,7 +8842,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "\r\n <mat-menu #tabledriven=\"matMenu\">\r\n   <mat-list-item *ngFor=\"let location of locationname\">\r\n      {{ location.locationName }}\r\n    </mat-list-item>\r\n </mat-menu>\r\n\r\n\r\n    ",
+                            "_value": "\r\n <mat-menu #tabledriven=\"matMenu\">\r\n    <button mat-menu-item *ngFor=\"let location of locationname\">{{ location.locationName }}</button>\r\n </mat-menu>\r\n\r\n\r\n  ",
                             "_type": "a",
                             "_attrDef": "p"
                         }
