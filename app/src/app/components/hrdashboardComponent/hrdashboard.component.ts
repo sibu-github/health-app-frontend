@@ -45,27 +45,25 @@ q3negative:number
     async ngOnInit() {
         try{
         let dashboard = await this.hrdashboard.hrDashboard()
-         this.q1postive = dashboard.local.result.q1_count.postive[0].postive.toString();
-         this.q1negative = dashboard.local.result.q1_count.negative[0].negative;
+         this.q2postive = dashboard.local.result.q1_count.postive[0].postive.toString();
+         this.q2negative = dashboard.local.result.q1_count.negative[0].negative;
 
      //q2
-    this.q2postive = dashboard.local.result.q2_count.positive[0].postive;
-     this.q2negative = dashboard.local.result.q2_count.negative[0].negative;
+    this.q3postive = dashboard.local.result.q2_count.positive[0].postive;
+     this.q3negative = dashboard.local.result.q2_count.negative[0].negative;
      
      //q3
-<<<<<<< HEAD
+
+    
+
      this.q1postive = dashboard.local.result.q3_count.positive[0].postive;
      this.q1negative = dashboard.local.result.q3_count.negative[0].negative;
-      let bh = await this.getlocation.getLocations()
+
+     let bh = await this.getlocation.getLocations()
             console.log(bh)
             this.locationname = bh.local.result;         
             // console.log(bh.local.result.length);
          console.log('locationlist',this.locationname);
-=======
-     this.q3postive = dashboard.local.result.q3_count.positive[0].postive;
-     this.q3negative = dashboard.local.result.q3_count.negative[0].negative;
->>>>>>> parent of 83c3d20... 11.1
-     
         }
         catch(err){
             console.error(err)
