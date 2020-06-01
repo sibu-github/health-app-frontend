@@ -22,8 +22,11 @@ export class hrdashboard {
 
   //   service flows_hrdashboard
 
-  public async hrDashboard(...others) {
-    let bh = { input: {}, local: { result: undefined, apiURL: undefined } };
+  public async hrDashboard(body: any = undefined, ...others) {
+    let bh = {
+      input: { body: body },
+      local: { result: undefined, apiURL: undefined }
+    };
     try {
       bh = this.sdService.__constructDefault(bh);
       bh = await this.sd_kamBbrZpnMvR8rdb(bh);
@@ -62,7 +65,7 @@ export class hrdashboard {
         reportProgress: undefined,
         headers: {},
         params: {},
-        body: undefined
+        body: bh.input.body
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
       this.sd_YpkWzoDaVvv9eMUU(bh);

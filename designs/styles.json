@@ -38,6 +38,7 @@
     "filters",
     "hrtextbutton",
     "hrqrtest",
-    "positive"
+    "positive",
+    "test"
   ]
 }

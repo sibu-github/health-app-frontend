@@ -59,19 +59,9 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // if (this.localdata && this.localdata.locationName) {
-    //   this.locationName = this.localdata.locationName;
-    //   this.phone = this.localdata.phone;
-    //   this.buildingNo = this.localdata.buildingNo;
-    //   this.sectionNo = this.localdata.sectionNo;
-    //   this.floorNo = this.localdata.floorNo;
-    //   this.cubeNo = this.localdata.cubeNo;
-    // } else {
-    //   this.locationName = this.defaultLocationName.slice(0);
-    //   this.phone = "";
-    // }
-
-    // this.updatelocations = this.datash.getlocationdata();
+    this.locationName = this.defaultLocationName.slice(0);
+    this.phone = "817930010987";
+    //this.updatelocations = this.datash.getlocationdata();
 
     // console.log(this.totallocations);
     try {
@@ -80,7 +70,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
       console.log(bh.local.result);
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
-      // console.log(this.totallocations)
+      console.log(this.totallocations);
     } catch (err) {
       console.error(err);
     }
@@ -121,13 +111,13 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
             this.masterdata.cubeNo
           );
           let confirmdetailsObj = {
-            email: localStorage.getItem('username'),
+            email: localStorage.getItem("username"),
             locationName: this.masterdata.locationName,
             phone: this.masterdata.phone,
             buildingNo: this.masterdata.buildingNo,
             floorNo: this.masterdata.floorNo,
             sectionNo: this.masterdata.sectionNo,
-            cubeNo: this.masterdata.cubeNo
+            cubeNo: this.masterdata.cubeNo,
           };
 
           //calling confirm details api
@@ -156,7 +146,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   }
 
   filter(values) {
-    // console.log(values);
+    console.log(values);
     return values.filter((location) =>
       location.locationName.includes(this.locationName)
     );
