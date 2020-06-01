@@ -1,0 +1,14 @@
+{
+    "appPageId": "6df2f6b6-ff13-c31f-d6bd-d5d0bef1ee1a",
+    "appPageName": "hroption",
+    "componentName": "hroptionComponent",
+    "selectorName": "bh-hroption",
+    "htmlFileName": "hroption.template.html",
+    "tsFileName": "hroption.component.ts",
+    "createDate": "2020-06-01T10:34:31.551Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

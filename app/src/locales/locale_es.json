@@ -77,7 +77,11 @@
         "classifyyourself": "Clasifícate",
         "bno": "edificio número",
         "flno": "Piso no",
-        "scno": "Sección no",
-        "cuno": "Cubo no"
+        "scno": "Ala / Sección No",
+        "cuno": "Cubo / Oficina No",
+        "pep": "Por favor, ingrese contraseña",
+        "chooseopt": "Elija opciones para continuar",
+        "lase": "Iniciar sesión como empleado",
+        "lahr": "Inicie sesión como HR"
     }
 }

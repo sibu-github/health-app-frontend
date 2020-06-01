@@ -73,7 +73,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
       this.firstname = this.localdata.firstName;
       this.lastname = this.localdata.lastName;
       this.locationName = this.localdata.locationName;
-      this.type = this.localdata.type;
+      this.type = this.localdata.type.charAt(0).toUpperCase() + this.localdata.type.slice(1)
     } else {
       this.firstname = "";
       this.lastname = "";
@@ -108,7 +108,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = data.value.locationName;
-    this.masterdata.userType = data.value.type;
+    this.masterdata.userType = data.value.type.toLowerCase();
     if (data.valid === true) {
       for (let i = 0; i <= this.totallocations.length; i++) {
         if (

@@ -13,13 +13,13 @@ export class datasharingService {
     // sample json data
     return (this.usertypes = [
       {
-        type: "vendor",
+        type: "Vendor",
       },
       {
-        type: "customer",
+        type: "Customer",
       },
       {
-        type: "visitor",
+        type: "Visitor",
       },
     ]);
     console.log("user name", this.usertypes[0].name);
