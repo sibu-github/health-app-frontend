@@ -121,9 +121,13 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
             this.masterdata.cubeNo
           );
           let confirmdetailsObj = {
-            email: "bhsarat@gmail.com",
+            email: localStorage.getItem('username'),
             locationName: this.masterdata.locationName,
             phone: this.masterdata.phone,
+            buildingNo: this.masterdata.buildingNo,
+            floorNo: this.masterdata.floorNo,
+            sectionNo: this.masterdata.sectionNo,
+            cubeNo: this.masterdata.cubeNo
           };
 
           //calling confirm details api

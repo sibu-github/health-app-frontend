@@ -82,5 +82,11 @@
         "componentName": "logoComponent",
         "isEntry": false,
         "createDate": "2020-05-28T09:49:31.705Z"
+    },
+    "6df2f6b6-ff13-c31f-d6bd-d5d0bef1ee1a": {
+        "appPageName": "hroption",
+        "componentName": "hroptionComponent",
+        "isEntry": false,
+        "createDate": "2020-06-01T10:34:31.551Z"
     }
 }

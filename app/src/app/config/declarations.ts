@@ -15,6 +15,8 @@ window["neutrinos"] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-hroptionComponent
+import { hroptionComponent } from '../components/hroptionComponent/hroption.component';
 //CORE_REFERENCE_IMPORT-logoComponent
 import { logoComponent } from "../components/logoComponent/logo.component";
 //CORE_REFERENCE_IMPORT-masterdataService
@@ -81,6 +83,8 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-hroptionComponent
+hroptionComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-logoComponent
   logoComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-healthinfonextComponent
@@ -139,5 +143,6 @@ export const appProviders = [
  */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'personalinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: 'hinfonext', component: healthinfonextComponent},{path: 'landpage', component: landingpageComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'personalinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: 'hinfonext', component: healthinfonextComponent,
+children: []},{path: 'landpage', component: landingpageComponent},{path: 'optionpage', component: hroptionComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

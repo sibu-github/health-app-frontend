@@ -3,7 +3,7 @@
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="height :20px;width:80px;" width="50px;"></div>
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="height :20px;width:80px;" width="50px;"></div>
       </div>
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -44,22 +44,22 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnr}}</small></span><span *ngIf="mobilenumber.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pnrl}}</small></span></div>
         <mat-form-field style="width:100%;font-family:Poppins;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="buildingNo" name="buildingNo" type="text" placeholder="{{locales.bno}}" required #Bno="ngModel">
+          <input matInput [(ngModel)]="buildingNo" name="buildingNo" type="text" placeholder="{{locales.bno}}" #Bno="ngModel">
 
         </mat-form-field>
         <mat-form-field style="width:100%;font-family:Poppins;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="floorNo" name="floorNo" type="text" placeholder="{{locales.flno}}" required #fno="ngModel">
+          <input matInput [(ngModel)]="floorNo" name="floorNo" type="text" placeholder="{{locales.flno}}" #fno="ngModel">
 
         </mat-form-field>
         <mat-form-field style="width:100%;font-family:Poppins;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="sectionNo" name="sectionNo" type="text" placeholder="{{locales.scno}}" required #Sno="ngModel">
+          <input matInput [(ngModel)]="sectionNo" name="sectionNo" type="text" placeholder="{{locales.scno}}" #Sno="ngModel">
 
         </mat-form-field>
         <mat-form-field style="width:100%;font-family:Poppins;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="cubeNo" name="cubeNo" type="text" placeholder="{{locales.cuno}}" required #Cno="ngModel">
+          <input matInput [(ngModel)]="cubeNo" name="cubeNo" type="text" placeholder="{{locales.cuno}}" #Cno="ngModel">
 
         </mat-form-field>
-        <div fxLayout="row wrap" style="width:100%;height:20%;margin-top:70px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;margin-top: 0px;margin-left:185px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="onSubmit(ConfirmdetailsForm)" type="submit">{{locales.cont}}</button></div>
+        <div fxLayout="row wrap" style="width:100%;height:20%;margin-top:40px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;margin-top: 0px;margin-left:185px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="onSubmit(ConfirmdetailsForm)" type="submit">{{locales.cont}}</button></div>
       </form>
     </div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>

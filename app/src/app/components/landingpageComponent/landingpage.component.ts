@@ -22,19 +22,8 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 export class landingpageComponent extends NBaseComponent implements OnInit {
   public href: string = "";
-  constructor(private router: Router) {
-    super();
-
-    // get the previously selected language from local storage
-    // set the language if selected
-    let language = window.localStorage.getItem("language");
-    if (language) {
-      this.localeService.language = language;
-    }
-  }
-
-  ngOnInit() {}
-  languages: any[] = [
+  defaultlang= 'English';
+    languages: any[] = [
     { value: "en", viewValue: "English" },
     { value: "es", viewValue: "Spanish" },
     { value: "de", viewValue: "German" },
@@ -45,6 +34,22 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
     // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
   ];
+  constructor(private router: Router) {
+    super();
+    // get the previously selected language from local storage
+    // set the language if selected
+    let language = window.localStorage.getItem("language");
+    if (language) {
+      this.localeService.language = language;
+     
+    }
+  }
+
+  ngOnInit() {
+  // this.defaultlang = this.languages[0].viewValue;
+  // console.log(this.languages[0].viewValue, this.defaultlang);
+  }
+
 
   doSomething(event) {
     //console.log(event.value);

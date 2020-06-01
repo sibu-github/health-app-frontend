@@ -78,8 +78,12 @@
             "classifyyourself": "Classify Yourself",
             "bno": "Building No",
             "flno": "Floor No",
-            "scno": "Section No",
-            "cuno": "Cube No"
+            "scno": "Wing / Section No",
+            "cuno": "Cube / Office No",
+            "pep": "Please Enter Password",
+            "chooseopt": "Choose Options To Continue",
+            "lase": "Login as Employee",
+            "lahr": "Login as HR"
         }
     },
     "zh-CN": {
@@ -161,8 +165,12 @@
             "classifyyourself": "自我分类",
             "bno": "楼号",
             "flno": "楼层号",
-            "scno": "节号",
-            "cuno": "立方体号"
+            "scno": "翼/科号",
+            "cuno": "立方体/办公室编号",
+            "pep": "请输入密码",
+            "chooseopt": "选择选项继续",
+            "lase": "以员工身份登录",
+            "lahr": "以人力资源身份登录"
         }
     },
     "zh-TW": {
@@ -244,8 +252,12 @@
             "classifyyourself": "自我分類",
             "bno": "樓號",
             "flno": "樓層號",
-            "scno": "節號",
-            "cuno": "立方體號"
+            "scno": "翼/科號",
+            "cuno": "立方體/辦公室編號",
+            "pep": "請輸入密碼",
+            "chooseopt": "選擇選項繼續",
+            "lase": "以員工身份登錄",
+            "lahr": "以人力資源身份登錄"
         }
     },
     "es": {
@@ -327,8 +339,12 @@
             "classifyyourself": "Clasifícate",
             "bno": "edificio número",
             "flno": "Piso no",
-            "scno": "Sección no",
-            "cuno": "Cubo no"
+            "scno": "Ala / Sección No",
+            "cuno": "Cubo / Oficina No",
+            "pep": "Por favor, ingrese contraseña",
+            "chooseopt": "Elija opciones para continuar",
+            "lase": "Iniciar sesión como empleado",
+            "lahr": "Inicie sesión como HR"
         }
     },
     "pt": {
@@ -410,8 +426,12 @@
             "classifyyourself": "Classifique-se",
             "bno": "Edifício n.",
             "flno": "Piso não",
-            "scno": "Secção n.",
-            "cuno": "Cubo n."
+            "scno": "Asa / Seção Não",
+            "cuno": "Cubo / Escritório Não",
+            "pep": "Digite a senha",
+            "chooseopt": "Escolha Opções para continuar",
+            "lase": "Entrar como Funcionário",
+            "lahr": "Entrar como RH"
         }
     },
     "ko": {
@@ -493,8 +513,12 @@
             "classifyyourself": "자신을 분류하십시오",
             "bno": "건물 번호",
             "flno": "층 번호",
-            "scno": "섹션 번호",
-            "cuno": "큐브 번호"
+            "scno": "날개 / 섹션 번호",
+            "cuno": "큐브 / 사무실 아니요",
+            "pep": "비밀번호를 입력 해주세요",
+            "chooseopt": "계속하려면 옵션을 선택하십시오",
+            "lase": "직원으로 로그인",
+            "lahr": "HR로 로그인"
         }
     },
     "th": {
@@ -576,8 +600,12 @@
             "classifyyourself": "แบ่งประเภทของตัวเอง",
             "bno": "อาคารเลขที่",
             "flno": "ชั้นที่",
-            "scno": "มาตรา",
-            "cuno": "เลขที่ Cube"
+            "scno": "Wing / Section Section",
+            "cuno": "คิวบ์ / หมายเลขสำนักงาน",
+            "pep": "กรุณาใส่รหัสผ่าน",
+            "chooseopt": "เลือกตัวเลือกเพื่อดำเนินการต่อ",
+            "lase": "เข้าสู่ระบบเป็นพนักงาน",
+            "lahr": "เข้าสู่ระบบเป็น HR"
         }
     },
     "de": {
@@ -659,8 +687,12 @@
             "classifyyourself": "Klassifizieren Sie sich",
             "bno": "Hausnummer",
             "flno": "Etage Nr",
-            "scno": "Abschnitt Nr",
-            "cuno": "Würfel Nr"
+            "scno": "Flügel / Abschnitt Nr",
+            "cuno": "Würfel / Büro Nr",
+            "pep": "Bitte Passwort eingeben",
+            "chooseopt": "Wählen Sie Optionen, um fortzufahren",
+            "lase": "Melden Sie sich als Mitarbeiter an",
+            "lahr": "Melden Sie sich als HR an"
         }
     }
 }

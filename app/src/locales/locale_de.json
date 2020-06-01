@@ -77,7 +77,11 @@
         "classifyyourself": "Klassifizieren Sie sich",
         "bno": "Hausnummer",
         "flno": "Etage Nr",
-        "scno": "Abschnitt Nr",
-        "cuno": "Würfel Nr"
+        "scno": "Flügel / Abschnitt Nr",
+        "cuno": "Würfel / Büro Nr",
+        "pep": "Bitte Passwort eingeben",
+        "chooseopt": "Wählen Sie Optionen, um fortzufahren",
+        "lase": "Melden Sie sich als Mitarbeiter an",
+        "lahr": "Melden Sie sich als HR an"
     }
 }

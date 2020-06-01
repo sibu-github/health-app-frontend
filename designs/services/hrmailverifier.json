@@ -1,0 +1,139 @@
+[
+    {
+        "id": "sd_hF5dbKElEaboSckT",
+        "type": "tab",
+        "createdDate": "2020-06-01T09:07:50.376Z",
+        "label": "hrmailverifier",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "hrmailverifier"
+    },
+    {
+        "id": "sd_r7DmcKt0D0fvtAUr",
+        "type": "Start",
+        "z": "sd_hF5dbKElEaboSckT",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "verifyEmail",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "apiURL",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "verifyEmail",
+        "category": "General",
+        "x": 80,
+        "y": 140,
+        "wires": [
+            [
+                "sd_wLTtgZk5nDHcudhs"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "hrmailverifier"
+    },
+    {
+        "id": "sd_wLTtgZk5nDHcudhs",
+        "type": "Script",
+        "z": "sd_hF5dbKElEaboSckT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "apiURL",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;",
+        "category": "Function",
+        "x": 225,
+        "y": 140,
+        "wires": [
+            [
+                "sd_i08KsUu1AjUUxyYK"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_i08KsUu1AjUUxyYK",
+        "type": "HttpRequest",
+        "z": "sd_hF5dbKElEaboSckT",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "verifymail",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.apiURL",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "apiURL"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "category": "HTTP",
+        "x": 365,
+        "y": 140,
+        "wires": [
+            [
+                "sd_r7yd10rK3zR6QVqO"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_r7yd10rK3zR6QVqO",
+        "type": "Log",
+        "z": "sd_hF5dbKElEaboSckT",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "bh",
+        "category": "General",
+        "x": 580,
+        "y": 160,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    }
+]

@@ -77,7 +77,11 @@
         "classifyyourself": "Classifique-se",
         "bno": "Edifício n.",
         "flno": "Piso não",
-        "scno": "Secção n.",
-        "cuno": "Cubo n."
+        "scno": "Asa / Seção Não",
+        "cuno": "Cubo / Escritório Não",
+        "pep": "Digite a senha",
+        "chooseopt": "Escolha Opções para continuar",
+        "lase": "Entrar como Funcionário",
+        "lahr": "Entrar como RH"
     }
 }

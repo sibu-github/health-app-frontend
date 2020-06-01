@@ -3,7 +3,7 @@
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png"></div>
+        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="25" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="width:80px;height:20px;" width="100px;"></div>
       </div>
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="75" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -47,14 +47,19 @@
   </div></em>
         </div>
       </form>
+      <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-button style="background: #5EA73E;color: #FFFFFF;margin-top: 50px;margin-left:85px;height: 55px;width: 160px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="signSubmit(certifyForm)">{{locales.Submit}}</button></div>
     </div>
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="end start" [fxShow]="true" [fxHide]="false"><label>
-        <button mat-button (click)="onBack()">
-          <mat-icon>keyboard_arrow_left</mat-icon>{{locales.back}}
-        </button></label></div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;margin-top: 50px;margin-left:90px;height: 60px;width: 150px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#52575C;border-radius: 44px;" (click)="signSubmit(certifyForm)">{{locales.Submit}}</button></div>
+        <div>
+
+          <mat-icon style="position: absolute;top: 430px;bottom: 24%;margin-left: 4px;font-size:12px;" (click)="onBack()">arrow_back_ios</mat-icon>
+          <button mat-flat-button style="margin-top: 6px;margin-left: 16px;font-family: Poppins;font-style: normal;font-weight: 500;font-size: 18px;line-height: 24px;display: flex;align-items: center;letter-spacing: 0.5px;text-transform: capitalize;color: #A1A4B1;
+" type="submit" (click)="onBack()">{{locales.back}}</button>
+        </div>
+      </label></div>
+    <div fxLayout="column wrap" style="width:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
 </div>

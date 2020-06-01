@@ -50,11 +50,16 @@
         },
         {
             "path": "hinfonext",
-            "component": "healthinfonextComponent"
+            "component": "healthinfonextComponent",
+            "children": []
         },
         {
             "path": "landpage",
             "component": "landingpageComponent"
+        },
+        {
+            "path": "optionpage",
+            "component": "hroptionComponent"
         },
         {
             "path": "''",

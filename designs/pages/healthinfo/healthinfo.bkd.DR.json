@@ -420,7 +420,7 @@
                                 },
                                 {
                                     "_key": "imgSrc",
-                                    "_value": "Web/image1.png",
+                                    "_value": "Web/Fit4digital.png",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -3940,7 +3940,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "answer2",
+                                "_value": "",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

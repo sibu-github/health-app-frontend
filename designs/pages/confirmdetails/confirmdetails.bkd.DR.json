@@ -420,7 +420,7 @@
                                 },
                                 {
                                     "_key": "imgSrc",
-                                    "_value": "Images\\image1.png",
+                                    "_value": "Web/Fit4digital.png",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -1685,7 +1685,6 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "2cec16d8-78e9-a2be-a445-1381fa270413",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1878,7 +1877,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "5adfa72a-22a6-fad7-6583-d34a93c221de",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2071,7 +2069,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "d51152e2-9ba7-f9f4-55d9-5ff2cc2a7f0c",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2098,7 +2095,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "5adfa72a-22a6-fad7-6583-d34a93c221de",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2291,7 +2287,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "b7ae6f64-b7bd-2b7f-42e1-55f5e06f3ece",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2499,7 +2494,6 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "2cec16d8-78e9-a2be-a445-1381fa270413",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -2692,7 +2686,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "4c12637b-80a0-35ab-be10-46eae1feb094",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2885,7 +2878,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "2398cf0d-6bb2-b0bf-f647-0fb48d607339",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2912,7 +2904,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "4c12637b-80a0-35ab-be10-46eae1feb094",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -3105,7 +3096,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "ac9c4c80-287a-0955-d4d8-27767b4a97f8",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -3167,7 +3157,7 @@
                             },
                             {
                                 "_key": "required",
-                                "_value": "required",
+                                "_value": "",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -3341,7 +3331,7 @@
                             },
                             {
                                 "_key": "required",
-                                "_value": "required",
+                                "_value": "",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -3515,7 +3505,7 @@
                             },
                             {
                                 "_key": "required",
-                                "_value": "required",
+                                "_value": "",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -3689,7 +3679,7 @@
                             },
                             {
                                 "_key": "required",
-                                "_value": "required",
+                                "_value": "",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -3838,7 +3828,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "width:100%;height:20%;margin-top:70px;",
+                                "_value": "width:100%;height:20%;margin-top:40px;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

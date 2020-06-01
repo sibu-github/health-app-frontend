@@ -77,7 +77,11 @@
         "classifyyourself": "Classify Yourself",
         "bno": "Building No",
         "flno": "Floor No",
-        "scno": "Section No",
-        "cuno": "Cube No"
+        "scno": "Wing / Section No",
+        "cuno": "Cube / Office No",
+        "pep": "Please Enter Password",
+        "chooseopt": "Choose Options To Continue",
+        "lase": "Login as Employee",
+        "lahr": "Login as HR"
     }
 }
