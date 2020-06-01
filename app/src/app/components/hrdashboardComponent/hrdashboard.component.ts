@@ -115,40 +115,47 @@ date:any;
         console.log(this.locationName);
         return values.filter(location => location.locationName.includes(this.locationName))
     }
-   async selected(data){
+async selected(data){
 if(data.option.value){
-let dashboard = await this.hrdashboard.hrDashboard({locationName: data.option.value})
+    if(this.fromDate && this.toDate){
+        console.log('with from & to Date');
+    let dashboard = await this.hrdashboard.hrDashboard({locationName: data.option.value, fromDate: this.fromDate, toDate: this.toDate})
         console.log(dashboard.local.result.q1Positive);
-      this.q2postive = dashboard.local.result.q2Positive;
-      this.q2negative = dashboard.local.result.q2Negative;
+         this.q3postive = dashboard.local.result.q2Positive;
+         this.q3negative = dashboard.local.result.q2Negative;
 
     //  //q2
-        this.q3postive = dashboard.local.result.q3Positive;
-        this.q3negative = dashboard.local.result.q3Negative;
+        this.q2postive = dashboard.local.result.q1Positive;
+        this.q2negative = dashboard.local.result.q1Negative;
      
     //  //q3
      this.q1postive = dashboard.local.result.q3Positive;
      this.q1negative = dashboard.local.result.q3Negative;
+    }else{
+
+    let dashboard = await this.hrdashboard.hrDashboard({locationName: data.option.value})
+        console.log(dashboard.local.result.q1Positive);
+      this.q3postive = dashboard.local.result.q2Positive;
+      this.q3negative = dashboard.local.result.q2Negative;
+
+    //  //q2
+        this.q2postive = dashboard.local.result.q1Positive;
+        this.q2negative = dashboard.local.result.q1Negative;
+     
+    //  //q3
+     this.q1postive = dashboard.local.result.q3Positive;
+     this.q1negative = dashboard.local.result.q3Negative;
+}
+}
+else{
+    console.log('No Location is Selected ')
 }
     }
     async dateselected(datedata){
     this.fromDate = datedata.value.toISOString().substring(0,10);
 
     console.log(this.fromDate);
-    // let dashboard = await this.hrdashboard.hrDashboard({fromDate: this.fromDate})
-    //     console.log(dashboard.local.result.q1Positive);
-    //   this.q2postive = dashboard.local.result.q2Positive;
-    //   this.q2negative = dashboard.local.result.q2Negative;
-
-    // //  //q2
-    //     this.q3postive = dashboard.local.result.q3Positive;
-    //     this.q3negative = dashboard.local.result.q3Negative;
-     
-    // //  //q3
-    //  this.q1postive = dashboard.local.result.q3Positive;
-    //  this.q1negative = dashboard.local.result.q3Negative;
-
-    //  let bh = await this.getlocation.getLocations()
+    
    
 }
 async toDateSelected(datedata){
@@ -158,12 +165,12 @@ async toDateSelected(datedata){
     if(this.fromDate){
     let dashboard = await this.hrdashboard.hrDashboard({toDate: this.toDate,fromDate: this.fromDate })
         console.log(dashboard.local.result.q1Positive);
-      this.q2postive = dashboard.local.result.q2Positive;
-      this.q2negative = dashboard.local.result.q2Negative;
+      this.q3postive = dashboard.local.result.q2Positive;
+      this.q3negative = dashboard.local.result.q2Negative;
 
     //  //q2
-        this.q3postive = dashboard.local.result.q3Positive;
-        this.q3negative = dashboard.local.result.q3Negative;
+        this.q2postive = dashboard.local.result.q1Positive;
+        this.q2negative = dashboard.local.result.q1Negative;
      
     //  //q3
      this.q1postive = dashboard.local.result.q3Positive;
@@ -173,7 +180,7 @@ async toDateSelected(datedata){
    
     }
     else{
-        consle.log('error');
+        console.log('No From Date');
     }
 }
   // private _filter(value: string): string[] {
