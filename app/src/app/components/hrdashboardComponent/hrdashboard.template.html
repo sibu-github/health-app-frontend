@@ -25,23 +25,32 @@
   </div>
   <div fxLayout="row wrap" style="width:100%;height:100px;" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false" fxLayout.xs="column"><label style="widht:100%; height:100%;" class="filters">
       Filters</label>
-    <div fxLayout="row wrap" fxLayoutGap="3px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1"><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="test hrtextbutton" [ngClass]="{&apos;test&apos;: newColor}" (click)="dashboarddata()">{{locales.global}}</button><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="hrtextbutton" (click)="dashboarddata()">{{locales.fromdate}}
-        <mat-icon>keyboard_arrow_down</mat-icon>
-      </button><button mat-button style="background: #5EA73E;border-radius: 40.5882px; width:120px; height:40px;" class="hrtextbutton" (click)="dashboarddata()">{{locales.todate}}
-        <mat-icon>keyboard_arrow_down</mat-icon>
-      </button></div>
-    <div fxLayout="row wrap" fxLayoutGap="3px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="2"><button mat-button style="background: #5EA73E;border-radius: 40.5882px; height:40px;" class="hrtextbutton" [matMenuTriggerFor]="tabledriven">{{locales.plantlocation}}
-        <mat-icon>keyboard_arrow_down</mat-icon>
-      </button>
+    <div fxLayout="row wrap" fxLayoutGap="3px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1">
+      <mat-form-field [appearance]="&apos;legacy&apos;">
+        <input matInput placeholder="From Date" [matDatepicker]="picker" (dateInput)="dateselected($event)" required [disabled]="false">
+        <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+        <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+
+      </mat-form-field>
+      <mat-form-field [appearance]="&apos;legacy&apos;">
+        <input matInput placeholder="To Date" [matDatepicker]="picker1" (dateInput)="toDateSelected($event)" required [disabled]="false">
+        <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 [disabled]="false"></mat-datepicker>
+
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="3px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="2">
       <form>
-        <mat-form-field class="example-full-width">
-          <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let option of locationname" [value]="option">
-              {{option.locationName}}
-            </mat-option>
-          </mat-autocomplete>
+
+        <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.confirmlocation}}" required #location="ngModel" pattern="[a-zA-Z0-9\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}" (ngModelChange)="locationFilter()" [matAutocomplete]="auto">
+
         </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+            {{location.locationName}}
+          </mat-option>
+        </mat-autocomplete>
       </form>
     </div>
   </div>

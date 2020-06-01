@@ -27,11 +27,18 @@ dashboard:any
  locationname :any
 q1postive:number 
 q1negative:number
-q2postive:number 
+q2postive:number
 q2negative:number
 q3postive:number 
 q3negative:number
-location:array[];
+location:any[];
+fromDate:any;
+toDate:any;
+newarr=[];
+updatelocations: any;
+totallocations: any;
+locationName: any;
+date:any;
 
 
  myControl:FormControl;
@@ -52,27 +59,28 @@ location:array[];
   
 
     async ngOnInit() {
-      // this.myControl = new FormControl();
-      // this.filteredOptions = this.myControl.valueChanges
-      // .pipe(
-      //   startWith(''),
-      //   map(value => this._filter(value))
-      // );
+        // console.log(date);
+    //   this.myControl = new FormControl();
+    //   console.log(this.myControl.valueChanges);
+    //   this.filteredOptions = this.myControl.valueChanges
+      
+    //   .pipe(
+    //     startWith(''),
+    //     map(value => this._filter(value))
+    //   );
         try{
         let dashboard = await this.hrdashboard.hrDashboard()
-         this.q2postive = dashboard.local.result.q1_count.postive[0].postive.toString();
-         this.q2negative = dashboard.local.result.q1_count.negative[0].negative;
+        console.log(dashboard.local.result.q1Positive);
+      this.q2postive = dashboard.local.result.q2Positive;
+      this.q2negative = dashboard.local.result.q2Negative;
 
-     //q2
-    this.q3postive = dashboard.local.result.q2_count.positive[0].postive;
-     this.q3negative = dashboard.local.result.q2_count.negative[0].negative;
+    //  //q2
+        this.q3postive = dashboard.local.result.q3Positive;
+        this.q3negative = dashboard.local.result.q3Negative;
      
-     //q3
-
-    
-
-     this.q1postive = dashboard.local.result.q3_count.positive[0].postive;
-     this.q1negative = dashboard.local.result.q3_count.negative[0].negative;
+    //  //q3
+     this.q1postive = dashboard.local.result.q3Positive;
+     this.q1negative = dashboard.local.result.q3Negative;
 
      let bh = await this.getlocation.getLocations()
             console.log(bh)
@@ -80,17 +88,18 @@ location:array[];
             // console.log(bh.local.result.length);
          console.log('locationlist',this.locationname);
          
+         
         // for(let i = 0; i < this.locationname.length; i++){
         //  console.log('forloop',this.locationname[i].locationName);
-        //  //this.location[i] = this.locationname[i].locationName
-        //    //await this.location.push(this.locationname[i].locationName);
-           
-        //  }
-        this.locationname.forEach((item)=>{
-          console.log(item.locationName);
-    this.location =item.locationName;
-        })
-         console.log('locations', this.location);
+//  }
+        // this.locationname.forEach((item)=>{
+        //   //console.log(item);
+        //   this.newarr.push(item.locationName);
+        //    })
+        this.location = this.newarr
+        this.updatelocations = bh.local.result;
+        this.totallocations = this.updatelocations;
+       console.log('locationinput', this.locationName);
         }
         catch(err){
             console.error(err)
@@ -98,15 +107,79 @@ location:array[];
       
 
   }
+ locationFilter() {
+        this.updatelocations = this.filter(this.totallocations);
+    }
 
+    filter(values) {
+        console.log(this.locationName);
+        return values.filter(location => location.locationName.includes(this.locationName))
+    }
+   async selected(data){
+if(data.option.value){
+let dashboard = await this.hrdashboard.hrDashboard({locationName: data.option.value})
+        console.log(dashboard.local.result.q1Positive);
+      this.q2postive = dashboard.local.result.q2Positive;
+      this.q2negative = dashboard.local.result.q2Negative;
+
+    //  //q2
+        this.q3postive = dashboard.local.result.q3Positive;
+        this.q3negative = dashboard.local.result.q3Negative;
+     
+    //  //q3
+     this.q1postive = dashboard.local.result.q3Positive;
+     this.q1negative = dashboard.local.result.q3Negative;
+}
+    }
+    async dateselected(datedata){
+    this.fromDate = datedata.value.toISOString().substring(0,10);
+
+    console.log(this.fromDate);
+    // let dashboard = await this.hrdashboard.hrDashboard({fromDate: this.fromDate})
+    //     console.log(dashboard.local.result.q1Positive);
+    //   this.q2postive = dashboard.local.result.q2Positive;
+    //   this.q2negative = dashboard.local.result.q2Negative;
+
+    // //  //q2
+    //     this.q3postive = dashboard.local.result.q3Positive;
+    //     this.q3negative = dashboard.local.result.q3Negative;
+     
+    // //  //q3
+    //  this.q1postive = dashboard.local.result.q3Positive;
+    //  this.q1negative = dashboard.local.result.q3Negative;
+
+    //  let bh = await this.getlocation.getLocations()
+   
+}
+async toDateSelected(datedata){
+    this.toDate = datedata.value.toISOString().substring(0,10);
+
+    console.log(this.toDate);
+    if(this.fromDate){
+    let dashboard = await this.hrdashboard.hrDashboard({toDate: this.toDate,fromDate: this.fromDate })
+        console.log(dashboard.local.result.q1Positive);
+      this.q2postive = dashboard.local.result.q2Positive;
+      this.q2negative = dashboard.local.result.q2Negative;
+
+    //  //q2
+        this.q3postive = dashboard.local.result.q3Positive;
+        this.q3negative = dashboard.local.result.q3Negative;
+     
+    //  //q3
+     this.q1postive = dashboard.local.result.q3Positive;
+     this.q1negative = dashboard.local.result.q3Negative;
+
+    //  let bh = await this.getlocation.getLocations()
+   
+    }
+    else{
+        consle.log('error');
+    }
+}
   // private _filter(value: string): string[] {
   //   const filterValue = value.toLowerCase();
 
-  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  //   return this.newarr.filter(option => option.toLowerCase().includes(filterValue));
   // } 
    
-    
- 
-
- 
 }

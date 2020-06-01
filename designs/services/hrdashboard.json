@@ -18,7 +18,16 @@
         "name": "hrDashboard",
         "outputs": 1,
         "noerr": 0,
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "body",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
         "localVariables": [
             {
                 "key": "result",
@@ -85,9 +94,10 @@
         },
         "ret": "json",
         "retMappingObj": {},
+        "reqBody": "bh.input.body",
         "reqBodyObj": {
-            "mapVarType": "bh",
-            "mapVarValue": ""
+            "mapVarType": "bh.input",
+            "mapVarValue": "body"
         },
         "resultMapping": "bh.local.result",
         "resultMappingObj": {

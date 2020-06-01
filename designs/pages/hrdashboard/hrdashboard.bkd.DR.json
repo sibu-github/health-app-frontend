@@ -2306,6 +2306,7 @@
                 "9306e0ed-0576-ee2d-563d-ccab124c077c": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "c72d614f-7997-acd1-d37e-1518b0cfa16c",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2376,6 +2377,7 @@
                 "9132db71-b9a5-68f5-44c4-dfee096db3f7": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "c72d614f-7997-acd1-d37e-1518b0cfa16c",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2439,6 +2441,7 @@
                 "d84925bb-fdfd-bffa-c8b6-a5613149a952": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "c72d614f-7997-acd1-d37e-1518b0cfa16c",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2496,6 +2499,483 @@
                             "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
+                        }
+                    ]
+                },
+                "2fba220d-803c-75c4-a763-10a852268dfe": {
+                    "paletteKey": "NG-DatePicker",
+                    "parentEditorKey": "c72d614f-7997-acd1-d37e-1518b0cfa16c",
+                    "isAdvancedComponent": true,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "From Date",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[dateClass]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "panelClass",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[min]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[max]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[startAt]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[calendarHeaderComponent]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "startView",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "touchUi",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(dateChange)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(dateInput)",
+                            "_value": "dateselected($event)",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[opened]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabledDatepicker]",
+                            "_value": "false",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabledDatepickerIcons]",
+                            "_value": "false",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabledDatepickerInput]",
+                            "_value": "false",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(opened)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(closed)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[matDatepickerFilter]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "picker",
+                            "_value": "picker",
+                            "_type": "ma",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "ngModel",
+                            "_value": "",
+                            "_type": "vk",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "required",
+                            "_value": "required",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(yearSelected)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(monthSelected)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "customIcon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[iconPosition]",
+                            "_value": "matSuffix",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        }
+                    ]
+                },
+                "81ef5a08-6553-973b-b955-fc0fb9dbd50d": {
+                    "paletteKey": "NG-DatePicker",
+                    "parentEditorKey": "c72d614f-7997-acd1-d37e-1518b0cfa16c",
+                    "isAdvancedComponent": true,
+                    "isCommented": "false",
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "To Date",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[dateClass]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "panelClass",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[min]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[max]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[startAt]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[calendarHeaderComponent]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "startView",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "touchUi",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(dateChange)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(dateInput)",
+                            "_value": "toDateSelected($event)",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[opened]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabledDatepicker]",
+                            "_value": "false",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabledDatepickerIcons]",
+                            "_value": "false",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabledDatepickerInput]",
+                            "_value": "false",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(opened)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(closed)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[matDatepickerFilter]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "picker",
+                            "_value": "picker1",
+                            "_type": "ma",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "ngModel",
+                            "_value": "",
+                            "_type": "vk",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "required",
+                            "_value": "required",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(yearSelected)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(monthSelected)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "customIcon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[iconPosition]",
+                            "_value": "matSuffix",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
                         }
                     ]
                 }
@@ -2709,6 +3189,7 @@
                 "0e0d7b2a-d078-09a1-3705-3a60c8d528d8": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "df9fd2d2-de50-01cf-b1c3-3cb8e779fb29",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2962,10 +3443,328 @@
                             "_visibility": false
                         }
                     ],
+                    "76607cd0-c94d-782b-ac78-f82f97439a13": {
+                        "paletteKey": "NG-Input",
+                        "parentEditorKey": "e0f9479b-9986-bc7d-d72f-debe47156988",
+                        "isAdvancedComponent": true,
+                        "designerReference": [
+                            {
+                                "_key": "style",
+                                "_value": "font-family:Poppins;font-style:normal;width:100%;",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "placeholder",
+                                "_value": "{{locales.confirmlocation}}",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "value",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[appearance]",
+                                "_value": "'legacy'",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "required",
+                                "_value": "required",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[(ngModel)]",
+                                "_value": "locationName",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "color",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "name",
+                                "_value": "locationName",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "type",
+                                "_value": "text",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[formControl]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "readonly",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[disabled]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "id",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[floatLabel]",
+                                "_value": "'auto'",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[hideRequiredMarker]",
+                                "_value": "false",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "matError",
+                                "_value": [],
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "inputHint",
+                                "_value": [],
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "Label",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "Suffix Icon",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "(suffixIconClick)",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "Prefix Icon",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "(prefixIconClick)",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "Prefix",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "Suffix",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": true
+                            },
+                            {
+                                "_key": "#location",
+                                "_value": "ngModel",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "pattern",
+                                "_value": "[a-zA-Z0-9\\s]+$",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "[ngModelOptions]",
+                                "_value": "{updateOn:'change'}",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "(ngModelChange)",
+                                "_value": "locationFilter()",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "[matAutocomplete]",
+                                "_value": "auto",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            }
+                        ]
+                    },
+                    "a253cf84-431f-6803-5d70-68e4411e5a0a": {
+                        "paletteKey": "ng-autocomplete",
+                        "parentEditorKey": "e0f9479b-9986-bc7d-d72f-debe47156988",
+                        "isAdvancedComponent": true,
+                        "designerReference": [
+                            {
+                                "_key": "componentLabel",
+                                "_value": "Autocomplete",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_useAsLabel": true
+                            },
+                            {
+                                "_key": "style",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "class",
+                                "_value": "",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "matAutocomplete",
+                                "_value": "auto",
+                                "_type": "vk",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "autoActiveFirstOption",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "[disableRipple]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "[displayWith]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "[panelWidth]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "(closed)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "(opened)",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "(optionSelected)",
+                                "_value": "selected($event)",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_complexity": "advanced"
+                            },
+                            {
+                                "_key": "*ngFor",
+                                "_value": "let location of updatelocations",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[groupOptions]",
+                                "_value": "noGroup",
+                                "_type": "dav",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "optionView",
+                                "_value": "{{location.locationName}}",
+                                "_type": "a",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[value]",
+                                "_value": "location.locationName",
+                                "_type": "kv",
+                                "_attrDef": "p"
+                            },
+                            {
+                                "_key": "[optionDatasource]",
+                                "_value": "",
+                                "_type": "a",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            },
+                            {
+                                "_key": "[label]",
+                                "_value": "",
+                                "_type": "kv",
+                                "_attrDef": "p",
+                                "_visibility": false
+                            }
+                        ]
+                    },
                     "e1aa618b-9dde-746a-b22d-63c8fb49b158": {
                         "paletteKey": "html-editor",
                         "parentEditorKey": "e0f9479b-9986-bc7d-d72f-debe47156988",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -2981,7 +3780,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": " <mat-form-field class=\"example-full-width\">\r\n    <input type=\"text\"\r\n           placeholder=\"Pick one\"\r\n           aria-label=\"Number\"\r\n           matInput\r\n           [formControl]=\"myControl\"\r\n           [matAutocomplete]=\"auto\">\r\n    <mat-autocomplete #auto=\"matAutocomplete\">\r\n      <mat-option *ngFor=\"let option of locationname\" [value]=\"option\">\r\n        {{option.locationName}}\r\n      </mat-option>\r\n    </mat-autocomplete>\r\n  </mat-form-field>",
+                                "_value": "   <mat-form-field style=\"font-family:Poppins;font-style:normal;width:100%;\" [appearance]=\"&apos;legacy&apos;\" [floatLabel]=\"&apos;auto&apos;\" [hideRequiredMarker]=\"false\">\r\n          <input matInput [(ngModel)]=\"locationName\" name=\"locationName\" type=\"text\" placeholder=\"{{locales.confirmlocation}}\" required #location=\"ngModel\" pattern=\"[a-zA-Z0-9\\s]+$\" [ngModelOptions]=\"{updateOn:&apos;change&apos;}\" (ngModelChange)=\"locationFilter()\" [matAutocomplete]=\"auto\">\r\n\r\n        </mat-form-field>\r\n        <mat-autocomplete #auto=\"matAutocomplete\">\r\n          <mat-option *ngFor=\"let location of newarr\" [value]=\"location\">\r\n            {{location}}\r\n          </mat-option>\r\n        </mat-autocomplete>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
@@ -3065,7 +3864,6 @@
             "494773b7-e733-04a9-6e84-dd74a1a6d76e": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "93b3651a-57de-7840-f084-77cb55732cd3",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -3145,7 +3943,6 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "494773b7-e733-04a9-6e84-dd74a1a6d76e",
                     "isAdvancedComponent": true,
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -3332,7 +4129,6 @@
                     "373469f0-b5d8-e362-a6a3-31cb48ce6b62": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "dafea18a-abd3-0bdc-18d2-0577ce21bcc4",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -3400,7 +4196,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "373469f0-b5d8-e362-a6a3-31cb48ce6b62",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -3590,7 +4385,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "d407a301-222b-1941-fe07-319b73c4479b",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -3617,7 +4411,6 @@
                     "d06c1004-8aa6-9ea2-e656-5948aa102243": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "dafea18a-abd3-0bdc-18d2-0577ce21bcc4",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -3684,7 +4477,6 @@
                         "427edfe0-970d-aa38-14bf-d2884decbfe9": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "d06c1004-8aa6-9ea2-e656-5948aa102243",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -3751,7 +4543,6 @@
                             "51a3e16c-cc93-d54d-2f75-5ad1650e3158": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "427edfe0-970d-aa38-14bf-d2884decbfe9",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -3819,7 +4610,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "51a3e16c-cc93-d54d-2f75-5ad1650e3158",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -4009,7 +4799,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "b59950aa-4d15-76de-f3b4-aecc805bfc41",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -4036,7 +4825,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "51a3e16c-cc93-d54d-2f75-5ad1650e3158",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -4223,7 +5011,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "a026ecfd-e312-a171-f78b-b76b0a5dc0db",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -4250,7 +5037,6 @@
                             "f138fb4d-92db-5539-abcd-d115ad42b11b": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "427edfe0-970d-aa38-14bf-d2884decbfe9",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -4318,7 +5104,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "f138fb4d-92db-5539-abcd-d115ad42b11b",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -4508,7 +5293,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "70d1e8cc-b057-4d64-a0a3-0cbb17fa8c24",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -4535,7 +5319,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "f138fb4d-92db-5539-abcd-d115ad42b11b",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -4722,7 +5505,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "140f1c9f-d49a-0729-bf15-f38431d4a24d",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -4750,7 +5532,6 @@
                         "99cb34b5-1df3-04b8-04b3-9dae06248153": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "d06c1004-8aa6-9ea2-e656-5948aa102243",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -4817,7 +5598,6 @@
                             "d22749f6-4ab8-7277-3dbb-a896da809238": {
                                 "paletteKey": "NG-image",
                                 "parentEditorKey": "99cb34b5-1df3-04b8-04b3-9dae06248153",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -4901,7 +5681,6 @@
             "e623906b-af98-89a5-8fab-4fe94eef6afb": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "93b3651a-57de-7840-f084-77cb55732cd3",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -4981,7 +5760,6 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "e623906b-af98-89a5-8fab-4fe94eef6afb",
                     "isAdvancedComponent": true,
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -5168,7 +5946,6 @@
                     "57669dea-b2ab-5ea9-4909-d79f188d77a6": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "b87cb621-11fc-2979-1eef-d9535c956398",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -5236,7 +6013,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "57669dea-b2ab-5ea9-4909-d79f188d77a6",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -5426,7 +6202,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "14873154-c62c-39a8-bd69-e9099ed6f3d3",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -5453,7 +6228,6 @@
                     "c4d97693-32e8-41de-0fd7-f70ee809b4e2": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "b87cb621-11fc-2979-1eef-d9535c956398",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -5520,7 +6294,6 @@
                         "f8fe95cf-868a-0cf6-6535-a7cb979df0d6": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "c4d97693-32e8-41de-0fd7-f70ee809b4e2",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -5587,7 +6360,6 @@
                             "b4b9306e-bd85-854f-460c-658f53efe11f": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "f8fe95cf-868a-0cf6-6535-a7cb979df0d6",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -5655,7 +6427,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "b4b9306e-bd85-854f-460c-658f53efe11f",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -5845,7 +6616,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "e1c1523e-8c6a-2336-6ce2-5064ddf7a826",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -5872,7 +6642,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "b4b9306e-bd85-854f-460c-658f53efe11f",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -6059,7 +6828,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "708df23b-7080-235e-d7fa-843c8b3847b3",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -6086,7 +6854,6 @@
                             "fe92a4e0-8bbd-e811-7ebe-674285c589af": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "f8fe95cf-868a-0cf6-6535-a7cb979df0d6",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -6154,7 +6921,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "fe92a4e0-8bbd-e811-7ebe-674285c589af",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -6344,7 +7110,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "3bf6d41c-2b4c-95b9-5a12-2ef77571d6b2",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -6371,7 +7136,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "fe92a4e0-8bbd-e811-7ebe-674285c589af",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -6558,7 +7322,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "168849a7-9e6d-e4fb-a688-fa8e92287a6d",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -6586,7 +7349,6 @@
                         "4571f71a-dc17-580e-689e-62d8be1aef3a": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "c4d97693-32e8-41de-0fd7-f70ee809b4e2",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -6653,7 +7415,6 @@
                             "c71798e3-ab23-c8aa-0360-8097e15b652f": {
                                 "paletteKey": "NG-image",
                                 "parentEditorKey": "4571f71a-dc17-580e-689e-62d8be1aef3a",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -6737,7 +7498,6 @@
             "cc9d273e-6103-b213-2ad1-9f68ed7ec2f1": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "93b3651a-57de-7840-f084-77cb55732cd3",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -6817,7 +7577,6 @@
                     "paletteKey": "Html5",
                     "parentEditorKey": "cc9d273e-6103-b213-2ad1-9f68ed7ec2f1",
                     "isAdvancedComponent": true,
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -7004,7 +7763,6 @@
                     "552a2534-bed3-464a-e54a-460e421f3f2f": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "c2865824-65bf-01cf-bbad-8eb56be606dc",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -7072,7 +7830,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "552a2534-bed3-464a-e54a-460e421f3f2f",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -7262,7 +8019,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "165fc11c-a567-23ea-fe14-c350eeb9deab",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -7289,7 +8045,6 @@
                     "96daff8a-5417-e43d-64ad-7ba3c3e8a148": {
                         "paletteKey": "FlexLayoutRow",
                         "parentEditorKey": "c2865824-65bf-01cf-bbad-8eb56be606dc",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -7356,7 +8111,6 @@
                         "6682b8c9-5405-4000-09af-882d36ee9993": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "96daff8a-5417-e43d-64ad-7ba3c3e8a148",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -7423,7 +8177,6 @@
                             "77f93546-715e-1e03-4c1c-cf3d1c14ea57": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "6682b8c9-5405-4000-09af-882d36ee9993",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -7491,7 +8244,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "77f93546-715e-1e03-4c1c-cf3d1c14ea57",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -7681,7 +8433,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "49d386bb-3e85-1a5f-5e90-a904f141aed0",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -7708,7 +8459,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "77f93546-715e-1e03-4c1c-cf3d1c14ea57",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -7895,7 +8645,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "b8f4857b-b36f-21e8-4875-0266bd58a4e4",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -7922,7 +8671,6 @@
                             "98dbf4b1-9238-a6d3-ec5e-fcd59db2536a": {
                                 "paletteKey": "FlexLayoutRow",
                                 "parentEditorKey": "6682b8c9-5405-4000-09af-882d36ee9993",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",
@@ -7990,7 +8738,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "98dbf4b1-9238-a6d3-ec5e-fcd59db2536a",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -8180,7 +8927,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "03077a3a-fb1d-dbdb-9659-c7bcacff6d07",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -8207,7 +8953,6 @@
                                     "paletteKey": "Html5",
                                     "parentEditorKey": "98dbf4b1-9238-a6d3-ec5e-fcd59db2536a",
                                     "isAdvancedComponent": true,
-                                    "isCommented": "false",
                                     "designerReference": [
                                         {
                                             "_key": "style",
@@ -8394,7 +9139,6 @@
                                         "paletteKey": "html-editor",
                                         "parentEditorKey": "89f9723f-79b4-598c-457c-d2cc015ee2b5",
                                         "isAdvancedChildComponent": true,
-                                        "isCommented": "false",
                                         "designerReference": [
                                             {
                                                 "_key": "style",
@@ -8422,7 +9166,6 @@
                         "871480bc-7c87-3811-d99c-6cf49193e7cb": {
                             "paletteKey": "FlexLayoutCol",
                             "parentEditorKey": "96daff8a-5417-e43d-64ad-7ba3c3e8a148",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -8489,7 +9232,6 @@
                             "5fcb52fc-e24d-adff-cc29-9f396807b6ba": {
                                 "paletteKey": "NG-image",
                                 "parentEditorKey": "871480bc-7c87-3811-d99c-6cf49193e7cb",
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "componentLabel",

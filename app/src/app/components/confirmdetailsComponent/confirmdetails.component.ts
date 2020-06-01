@@ -52,7 +52,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
             console.log(bh.local.result);
              this.updatelocations = bh.local.result;
              this.totallocations = this.updatelocations;
-            // console.log(this.totallocations)
+            console.log(this.totallocations)
         }catch(err) {
             console.error(err);
         }
@@ -109,7 +109,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     }
 
     filter(values) {
-       // console.log(values);
+       console.log(values);
         return values.filter(location => location.locationName.includes(this.locationName))
     }
 }
