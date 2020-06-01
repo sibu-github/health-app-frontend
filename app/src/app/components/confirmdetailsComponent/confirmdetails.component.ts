@@ -50,26 +50,26 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     if (language) {
       this.localeService.language = language;
     }
-    // for prepopulating the data
-    let uResp = localStorage.getItem("userResponse");
-    if (uResp) {
-      this.localdata = JSON.parse(uResp);
-    }
-    console.log(this.localdata);
+    // // for prepopulating the data
+    // let uResp = localStorage.getItem("userResponse");
+    // if (uResp) {
+    //   this.localdata = JSON.parse(uResp);
+    // }
+    // console.log(this.localdata);
   }
 
   async ngOnInit() {
-    if (this.localdata && this.localdata.locationName) {
-      this.locationName = this.localdata.locationName;
-      this.phone = this.localdata.phone;
-      this.buildingNo = this.localdata.buildingNo;
-      this.sectionNo = this.localdata.sectionNo;
-      this.floorNo = this.localdata.floorNo;
-      this.cubeNo = this.localdata.cubeNo;
-    } else {
-      this.locationName = this.defaultLocationName.slice(0);
-      this.phone = "";
-    }
+    // if (this.localdata && this.localdata.locationName) {
+    //   this.locationName = this.localdata.locationName;
+    //   this.phone = this.localdata.phone;
+    //   this.buildingNo = this.localdata.buildingNo;
+    //   this.sectionNo = this.localdata.sectionNo;
+    //   this.floorNo = this.localdata.floorNo;
+    //   this.cubeNo = this.localdata.cubeNo;
+    // } else {
+    //   this.locationName = this.defaultLocationName.slice(0);
+    //   this.phone = "";
+    // }
 
     // this.updatelocations = this.datash.getlocationdata();
 

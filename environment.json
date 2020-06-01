@@ -13,7 +13,12 @@
             "SSD_BASE_PATH": "server",
             "SSD_DEFAULT_PORT": "server",
             "webAppMountpoint": "both",
-            "CLOCK_TOLERANCE": "server"
+            "CLOCK_TOLERANCE": "server",
+            "azureClientID": "both",
+            "azureAuthURL": "both",
+            "redirectURL": "both",
+            "azureScopes": "both",
+            "azureResponseType": "both"
         }
     },
     "dev": {
@@ -30,7 +35,12 @@
             "SSD_BASE_PATH": "/api",
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
-            "CLOCK_TOLERANCE": "5"
+            "CLOCK_TOLERANCE": "5",
+            "azureClientID": "18a118d6-dbdb-40e7-8f77-3fe294c27ead",
+            "azureAuthURL": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+            "redirectURL": "http://localhost:3000/authorize",
+            "azureScopes": "openid profile offline_access",
+            "azureResponseType": "code"
         }
     },
     "prod": {
@@ -47,7 +57,12 @@
             "SSD_BASE_PATH": "/api",
             "SSD_DEFAULT_PORT": "8081",
             "webAppMountpoint": "web",
-            "CLOCK_TOLERANCE": "5"
+            "CLOCK_TOLERANCE": "5",
+            "azureClientID": "18a118d6-dbdb-40e7-8f77-3fe294c27ead",
+            "azureAuthURL": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize",
+            "redirectURL": "http://localhost:3000/authorize",
+            "azureScopes": "openid profile offline_access",
+            "azureResponseType": "code"
         }
     }
 }

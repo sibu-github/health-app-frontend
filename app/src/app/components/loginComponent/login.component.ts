@@ -26,11 +26,17 @@ export class loginComponent extends NBaseComponent implements OnInit {
   ) {
     super();
     let language = window.localStorage.getItem("language");
-
     if (language) {
       this.localeService.language = language;
     }
   }
+
+    showInAppBrowser(){
+        
+    }
+
+
+
 
   ngOnInit() {}
   async login(form) {

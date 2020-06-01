@@ -65,8 +65,11 @@ export class saveuserresponse {
     }
   }
 
-  public async getIfUserSubmitted(email = '', ...others) {
-    let bh = { input: { email: email }, local: { result: undefined } };
+  public async getIfUserSubmitted(email = '', apiURL = '', ...others) {
+    let bh = {
+      input: { email: email, apiURL: apiURL },
+      local: { result: undefined }
+    };
     try {
       bh = this.sdService.__constructDefault(bh);
       bh = await this.sd_Og123zKXVRzX2ldq(bh);
@@ -82,6 +85,52 @@ export class saveuserresponse {
       return outputVariables;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_UT6P090uRaDXp7Bs');
+    }
+  }
+
+  public async getTokenFromCode(authCode = '', apiURL = '', ...others) {
+    let bh = {
+      input: { authCode: authCode, apiURL: apiURL },
+      local: { result: undefined }
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_dSeRMJ9WXtUgRhgs(bh);
+      //appendnew_next_getTokenFromCode
+      //Start formatting output variables
+      let outputVariables = {
+        input: {},
+        local: {
+          result: bh.local.result
+        }
+      };
+      //End formatting output variables
+      return outputVariables;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_qCRbvPMFiNOH7zzr');
+    }
+  }
+
+  public async getNewTokens(refreshToken = '', apiURL = '', ...others) {
+    let bh = {
+      input: { refreshToken: refreshToken, apiURL: apiURL },
+      local: { result: undefined }
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_5g1JuQUdOxhsYmxt(bh);
+      //appendnew_next_getNewTokens
+      //Start formatting output variables
+      let outputVariables = {
+        input: {},
+        local: {
+          result: bh.local.result
+        }
+      };
+      //End formatting output variables
+      return outputVariables;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_T99l5q5gM9f8vrCK');
     }
   }
   //appendnew_flow_saveuserresponse_Start
@@ -222,6 +271,88 @@ export class saveuserresponse {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_OhLN2vw7EWihaLcR');
+    }
+  }
+  async sd_dSeRMJ9WXtUgRhgs(bh) {
+    try {
+      const code = bh.input.authCode;
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getToken?code=${code}`;
+      bh = await this.sd_2UzkbppxpPiv9cll(bh);
+      //appendnew_next_sd_dSeRMJ9WXtUgRhgs
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_dSeRMJ9WXtUgRhgs');
+    }
+  }
+  async sd_2UzkbppxpPiv9cll(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.apiURL,
+        method: 'get',
+        responseType: 'json',
+        reportProgress: undefined,
+        headers: {},
+        params: {},
+        body: undefined
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_jChj41xC9Yu5CC1V(bh);
+      //appendnew_next_sd_2UzkbppxpPiv9cll
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_2UzkbppxpPiv9cll');
+    }
+  }
+  async sd_jChj41xC9Yu5CC1V(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.local.result);
+
+      //appendnew_next_sd_jChj41xC9Yu5CC1V
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_jChj41xC9Yu5CC1V');
+    }
+  }
+  async sd_5g1JuQUdOxhsYmxt(bh) {
+    try {
+      const refreshToken = bh.input.refreshToken;
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getNewTokens?refreshToken=${refreshToken}`;
+      console.log({ refreshToken });
+      console.log(bh.local.apiURL);
+      bh = await this.sd_87BdheXEiwUyIEnE(bh);
+      //appendnew_next_sd_5g1JuQUdOxhsYmxt
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_5g1JuQUdOxhsYmxt');
+    }
+  }
+  async sd_87BdheXEiwUyIEnE(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.apiURL,
+        method: 'get',
+        responseType: 'json',
+        reportProgress: undefined,
+        headers: {},
+        params: {},
+        body: undefined
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_YvPDbvTSCW4vRzYR(bh);
+      //appendnew_next_sd_87BdheXEiwUyIEnE
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_87BdheXEiwUyIEnE');
+    }
+  }
+  async sd_YvPDbvTSCW4vRzYR(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.local.result);
+
+      //appendnew_next_sd_YvPDbvTSCW4vRzYR
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_YvPDbvTSCW4vRzYR');
     }
   }
   //appendnew_node
