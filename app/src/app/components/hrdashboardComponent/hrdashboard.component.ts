@@ -120,6 +120,8 @@ if(data.option.value){
     if(this.fromDate && this.toDate){
         console.log('with from & to Date');
     let dashboard = await this.hrdashboard.hrDashboard({locationName: data.option.value, fromDate: this.fromDate, toDate: this.toDate})
+        this.fromDate='';
+        this.toDate='';
         console.log(dashboard.local.result.q1Positive);
          this.q3postive = dashboard.local.result.q2Positive;
          this.q3negative = dashboard.local.result.q2Negative;
