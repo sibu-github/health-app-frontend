@@ -75,11 +75,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   async letStart() {
-
-      this.router.navigate(['/optionpage']);
-      return;
-
-
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");
     let refreshToken = window.localStorage.getItem("refreshToken");
