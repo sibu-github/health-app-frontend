@@ -55,7 +55,27 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.getJWT();
+  }
+
+    // get JWT token to make API call
+    // in the non employee flow this is the starting page
+    async getJWT(){
+        try {
+            const bh = await this.userService.getJWT()
+            if(bh && bh.local && bh.local.result){
+                const jwtToken = bh.local.result.token;
+                // set the jwtToken in the localStorage so that can be used throughout the application
+                if(jwtToken){
+                    window.localStorage.setItem('jwtToken', `Bearer ${jwtToken}`)
+                }
+            }
+        } catch(err){
+            console.error(err)
+        }
+    }
+
 
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -139,7 +159,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     const SCOPE = this.azureScope;
     const RESPONSE_TYPE = this.azureResponseType;
     const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
-    console.log({ loginUrl });
 
     // if document URL is starting with http then it is opened from browser
     // otherwise from mobile

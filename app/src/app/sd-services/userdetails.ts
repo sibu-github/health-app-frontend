@@ -49,6 +49,11 @@ export class userdetails {
   async sd_9sGvXKpcJuz4o6iA(bh) {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userinfo`;
+
+      const jwtToken = window.localStorage.getItem('jwtToken');
+      bh.local.headers = {
+        Authorization: jwtToken
+      };
       bh = await this.sd_b3dGX6U7nArDuByi(bh);
       //appendnew_next_sd_9sGvXKpcJuz4o6iA
       return bh;
@@ -63,7 +68,7 @@ export class userdetails {
         method: 'post',
         responseType: 'json',
         reportProgress: undefined,
-        headers: {},
+        headers: bh.local.headers,
         params: {},
         body: bh.input.data
       };
