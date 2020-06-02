@@ -1,5 +1,5 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
@@ -28,12 +28,13 @@ import { HeroService } from '../../services/hero/hero.service';
 export class landingpageComponent extends NBaseComponent implements OnInit {
   public href: string = "";
   public inAppBrowserRef: any;
-  public defaultlang:string = 'English';
+  public defaultlang:string = 'en';
 
   constructor(private router: Router, 
             private masterdata: masterdataService,
             private userService: saveuserresponse, 
-            private hrmailService:hrmailverifier) {
+            private hrmailService:hrmailverifier,
+            private _zone: NgZone) {
     super();
 
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
@@ -74,6 +75,11 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   async letStart() {
+
+      this.router.navigate(['/optionpage']);
+      return;
+
+
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");
     let refreshToken = window.localStorage.getItem("refreshToken");
@@ -168,24 +174,24 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         return;
       }
 
-    // call service to get accessToken, refreshToken and user details   
-      let bh = await this.userService.getTokenFromCode(code);
-      console.log(bh)
-      this.setTokensNUserLocalStorage(bh);
+        // call service to get accessToken, refreshToken and user details   
+        let bh = await this.userService.getTokenFromCode(code);
         console.log(bh)
-    // call service to check if the user is a hradmin or not
-    if(bh.local && bh.local.result){
-        let email = bh.local.result.user.email
-        console.log({email})
-        let dt = await this.hrmailService.verifyEmail(email)
-        console.log(dt)
-        if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
-            this.router.navigate(["/optionpage"]);
-            return
+        this.setTokensNUserLocalStorage(bh);
+        console.log(bh)
+        // call service to check if the user is a hradmin or not
+        if(bh.local && bh.local.result){
+            let email = bh.local.result.user.email
+            console.log({email})
+            let dt = await this.hrmailService.verifyEmail(email)
+            let pagename = '/confirmdetails'
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+                pagename = "/optionpage";
+            }
+            this._zone.run(()=>{
+                this.router.navigate([pagename])
+            });
         }
-        // otherwise redirect to confirmdetails page
-        this.router.navigate(["/confirmdetails"]);
-    }
 
     } catch (err) {
       console.error(err);
