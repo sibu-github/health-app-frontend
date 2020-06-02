@@ -30,6 +30,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   public inAppBrowserRef: any;
   public defaultlang:string = 'en';
 
+// Ideally we should set all these properties in the environment and read it from there
+// keeping it as future refactoring task for now
+    private azureClientId:string = '18a118d6-dbdb-40e7-8f77-3fe294c27ead';
+    private azureAuthUrl:string = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize';
+    private azureRedirectUrl:string = 'http://localhost:3000/authorize';
+    private azureScope:string = 'openid profile offline_access';
+    private azureResponseType:string = 'code';
+
   constructor(private router: Router, 
             private masterdata: masterdataService,
             private userService: saveuserresponse, 
@@ -47,14 +55,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    //   const clientId = this.getVal('azureClientID')
-    //   const authURL = this.getVal('azureAuthURL')
-    //   const redirectURL = this.getVal('redirectURL')
-    //   const scopes = this.getVal('azureScopes')
-    //   const responseType = this.getVal('azureResponseType')
-    //   console.log({clientId, authURL, redirectURL, scopes, responseType})
-  }
+  ngOnInit() { }
 
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -95,7 +96,16 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         // redirect to confirmDetails page
         if (bh && bh.local && bh.local.result && bh.local.result.accessToken) {
           this.setTokensNUserLocalStorage(bh);
-          this.router.navigate(["/confirmdetails"]);
+          
+        // call service to check if the user is a hradmin or not
+            let email = bh.local.result.user.email
+            console.log({email})
+            let dt = await this.hrmailService.verifyEmail(email)
+            let pagename = '/confirmdetails'
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+                pagename = "/optionpage";
+            }
+            this.router.navigate([pagename]);
           return;
         }
       } catch (err) {
@@ -109,7 +119,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   // callback for loadstart event inappbrowser
   onLoadStartCallback({ url }) {
-    const REDIRECT_URL = "http://localhost:3000/authorize";
+    const REDIRECT_URL = this.azureRedirectUrl;
     console.log("InAppBrowser load started...", url);
     if (url.indexOf(REDIRECT_URL) === 0) {
       console.log("loading recirect url");
@@ -123,12 +133,11 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   // show the microsoft login window
   showLoginScreen() {
-    const CLIENT_ID = "18a118d6-dbdb-40e7-8f77-3fe294c27ead";
-    const AUTH_URL =
-      "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
-    const REDIRECT_URL = "http://localhost:3000/authorize";
-    const SCOPE = "openid profile offline_access";
-    const RESPONSE_TYPE = "code";
+    const CLIENT_ID = this.azureClientId;
+    const AUTH_URL = this.azureAuthUrl;
+    const REDIRECT_URL = this.azureRedirectUrl;
+    const SCOPE = this.azureScope;
+    const RESPONSE_TYPE = this.azureResponseType;
     const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
     console.log({ loginUrl });
 
