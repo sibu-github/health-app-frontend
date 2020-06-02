@@ -22,6 +22,8 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
   // the backround color of the circle will change to amber otherwise green
   isAmber: boolean = false;
   today: string = "";
+  name;
+  localdata: any;
 
   // returns today's date in DD-MMM-YYYY format
   // which can be shown in the UI
@@ -63,7 +65,6 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
 
   constructor() {
     super();
-
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
@@ -77,8 +78,31 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    // for prepopulating the data
+    let uResp = localStorage.getItem("userResponse");
+    if (uResp) {
+      this.localdata = JSON.parse(uResp);
+    }
+
+    console.log(this.localdata);
+      // get firstName and lastName
+     let firstName =  localStorage.getItem("firstName");
+     let lastName = localStorage.getItem("lastName");
+     
+     if(firstName !== null && lastName !== null) {
+       console.log(firstName, lastName);
+         this.name = firstName + ' ' + lastName;
+          console.log(name);
+     } else {
+         if(this.localdata.firstName &&  this.localdata.lastName)   this.name = this.localdata.firstName + ' ' + this.localdata.lastName;
+     }
     // set today
-    this.today = this.getDay();
+    // new addon time AM/PM
+    var time = new Date();
+    console.log("time", time);
+    let timezone = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    this.today = this.getDay() + ' ' + timezone;
     console.log(this.today);
   }
 }
