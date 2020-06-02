@@ -26,6 +26,7 @@ import { HeroService } from '../../services/hero/hero.service';
 export class landingpageComponent extends NBaseComponent implements OnInit {
   public href: string = "";
   public inAppBrowserRef: any;
+  defaultlang:string;
 
   constructor(private router: Router, private userService: saveuserresponse) {
     super();
@@ -49,6 +50,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     //   console.log({clientId, authURL, redirectURL, scopes, responseType})
   }
 
+    //languages array which will show up in lang selection drop down
   languages: any[] = [
     { value: "en", viewValue: "English" },
     { value: "es", viewValue: "Spanish" },
@@ -59,14 +61,16 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "zh-CN", viewValue: "Chinese (Mandarin)" },
   ];
 
-  doSomething(event) {
+
+    //when user selects language, goes into below fun
+  languageSelect(event) {
     //console.log(event.value);
     window.localStorage.setItem("language", event.value);
     let language = window.localStorage.getItem("language");
     console.log(language);
     this.localeService.language = language;
   }
-
+    //when user selects lets starts button
   async letStart() {
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");

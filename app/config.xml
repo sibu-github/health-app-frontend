@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="co.blucocoondigital.health_app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>health-app</name>
+    <name>Care First</name>
     <description>Health App for Ingredion</description>
     <author email="ideas@neutrinos.co" href="http://neutrinos.co">
         Neutrinos Team
@@ -18,13 +18,13 @@
     <preference name="OverrideUserAgent" value="Mozilla/5.0 Google" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="src/assets/Android/res/drawable/icon.png" />
-        <icon density="ldpi" src="src/assets/Android/res/drawable-ldpi/icon.png" />
-        <icon density="mdpi" src="src/assets/Android/res/drawable-mdpi/icon.png" />
-        <icon density="hdpi" src="src/assets/Android/res/drawable-hdpi/icon.png" />
-        <icon density="xhdpi" src="src/assets/Android/res/drawable-xhdpi/icon.png" />
-        <icon density="xxhdpi" src="src/assets/Android/res/drawable-xxhdpi/icon.png" />
-        <icon density="xxxhdpi" src="src/assets/Android/res/drawable-xxxhdpi/icon.png" />
+        <icon src="src/assets/Android/res/drawable/icon1.jpg" />
+        <icon density="ldpi" src="src/assets/Android/res/drawable-ldpi/icon1.jpg" />
+        <icon density="mdpi" src="src/assets/Android/res/drawable-mdpi/icon1.jpg" />
+        <icon density="hdpi" src="src/assets/Android/res/drawable-hdpi/icon1.jpg" />
+        <icon density="xhdpi" src="src/assets/Android/res/drawable-xhdpi/icon1.jpg" />
+        <icon density="xxhdpi" src="src/assets/Android/res/drawable-xxhdpi/icon1.jpg" />
+        <icon density="xxxhdpi" src="src/assets/Android/res/drawable-xxxhdpi/icon1.jpg" />
         <splash src="src/assets/Android/res/drawable/screen2.png" />
         <splash src="src/assets/Android/res/drawable-land/screen2.png" />
         <splash density="ldpi" src="src/assets/Android/res/drawable-ldpi/screen2.png" />

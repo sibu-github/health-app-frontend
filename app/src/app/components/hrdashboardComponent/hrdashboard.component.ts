@@ -112,6 +112,7 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
       location.locationName.includes(this.locationName)
     );
   }
+  //when location and fron & to date is selected will call for backend and only location filter as well
   async selected(data) {
     if (data.option.value) {
       if (this.fromDate && this.toDate) {
@@ -154,6 +155,7 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
       console.log("No Location is Selected ");
     }
   }
+  //When both fromDate and todate is selected it will call backend and update front end
   async dateselected(datedata) {
     this.fromDate = datedata.value.toISOString().substring(0, 10);
 

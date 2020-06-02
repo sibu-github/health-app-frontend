@@ -387,3 +387,36 @@
 .test {
   background-color: #a1a4b1;
 }
+
+.mat-datepicker-toggle{
+   color:white;
+}
+bh-hrdashboard .mat-form-field-flex{
+  color:white !important;
+}
+.mat-form-field-infix {
+   
+    margin-left: 49px;
+    
+}
+bh-hrdashboard .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon {
+   display:none;
+      /* display: flex; */
+}
+ bh-hrdashboard .mat-form-field-label {
+      /*change color of label*/
+      color: white !important;
+  }
+   bh-hrdashboard .mat-focused .mat-form-field-label {
+    color: whitesmoke !important;
+    font-size: 20px;
+} 
+bh-hrdashboard .mat-icon{
+vertical-align: bottom;
+}
+.margin{
+    margin-left: 45px!important;
+}
+.marginweb{
+    margin-left: 90px!important;
+}
