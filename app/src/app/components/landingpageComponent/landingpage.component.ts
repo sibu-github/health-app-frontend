@@ -32,9 +32,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
 // Ideally we should set all these properties in the environment and read it from there
 // keeping it as future refactoring task for now
-    private azureClientId:string = '18a118d6-dbdb-40e7-8f77-3fe294c27ead';
-    private azureAuthUrl:string = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize';
-    private azureRedirectUrl:string = 'http://localhost:3000/authorize';
+    private azureClientId:string = 'c4f2534b-88d8-4671-9804-495b19e235aa';
+    private azureAuthUrl:string = 'https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc/oauth2/v2.0/authorize';
+    private azureRedirectUrl:string = 'https://health-appuat.azurewebsites.net/logincomplete';
     private azureScope:string = 'openid profile offline_access';
     private azureResponseType:string = 'code';
 
