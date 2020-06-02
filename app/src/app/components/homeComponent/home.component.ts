@@ -42,7 +42,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
             const username = localStorage.getItem('username')
             // if the username is not stored in the localstorage
             // we show landingpage
-            if(!username){
+            if(!username || username === 'undefined'){
                 this.router.navigate(['/landingpage']);
                 return
             }

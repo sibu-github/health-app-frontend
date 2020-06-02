@@ -2,7 +2,9 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
+import { hrmailverifier } from "app/sd-services/hrmailverifier";
 interface Language {
   value: string;
   viewValue: string;
@@ -26,8 +28,12 @@ import { HeroService } from '../../services/hero/hero.service';
 export class landingpageComponent extends NBaseComponent implements OnInit {
   public href: string = "";
   public inAppBrowserRef: any;
+  public defaultlang:string = 'English';
 
-  constructor(private router: Router, private userService: saveuserresponse) {
+  constructor(private router: Router, 
+            private masterdata: masterdataService,
+            private userService: saveuserresponse, 
+            private hrmailService:hrmailverifier) {
     super();
 
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
@@ -162,9 +168,25 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         return;
       }
 
-      const bh = await this.userService.getTokenFromCode(code);
+    // call service to get accessToken, refreshToken and user details   
+      let bh = await this.userService.getTokenFromCode(code);
+      console.log(bh)
       this.setTokensNUserLocalStorage(bh);
-      this.router.navigate(["/confirmdetails"]);
+        console.log(bh)
+    // call service to check if the user is a hradmin or not
+    if(bh.local && bh.local.result){
+        let email = bh.local.result.user.email
+        console.log({email})
+        let dt = await this.hrmailService.verifyEmail(email)
+        console.log(dt)
+        if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+            this.router.navigate(["/optionpage"]);
+            return
+        }
+        // otherwise redirect to confirmdetails page
+        this.router.navigate(["/confirmdetails"]);
+    }
+
     } catch (err) {
       console.error(err);
     }
@@ -176,12 +198,13 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       console.log(bh.local.result);
       window.localStorage.setItem("accessToken", bh.local.result.accessToken);
       window.localStorage.setItem("refreshToken", bh.local.result.refreshToken);
-      window.localStorage.setItem("email", bh.local.result.email);
-      window.localStorage.setItem("username", bh.local.result.email);
+      window.localStorage.setItem("email", bh.local.result.user.email);
+      window.localStorage.setItem("username", bh.local.result.user.email);
       window.localStorage.setItem("firstName", bh.local.result.user.firstName);
       window.localStorage.setItem("lastName", bh.local.result.user.lastName);
       window.localStorage.setItem("location", bh.local.result.user.location);
       window.localStorage.setItem("phone", bh.local.result.user.phone);
+      this.masterdata.email = bh.local.result.email;
     }
   }
 }
