@@ -38,24 +38,24 @@ export class contactinformationComponent extends NBaseComponent
       this.localeService.language = language;
     }
 
-    let uResp = localStorage.getItem("userResponse");
-    if (uResp) {
-      this.localdata = JSON.parse(uResp);
-    }
+    // let uResp = localStorage.getItem("userResponse");
+    // if (uResp) {
+    //   this.localdata = JSON.parse(uResp);
+    // }
   }
 
   ngOnInit() {
-    if (this.localdata && this.localdata.firstName) {
-      this.email = this.localdata.email;
-      this.phone = this.localdata.phone;
-      this.company = this.localdata.company;
-      this.ingredioncontact = this.localdata.ingredionContact;
-    } else {
-      this.email = "";
-      this.phone = "";
-      this.company = "";
-      this.ingredioncontact = "";
-    }
+    // if (this.localdata && this.localdata.firstName) {
+    //   this.email = this.localdata.email;
+    //   this.phone = this.localdata.phone;
+    //   this.company = this.localdata.company;
+    //   this.ingredioncontact = this.localdata.ingredionContact;
+    // } else {
+    //   this.email = "";
+    //   this.phone = "";
+    //   this.company = "";
+    //   this.ingredioncontact = "";
+    // }
   }
 
   /**

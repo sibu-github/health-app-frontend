@@ -5,7 +5,7 @@
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
         <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\image1.png" style="margin-top:5px;"></div>
       </div>
-      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; /* identical to box height */  letter-spacing: 0.5px; text-transform: capitalize;">
+      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; letter-spacing: 0.5px; text-transform: capitalize;">
           {{locales.personalinformation}}</label></div>
       <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png" style="margin-left:15px;"></div>
     </div>
@@ -33,7 +33,7 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
         <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z0-9\s]+$" [matAutocomplete]="auto">
+          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z()0-9\s]+$" [matAutocomplete]="auto">
 
         </mat-form-field>
         <mat-autocomplete #auto="matAutocomplete">
@@ -44,7 +44,7 @@
         <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick)">
           <span *ngIf="location.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
-                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small>v</span></div>
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
         <mat-form-field style="width:100%;">
           <mat-label>Classify User</mat-label>
           <mat-select (selectionChange)="selectUser($event)" [(ngModel)]="type" name="type">
