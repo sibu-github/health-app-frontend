@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="co.blucocoondigital.healthapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Care First</name>
+    <name>Ingredion Care First</name>
     <description>Health App for Ingredion</description>
     <author email="ideas@neutrinos.co" href="http://neutrinos.co">
         Neutrinos Team
