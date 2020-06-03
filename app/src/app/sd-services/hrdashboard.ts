@@ -49,6 +49,11 @@ export class hrdashboard {
   async sd_kamBbrZpnMvR8rdb(bh) {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/dashboard`;
+
+      const jwtToken = window.localStorage.getItem('jwtToken');
+      bh.local.headers = {
+        Authorization: jwtToken
+      };
       bh = await this.sd_WgjyYUaFO0rOcUFb(bh);
       //appendnew_next_sd_kamBbrZpnMvR8rdb
       return bh;
@@ -63,7 +68,7 @@ export class hrdashboard {
         method: 'post',
         responseType: 'json',
         reportProgress: undefined,
-        headers: {},
+        headers: bh.local.headers,
         params: {},
         body: bh.input.body
       };
