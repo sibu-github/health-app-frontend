@@ -119,7 +119,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
           console.log("valid success");
           this.router.navigate(["/contactinfo"]);
           break;
-        }
+        } 
       }
       this.validclick = false;
       // this.router.navigate(['/thankyou']);

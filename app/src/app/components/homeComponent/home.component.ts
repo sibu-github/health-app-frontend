@@ -39,16 +39,19 @@ export class homeComponent extends NBaseComponent implements OnInit {
     // otherwise showLanding = true
     async fetchUserResponse(){
         try {
-            const username = localStorage.getItem('username')
+            const username = localStorage.getItem('username');
+            console.log(username);
+           
+            
+            const bh = await this.userService.getIfUserSubmitted(username);
+            console.log(bh);
+            
             // if the username is not stored in the localstorage
             // we show landingpage
             if(!username || username === 'undefined'){
                 this.router.navigate(['/landingpage']);
                 return
             }
-            
-            const bh = await this.userService.getIfUserSubmitted(username);
-            console.log(bh);
 
             let hasSubmitted = "no";
             let colorCode = "green";

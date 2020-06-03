@@ -127,6 +127,9 @@ export class masterdataService {
       };
       console.log(formdata);
       localStorage.setItem("userResponse", JSON.stringify(formdata));
+      var time = new Date().toLocaleDateString();
+      console.log("time", time);
+      localStorage.setItem("lastResponse", time);
       let bh = await this.saveuserService.saveUserData(formdata);
       console.log(bh.local.result);
       return bh.local.result;

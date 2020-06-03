@@ -1,7 +1,6 @@
 {
     "729fb150-57e2-5939-8be8-01c09cfcd425": {
         "paletteKey": "FlexLayoutCol",
-        "isCommented": "false",
         "designerReference": [
             {
                 "_key": "componentLabel",
@@ -69,7 +68,6 @@
             "paletteKey": "Html5",
             "parentEditorKey": "729fb150-57e2-5939-8be8-01c09cfcd425",
             "isAdvancedComponent": true,
-            "isCommented": "false",
             "designerReference": [
                 {
                     "_key": "style",
@@ -256,7 +254,6 @@
                 "paletteKey": "html-editor",
                 "parentEditorKey": "05b4536b-08d8-845f-8850-a4e092976678",
                 "isAdvancedChildComponent": true,
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "style",
