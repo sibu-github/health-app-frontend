@@ -31,7 +31,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   firstname: any; // data binding
   lastname: any; // data binding
   usertypes: any; // list of user types data
-  localdata: any;
+//   localdata: any;
   type: any;
   constructor(
     private router: Router,
@@ -46,10 +46,10 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     if (language) {
       this.localeService.language = language;
     }
-    let uResp = localStorage.getItem("userResponse");
-    if (uResp) {
-      this.localdata = JSON.parse(uResp);
-    }
+    // let uResp = localStorage.getItem("userResponse");
+    // if (uResp) {
+    //   this.localdata = JSON.parse(uResp);
+    // }
   }
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -69,17 +69,17 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     this.localeService.language = language;
   }
   async ngOnInit() {
-    if (this.localdata && this.localdata.firstName) {
-      this.firstname = this.localdata.firstName;
-      this.lastname = this.localdata.lastName;
-      this.locationName = this.localdata.locationName;
-      this.type = this.localdata.type.charAt(0).toUpperCase() + this.localdata.type.slice(1)
-    } else {
-      this.firstname = "";
-      this.lastname = "";
-      this.locationName = "";
-      this.type = "";
-    }
+    // if (this.localdata && this.localdata.firstName) {
+    //   this.firstname = this.localdata.firstName;
+    //   this.lastname = this.localdata.lastName;
+    //   this.locationName = this.localdata.locationName;
+    //   this.type = this.localdata.type.charAt(0).toUpperCase() + this.localdata.type.slice(1)
+    // } else {
+    //   this.firstname = "";
+    //   this.lastname = "";
+    //   this.locationName = "";
+    //   this.type = "";
+    // }
     try {
       this.usertypes = this.datash.getusertypes();
       console.log("uts", this.usertypes);
@@ -119,7 +119,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
           console.log("valid success");
           this.router.navigate(["/contactinfo"]);
           break;
-        }
+        } 
       }
       this.validclick = false;
       // this.router.navigate(['/thankyou']);

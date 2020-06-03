@@ -52,7 +52,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
-    }
+    
+      this.defaultlang = language
+            }
+     else{
+              this.defaultlang = 'en' ;
+          }
+    
+     
   }
 
   ngOnInit() { 
@@ -87,14 +94,17 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "zh-CN", viewValue: "Chinese (Mandarin)" },
   ];
 
-  doSomething(event) {
+selectedObjects : any[];
+
+    //when user selects language, goes into below fun
+  languageSelect(event) {
     //console.log(event.value);
     window.localStorage.setItem("language", event.value);
     let language = window.localStorage.getItem("language");
     console.log(language);
     this.localeService.language = language;
   }
-
+    //when user selects lets starts button
   async letStart() {
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");
@@ -122,7 +132,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
             console.log({email})
             let dt = await this.hrmailService.verifyEmail(email)
             let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true'){
                 pagename = "/optionpage";
             }
             this.router.navigate([pagename]);
@@ -208,7 +218,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
             console.log({email})
             let dt = await this.hrmailService.verifyEmail(email)
             let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized =='true'){
                 pagename = "/optionpage";
             }
             this._zone.run(()=>{
@@ -220,6 +230,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       console.error(err);
     }
   }
+
 
   // set user details and tokens in localstorage
   setTokensNUserLocalStorage(bh) {

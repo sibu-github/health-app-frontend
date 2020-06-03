@@ -2229,6 +2229,12 @@
                                 "_value": "ngModel",
                                 "_type": "kv",
                                 "_attrDef": "c"
+                            },
+                            {
+                                "_key": "pattern",
+                                "_value": "(^\\+?[0-9]{5,12})$",
+                                "_type": "kv",
+                                "_attrDef": "c"
                             }
                         ]
                     },
