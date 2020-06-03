@@ -122,7 +122,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
             console.log({email})
             let dt = await this.hrmailService.verifyEmail(email)
             let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true'){
                 pagename = "/optionpage";
             }
             this.router.navigate([pagename]);
@@ -208,7 +208,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
             console.log({email})
             let dt = await this.hrmailService.verifyEmail(email)
             let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized =='true'){
                 pagename = "/optionpage";
             }
             this._zone.run(()=>{
