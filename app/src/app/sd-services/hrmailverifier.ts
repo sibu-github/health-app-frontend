@@ -49,6 +49,11 @@ export class hrmailverifier {
   async sd_wLTtgZk5nDHcudhs(bh) {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;
+
+      const jwtToken = window.localStorage.getItem('jwtToken');
+      bh.local.headers = {
+        Authorization: jwtToken
+      };
       bh = await this.sd_i08KsUu1AjUUxyYK(bh);
       //appendnew_next_sd_wLTtgZk5nDHcudhs
       return bh;
@@ -63,7 +68,7 @@ export class hrmailverifier {
         method: 'get',
         responseType: 'json',
         reportProgress: undefined,
-        headers: {},
+        headers: bh.local.headers,
         params: {},
         body: undefined
       };

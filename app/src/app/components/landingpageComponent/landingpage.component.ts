@@ -1,8 +1,10 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit, AfterViewInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
+import { hrmailverifier } from "app/sd-services/hrmailverifier";
 interface Language {
   value: string;
   viewValue: string;
@@ -26,10 +28,21 @@ import { HeroService } from '../../services/hero/hero.service';
 export class landingpageComponent extends NBaseComponent implements OnInit {
   public href: string = "";
   public inAppBrowserRef: any;
-  defaultlang:string;
-  
+  public defaultlang:string = 'en';
 
-  constructor(private router: Router, private userService: saveuserresponse) {
+// Ideally we should set all these properties in the environment and read it from there
+// keeping it as future refactoring task for now
+    private azureClientId:string = 'c4f2534b-88d8-4671-9804-495b19e235aa';
+    private azureAuthUrl:string = 'https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc/oauth2/v2.0/authorize';
+    private azureRedirectUrl:string = 'https://health-appuat.azurewebsites.net/logincomplete';
+    private azureScope:string = 'openid profile offline_access';
+    private azureResponseType:string = 'code';
+
+  constructor(private router: Router, 
+            private masterdata: masterdataService,
+            private userService: saveuserresponse, 
+            private hrmailService:hrmailverifier,
+            private _zone: NgZone) {
     super();
 
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
@@ -50,27 +63,28 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
      
   }
 
-  ngOnInit() {
-
-      	this.selectedObjects = [{ value: "en", viewValue: "English" }];
-      //Selecting defalut language
-      
-    //    this.languages.filter((data)=>{
-    //      if (this.localeService.language == data.value){
-    //          this.defaultlang = data.viewValue
-    //          console.log(this.defaultlang)
-    //      }      
-         
-    //   })
-    //   const clientId = this.getVal('azureClientID')
-    //   const authURL = this.getVal('azureAuthURL')
-    //   const redirectURL = this.getVal('redirectURL')
-    //   const scopes = this.getVal('azureScopes')
-    //   const responseType = this.getVal('azureResponseType')
-    //   console.log({clientId, authURL, redirectURL, scopes, responseType})
+  ngOnInit() { 
+    this.getJWT();
   }
 
-    //languages array which will show up in lang selection drop down
+    // get JWT token to make API call
+    // in the non employee flow this is the starting page
+    async getJWT(){
+        try {
+            const bh = await this.userService.getJWT()
+            if(bh && bh.local && bh.local.result){
+                const jwtToken = bh.local.result.token;
+                // set the jwtToken in the localStorage so that can be used throughout the application
+                if(jwtToken){
+                    window.localStorage.setItem('jwtToken', `Bearer ${jwtToken}`)
+                }
+            }
+        } catch(err){
+            console.error(err)
+        }
+    }
+
+
   languages: any[] = [
     { value: "en", viewValue: "English" },
     { value: "es", viewValue: "Spanish" },
@@ -113,7 +127,16 @@ selectedObjects : any[];
         // redirect to confirmDetails page
         if (bh && bh.local && bh.local.result && bh.local.result.accessToken) {
           this.setTokensNUserLocalStorage(bh);
-          this.router.navigate(["/confirmdetails"]);
+          
+        // call service to check if the user is a hradmin or not
+            let email = bh.local.result.user.email
+            console.log({email})
+            let dt = await this.hrmailService.verifyEmail(email)
+            let pagename = '/confirmdetails'
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+                pagename = "/optionpage";
+            }
+            this.router.navigate([pagename]);
           return;
         }
       } catch (err) {
@@ -127,7 +150,7 @@ selectedObjects : any[];
 
   // callback for loadstart event inappbrowser
   onLoadStartCallback({ url }) {
-    const REDIRECT_URL = "http://localhost:3000/authorize";
+    const REDIRECT_URL = this.azureRedirectUrl;
     console.log("InAppBrowser load started...", url);
     if (url.indexOf(REDIRECT_URL) === 0) {
       console.log("loading recirect url");
@@ -141,14 +164,12 @@ selectedObjects : any[];
 
   // show the microsoft login window
   showLoginScreen() {
-    const CLIENT_ID = "18a118d6-dbdb-40e7-8f77-3fe294c27ead";
-    const AUTH_URL =
-      "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
-    const REDIRECT_URL = "http://localhost:3000/authorize";
-    const SCOPE = "openid profile offline_access";
-    const RESPONSE_TYPE = "code";
+    const CLIENT_ID = this.azureClientId;
+    const AUTH_URL = this.azureAuthUrl;
+    const REDIRECT_URL = this.azureRedirectUrl;
+    const SCOPE = this.azureScope;
+    const RESPONSE_TYPE = this.azureResponseType;
     const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
-    console.log({ loginUrl });
 
     // if document URL is starting with http then it is opened from browser
     // otherwise from mobile
@@ -187,9 +208,25 @@ selectedObjects : any[];
         return;
       }
 
-      const bh = await this.userService.getTokenFromCode(code);
-      this.setTokensNUserLocalStorage(bh);
-      this.router.navigate(["/confirmdetails"]);
+        // call service to get accessToken, refreshToken and user details   
+        let bh = await this.userService.getTokenFromCode(code);
+        console.log(bh)
+        this.setTokensNUserLocalStorage(bh);
+        console.log(bh)
+        // call service to check if the user is a hradmin or not
+        if(bh.local && bh.local.result){
+            let email = bh.local.result.user.email
+            console.log({email})
+            let dt = await this.hrmailService.verifyEmail(email)
+            let pagename = '/confirmdetails'
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized){
+                pagename = "/optionpage";
+            }
+            this._zone.run(()=>{
+                this.router.navigate([pagename])
+            });
+        }
+
     } catch (err) {
       console.error(err);
     }
@@ -202,12 +239,13 @@ selectedObjects : any[];
       console.log(bh.local.result);
       window.localStorage.setItem("accessToken", bh.local.result.accessToken);
       window.localStorage.setItem("refreshToken", bh.local.result.refreshToken);
-      window.localStorage.setItem("email", bh.local.result.email);
-      window.localStorage.setItem("username", bh.local.result.email);
+      window.localStorage.setItem("email", bh.local.result.user.email);
+      window.localStorage.setItem("username", bh.local.result.user.email);
       window.localStorage.setItem("firstName", bh.local.result.user.firstName);
       window.localStorage.setItem("lastName", bh.local.result.user.lastName);
       window.localStorage.setItem("location", bh.local.result.user.location);
       window.localStorage.setItem("phone", bh.local.result.user.phone);
+      this.masterdata.email = bh.local.result.email;
     }
   }
 }

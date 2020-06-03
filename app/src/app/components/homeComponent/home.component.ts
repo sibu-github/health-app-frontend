@@ -31,18 +31,48 @@ export class homeComponent extends NBaseComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.fetchUserResponse()
+        this.callAPI()
     }
+
+    // call API
+    async callAPI(){
+        try {
+            await this.getJWT();
+            await this.fetchUserResponse();
+        } catch(err){
+            console.error(err)
+        }
+    }
+
+
+    // get JWT token to make API call
+    async getJWT(){
+        try {
+            const bh = await this.userService.getJWT()
+            if(bh && bh.local && bh.local.result){
+                const jwtToken = bh.local.result.token;
+                // set the jwtToken in the localStorage so that can be used throughout the application
+                if(jwtToken){
+                    window.localStorage.setItem('jwtToken', `Bearer ${jwtToken}`)
+                }
+            }
+        } catch(err){
+            console.error(err)
+        }
+    }
+
+
 
     // check if the user has submitted response for the day
     // if user has submitted already then we set showThankYou = true
     // otherwise showLanding = true
     async fetchUserResponse(){
+        console.log('fetchUserResponse called')
         try {
             const username = localStorage.getItem('username')
             // if the username is not stored in the localstorage
             // we show landingpage
-            if(!username){
+            if(!username || username === 'undefined'){
                 this.router.navigate(['/landingpage']);
                 return
             }

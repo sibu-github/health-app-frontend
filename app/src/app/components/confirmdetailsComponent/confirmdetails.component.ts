@@ -24,7 +24,7 @@ import { masterdataService } from "../../services/masterdata/masterdata.service"
 })
 export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   validclick: Boolean;
-  defaultLocationName = "Westchester";
+  defaultLocationName;
   phone;
   updatelocations: any;
   totallocations: any;
@@ -51,19 +51,33 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
       this.localeService.language = language;
     }
     // // for prepopulating the data
-    // let uResp = localStorage.getItem("userResponse");
-    // if (uResp) {
-    //   this.localdata = JSON.parse(uResp);
-    // }
-    // console.log(this.localdata);
+    let uResp = localStorage.getItem("userResponse");
+    if (uResp) {
+      this.localdata = JSON.parse(uResp);
+    }
+    console.log(this.localdata);
+
+    this.defaultLocationName = localStorage.getItem('location');
+    this.phone = localStorage.getItem('phone');
   }
 
   async ngOnInit() {
-    this.locationName = this.defaultLocationName.slice(0);
-    this.phone = "817930010987";
-    //this.updatelocations = this.datash.getlocationdata();
 
-    // console.log(this.totallocations);
+     if (this.localdata && this.localdata.locationName) {
+      this.locationName = this.localdata.locationName;
+      this.phone = this.localdata.phone;
+      this.buildingNo = this.localdata.buildingNo;
+      this.sectionNo = this.localdata.sectionNo;
+      this.floorNo = this.localdata.floorNo;
+      this.cubeNo = this.localdata.cubeNo;
+    }
+     else if(this.defaultLocationName && this.phone){
+      this.locationName = this.defaultLocationName;
+      this.phone = this.phone;
+    } else {
+        console.log('Enter Manually')
+    }
+      
     try {
       let bh = await this.getlocation.getLocations();
       console.log(bh);

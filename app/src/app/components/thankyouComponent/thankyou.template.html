@@ -11,11 +11,27 @@
           {{locales.thankyou}}</div>
       </div>
     </div>
+    <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div style="bottom: 47.39%; font-family: Poppins; font-style: normal; font-weight: normal; font-size: 15px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; left: 35.2%; color: #283552;">
+        {{locales.submittedby}}
+
+      </div>
+    </div>
     <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
-      <div style="color: #283552;width:60%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
+      <div style="color: #283552;width:80%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
         {{locales.thankyoumessage}}
 
-        <div style="font-size: 20px; margin-top: 30px; font-weight: 600;">{{today}}</div>
+        <div style="    color: #283552;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    width: 100%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;margin-top: 40px;">{{name}}</div>
+        <div style="font-size: 15px; margin-top: 10px; font-weight: 500;">{{today}}</div>
       </div>
     </div>
   </div>
