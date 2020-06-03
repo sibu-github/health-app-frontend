@@ -10,7 +10,7 @@
             "client_info": {
                 "mobilesdk_app_id": "1:626566066881:android:aecfd1651b40f793",
                 "android_client_info": {
-                    "package_name": "co.blucocoondigital.health_app"
+                    "package_name": "co.blucocoondigital.healthapp"
                 }
             },
             "oauth_client": [
@@ -41,7 +41,7 @@
             "client_info": {
                 "mobilesdk_app_id": "1:626566066881:android:526ceacd73936248",
                 "android_client_info": {
-                    "package_name": "co.blucocoondigital.health_app"
+                    "package_name": "co.blucocoondigital.healthapp"
                 }
             },
             "oauth_client": [
@@ -72,7 +72,7 @@
             "client_info": {
                 "mobilesdk_app_id": "1:626566066881:android:953023f903e9daf0",
                 "android_client_info": {
-                    "package_name": "co.blucocoondigital.health_app"
+                    "package_name": "co.blucocoondigital.healthapp"
                 }
             },
             "oauth_client": [
