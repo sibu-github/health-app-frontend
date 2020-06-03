@@ -1,9 +1,9 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
-import {saveuserresponse} from 'app/sd-services/saveuserresponse';
+import { saveuserresponse } from 'app/sd-services/saveuserresponse';
 
 /*
 Client Service import Example:
@@ -22,8 +22,8 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class homeComponent extends NBaseComponent implements OnInit {
 
-    showSplash:boolean = true;
-    showThankYou:boolean = false;
+    showSplash: boolean = true;
+    showThankYou: boolean = false;
 
 
     constructor(private userService: saveuserresponse, private router: Router) {
@@ -35,28 +35,28 @@ export class homeComponent extends NBaseComponent implements OnInit {
     }
 
     // call API
-    async callAPI(){
+    async callAPI() {
         try {
             await this.getJWT();
             await this.fetchUserResponse();
-        } catch(err){
+        } catch (err) {
             console.error(err)
         }
     }
 
 
     // get JWT token to make API call
-    async getJWT(){
+    async getJWT() {
         try {
             const bh = await this.userService.getJWT()
-            if(bh && bh.local && bh.local.result){
+            if (bh && bh.local && bh.local.result) {
                 const jwtToken = bh.local.result.token;
                 // set the jwtToken in the localStorage so that can be used throughout the application
-                if(jwtToken){
+                if (jwtToken) {
                     window.localStorage.setItem('jwtToken', `Bearer ${jwtToken}`)
                 }
             }
-        } catch(err){
+        } catch (err) {
             console.error(err)
         }
     }
@@ -66,27 +66,31 @@ export class homeComponent extends NBaseComponent implements OnInit {
     // check if the user has submitted response for the day
     // if user has submitted already then we set showThankYou = true
     // otherwise showLanding = true
-    async fetchUserResponse(){
+    async fetchUserResponse() {
         console.log('fetchUserResponse called')
         try {
-            const username = localStorage.getItem('username')
-            // if the username is not stored in the localstorage
-            // we show landingpage
-            if(!username || username === 'undefined'){
-                this.router.navigate(['/landingpage']);
-                return
-            }
-            
+            const username = localStorage.getItem('username');
+            console.log(username);
+
+
             const bh = await this.userService.getIfUserSubmitted(username);
             console.log(bh);
 
+            // if the username is not stored in the localstorage
+            // we show landingpage
+            if (!username || username === 'undefined') {
+                this.router.navigate(['/landingpage']);
+                return
+            }
+
             let hasSubmitted = "no";
             let colorCode = "green";
-            if(bh.local && bh.local.result){
+            if (bh.local && bh.local.result) {
                 hasSubmitted = bh.local.result.updated;
+                console.log('hassum', hasSubmitted);
                 colorCode = bh.local.result.colorCode;
             }
-            
+
             // save the colorCode in localStorage
             window.localStorage.setItem('colorCode', colorCode);
 
@@ -94,20 +98,16 @@ export class homeComponent extends NBaseComponent implements OnInit {
             // hide splash screen
             this.showSplash = false;
             // when user already submitted show Thank You screen 
-            if(hasSubmitted === "yes"){
+            if (hasSubmitted === "yes") {
                 this.showThankYou = true;
                 return;
             }
-            
+
             // otherwise show landing page 
             this.router.navigate(['/landingpage']);
 
-        } catch(err){
+        } catch (err) {
             console.error(err)
         }
     }
-
-
-
-
 }

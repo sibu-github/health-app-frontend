@@ -1538,7 +1538,7 @@
                             },
                             {
                                 "_key": "pattern",
-                                "_value": "[a-zA-Z0-9\\s]+$",
+                                "_value": "[a-zA-Z()0-9\\s]+$",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             },
