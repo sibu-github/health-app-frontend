@@ -429,3 +429,18 @@ vertical-align: bottom;
 .mat-select-panel {
   max-height: 400px !important;
 }
+bh-landingpage .mat-form-field-type-mat-select .mat-form-field-label, .mat-select-value {
+  color: #5EA73E;
+   max-width: 100%;
+    width: auto;
+}
+bh-landingpage .mat-select {
+       border: 1px solid #5EA73E;
+    box-sizing: border-box;
+    border-radius: 44px;
+    height: 27px;
+    width: 117px;
+}
+// bh-landingpage .mat-select-trigger {
+//     height: 2.125em;
+// }

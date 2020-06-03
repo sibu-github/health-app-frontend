@@ -53,6 +53,9 @@
         "mat-focused",
         "margin",
         "marginweb",
-        "mat-select-panel"
+        "mat-select-panel",
+        "mat-form-field-type-mat-select",
+        "mat-select-value",
+        "mat-select"
     ]
 }
