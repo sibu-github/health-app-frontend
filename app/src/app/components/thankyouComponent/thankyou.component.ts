@@ -1,7 +1,9 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
-
+import { HostListener } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
+import {Router} from '@angular/router';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -61,9 +63,15 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     return dayStr;
   }
 
-  constructor() {
+  constructor(location: PlatformLocation, private router: Router) {
     super();
+    //disbale back button
+    location.onPopState(() => {
+    console.log('pressed back button');
 
+//this.router.navigateByUrl(‘/multicomponent’);
+//history.forward();
+});
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
@@ -81,4 +89,19 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     this.today = this.getDay();
     console.log(this.today);
   }
+    //press backbutton to exit app
+//     document.addEventListener('deviceready', function() {
+
+//     document.addEventListener("backbutton", ShowExitDialog, false);
+
+// }, false);
+// function ShowExitDialog() {
+//         navigator.notification.confirm(
+//                 ("Do you want to Exit?"), // message
+//                 alertexit, // callback
+//                 'My APp', // title
+//                 'YES,NO' // buttonName
+//         );
+
+//     }
 }

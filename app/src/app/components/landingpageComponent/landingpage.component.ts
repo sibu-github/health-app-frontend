@@ -27,6 +27,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   public href: string = "";
   public inAppBrowserRef: any;
   defaultlang:string;
+  
 
   constructor(private router: Router, private userService: saveuserresponse) {
     super();
@@ -38,10 +39,29 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
-    }
+    //   if(language.value == this.localeService.language ){
+    //           this.defaultlang = language.value;
+    //           console.log(this.defaultlang);
+    //       }
+    //       else{
+    //           this.defaultlang = ;
+    //       }
+     }
+     
   }
 
   ngOnInit() {
+
+      	this.selectedObjects = [{ value: "en", viewValue: "English" }];
+      //Selecting defalut language
+      
+    //    this.languages.filter((data)=>{
+    //      if (this.localeService.language == data.value){
+    //          this.defaultlang = data.viewValue
+    //          console.log(this.defaultlang)
+    //      }      
+         
+    //   })
     //   const clientId = this.getVal('azureClientID')
     //   const authURL = this.getVal('azureAuthURL')
     //   const redirectURL = this.getVal('redirectURL')
@@ -61,6 +81,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "zh-CN", viewValue: "Chinese (Mandarin)" },
   ];
 
+selectedObjects : any[];
 
     //when user selects language, goes into below fun
   languageSelect(event) {
@@ -173,6 +194,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       console.error(err);
     }
   }
+
 
   // set user details and tokens in localstorage
   setTokensNUserLocalStorage(bh) {

@@ -18,13 +18,13 @@
     <preference name="OverrideUserAgent" value="Mozilla/5.0 Google" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="src/assets/Android/res/drawable/icon1.jpg" />
-        <icon density="ldpi" src="src/assets/Android/res/drawable-ldpi/icon1.jpg" />
-        <icon density="mdpi" src="src/assets/Android/res/drawable-mdpi/icon1.jpg" />
-        <icon density="hdpi" src="src/assets/Android/res/drawable-hdpi/icon1.jpg" />
-        <icon density="xhdpi" src="src/assets/Android/res/drawable-xhdpi/icon1.jpg" />
-        <icon density="xxhdpi" src="src/assets/Android/res/drawable-xxhdpi/icon1.jpg" />
-        <icon density="xxxhdpi" src="src/assets/Android/res/drawable-xxxhdpi/icon1.jpg" />
+        <icon src="src/assets/Android/res/drawable/icon3.png" />
+        <icon density="ldpi" src="src/assets/Android/res/drawable-ldpi/icon3.png" />
+        <icon density="mdpi" src="src/assets/Android/res/drawable-mdpi/icon3.png" />
+        <icon density="hdpi" src="src/assets/Android/res/drawable-hdpi/icon3.png" />
+        <icon density="xhdpi" src="src/assets/Android/res/drawable-xhdpi/icon3.png" />
+        <icon density="xxhdpi" src="src/assets/Android/res/drawable-xxhdpi/icon3.png" />
+        <icon density="xxxhdpi" src="src/assets/Android/res/drawable-xxxhdpi/icon3.png" />
         <splash src="src/assets/Android/res/drawable/screen2.png" />
         <splash src="src/assets/Android/res/drawable-land/screen2.png" />
         <splash density="ldpi" src="src/assets/Android/res/drawable-ldpi/screen2.png" />

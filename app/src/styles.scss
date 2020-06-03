@@ -394,10 +394,16 @@
 bh-hrdashboard .mat-form-field-flex{
   color:white !important;
 }
-.mat-form-field-infix {
+//add margin left to hr dashboard
+bh-hrdashboard .mat-form-field-infix {
    
     margin-left: 49px;
     
+}
+//Remove underline for select language
+bh-landingpage .mat-form-field-underline {
+  display: none;
+
 }
 bh-hrdashboard .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon {
    display:none;
@@ -420,6 +426,6 @@ vertical-align: bottom;
 .marginweb{
     margin-left: 90px!important;
 }
-.hrfilteralign{
-justify-content: center!important;
+.mat-select-panel {
+  max-height: 400px !important;
 }
