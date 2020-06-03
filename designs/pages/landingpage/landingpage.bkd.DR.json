@@ -1074,7 +1074,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": " <mat-label>Select Language</mat-label>\r\n  <mat-select [(value)]=\"defaultlang\" (selectionChange)=\"languageSelect($event)\" >\r\n    <mat-option *ngFor=\"let language of languages\" [value]=\"language.value\">\r\n      {{language.viewValue}}\r\n    </mat-option>\r\n  </mat-select>",
+                                "_value": " \r\n  <mat-select [(value)]=\"defaultlang\" (selectionChange)=\"languageSelect($event)\" >\r\n    <mat-option *ngFor=\"let language of languages\" [value]=\"language.value\">\r\n      {{language.viewValue}}\r\n    </mat-option>\r\n  </mat-select>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }

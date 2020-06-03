@@ -52,14 +52,13 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
-    //   if(language.value == this.localeService.language ){
-    //           this.defaultlang = language.value;
-    //           console.log(this.defaultlang);
-    //       }
-    //       else{
-    //           this.defaultlang = ;
-    //       }
-     }
+    
+      this.defaultlang = language
+            }
+     else{
+              this.defaultlang = 'en' ;
+          }
+    
      
   }
 
