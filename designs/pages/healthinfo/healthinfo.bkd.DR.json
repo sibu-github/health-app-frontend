@@ -11,13 +11,15 @@
             },
             {
                 "_key": "style",
-                "_value": "display:flex; width:100%; height:700px;",
+                "_value": "",
                 "_type": "kv",
                 "_attrDef": "p"
             },
             {
                 "_key": "class",
-                "_value": [],
+                "_value": [
+                    "ios-fix"
+                ],
                 "_type": "dav",
                 "_attrDef": "p"
             },
@@ -62,6 +64,12 @@
                 "_value": "false",
                 "_type": "kv",
                 "_attrDef": "p"
+            },
+            {
+                "_key": "fxFill",
+                "_value": "fxFill",
+                "_type": "a",
+                "_attrDef": "c"
             }
         ],
         "19b23f4b-ee1d-ee00-d752-3953ef424dfc": {
