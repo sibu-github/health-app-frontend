@@ -20,7 +20,7 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./healthinfonext.template.html",
 })
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
-  answer: string = "";
+  answer3: string = "";
   addlinfo: any;
   shortTextThree = "Travelled Outside Country";
   enableTextArea: Boolean = false;
@@ -48,10 +48,10 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 
   ngOnInit() {
     if (this.localdata && this.localdata.response.length > 0) {
-      this.answer = this.localdata.response[2].answer;
+      this.answer3 = this.localdata.response[2].answer;
       this.addlinfo = this.localdata.response[2].addlnfo;
     } else {
-      this.answer = "false";
+      this.answer3 = "false";
       this.addlinfo = "";
     }
   }
@@ -61,7 +61,7 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     console.log("onChangeRadio called...");
     console.log("Question Index", questionIndex);
     this.val3 = e.value;
-    this.answer = this.val3;
+    this.answer3 = this.val3;
     // if(this.answer == YES){
     //     this.question = true;
     // }

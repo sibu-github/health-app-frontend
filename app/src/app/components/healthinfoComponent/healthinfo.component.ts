@@ -40,6 +40,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     let uResp = localStorage.getItem("userResponse");
     if (uResp) {
       this.localdata = JSON.parse(uResp);
+      console.log(this.localdata);
     }
   }
   answer: string = "";
@@ -51,12 +52,14 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   val1: any;
   val2: any;
   ngOnInit() {
-    if (this.localdata && this.localdata.response.length > 0) {
-      this.answer = this.localdata.response[0].answer;
-      this.answer2 = this.localdata.response[1].answer;
-      // this.answer3 = this.localdata.response[2].answer;
-      //this.addlinfo = this.localdata.response[2].addlnfo;
-    } else {
+      let ans1 = JSON.parse(localStorage.getItem('answer1'));
+      let ans2 = JSON.parse(localStorage.getItem('answer2'));
+      console.log(ans1,ans2);
+       if (ans1 && ans2) {
+           this.answer = ans1.answer;
+           this.answer2 = ans2.answer;
+       }
+   else {
       this.answer = "false";
       this.answer2 = "false";
       //  this.answer3 = 'false';

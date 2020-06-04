@@ -112,7 +112,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
           console.log('fetchUserResponse called');
           try{
            const newusername = localStorage.getItem('username');
-            console.log(newusername);
              // if the username is not stored in the localstorage
             // we show landingpage
             if (!newusername || newusername === 'undefined') {
@@ -136,6 +135,10 @@ export class homeComponent extends NBaseComponent implements OnInit {
                             colorCode = bh.local.result.colorCode;
                         }
 
+                        else if(bh.local.result == undefined || hasSubmitted == "no") {
+                            this.router.navigate(['/landingpage']);
+                        } 
+
                         // save the colorCode in localStorage
                         window.localStorage.setItem('colorCode', colorCode);
 
@@ -147,7 +150,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
                             return;
                         }
                         // otherwise show landing page 
-                        this.router.navigate(['/landingpage']);
+                        // this.router.navigate(['/landingpage']);
                  }
             }
            

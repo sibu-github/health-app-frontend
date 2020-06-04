@@ -214,8 +214,8 @@ selectedObjects : any[];
         console.log(bh)
         // call service to check if the user is a hradmin or not
         if(bh.local && bh.local.result){
-            let email = bh.local.result.user.email
-            console.log({email})
+            let email = bh.local.result.user.email;
+            console.log({email});
             let dt = await this.hrmailService.verifyEmail(email)
             let pagename = '/confirmdetails'
             if(dt && dt.local && dt.local.result && dt.local.result.Authorized =='true'){

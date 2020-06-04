@@ -125,7 +125,7 @@ export class masterdataService {
           },
         ],
       };
-      console.log(formdata);
+      console.log(formdata.email);
       localStorage.setItem("userResponse", JSON.stringify(formdata));
       var time = new Date().toLocaleDateString();
       console.log("time", time);
