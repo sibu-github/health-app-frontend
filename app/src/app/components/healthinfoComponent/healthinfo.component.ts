@@ -36,9 +36,10 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     if (language) {
       this.localeService.language = language;
     }
-
+    //saving user responses in local storage
     let uResp = localStorage.getItem("userResponse");
     if (uResp) {
+        console.log('userResponse', );
       this.localdata = JSON.parse(uResp);
       console.log(this.localdata);
     }

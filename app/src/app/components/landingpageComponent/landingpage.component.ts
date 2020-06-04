@@ -244,7 +244,7 @@ selectedObjects : any[];
       window.localStorage.setItem("lastName", bh.local.result.user.lastName);
       window.localStorage.setItem("location", bh.local.result.user.location);
       window.localStorage.setItem("phone", bh.local.result.user.phone);
-      this.masterdata.email = bh.local.result.email;
+      this.masterdata.email = bh.local.result.user.email;
     }
   }
 }

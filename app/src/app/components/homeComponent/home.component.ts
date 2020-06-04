@@ -134,6 +134,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
                             console.log('hassum', hasSubmitted);
                             colorCode = bh.local.result.colorCode;
                         }
+                    else if(bh.local.result == undefined || hasSubmitted == "no") {
+                            this.router.navigate(['/landingpage']);
+                        } 
 
                         else if(bh.local.result == undefined || hasSubmitted == "no") {
                             this.router.navigate(['/landingpage']);
