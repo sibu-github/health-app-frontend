@@ -1673,13 +1673,13 @@
                     },
                     {
                         "_key": "layoutAlign",
-                        "_value": "start",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "center",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -1696,6 +1696,67 @@
                         "_attrDef": "p"
                     }
                 ],
+                "7cafa297-8d44-1de5-f67c-fecc65bd2f3c": {
+                    "paletteKey": "NG-ProgressSpinner",
+                    "parentEditorKey": "c65539fb-59c6-8efb-6a9f-e80cad0f7631",
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "margin-top:20px;margin-left:auto;margin-right:auto;",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "componentLabel",
+                            "_value": "Progress Spinner",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "[mode]",
+                            "_value": "'indeterminate'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "strokeWidth",
+                            "_value": "2",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[value]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "primary",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[diameter]",
+                            "_value": "25",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "showSpinner",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                },
                 "d30c1756-1fce-8b7e-25cd-ef39fcb776ab": {
                     "paletteKey": "Html5",
                     "parentEditorKey": "c65539fb-59c6-8efb-6a9f-e80cad0f7631",
@@ -1881,6 +1942,12 @@
                             "_type": "kv",
                             "_attrDef": "p",
                             "_visibility": false
+                        },
+                        {
+                            "_key": "*ngIf",
+                            "_value": "!showSpinner",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "b15430bd-3208-bace-ddcd-35de3230b667": {

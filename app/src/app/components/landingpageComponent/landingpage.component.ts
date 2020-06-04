@@ -30,6 +30,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   public inAppBrowserRef: any;
   public defaultlang:string = 'en';
 
+  public showSpinner:boolean = false;
+
 // Ideally we should set all these properties in the environment and read it from there
 // keeping it as future refactoring task for now
     private azureClientId:string = 'c4f2534b-88d8-4671-9804-495b19e235aa';
@@ -109,6 +111,8 @@ selectedObjects : any[];
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");
     let refreshToken = window.localStorage.getItem("refreshToken");
+
+    this.showSpinner = true;
 
     console.log({ accessToken, refreshToken });
 
