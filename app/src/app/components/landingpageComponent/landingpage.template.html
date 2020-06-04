@@ -1,15 +1,17 @@
 <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
   <bh-logo></bh-logo>
-  <div fxLayout="row wrap" style="width:100%;height:60px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="width:100%;height:60px;margin-bottom:30px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="60" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-      <mat-form-field style="width:50%;solid #5EA73E; ">
+      <mat-form-field>
 
-        <mat-select [(value)]="defaultlang" (selectionChange)="languageSelect($event)">
-          <mat-option *ngFor="let language of languages" [value]="language.value">
-            {{language.viewValue}}
-          </mat-option>
-        </mat-select>
+        <mat-form-field id="lang-select" appearance="outline">
+          <mat-select [(value)]="defaultlang" (selectionChange)="languageSelect($event)">
+            <mat-option *ngFor="let language of languages" [value]="language.value">
+              {{language.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </mat-form-field>
     </div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>

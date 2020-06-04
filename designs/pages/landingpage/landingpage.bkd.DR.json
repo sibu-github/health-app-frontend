@@ -682,7 +682,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%;height:60px;",
+                    "_value": "width:100%;height:60px;margin-bottom:30px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -875,7 +875,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width:50%;solid #5EA73E; ",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1074,7 +1074,7 @@
                             },
                             {
                                 "_key": "html",
-                                "_value": " \r\n  <mat-select [(value)]=\"defaultlang\" (selectionChange)=\"languageSelect($event)\" >\r\n    <mat-option *ngFor=\"let language of languages\" [value]=\"language.value\">\r\n      {{language.viewValue}}\r\n    </mat-option>\r\n  </mat-select>",
+                                "_value": " \r\n  <mat-form-field id=\"lang-select\" appearance=\"outline\">\r\n  <mat-select [(value)]=\"defaultlang\" (selectionChange)=\"languageSelect($event)\" >\r\n    <mat-option *ngFor=\"let language of languages\" [value]=\"language.value\">\r\n      {{language.viewValue}}\r\n    </mat-option>\r\n  </mat-select>\r\n  </mat-form-field>",
                                 "_type": "a",
                                 "_attrDef": "p"
                             }
