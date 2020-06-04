@@ -39,7 +39,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     //saving user responses in local storage
     let uResp = localStorage.getItem("userResponse");
     if (uResp) {
-        console.log('userResponse', );
+      console.log('userResponse', uResp);
       this.localdata = JSON.parse(uResp);
       console.log(this.localdata);
     }
@@ -87,6 +87,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
       );
     }
   }
+  
   onChangeRadioTwo(e, questionIndex) {
     console.log("onChangeRadio2 called...");
     console.log("Question Index", questionIndex);
