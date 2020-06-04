@@ -2,6 +2,7 @@
 import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { NSystemService } from 'neutrinos-seed-services';
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
@@ -26,19 +27,15 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./landingpage.template.html",
 })
 export class landingpageComponent extends NBaseComponent implements OnInit {
+    // get the instance of the SystemService to read environment variables
+  private systemService: NSystemService = NSystemService.getInstance();
   public href: string = "";
   public inAppBrowserRef: any;
   public defaultlang:string = 'en';
 
   public showSpinner:boolean = false;
+  
 
-// Ideally we should set all these properties in the environment and read it from there
-// keeping it as future refactoring task for now
-    private azureClientId:string = 'c4f2534b-88d8-4671-9804-495b19e235aa';
-    private azureAuthUrl:string = 'https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc/oauth2/v2.0/authorize';
-    private azureRedirectUrl:string = 'https://health-appuat.azurewebsites.net/logincomplete';
-    private azureScope:string = 'openid profile offline_access';
-    private azureResponseType:string = 'code';
 
   constructor(private router: Router, 
             private masterdata: masterdataService,
@@ -65,6 +62,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   ngOnInit() { 
+    // call API to generate and new token and set in the localstorage
+    // Note: In case of non employee flow we are directly landing on this page
     this.getJWT();
   }
 
@@ -153,7 +152,7 @@ selectedObjects : any[];
 
   // callback for loadstart event inappbrowser
   onLoadStartCallback({ url }) {
-    const REDIRECT_URL = this.azureRedirectUrl;
+    const REDIRECT_URL = this.systemService.getVal('redirectURL');
     console.log("InAppBrowser load started...", url);
     if (url.indexOf(REDIRECT_URL) === 0) {
       console.log("loading recirect url");
@@ -167,11 +166,11 @@ selectedObjects : any[];
 
   // show the microsoft login window
   showLoginScreen() {
-    const CLIENT_ID = this.azureClientId;
-    const AUTH_URL = this.azureAuthUrl;
-    const REDIRECT_URL = this.azureRedirectUrl;
-    const SCOPE = this.azureScope;
-    const RESPONSE_TYPE = this.azureResponseType;
+    const CLIENT_ID = this.systemService.getVal('azureClientID');
+    const AUTH_URL = this.systemService.getVal('azureAuthURL');
+    const REDIRECT_URL = this.systemService.getVal('redirectURL');
+    const SCOPE = this.systemService.getVal('azureScopes');
+    const RESPONSE_TYPE = this.systemService.getVal('azureResponseType');
     const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
 
     // if document URL is starting with http then it is opened from browser
@@ -182,7 +181,7 @@ selectedObjects : any[];
       // route to personalinfo in that case
       if (document.URL.indexOf("/landpage") > 0) {
         this.router.navigate(["/personalinfo"]);
-      }
+      } 
     } else {
       console.log("From mobile");
       // keep the reference of this so that can be used from the event listener callback

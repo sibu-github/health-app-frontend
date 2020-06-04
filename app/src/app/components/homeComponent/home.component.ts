@@ -74,6 +74,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
             // if the username is not stored in the localstorage
             // we show landingpage
+            // NOTE:username not stored in localstorage means user has never logged into the app
+            // or cleared the cache, or uninstalled and install the app
+            // in all cases we show the login page to the user again
             if (!username || username === 'undefined') {
                 this.router.navigate(['/landingpage']);
                 return
@@ -81,6 +84,10 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
             // check if the user is an HR Admin
             // if user is HR Admin then we move to optionpage
+            // NOTE: If the user is HR Admin we show the option page first. 
+            // If user chooses to conitune as employee thats when we check if he has
+            // submitted data for the day already. The optionpage will also include the 
+            // logic for checking if the user has already submitted data for the day.
             let dt = await this.hrmailService.verifyEmail(username);
             if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true'){
                 this.router.navigate(['/optionpage']);
@@ -88,6 +95,8 @@ export class homeComponent extends NBaseComponent implements OnInit {
             }
 
             // check if user has submitted data for the day 
+            // Note: for employee we check if the user has submitted data for the day already
+            // if yes we redirect to thank you page, otherwise redirect to landingpage
             const bh = await this.userService.getIfUserSubmitted(username);
             console.log(bh);
 
