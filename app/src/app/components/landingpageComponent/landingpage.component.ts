@@ -211,23 +211,55 @@ selectedObjects : any[];
       }
 
         // call service to get accessToken, refreshToken and user details   
+        // set in the locastorage
         let bh = await this.userService.getTokenFromCode(code);
-        console.log(bh)
         this.setTokensNUserLocalStorage(bh);
-        console.log(bh)
+
         // call service to check if the user is a hradmin or not
-        if(bh.local && bh.local.result){
-            let email = bh.local.result.user.email
-            console.log({email})
-            let dt = await this.hrmailService.verifyEmail(email)
-            let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized =='true'){
-                pagename = "/optionpage";
-            }
-            this._zone.run(()=>{
-                this.router.navigate([pagename])
-            });
+        // if HRAdmin then we move to the optionpage 
+        let email = window.localStorage.getItem('email')
+        // if email is not found in the localstorage then exit
+        // something wrong happened in this scenario which should never happen
+        if(!email || email === 'undefined'){
+            this.showSpinner = false;
+            return;
         }
+
+        bh = await this.hrmailService.verifyEmail(email)
+        if(bh && bh.local && bh.local.result && bh.local.result.Authorized =='true'){
+            this._zone.run(()=>{
+                this.router.navigate(['/optionpage'])
+            });
+            return;
+        }
+
+
+        // ------------------- FIX: 4261 ------------------
+        // check if user has submitted data for the day 
+        // Note: for employee we check if the user has submitted data for the day already
+        // if yes we redirect to thank you page, otherwise redirect to landingpage
+        bh = await this.userService.getIfUserSubmitted(email);
+        console.log(bh);
+        let hasSubmitted = "no";
+        let colorCode = "green";
+        if (bh.local && bh.local.result) {
+            hasSubmitted = bh.local.result.updated;
+            colorCode = bh.local.result.colorCode;
+        }
+        // save the colorCode in localStorage
+        window.localStorage.setItem('colorCode', colorCode);
+        if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
+            this._zone.run(()=>{
+                this.router.navigate(['/thankyou'])
+            });
+            return;
+        }
+
+        //If none of the above condition is true then we 
+        // redirect to confirmDetails page as usual 
+        this._zone.run(()=>{
+            this.router.navigate(['/confirmdetails'])
+        });
 
     } catch (err) {
       console.error(err);
