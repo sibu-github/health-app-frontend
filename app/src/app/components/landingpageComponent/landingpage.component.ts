@@ -87,12 +87,12 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   languages: any[] = [
     { value: "en", viewValue: "English" },
-    { value: "es", viewValue: "Spanish" },
-    { value: "de", viewValue: "German" },
-    { value: "pt", viewValue: "Portuguese" },
-    { value: "ko", viewValue: "Korean" },
-    { value: "th", viewValue: "Thai" },
-    { value: "zh-CN", viewValue: "Chinese (Mandarin)" },
+    { value: "es", viewValue: "Español" },
+    { value: "de", viewValue: "Deutsche" },
+    { value: "pt", viewValue: "Português" },
+    { value: "ko", viewValue: "한국어" },
+    { value: "th", viewValue: "ไทย" },
+    { value: "zh-CN", viewValue: "中文（普通话)" },
   ];
 
 selectedObjects : any[];
@@ -278,7 +278,7 @@ selectedObjects : any[];
       window.localStorage.setItem("firstName", bh.local.result.user.firstName);
       window.localStorage.setItem("lastName", bh.local.result.user.lastName);
       window.localStorage.setItem("location", bh.local.result.user.location);
-      window.localStorage.setItem("phone", bh.local.result.user.phone);
+      window.localStorage.setItem("phone", bh.local.result.user.phone.replace(' ', '')); // phone number received from AD contains space
       this.masterdata.email = bh.local.result.user.email;
     }
   }
