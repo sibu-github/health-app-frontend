@@ -1818,7 +1818,7 @@
                         },
                         {
                             "_key": "[(ngModel)]",
-                            "_value": "",
+                            "_value": "selected3",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -2389,7 +2389,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "<mat-form-field class=\"example-full-width\">\r\n    <input name=\"addlinfo\" [(ngModel)]=\"addlinfo\" matInput #message maxlength=\"256\" placeholder=\"{{locales.inputhelp}}\">\r\n    <mat-hint align=\"end\">{{message.value.length}} / 256</mat-hint>\r\n  </mat-form-field>",
+                            "_value": "<mat-form-field class=\"example-full-width\">\r\n    <input name=\"addlinfo\" [(ngModel)]=\"name\" matInput #message maxlength=\"256\" placeholder=\"{{locales.inputhelp}}\">\r\n    <mat-hint align=\"end\">{{message.value.length}} / 256</mat-hint>\r\n  </mat-form-field>",
                             "_type": "a",
                             "_attrDef": "p"
                         }
