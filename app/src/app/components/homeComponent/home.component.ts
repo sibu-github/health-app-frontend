@@ -39,8 +39,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
     async callAPI() {
         try {
             await this.getJWT();
-            // await this.fetchUserResponse();
-            await this.fetchNewUserResponse();
+            await this.fetchUserResponse();
         } catch (err) {
             console.error(err)
         }
@@ -67,95 +66,62 @@ export class homeComponent extends NBaseComponent implements OnInit {
     // check if the user has submitted response for the day
     // if user has submitted already then we set showThankYou = true
     // otherwise showLanding = true
-    // async fetchUserResponse() {
-    //     console.log('fetchUserResponse called')
-    //     try {
-    //         const username = localStorage.getItem('username');
-    //         console.log(username);
+    async fetchUserResponse() {
+        console.log('fetchUserResponse called')
+        try {
+            const username = localStorage.getItem('username');
+            console.log(username);
 
-    //         const bh = await this.userService.getIfUserSubmitted(username);
-    //         console.log(bh);
-
-    //         // if the username is not stored in the localstorage
-    //         // we show landingpage
-    //         if (!username || username === 'undefined') {
-    //             this.router.navigate(['/landingpage']);
-    //             return
-    //         }
-
-    //         let hasSubmitted = "no";
-    //         let colorCode = "green";
-    //         if (bh.local && bh.local.result) {
-    //             hasSubmitted = bh.local.result.updated;
-    //             console.log('hassum', hasSubmitted);
-    //             colorCode = bh.local.result.colorCode;
-    //         }
-
-    //         // save the colorCode in localStorage
-    //         window.localStorage.setItem('colorCode', colorCode);
-
-    //         // hide splash screen
-    //         this.showSplash = false;
-    //         // when user already submitted show Thank You screen 
-    //         if (hasSubmitted === "yes") {
-    //            // this.showThankYou = true;
-    //             return;
-    //         }
-    //         // otherwise show landing page 
-    //         this.router.navigate(['/landingpage']);
-    //     } catch (err) {
-    //         console.error(err)
-    //     }
-    // }
-
-    async fetchNewUserResponse() {
-          console.log('fetchUserResponse called');
-          try{
-           const newusername = localStorage.getItem('username');
-            console.log(newusername);
-             // if the username is not stored in the localstorage
+            // if the username is not stored in the localstorage
             // we show landingpage
-            if (!newusername || newusername === 'undefined') {
+            // NOTE:username not stored in localstorage means user has never logged into the app
+            // or cleared the cache, or uninstalled and install the app
+            // in all cases we show the login page to the user again
+            if (!username || username === 'undefined') {
                 this.router.navigate(['/landingpage']);
                 return
-            } else {
-                let dt = await this.hrmailService.verifyEmail(newusername);
-                console.log(dt.local.result.Authorized)
-                 if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true')
-                 {
-                 let pagename = "/optionpage";
-                 this.router.navigate([pagename]);
-                 } else {
-                        const bh = await this.userService.getIfUserSubmitted(newusername);
-                        console.log("newbh",bh);
-                        let hasSubmitted = "no";
-                        let colorCode = "green";
-                        if (bh.local && bh.local.result) {
-                            hasSubmitted = bh.local.result.updated;
-                            console.log('hassum', hasSubmitted);
-                            colorCode = bh.local.result.colorCode;
-                        }
-                    else if(bh.local.result == undefined || hasSubmitted == "no") {
-                            this.router.navigate(['/landingpage']);
-                        } 
-
-                        // save the colorCode in localStorage
-                        window.localStorage.setItem('colorCode', colorCode);
-
-                        // hide splash screen
-                        this.showSplash = false;
-                        // when user already submitted show Thank You screen 
-                        if (hasSubmitted === "yes") {
-                            this.router.navigate(['/thankyou']);
-                            return;
-                        }
-                        // otherwise show landing page 
-                        //this.router.navigate(['/landingpage']);
-                 }
             }
-           
-          }catch(err){
-              console.log("error");
-          }
+
+            // check if the user is an HR Admin
+            // if user is HR Admin then we move to optionpage
+            // NOTE: If the user is HR Admin we show the option page first. 
+            // If user chooses to conitune as employee thats when we check if he has
+            // submitted data for the day already. The optionpage will also include the 
+            // logic for checking if the user has already submitted data for the day.
+            let dt = await this.hrmailService.verifyEmail(username);
+            if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true'){
+                this.router.navigate(['/optionpage']);
+                return
+            }
+
+            // check if user has submitted data for the day 
+            // Note: for employee we check if the user has submitted data for the day already
+            // if yes we redirect to thank you page, otherwise redirect to landingpage
+            const bh = await this.userService.getIfUserSubmitted(username);
+            console.log(bh);
+
+            let hasSubmitted = "no";
+            let colorCode = "green";
+            if (bh.local && bh.local.result) {
+                hasSubmitted = bh.local.result.updated;
+                colorCode = bh.local.result.colorCode;
+            }
+
+            // save the colorCode in localStorage
+            window.localStorage.setItem('colorCode', colorCode);
+
+            // hide splash screen
+            this.showSplash = false;
+            // when user already submitted show Thank You screen 
+            if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
+               this.router.navigate(['/thankyou'])
+                return;
+            }
+            // otherwise show landing page 
+            this.router.navigate(['/landingpage']);
+        } catch (err) {
+            console.error(err)
+        }
     }
+
 }
