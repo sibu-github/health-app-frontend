@@ -120,8 +120,12 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
           this.router.navigate(["/contactinfo"]);
           break;
         } 
+        else {
+          this.validclick = false;
+          this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
+        }
       }
-      this.validclick = false;
+        this.validclick = false;
       // this.router.navigate(['/thankyou']);
     }
   }

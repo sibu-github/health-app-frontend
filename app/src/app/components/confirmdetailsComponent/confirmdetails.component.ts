@@ -149,6 +149,10 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
 
                     break;
                 }
+                else {
+                    this.validclick = false;
+                    this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
+                }
             }
             this.validclick = false;
         }

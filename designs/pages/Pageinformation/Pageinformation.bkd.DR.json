@@ -372,13 +372,13 @@
                             },
                             {
                                 "_key": "layoutAlign",
-                                "_value": "start",
+                                "_value": "center",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "pLayoutAlign",
-                                "_value": "stretch",
+                                "_value": "end",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -408,7 +408,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "margin-top:5px;",
+                                    "_value": "height :20px;width:80px;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -420,7 +420,7 @@
                                 },
                                 {
                                     "_key": "imgSrc",
-                                    "_value": "Images\\image1.png",
+                                    "_value": "Web/Fit4digital.png",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -456,7 +456,7 @@
                                 },
                                 {
                                     "_key": "width",
-                                    "_value": "",
+                                    "_value": "50px;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
