@@ -10,6 +10,12 @@ import { NLocaleResource } from "../n-services/n-localeResources.service";
 import { NAuthGuardService } from "neutrinos-seed-services";
 import { ArtImgSrcDirective } from "../directives/artImgSrc.directive";
 
+/**
+ * for azure ad integration for login functionality
+ */
+import { MsalInterceptor } from "@azure/msal-angular";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+
 window["neutrinos"] = {
   environments: environment,
 };
@@ -140,6 +146,12 @@ export const appProviders = [
   datasharingService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-languageService
   languageService,
+  // for azure ad integration for login functionality
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: MsalInterceptor,
+    multi: true,
+  },
 ];
 
 /**
