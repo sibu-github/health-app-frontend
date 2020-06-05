@@ -94,7 +94,7 @@ export class masterdataService {
       let formdata = {
         type: this.userType,
         locationName: this.locationName,
-        email: this.email,
+        email: localStorage.getItem('email'),
         phone: localStorage.getItem("phone"),
         firstName: this.firstName,
         lastName: this.lastName,
