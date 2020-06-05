@@ -99,7 +99,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
    */
   onSubmit(data) {
     this.validclick = true;
-    console.log(data.value);
+    console.log(data.valid);
     console.log(this.defaultLocationName, data.value.locationName);
     if (data.valid === true) {
       for (let i = 0; i <= this.totallocations.length; i++) {
@@ -149,6 +149,9 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
           localStorage.setItem("phone", confirmdetailsObj.phone);
 
           break;
+        } else {
+            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
+         
         }
       }
       this.validclick = false;
@@ -160,7 +163,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   }
 
   filter(values) {
-    console.log(values);
+
     return values.filter((location) =>
       location.locationName.includes(this.locationName)
     );

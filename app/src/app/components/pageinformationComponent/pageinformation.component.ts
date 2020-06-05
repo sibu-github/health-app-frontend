@@ -119,13 +119,19 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
           console.log("valid success");
           this.router.navigate(["/contactinfo"]);
           break;
-        } 
+        } else {
+            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
+
+            //break;
+        }
       }
       this.validclick = false;
       // this.router.navigate(['/thankyou']);
     }
+    else {
+    this.datash.openSnackBar('Please select appropriate classify user', "X");
   }
-
+  }
   locationFilter() {
     this.updatelocations = this.filter(this.totallocations);
   }
