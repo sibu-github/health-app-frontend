@@ -2628,7 +2628,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "onNext()",
+                            "_value": "onNext(healthForm)",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

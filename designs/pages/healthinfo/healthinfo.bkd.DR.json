@@ -4485,7 +4485,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "onNext(healthForm)",
+                            "_value": "onNext()",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
