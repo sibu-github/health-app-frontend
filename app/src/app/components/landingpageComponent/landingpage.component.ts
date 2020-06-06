@@ -115,6 +115,10 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   async letStart() {
     console.log("Lets Starts is working");
 
+    console.log("showSpinner", this.showSpinner);
+    console.log("isMobileApp", this.isMobileApp);
+    console.log("isEmpLoggedIn", this.isEmpLoggedIn);
+
     // when opened from browser
     // for non employee flow the url contains the string /landpage
     // route to personalinfo in that case

@@ -147,11 +147,11 @@ export const appProviders = [
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-languageService
   languageService,
   // for azure ad integration for login functionality
-  {
-    provide: HTTP_INTERCEPTORS,
-    useClass: MsalInterceptor,
-    multi: true,
-  },
+  // {
+  //   provide: HTTP_INTERCEPTORS,
+  //   useClass: MsalInterceptor,
+  //   multi: true,
+  // },
 ];
 
 /**
