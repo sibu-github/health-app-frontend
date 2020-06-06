@@ -3435,7 +3435,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "center",
+                        "_value": "start",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -4263,7 +4263,6 @@
         "731fec3c-f72b-c0ff-0369-09995c34d601": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "d3c44734-499c-e7b2-c5ae-4f4447805fd2",
-            "isCommented": "false",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -4330,7 +4329,6 @@
             "cc95177e-e3dc-bb21-0b18-10a0328a7aa5": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "731fec3c-f72b-c0ff-0369-09995c34d601",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -4460,7 +4458,6 @@
             "7aa04525-ec53-d9bd-9f7d-1853d9e43cbc": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "731fec3c-f72b-c0ff-0369-09995c34d601",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -4527,7 +4524,6 @@
                 "d903b473-0e76-5274-71a2-31fd9abd4c81": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "7aa04525-ec53-d9bd-9f7d-1853d9e43cbc",
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",
