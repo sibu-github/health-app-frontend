@@ -31,7 +31,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     private datasharingService: datasharingService
   ) {
     super();
-
+    console.log('Health info new page fix');
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");

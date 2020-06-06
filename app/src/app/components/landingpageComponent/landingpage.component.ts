@@ -43,7 +43,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
             private hrmailService:hrmailverifier,
             private _zone: NgZone) {
     super();
-
+    console.log('New Logo alignment fix');
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
 
     // get the previously selected language from local storage

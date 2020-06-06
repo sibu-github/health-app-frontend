@@ -2937,7 +2937,7 @@
                             },
                             {
                                 "_key": "pattern",
-                                "_value": "[a-zA-Z()0-9\\s]+$",
+                                "_value": "[a-zA-Z-()0-9\\s]+$",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             },
@@ -3264,7 +3264,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b9c3cf91-f711-077c-30c8-93af2fda2db1",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -3457,7 +3456,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "50cd22f3-ed90-9c9c-ef62-4e4dc04b405c",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -3702,7 +3700,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "b9c3cf91-f711-077c-30c8-93af2fda2db1",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -3895,7 +3892,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "00227fae-ec5b-4db6-3362-0a8a85748937",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",

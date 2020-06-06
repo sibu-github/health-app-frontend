@@ -34,6 +34,7 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     private datasharingService: datasharingService
   ) {
     super();
+    console.log('Health next || new page fix');
     //Getting the saved user responses and updating in the DOM
       let select3 = window.localStorage.getItem("val3");
       let addlinformation = window.localStorage.getItem("addlinfo");
