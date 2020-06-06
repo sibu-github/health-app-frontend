@@ -2,7 +2,7 @@
 import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { NSystemService } from 'neutrinos-seed-services';
+import { NSystemService } from "neutrinos-seed-services";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
@@ -27,21 +27,21 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./landingpage.template.html",
 })
 export class landingpageComponent extends NBaseComponent implements OnInit {
-    // get the instance of the SystemService to read environment variables
+  // get the instance of the SystemService to read environment variables
   private systemService: NSystemService = NSystemService.getInstance();
   public href: string = "";
   public inAppBrowserRef: any;
-  public defaultlang:string = 'en';
+  public defaultlang: string = "en";
 
-  public showSpinner:boolean = false;
-  
+  public showSpinner: boolean = false;
 
-
-  constructor(private router: Router, 
-            private masterdata: masterdataService,
-            private userService: saveuserresponse, 
-            private hrmailService:hrmailverifier,
-            private _zone: NgZone) {
+  constructor(
+    private router: Router,
+    private masterdata: masterdataService,
+    private userService: saveuserresponse,
+    private hrmailService: hrmailverifier,
+    private _zone: NgZone
+  ) {
     super();
 
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
@@ -51,39 +51,35 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
-    
-      this.defaultlang = language
-            }
-     else{
-              this.defaultlang = 'en' ;
-          }
-    
-     
+
+      this.defaultlang = language;
+    } else {
+      this.defaultlang = "en";
+    }
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     // call API to generate and new token and set in the localstorage
     // Note: In case of non employee flow we are directly landing on this page
     this.getJWT();
   }
 
-    // get JWT token to make API call
-    // in the non employee flow this is the starting page
-    async getJWT(){
-        try {
-            const bh = await this.userService.getJWT()
-            if(bh && bh.local && bh.local.result){
-                const jwtToken = bh.local.result.token;
-                // set the jwtToken in the localStorage so that can be used throughout the application
-                if(jwtToken){
-                    window.localStorage.setItem('jwtToken', `Bearer ${jwtToken}`)
-                }
-            }
-        } catch(err){
-            console.error(err)
+  // get JWT token to make API call
+  // in the non employee flow this is the starting page
+  async getJWT() {
+    try {
+      const bh = await this.userService.getJWT();
+      if (bh && bh.local && bh.local.result) {
+        const jwtToken = bh.local.result.token;
+        // set the jwtToken in the localStorage so that can be used throughout the application
+        if (jwtToken) {
+          window.localStorage.setItem("jwtToken", `Bearer ${jwtToken}`);
         }
+      }
+    } catch (err) {
+      console.error(err);
     }
-
+  }
 
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -95,9 +91,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "zh-CN", viewValue: "中文（普通话)" },
   ];
 
-selectedObjects : any[];
+  selectedObjects: any[];
 
-    //when user selects language, goes into below fun
+  //when user selects language, goes into below fun
   languageSelect(event) {
     //console.log(event.value);
     window.localStorage.setItem("language", event.value);
@@ -105,7 +101,7 @@ selectedObjects : any[];
     console.log(language);
     this.localeService.language = language;
   }
-    //when user selects lets starts button
+  //when user selects lets starts button
   async letStart() {
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");
@@ -129,16 +125,21 @@ selectedObjects : any[];
         // redirect to confirmDetails page
         if (bh && bh.local && bh.local.result && bh.local.result.accessToken) {
           this.setTokensNUserLocalStorage(bh);
-          
-        // call service to check if the user is a hradmin or not
-            let email = bh.local.result.user.email
-            console.log({email})
-            let dt = await this.hrmailService.verifyEmail(email)
-            let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true'){
-                pagename = "/optionpage";
-            }
-            this.router.navigate([pagename]);
+
+          // call service to check if the user is a hradmin or not
+          let email = bh.local.result.user.email;
+          console.log({ email });
+          let dt = await this.hrmailService.verifyEmail(email);
+          let pagename = "/confirmdetails";
+          if (
+            dt &&
+            dt.local &&
+            dt.local.result &&
+            dt.local.result.Authorized == "true"
+          ) {
+            pagename = "/optionpage";
+          }
+          this.router.navigate([pagename]);
           return;
         }
       } catch (err) {
@@ -152,7 +153,7 @@ selectedObjects : any[];
 
   // callback for loadstart event inappbrowser
   onLoadStartCallback({ url }) {
-    const REDIRECT_URL = this.systemService.getVal('redirectURL');
+    const REDIRECT_URL = this.systemService.getVal("redirectURL");
     console.log("InAppBrowser load started...", url);
     if (url.indexOf(REDIRECT_URL) === 0) {
       console.log("loading recirect url");
@@ -166,11 +167,11 @@ selectedObjects : any[];
 
   // show the microsoft login window
   showLoginScreen() {
-    const CLIENT_ID = this.systemService.getVal('azureClientID');
-    const AUTH_URL = this.systemService.getVal('azureAuthURL');
-    const REDIRECT_URL = this.systemService.getVal('redirectURL');
-    const SCOPE = this.systemService.getVal('azureScopes');
-    const RESPONSE_TYPE = this.systemService.getVal('azureResponseType');
+    const CLIENT_ID = this.systemService.getVal("azureClientID");
+    const AUTH_URL = this.systemService.getVal("azureAuthURL");
+    const REDIRECT_URL = this.systemService.getVal("redirectURL");
+    const SCOPE = this.systemService.getVal("azureScopes");
+    const RESPONSE_TYPE = this.systemService.getVal("azureResponseType");
     const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
 
     // if document URL is starting with http then it is opened from browser
@@ -181,7 +182,7 @@ selectedObjects : any[];
       // route to personalinfo in that case
       if (document.URL.indexOf("/landpage") > 0) {
         this.router.navigate(["/personalinfo"]);
-      } 
+      }
     } else {
       console.log("From mobile");
       // keep the reference of this so that can be used from the event listener callback
@@ -210,62 +211,64 @@ selectedObjects : any[];
         return;
       }
 
-        // call service to get accessToken, refreshToken and user details   
-        // set in the locastorage
-        let bh = await this.userService.getTokenFromCode(code);
-        this.setTokensNUserLocalStorage(bh);
+      // call service to get accessToken, refreshToken and user details
+      // set in the locastorage
+      let bh = await this.userService.getTokenFromCode(code);
+      this.setTokensNUserLocalStorage(bh);
 
-        // call service to check if the user is a hradmin or not
-        // if HRAdmin then we move to the optionpage 
-        let email = window.localStorage.getItem('email')
-        // if email is not found in the localstorage then exit
-        // something wrong happened in this scenario which should never happen
-        if(!email || email === 'undefined'){
-            this.showSpinner = false;
-            return;
-        }
+      // call service to check if the user is a hradmin or not
+      // if HRAdmin then we move to the optionpage
+      let email = window.localStorage.getItem("email");
+      // if email is not found in the localstorage then exit
+      // something wrong happened in this scenario which should never happen
+      if (!email || email === "undefined") {
+        this.showSpinner = false;
+        return;
+      }
 
-        bh = await this.hrmailService.verifyEmail(email)
-        if(bh && bh.local && bh.local.result && bh.local.result.Authorized =='true'){
-            this._zone.run(()=>{
-                this.router.navigate(['/optionpage'])
-            });
-            return;
-        }
-
-
-        // ------------------- FIX: 4261 ------------------
-        // check if user has submitted data for the day 
-        // Note: for employee we check if the user has submitted data for the day already
-        // if yes we redirect to thank you page, otherwise redirect to landingpage
-        bh = await this.userService.getIfUserSubmitted(email);
-        console.log(bh);
-        let hasSubmitted = "no";
-        let colorCode = "green";
-        if (bh.local && bh.local.result) {
-            hasSubmitted = bh.local.result.updated;
-            colorCode = bh.local.result.colorCode;
-        }
-        // save the colorCode in localStorage
-        window.localStorage.setItem('colorCode', colorCode);
-        if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
-            this._zone.run(()=>{
-                this.router.navigate(['/thankyou'])
-            });
-            return;
-        }
-
-        //If none of the above condition is true then we 
-        // redirect to confirmDetails page as usual 
-        this._zone.run(()=>{
-            this.router.navigate(['/confirmdetails'])
+      bh = await this.hrmailService.verifyEmail(email);
+      if (
+        bh &&
+        bh.local &&
+        bh.local.result &&
+        bh.local.result.Authorized == "true"
+      ) {
+        this._zone.run(() => {
+          this.router.navigate(["/optionpage"]);
         });
+        return;
+      }
 
+      // ------------------- FIX: 4261 ------------------
+      // check if user has submitted data for the day
+      // Note: for employee we check if the user has submitted data for the day already
+      // if yes we redirect to thank you page, otherwise redirect to landingpage
+      bh = await this.userService.getIfUserSubmitted(email);
+      console.log(bh);
+      let hasSubmitted = "no";
+      let colorCode = "green";
+      if (bh.local && bh.local.result) {
+        hasSubmitted = bh.local.result.updated;
+        colorCode = bh.local.result.colorCode;
+      }
+      // save the colorCode in localStorage
+      window.localStorage.setItem("colorCode", colorCode);
+      if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
+        this._zone.run(() => {
+          this.router.navigate(["/thankyou"]);
+        });
+        return;
+      }
+
+      //If none of the above condition is true then we
+      // redirect to confirmDetails page as usual
+      this._zone.run(() => {
+        this.router.navigate(["/confirmdetails"]);
+      });
     } catch (err) {
       console.error(err);
     }
   }
-
 
   // set user details and tokens in localstorage
   setTokensNUserLocalStorage(bh) {
@@ -278,7 +281,10 @@ selectedObjects : any[];
       window.localStorage.setItem("firstName", bh.local.result.user.firstName);
       window.localStorage.setItem("lastName", bh.local.result.user.lastName);
       window.localStorage.setItem("location", bh.local.result.user.location);
-      window.localStorage.setItem("phone", bh.local.result.user.phone.replace(' ', '')); // phone number received from AD contains space
+      window.localStorage.setItem(
+        "phone",
+        bh.local.result.user.phone.replace(" ", "")
+      ); // phone number received from AD contains space
       this.masterdata.email = bh.local.result.user.email;
     }
   }

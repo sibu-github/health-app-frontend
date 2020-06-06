@@ -41,8 +41,9 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     //saving user responses in local storage
     let uResp = localStorage.getItem("userResponse");
     if (uResp) {
-        console.log('userResponse', );
+      console.log("userResponse", uResp);
       this.localdata = JSON.parse(uResp);
+      console.log(this.localdata);
     }
   }
   answer: string = "";
@@ -54,27 +55,18 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   val1: any;
   val2: any;
   ngOnInit() {
-      //Getting the saved user responses and updating in the DOM
-      let select1 = window.localStorage.getItem("val1");
-      let select2 = window.localStorage.getItem("val2");
-    if (select1) {
-        console.log('select1',select1);
-     this.selected1 = select1;
-      this.selected2 = select2;
-      this.val1= select1;
-      this.val2= select2;
-    }
-      console.log('ngonit selected print', this.selected1);
-    // if (this.localdata && this.localdata.response.length > 0) {
-    //   this.answer = this.localdata.response[0].answer;
-    //   this.answer2 = this.localdata.response[1].answer;
-      // this.answer3 = this.localdata.response[2].answer;
-      //this.addlinfo = this.localdata.response[2].addlnfo;
-    // } else {
-    //   this.answer = "false";
-    //   this.answer2 = "false";
+    let ans1 = JSON.parse(localStorage.getItem("answer1"));
+    let ans2 = JSON.parse(localStorage.getItem("answer2"));
+    console.log(ans1, ans2);
+    if (ans1 && ans2) {
+      this.answer = ans1.answer;
+      this.answer2 = ans2.answer;
+    } else {
+      this.answer = "false";
+      this.answer2 = "false";
       //  this.answer3 = 'false';
-    // }
+      // }
+    }
   }
 
   onChangeRadio(e, questionIndex) {
@@ -82,11 +74,11 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     console.log("Question Index", questionIndex);
     this.val1 = e.value;
     this.answer = this.val1;
-    
+
     console.log("ths.ans", this.val1);
     if (questionIndex == "1") {
       this.masterdata.answer1 = this.val1;
-      
+
       this.masterdata.questionId = questionIndex;
       this.masterdata.shortTextOne = this.shortTextOne;
       localStorage.setItem(
@@ -99,6 +91,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
       );
     }
   }
+
   onChangeRadioTwo(e, questionIndex) {
     console.log("onChangeRadio2 called...");
     console.log("Question Index", questionIndex);
@@ -108,7 +101,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
 
     if (questionIndex == "2") {
       this.masterdata.answer2 = this.val2;
-      
+
       this.masterdata.questionId2 = questionIndex;
       this.masterdata.shortTextTwo = this.shortTextTwo;
       localStorage.setItem(
@@ -128,8 +121,8 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   onNext() {
     console.log("val1", this.val1, "val2", this.val2);
     if (this.val1 && this.val2) {
-        window.localStorage.setItem("val1",this.val1);
-         window.localStorage.setItem("val2",this.val2);
+      window.localStorage.setItem("val1", this.val1);
+      window.localStorage.setItem("val2", this.val2);
       console.log(this.selected2);
       this.router.navigate(["/hinfonext"]);
     } else {

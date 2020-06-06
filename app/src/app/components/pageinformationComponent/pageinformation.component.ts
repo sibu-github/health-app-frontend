@@ -31,8 +31,8 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   firstname: any; // data binding
   lastname: any; // data binding
   usertypes: any; // list of user types data
-//   localdata: any;
-showme:Boolean;
+  //   localdata: any;
+  showme: Boolean;
   type: any;
   constructor(
     private router: Router,
@@ -110,36 +110,44 @@ showme:Boolean;
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = data.value.locationName;
-    this.masterdata.userType = data.value.type.toLowerCase(); 
-   
+    this.masterdata.userType = data.value.type.toLowerCase();
+
     if (data.valid === true) {
-        var locationmatch = await this.checkLocation(data.value.locationName);
-        if(locationmatch){
-            console.log('success');
-               this.router.navigate(["/contactinfo"]);  
-        } else{
-            console.log('else condition');
-            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
-        }    
+      var locationmatch = await this.checkLocation(data.value.locationName);
+      if (locationmatch) {
+        console.log("success");
+        this.router.navigate(["/contactinfo"]);
+      } else {
+        console.log("else condition");
+        this.datash.openSnackBar(
+          "Please provide Exact location / select appropriate one",
+          "X"
+        );
+      }
+    } else {
+      console.log("commented snack bar");
     }
-    else {
-        console.log('commented snack bar');
-  }
   }
 
-  checkLocation(locname){
-     
-      var locmatch:any;
-       for (let i = 0; i < this.totallocations.length; i++) {
-        if (
-          (this.totallocations[i] &&
-            this.totallocations[i].locationName == locname)) {
-          console.log("valid success");
-          locmatch=this.totallocations[i];
-          break;
-        } 
+  checkLocation(locname) {
+    var locmatch: any;
+    for (let i = 0; i < this.totallocations.length; i++) {
+      if (
+        this.totallocations[i] &&
+        this.totallocations[i].locationName == locname
+      ) {
+        console.log("valid success");
+        locmatch = this.totallocations[i];
+        break;
+      } else {
+        this.validclick = false;
+        this.datash.openSnackBar(
+          "Please provide Exact location / select appropriate one",
+          "X"
+        );
       }
-      return locmatch;
+    }
+    return locmatch;
   }
   locationFilter() {
     this.updatelocations = this.filter(this.totallocations);
