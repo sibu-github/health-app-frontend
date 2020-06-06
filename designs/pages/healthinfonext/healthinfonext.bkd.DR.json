@@ -1657,6 +1657,7 @@
             "d30e778c-a85d-ebc2-ba47-e0d41981ec51": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "93469bba-3b9b-6903-3cf9-7e938780f4b4",
+                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -1723,6 +1724,7 @@
                 "e150c0ae-5089-122d-f32c-0ac91228b4c4": {
                     "paletteKey": "NG-RadioGroup",
                     "parentEditorKey": "d30e778c-a85d-ebc2-ba47-e0d41981ec51",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1795,6 +1797,7 @@
                     "dda2ae81-a22c-a66d-8047-c42114262f55": {
                         "paletteKey": "NG-Radio",
                         "parentEditorKey": "e150c0ae-5089-122d-f32c-0ac91228b4c4",
+                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1886,6 +1889,7 @@
                     "ad35177e-9f7d-4360-6d2f-44506f0cb59b": {
                         "paletteKey": "NG-Radio",
                         "parentEditorKey": "e150c0ae-5089-122d-f32c-0ac91228b4c4",
+                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",

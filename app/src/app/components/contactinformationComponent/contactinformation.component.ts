@@ -30,7 +30,7 @@ export class contactinformationComponent extends NBaseComponent
   localdata: any;
   constructor(private router: Router, private masterdata: masterdataService) {
     super();
-
+console.log('Contact next || new page fix');
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
