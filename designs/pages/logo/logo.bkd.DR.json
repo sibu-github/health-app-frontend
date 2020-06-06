@@ -209,7 +209,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "margin-left:10px;align-self:center;width:80px;margin-top:10px;",
+                            "_value": "margin-left:25px;align-self:center;width:80px;margin-top:10px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
