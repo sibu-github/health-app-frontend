@@ -2,6 +2,7 @@
 import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { HttpClient } from "@angular/common/http";
 import { NSystemService } from "neutrinos-seed-services";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
@@ -25,6 +26,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   public loggedIn: boolean = false;
   public isMobileApp: boolean = false;
 
+  private isEmpLoggedIn: boolean = false;
+
   // list all languages to be shown in the language selection drop down
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -43,7 +46,10 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     private masterdata: masterdataService,
     private userService: saveuserresponse,
     private hrmailService: hrmailverifier,
-    private _zone: NgZone
+    private _zone: NgZone,
+    private http: HttpClient,
+    private broadcastService: BroadcastService,
+    private authService: MsalService
   ) {
     super();
 
