@@ -57,27 +57,25 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     }
     console.log(this.localdata);
 
-    this.defaultLocationName = localStorage.getItem('location');
-    this.phone = localStorage.getItem('phone');
+    this.defaultLocationName = localStorage.getItem("location");
+    this.phone = localStorage.getItem("phone");
   }
 
   async ngOnInit() {
-
-     if (this.localdata && this.localdata.locationName) {
+    if (this.localdata && this.localdata.locationName) {
       this.locationName = this.localdata.locationName;
       this.phone = this.localdata.phone;
       this.buildingNo = this.localdata.buildingNo;
       this.sectionNo = this.localdata.sectionNo;
       this.floorNo = this.localdata.floorNo;
       this.cubeNo = this.localdata.cubeNo;
-    }
-     else if(this.defaultLocationName && this.phone){
+    } else if (this.defaultLocationName && this.phone) {
       this.locationName = this.defaultLocationName;
       this.phone = this.phone;
     } else {
-        console.log('Enter Manually')
+      console.log("Enter Manually");
     }
-      
+
     try {
       let bh = await this.getlocation.getLocations();
       console.log(bh);
@@ -97,70 +95,80 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
    * @Desc: This function collects the locationname and phonenumber from user and posts into db
    * @error: 500 Internal server error / 404 - method not found
    */
-  onSubmit(data) {
+  async onSubmit(data) {
     this.validclick = true;
-    console.log(data.value);
-    console.log(this.defaultLocationName, data.value.locationName);
+    console.log(data.valid);
+
     if (data.valid === true) {
-      for (let i = 0; i <= this.totallocations.length; i++) {
-        if (
-          (this.totallocations[i] &&
-            this.totallocations[i].locationName === this.locationName) ||
-          this.defaultLocationName === data.value.locationName
-        ) {
-          console.log("valid success");
+      var locationmatch = await this.checkLocation(data.value.locationName);
 
-          this.masterdata.locationName = data.value.locationName;
-          this.masterdata.phone = data.value.phone;
-          this.masterdata.locationNameTwo = data.value.locationName;
-          this.masterdata.userType = data.value.type;
-          this.masterdata.buildingNo = data.value.buildingNo;
-          this.masterdata.floorNo = data.value.floorNo;
-          this.masterdata.sectionNo = data.value.sectionNo;
-          this.masterdata.cubeNo = data.value.cubeNo;
-          console.log(
-            this.masterdata.buildingNo,
-            this.masterdata.floorNo,
-            this.masterdata.sectionNo,
-            this.masterdata.cubeNo
-          );
-          let confirmdetailsObj = {
-            email: localStorage.getItem("username"),
-            locationName: this.masterdata.locationName,
-            phone: this.masterdata.phone,
-            buildingNo: this.masterdata.buildingNo,
-            floorNo: this.masterdata.floorNo,
-            sectionNo: this.masterdata.sectionNo,
-            cubeNo: this.masterdata.cubeNo,
-          };
+      if (locationmatch) {
+        console.log("valid success");
 
-          //calling confirm details api
-          this.userdataservice
-            .userDetails(confirmdetailsObj)
-            .then((result) => {
-              console.log(result);
-              this.router.navigate(["/healthinfo"]);
-            })
-            .catch((err) => {
-              console.log("error", err);
-            });
+        this.masterdata.locationName = data.value.locationName;
+        this.masterdata.phone = data.value.phone;
+        this.masterdata.locationNameTwo = data.value.locationName;
+        this.masterdata.userType = data.value.type;
+        this.masterdata.buildingNo = data.value.buildingNo;
+        this.masterdata.floorNo = data.value.floorNo;
+        this.masterdata.sectionNo = data.value.sectionNo;
+        this.masterdata.cubeNo = data.value.cubeNo;
 
-          localStorage.setItem("locationName", confirmdetailsObj.locationName);
-          localStorage.setItem("phone", confirmdetailsObj.phone);
+        let confirmdetailsObj = {
+          email: localStorage.getItem("username"),
+          locationName: this.masterdata.locationName,
+          phone: this.masterdata.phone,
+          buildingNo: this.masterdata.buildingNo,
+          floorNo: this.masterdata.floorNo,
+          sectionNo: this.masterdata.sectionNo,
+          cubeNo: this.masterdata.cubeNo,
+        };
 
-          break;
-        }
+        //calling confirm details api
+        this.userdataservice
+          .userDetails(confirmdetailsObj)
+          .then((result) => {
+            console.log(result);
+            this.router.navigate(["/healthinfo"]);
+          })
+          .catch((err) => {
+            console.log("error", err);
+          });
+
+        localStorage.setItem("locationName", confirmdetailsObj.locationName);
+        localStorage.setItem("phone", confirmdetailsObj.phone);
+      } else {
+        this.datash.openSnackBar(
+          "Please provide Exact location / select appropriate one",
+          "X"
+        );
       }
+
       this.validclick = false;
     }
   }
 
+  checkLocation(locname) {
+    console.log("locname", locname);
+    var locmatch: any;
+    for (let i = 0; i < this.totallocations.length; i++) {
+      if (
+        this.totallocations[i] &&
+        this.totallocations[i].locationName == locname
+      ) {
+        console.log("valid success");
+        locmatch = this.totallocations[i];
+
+        break;
+      }
+    }
+    return locmatch;
+  }
   locationFilter() {
     this.updatelocations = this.filter(this.totallocations);
   }
 
   filter(values) {
-    console.log(values);
     return values.filter((location) =>
       location.locationName.includes(this.locationName)
     );

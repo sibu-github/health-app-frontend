@@ -95,7 +95,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     let language = window.localStorage.getItem("language");
     this.localeService.language = language;
   }
-
   //when user selects lets starts button
   async letStart() {
     console.log("Lets Starts is working");

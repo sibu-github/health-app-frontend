@@ -26,7 +26,10 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
  validclick:Boolean; // For Form validaton
  signature:any; // kept for build error
  accept:any; // kept for build error
-    constructor( private router: Router,private masterdata : masterdataService,private saveuserService:saveuserresponse,private datasharingService:datasharingService) {
+    constructor( private router: Router,
+    private masterdata : masterdataService,
+    private saveuserService:saveuserresponse,
+    private datasharingService:datasharingService) {
         super();
         
         // get the previously selected language from local storage
@@ -59,7 +62,11 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
                  this.masterdata.certifyInfoChecked = this.accept;
                 localStorage.setItem('certifyInfoName', data.value.signature);
                 localStorage.setItem('certifyInfoChecked', data.value.accept);
-
+                //Clearing user response in local storage once user 
+                window.localStorage.removeItem('val1');
+                window.localStorage.removeItem('val2');
+                window.localStorage.removeItem('val3');
+                window.localStorage.removeItem('addlinfo');
                 this.masterdata.userSubmit().then((resp)=>{
                     console.log('certt resp', resp);
 

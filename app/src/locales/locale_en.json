@@ -10,7 +10,7 @@
         "ClassifyYourself": "Classify Yourself",
         "Continue": "Continue",
         "loginmessage": "Login to your account!",
-        "username": "Username",
+        "username": "User name",
         "password": "Password",
         "rememberme": "Remember Me",
         "forgotpassword": "Forgot Password?",
@@ -89,6 +89,12 @@
         "flno": "Floor Number",
         "scno": "Wing / Section Number",
         "cuno": "Cube / Office Number",
-        "submittedby": "Submitted By"
+        "submittedby": "Submitted By",
+        "confirmphonenumber": "Confirm Phone Number",
+        "Individualdeclaration": "INDIVIDUAL DECLARATION FORM (2019 - Novel Coronavirus Screening)",
+        "lafq": "Let's answer few questions and inform our friends and families with our latest ground level Covid-19 updates from Ingredion Family and we believe \"We are in this together and we will get through this together\"",
+        "Filters": "Filters",
+        "ByDate": "By Date",
+        "Region": "Region"
     }
 }

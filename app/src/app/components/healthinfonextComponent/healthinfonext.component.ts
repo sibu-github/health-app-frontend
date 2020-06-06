@@ -20,19 +20,37 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./healthinfonext.template.html",
 })
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
-  answer: string = "";
+  answer3: string = "";
   addlinfo: any;
   shortTextThree = "Travelled Outside Country";
   enableTextArea: Boolean = false;
   val3: any;
+  public selected3: string;
   localdata: any;
+  name = '';
   constructor(
     private router: Router,
     private masterdata: masterdataService,
     private datasharingService: datasharingService
   ) {
     super();
-
+    //Getting the saved user responses and updating in the DOM
+      let select3 = window.localStorage.getItem("val3");
+      let addlinformation = window.localStorage.getItem("addlinfo");
+    if (select3) {
+      console.log('select3',select3);
+      this.selected3 = select3;
+      this.val3= select3;
+      if (this.val3 == "true") {
+        this.enableTextArea = true;
+        console.log('addlinfo',addlinformation);
+        this.name = addlinformation;
+        
+      } else {
+        this.enableTextArea = false;
+      }
+      
+    }
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
@@ -48,10 +66,10 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 
   ngOnInit() {
     if (this.localdata && this.localdata.response.length > 0) {
-      this.answer = this.localdata.response[2].answer;
+      this.answer3 = this.localdata.response[2].answer;
       this.addlinfo = this.localdata.response[2].addlnfo;
     } else {
-      this.answer = "false";
+      this.answer3 = "false";
       this.addlinfo = "";
     }
   }
@@ -61,7 +79,7 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     console.log("onChangeRadio called...");
     console.log("Question Index", questionIndex);
     this.val3 = e.value;
-    this.answer = this.val3;
+    this.answer3 = this.val3;
     // if(this.answer == YES){
     //     this.question = true;
     // }
@@ -96,9 +114,12 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 
     if (this.val3 != undefined && (this.val3 || !this.val3)) {
       console.log(this.val3);
+      window.localStorage.setItem("val3",this.val3);
       if (this.val3 == "true") {
         console.log(form.value.addlinfo, typeof(this.val3));
         if (this.val3 == "true" && form.value.addlinfo != undefined) {
+            //storing the addinfo in local storage
+          window.localStorage.setItem("addlinfo",form.value.addlinfo);
           this.router.navigate(["/certifyinfo"]);
         } else if (form.value.addlinfo == undefined) {
           this.datasharingService.openSnackBar("Please answer locations", "X");

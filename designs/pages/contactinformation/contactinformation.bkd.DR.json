@@ -408,7 +408,7 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "width:80px;height:20px;",
+                                    "_value": "width:80px;height:20px; margin-right:10px;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -4598,7 +4598,7 @@
                 },
                 {
                     "_key": "layoutAlign",
-                    "_value": "start",
+                    "_value": "space-around",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -4646,7 +4646,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "30",
+                        "_value": "50",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -4670,7 +4670,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "start",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -4687,10 +4687,73 @@
                         "_attrDef": "p"
                     }
                 ],
+                "94c92ff0-2ab8-75d7-26a4-0cf2c33bc7dd": {
+                    "paletteKey": "NG-button",
+                    "parentEditorKey": "7c6c45ef-0ad6-5757-a9e4-650b38f7f3bd",
+                    "isCommented": "false",
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "margin-top:20px;",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "buttonname",
+                            "_value": "<mat-icon>keyboard_arrow_left</mat-icon>{{locales.back}}",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "navigatePrev()",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disableRipple]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
+                },
                 "d490eedc-2865-7651-0206-404eac3426e9": {
                     "paletteKey": "Html5",
                     "parentEditorKey": "7c6c45ef-0ad6-5757-a9e4-650b38f7f3bd",
                     "isAdvancedComponent": true,
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -4877,6 +4940,7 @@
                         "paletteKey": "html-editor",
                         "parentEditorKey": "d490eedc-2865-7651-0206-404eac3426e9",
                         "isAdvancedChildComponent": true,
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -4925,7 +4989,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "70",
+                        "_value": "50",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -4949,7 +5013,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "stretch",
+                        "_value": "end",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -4972,7 +5036,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "color: #FFFFFF;margin-top: 50px;margin-left:105px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#5EA73E;border-radius: 44px;",
+                            "_value": "margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#5EA73E;border-radius: 44px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
