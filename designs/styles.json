@@ -54,6 +54,7 @@
         "margin",
         "marginweb",
         "mat-form-field-outline-thick",
-        "mat-select-panel"
+        "mat-select-panel",
+        "ios-fix"
     ]
 }
