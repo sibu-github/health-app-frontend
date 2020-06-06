@@ -1657,6 +1657,7 @@
             "d30e778c-a85d-ebc2-ba47-e0d41981ec51": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "93469bba-3b9b-6903-3cf9-7e938780f4b4",
+                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -1723,6 +1724,7 @@
                 "e150c0ae-5089-122d-f32c-0ac91228b4c4": {
                     "paletteKey": "NG-RadioGroup",
                     "parentEditorKey": "d30e778c-a85d-ebc2-ba47-e0d41981ec51",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -1795,6 +1797,7 @@
                     "dda2ae81-a22c-a66d-8047-c42114262f55": {
                         "paletteKey": "NG-Radio",
                         "parentEditorKey": "e150c0ae-5089-122d-f32c-0ac91228b4c4",
+                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1886,6 +1889,7 @@
                     "ad35177e-9f7d-4360-6d2f-44506f0cb59b": {
                         "paletteKey": "NG-Radio",
                         "parentEditorKey": "e150c0ae-5089-122d-f32c-0ac91228b4c4",
+                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -2333,6 +2337,7 @@
         "f8b5d9f1-ba5a-3f9f-dd89-dc15d15146ed": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "84d423ad-f14a-1c9a-8739-9ea3f47cf282",
+            "isCommented": "false",
             "designerReference": [
                 {
                     "_key": "componentLabel",
@@ -2399,6 +2404,7 @@
             "0da545cb-9db9-c751-f79c-752567cae136": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "f8b5d9f1-ba5a-3f9f-dd89-dc15d15146ed",
+                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -2465,6 +2471,7 @@
                 "848c3c33-cf1a-312c-cf5a-b8ba99e26a7e": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "0da545cb-9db9-c751-f79c-752567cae136",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2621,7 +2628,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "onNext($event)",
+                            "_value": "onNext()",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -2881,7 +2888,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "onNext()",
+                            "_value": "onNext(healthForm)",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
