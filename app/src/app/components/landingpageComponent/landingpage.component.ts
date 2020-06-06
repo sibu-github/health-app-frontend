@@ -95,9 +95,21 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     let language = window.localStorage.getItem("language");
     this.localeService.language = language;
   }
+
   //when user selects lets starts button
   async letStart() {
     console.log("Lets Starts is working");
+    if (this.isMobileApp) {
+      this.letsStartMobile();
+      return;
+    }
+  }
+
+  // let's start for Mobile App
+  // we show inappbrowser here
+  async letsStartMobile() {
+    console.log("Lets Starts Mobile");
+
     let accessToken = window.localStorage.getItem("accessToken");
     let refreshToken = window.localStorage.getItem("refreshToken");
     this.showSpinner = true;
@@ -141,7 +153,42 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     }
 
     // otherwise we show login screen for user to login
-    this.showLoginScreen();
+    this.openInAppBrowser();
+  }
+
+  // show the microsoft login window
+  showLoginScreen() {
+    // when opened from browser
+    // for non employee flow the url contains the string /landpage
+    // route to personalinfo in that case
+    if (document.URL.indexOf("/landpage") > 0) {
+      this.router.navigate(["/personalinfo"]);
+      return;
+    }
+  }
+
+  // show loginpopup for employee login
+  openLoginPopup() {}
+
+  // open inappbrowser to show the login winoow
+  openInAppBrowser() {
+    const CLIENT_ID = this.systemService.getVal("azureClientID");
+    const AUTH_URL = this.systemService.getVal("azureAuthURL");
+    const REDIRECT_URL = this.systemService.getVal("redirectURL");
+    const SCOPE = this.systemService.getVal("azureScopes");
+    const RESPONSE_TYPE = this.systemService.getVal("azureResponseType");
+    const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
+
+    // keep the reference of this so that can be used from the event listener callback
+    const options = "location=no,clearcache=yes,cleardata=yes";
+    const target = "_blank";
+    this.inAppBrowserRef = cordova.InAppBrowser.open(loginUrl, target, options);
+
+    // register the loadstart event listener
+    this.inAppBrowserRef.addEventListener(
+      "loadstart",
+      this.onLoadStartCallback
+    );
   }
 
   // callback for loadstart event inappbrowser
@@ -155,43 +202,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       const code = urlParams.get("code");
       this.inAppBrowserRef.close();
       this.onSuccess(code);
-    }
-  }
-
-  // show the microsoft login window
-  showLoginScreen() {
-    const CLIENT_ID = this.systemService.getVal("azureClientID");
-    const AUTH_URL = this.systemService.getVal("azureAuthURL");
-    const REDIRECT_URL = this.systemService.getVal("redirectURL");
-    const SCOPE = this.systemService.getVal("azureScopes");
-    const RESPONSE_TYPE = this.systemService.getVal("azureResponseType");
-    const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
-
-    // if document URL is starting with http then it is opened from browser
-    // otherwise from mobile
-    if (document.URL.indexOf("http") === 0) {
-      console.log("From browser");
-      // for non employee flow the url contains the string /landpage
-      // route to personalinfo in that case
-      if (document.URL.indexOf("/landpage") > 0) {
-        this.router.navigate(["/personalinfo"]);
-      }
-    } else {
-      console.log("From mobile");
-      // keep the reference of this so that can be used from the event listener callback
-      const options = "location=no,clearcache=yes,cleardata=yes";
-      const target = "_blank";
-      this.inAppBrowserRef = cordova.InAppBrowser.open(
-        loginUrl,
-        target,
-        options
-      );
-
-      // register the loadstart event listener
-      this.inAppBrowserRef.addEventListener(
-        "loadstart",
-        this.onLoadStartCallback
-      );
     }
   }
 
