@@ -2,7 +2,7 @@
 import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { NSystemService } from "neutrinos-seed-services";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
@@ -351,7 +351,21 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   async getProfile() {
     console.log("getProfile");
     const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me";
-    const profile: any = await this.http.get(graphMeEndpoint).toPromise();
+
+    const tokenResponse = await this.authService.acquireTokenSilent({
+      scopes: ["user.read"],
+    });
+    console.log(tokenResponse);
+    let headers = new HttpHeaders({
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + tokenResponse.accessToken,
+    });
+
+    const profile: any = await this.http
+      .get(graphMeEndpoint, { headers })
+      .toPromise();
+
+    console.log(profile);
 
     window.localStorage.setItem("email", profile.mail);
     window.localStorage.setItem("username", profile.mail);
