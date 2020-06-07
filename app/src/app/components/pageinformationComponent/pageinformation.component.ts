@@ -32,6 +32,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   lastname: any; // data binding
   usertypes: any; // list of user types data
   languageCode:any;
+  languageFilter: any;
 //   localdata: any;
 showme:Boolean;
   type: any;
@@ -48,9 +49,13 @@ showme:Boolean;
     if (language) {
       this.localeService.language = language;
       this.languageCode = language;
-      console.log(this.languageCode);
+      console.log('languageCode',this.languageCode);
     }
-    this.languageCode= 'en';
+    if (language == 'en'){
+        this.languageFilter= true;
+        console.log('lang changes det',this.languageFilter);
+    }
+    this.languageFilter = false;
     
   }
   languages: any[] = [
@@ -84,15 +89,17 @@ showme:Boolean;
     // }
     //Getting user types from legacy service and locations from DB
     try {
-      this.usertypes = this.datash.getusertypes();
-      console.log("uts", this.usertypes);
+      
+
+      //console.log("uts", this.usertypes);
       //let bh = await this.getlocation.getLocations();
       let language = window.localStorage.getItem("language") || 'en' ;
       console.log('languageKey', language);
       let bh = await this.getlocation.getLangLocations(language);
-      console.log('bh', bh);
+      this.usertypes = await this.getlocation.getRoles(language);
+      this.usertypes = this.usertypes.local.result
+      console.log('bh', this.usertypes);
       // console.log('bh', bh);
-      console.log(bh.local.result);
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
     } catch (err) {

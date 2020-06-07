@@ -236,8 +236,8 @@
         "accept_bh": false,
         "functionName": "getLocations",
         "category": "General",
-        "x": 185,
-        "y": 520,
+        "x": 205,
+        "y": 580,
         "wires": [
             [
                 "sd_chnzbvsmBYvG8poP"
@@ -255,8 +255,8 @@
         "name": "apiURL",
         "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation`;\n\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
         "category": "Function",
-        "x": 325,
-        "y": 540,
+        "x": 345,
+        "y": 600,
         "wires": [
             [
                 "sd_CrsIy7P6IOcKj3sX"
@@ -273,14 +273,18 @@
         "nodeType": "flow",
         "name": "locationData",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -290,6 +294,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -297,10 +303,11 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 465,
-        "y": 560,
+        "y": 620,
         "wires": [
             [
                 "sd_i2UZMf57vKvaRxeM"
@@ -326,8 +333,8 @@
                 "constant": false
             }
         },
-        "x": 610,
-        "y": 600,
+        "x": 605,
+        "y": 640,
         "wires": [],
         "generateNext": false,
         "generated": true
@@ -986,6 +993,149 @@
         "nodeType": "flow",
         "name": "locationData",
         "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlValue": "",
+        "urlMapping": "bh.local.apiURL",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "apiURL"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": [],
+        "headersObj": {},
+        "headerMapping": "bh.local.headers",
+        "headerMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "headers"
+        },
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "category": "HTTP",
+        "x": 525,
+        "y": 380,
+        "wires": [
+            [
+                "sd_kqtEUQ9XRAsHJAc2"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_HmVbYnz5Ilemc7oI",
+        "type": "Start",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getRoles",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "language",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "apiURL",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getRoles",
+        "category": "General",
+        "x": 185,
+        "y": 440,
+        "wires": [
+            [
+                "sd_HknIwM0VnQqhz3PB"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "saveuserresponse"
+    },
+    {
+        "id": "sd_HknIwM0VnQqhz3PB",
+        "type": "Script",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "getRoles",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/roles?languageKey=${bh.input.language}`;\n\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nconsole.log('apiURL is ', bh.local.apiURL)\nconsole.log('token is ', jwtToken)\nbh.local.headers = {\n    Authorization: jwtToken\n}\n\n// const email = bh.input.email\n// bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;\n\n// const jwtToken = window.localStorage.getItem('jwtToken')\n// console.log('apiURL is ', bh.local.apiURL)\n// console.log('token is ', jwtToken)\n\n// bh.local.headers = {\n//     Authorization: jwtToken\n// }",
+        "category": "Function",
+        "x": 345,
+        "y": 460,
+        "wires": [
+            [
+                "sd_5E0Fgea90XciH7V5"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_J0WQgXVMU57xr6SO",
+        "type": "Log",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "get roles",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "x": 625,
+        "y": 500,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_5E0Fgea90XciH7V5",
+        "type": "HttpRequest",
+        "z": "sd_475uFCxWWClXFyYI",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "rolesData",
+        "method": "get",
         "methodMappingObj": {},
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
@@ -1012,11 +1162,11 @@
         "paramsObj": [],
         "paramMappingObj": {},
         "category": "HTTP",
-        "x": 525,
-        "y": 380,
+        "x": 485,
+        "y": 480,
         "wires": [
             [
-                "sd_kqtEUQ9XRAsHJAc2"
+                "sd_J0WQgXVMU57xr6SO"
             ]
         ],
         "generateNext": false,

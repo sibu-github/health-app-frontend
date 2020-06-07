@@ -177,6 +177,30 @@ export class saveuserresponse {
       return await this.errorHandler(bh, e, 'sd_qpGUjxSgRbcsTNJB');
     }
   }
+
+  public async getRoles(language: any = undefined, ...others) {
+    let bh = {
+      input: { language: language },
+      local: { apiURL: undefined, result: undefined }
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_HknIwM0VnQqhz3PB(bh);
+      //appendnew_next_getRoles
+      //Start formatting output variables
+      let outputVariables = {
+        input: {},
+        local: {
+          apiURL: bh.local.apiURL,
+          result: bh.local.result
+        }
+      };
+      //End formatting output variables
+      return outputVariables;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_HmVbYnz5Ilemc7oI');
+    }
+  }
   //appendnew_flow_saveuserresponse_Start
 
   async sd_p4EvIXbAOEeVOVuZ(bh) {
@@ -511,6 +535,63 @@ export class saveuserresponse {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_kqtEUQ9XRAsHJAc2');
+    }
+  }
+  async sd_HknIwM0VnQqhz3PB(bh) {
+    try {
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/roles?languageKey=${bh.input.language}`;
+
+      const jwtToken = window.localStorage.getItem('jwtToken');
+      console.log('apiURL is ', bh.local.apiURL);
+      console.log('token is ', jwtToken);
+      bh.local.headers = {
+        Authorization: jwtToken
+      };
+
+      // const email = bh.input.email
+      // bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;
+
+      // const jwtToken = window.localStorage.getItem('jwtToken')
+      // console.log('apiURL is ', bh.local.apiURL)
+      // console.log('token is ', jwtToken)
+
+      // bh.local.headers = {
+      //     Authorization: jwtToken
+      // }
+      bh = await this.sd_5E0Fgea90XciH7V5(bh);
+      //appendnew_next_sd_HknIwM0VnQqhz3PB
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_HknIwM0VnQqhz3PB');
+    }
+  }
+  async sd_5E0Fgea90XciH7V5(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.apiURL,
+        method: 'get',
+        responseType: 'json',
+        reportProgress: undefined,
+        headers: bh.local.headers,
+        params: {},
+        body: undefined
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_J0WQgXVMU57xr6SO(bh);
+      //appendnew_next_sd_5E0Fgea90XciH7V5
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_5E0Fgea90XciH7V5');
+    }
+  }
+  async sd_J0WQgXVMU57xr6SO(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), bh.local.result);
+
+      //appendnew_next_sd_J0WQgXVMU57xr6SO
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_J0WQgXVMU57xr6SO');
     }
   }
   //appendnew_node
