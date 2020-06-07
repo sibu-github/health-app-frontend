@@ -37,7 +37,7 @@
   <div fxLayout="row wrap" style="width:100%;padding-top:10px;margin-left:10px;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <form class="example-form" #healthForm="ngForm" [hidden]="!enableTextArea" style="width:85%;">
       <mat-form-field class="example-full-width">
-        <input name="addlinfo" [(ngModel)]="name" matInput #message maxlength="256" placeholder="{{locales.inputhelp}}">
+        <input name="addlinfo" ngModel [(ngModel)]="name" matInput #message maxlength="256" placeholder="{{locales.inputhelp}}">
         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
       </mat-form-field>
     </form>

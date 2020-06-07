@@ -2911,7 +2911,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "<mat-form-field class=\"example-full-width\">\r\n    <input name=\"addlinfo\" [(ngModel)]=\"name\" matInput #message maxlength=\"256\" placeholder=\"{{locales.inputhelp}}\">\r\n    <mat-hint align=\"end\">{{message.value.length}} / 256</mat-hint>\r\n  </mat-form-field>",
+                            "_value": "<mat-form-field class=\"example-full-width\">\r\n    <input name=\"addlinfo\" ngModel [(ngModel)]=\"name\" matInput #message maxlength=\"256\" placeholder=\"{{locales.inputhelp}}\">\r\n    <mat-hint align=\"end\">{{message.value.length}} / 256</mat-hint>\r\n  </mat-form-field>",
                             "_type": "a",
                             "_attrDef": "p"
                         }
@@ -3182,6 +3182,7 @@
                 "34d04c00-d3c9-f9ae-54a4-881378c337bf": {
                     "paletteKey": "NG-button",
                     "parentEditorKey": "d1770d5a-609a-7e24-7e25-4775bb7a286a",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",

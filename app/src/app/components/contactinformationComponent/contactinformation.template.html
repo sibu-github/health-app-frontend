@@ -20,7 +20,7 @@
     <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <form #contactInfo="ngForm" style="width:100%;height:100%;">
         <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" pattern="([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+\.)+[a-z]{2,})" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)">
+          <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" pattern="([A-Z_a-z_]|[0-9])[_A-Z_a-z_0-9.]+[_A-Z_a-z_0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)">
 
         </mat-form-field>
         <div *ngIf="EmailId.errors &amp;&amp; (EmailId.dirty || EmailId.touched || validclick)">

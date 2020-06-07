@@ -118,6 +118,8 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
       window.localStorage.setItem("val3",this.val3);
       if (this.val3 == "true") {
         console.log(form.value.addlinfo, typeof(this.val3));
+        console.log('formvalue',form );
+        
         if (this.val3 == "true" && form.value.addlinfo != undefined) {
             //storing the addinfo in local storage
           window.localStorage.setItem("addlinfo",form.value.addlinfo);

@@ -51,7 +51,7 @@
         </div>
         <div *ngIf="!show">
           <mat-form-field style="width:100%;">
-            <mat-label>Location</mat-label>
+            <mat-label>{{locales.Location}}</mat-label>
             <mat-select (selectionChange)="selectLocation($event)" #location ngModel name="locationName" required>
               <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
                 {{location.locationName}}

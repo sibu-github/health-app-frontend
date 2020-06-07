@@ -65,8 +65,11 @@ console.log('Contact next || new page fix');
       var EmailId = email.toString().toLowerCase();
     }
     this.emailvalidation = false; // default we keep as false once the email is found in database records we make it to true
-    var regexp = new RegExp(
-      "([A-Za-z_]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
+    // var regexp = new RegExp(
+    //   "([A-Za-z_]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
+    // );
+     var regexp = new RegExp(
+      "([A-Z_a-z_]|[0-9])[_A-Z_a-z_0-9.]+[_A-Z_a-z_0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
     );
     if (regexp.test(EmailId)) {
       console.log(EmailId);
