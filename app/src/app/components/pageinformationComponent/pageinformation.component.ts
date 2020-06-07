@@ -32,7 +32,8 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   lastname: any; // data binding
   usertypes: any; // list of user types data
   languageCode:any;
-  languageFilter: any;
+  languageFilter: boolean;
+  show: boolean = false
 //   localdata: any;
 showme:Boolean;
   type: any;
@@ -53,6 +54,7 @@ showme:Boolean;
     }
     if (language == 'en'){
         this.languageFilter= true;
+        this.show = true;
         console.log('lang changes det',this.languageFilter);
     }
     this.languageFilter = false;

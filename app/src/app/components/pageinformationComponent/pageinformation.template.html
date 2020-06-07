@@ -32,7 +32,7 @@
           <span *ngIf="LastName.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
-        <div>
+        <div *ngIf="show">
 
           <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
             <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
@@ -49,7 +49,7 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
         </div>
-        <div *ngIf="false">
+        <div *ngIf="!show">
           <mat-form-field style="width:100%;">
             <mat-label>Location</mat-label>
             <mat-select (selectionChange)="selectLocation($event)" #location ngModel name="locationName" required>
