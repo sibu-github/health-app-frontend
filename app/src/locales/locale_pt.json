@@ -90,6 +90,7 @@
         "scno": "Número da asa / seção",
         "cuno": "Número do cubo / escritório",
         "submittedby": "Enviado por",
-        "classifyUser": "Classificar usuário"
+        "classifyUser": "Classificar usuário",
+        "ingredion": "Ingrediente"
     }
 }

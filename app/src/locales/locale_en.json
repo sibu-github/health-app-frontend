@@ -90,6 +90,7 @@
         "scno": "Wing / Section Number",
         "cuno": "Cube / Office Number",
         "submittedby": "Submitted By",
-        "classifyUser": "Classify User"
+        "classifyUser": "Classify User",
+        "ingredion": "Ingredion"
     }
 }

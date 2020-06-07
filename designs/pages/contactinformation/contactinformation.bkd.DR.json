@@ -3754,7 +3754,7 @@
                                             },
                                             {
                                                 "_key": "placeholder",
-                                                "_value": "{{locales.ingredoncontact}}",
+                                                "_value": "{{common.selectionType === 'employee' ? locales.ingredion : locales.ingredoncontact}}",
                                                 "_type": "kv",
                                                 "_attrDef": "p",
                                                 "_useAsLabel": true

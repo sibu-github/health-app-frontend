@@ -44,7 +44,7 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.cn}}</small></span><span *ngIf="companyName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.poc}}</small></span></div>
                 <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput [(ngModel)]="ingredioncontact" name="ingredioncontact" type="text" placeholder="{{locales.ingredoncontact}}" required #gc="ngModel" pattern="[a-zA-Z\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}">
+                  <input matInput [(ngModel)]="ingredioncontact" name="ingredioncontact" type="text" placeholder="{{common.selectionType === &apos;employee&apos; ? locales.ingredion : locales.ingredoncontact}}" required #gc="ngModel" pattern="[a-zA-Z\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}">
 
                 </mat-form-field>
                 <div *ngIf="gc.errors &amp;&amp; (gc.dirty || gc.touched || validclick)">

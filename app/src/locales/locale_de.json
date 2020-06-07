@@ -90,6 +90,7 @@
         "scno": "Flügel- / Abschnittsnummer",
         "cuno": "Würfel- / Büronummer",
         "submittedby": "Eingereicht von",
-        "classifyUser": "Benutzer klassifizieren"
+        "classifyUser": "Benutzer klassifizieren",
+        "ingredion": "Zutat"
     }
 }

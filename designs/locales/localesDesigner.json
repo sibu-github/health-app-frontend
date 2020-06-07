@@ -91,7 +91,8 @@
             "scno": "Wing / Section Number",
             "cuno": "Cube / Office Number",
             "submittedby": "Submitted By",
-            "classifyUser": "Classify User"
+            "classifyUser": "Classify User",
+            "ingredion": "Ingredion"
         }
     },
     "zh-CN": {
@@ -186,7 +187,8 @@
             "scno": "翼/科号",
             "cuno": "立方体/办公室编号",
             "submittedby": "由...所提交",
-            "classifyUser": "分类用户"
+            "classifyUser": "分类用户",
+            "ingredion": "侵略"
         }
     },
     "zh-TW": {
@@ -281,7 +283,8 @@
             "scno": "翼/科號",
             "cuno": "立方體/辦公室編號",
             "submittedby": "由...所提交",
-            "classifyUser": "分類用戶"
+            "classifyUser": "分類用戶",
+            "ingredion": "侵略"
         }
     },
     "es": {
@@ -376,7 +379,8 @@
             "scno": "Ala / Número de sección",
             "cuno": "Cubo / Número de oficina",
             "submittedby": "Presentado por",
-            "classifyUser": "Clasificar usuario"
+            "classifyUser": "Clasificar usuario",
+            "ingredion": "Ingredion"
         }
     },
     "pt": {
@@ -471,7 +475,8 @@
             "scno": "Número da asa / seção",
             "cuno": "Número do cubo / escritório",
             "submittedby": "Enviado por",
-            "classifyUser": "Classificar usuário"
+            "classifyUser": "Classificar usuário",
+            "ingredion": "Ingrediente"
         }
     },
     "ko": {
@@ -566,7 +571,8 @@
             "scno": "날개 / 섹션 번호",
             "cuno": "큐브 / 사무실 번호",
             "submittedby": "에 의해 제출 된",
-            "classifyUser": "사용자 분류"
+            "classifyUser": "사용자 분류",
+            "ingredion": "인 그리 디언"
         }
     },
     "th": {
@@ -661,7 +667,8 @@
             "scno": "จำนวนปีก / ส่วน",
             "cuno": "หมายเลข Cube / สำนักงาน",
             "submittedby": "ส่งมาโดย",
-            "classifyUser": "จำแนกผู้ใช้"
+            "classifyUser": "จำแนกผู้ใช้",
+            "ingredion": "Ingredion"
         }
     },
     "de": {
@@ -756,7 +763,8 @@
             "scno": "Flügel- / Abschnittsnummer",
             "cuno": "Würfel- / Büronummer",
             "submittedby": "Eingereicht von",
-            "classifyUser": "Benutzer klassifizieren"
+            "classifyUser": "Benutzer klassifizieren",
+            "ingredion": "Zutat"
         }
     }
 }
