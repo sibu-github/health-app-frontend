@@ -10,6 +10,7 @@ import { servicename } from 'app/sd-services/servicename';
 */
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
+import { commonService } from 'app/services/common/common.service';
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -31,10 +32,11 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   firstname: any; // data binding
   lastname: any; // data binding
   usertypes: any; // list of user types data
-//   localdata: any;
-showme:Boolean;
+  //   localdata: any;
+  showme: Boolean;
   type: any;
   constructor(
+    private common: commonService,
     private router: Router,
     private datash: datasharingService,
     private getlocation: saveuserresponse,
@@ -63,34 +65,17 @@ showme:Boolean;
   ];
 
   doSomething(event) {
-    //console.log(event.value);
     window.localStorage.setItem("language", event.value);
     let language = window.localStorage.getItem("language");
-    console.log(language);
     this.localeService.language = language;
   }
   async ngOnInit() {
-    // if (this.localdata && this.localdata.firstName) {
-    //   this.firstname = this.localdata.firstName;
-    //   this.lastname = this.localdata.lastName;
-    //   this.locationName = this.localdata.locationName;
-    //   this.type = this.localdata.type.charAt(0).toUpperCase() + this.localdata.type.slice(1)
-    // } else {
-    //   this.firstname = "";
-    //   this.lastname = "";
-    //   this.locationName = "";
-    //   this.type = "";
-    // }
     try {
       this.usertypes = this.datash.getusertypes();
-      console.log("uts", this.usertypes);
       let bh = await this.getlocation.getLocations();
-      console.log(bh);
-      console.log(bh.local.result);
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
     } catch (err) {
-      console.error(err);
     }
   }
 
@@ -105,41 +90,38 @@ showme:Boolean;
   async personalInfoSubmit(data) {
     this.validclick = true;
     this.showme = false;
-    console.log(data.value);
-    console.log(this.defaultLocationName, data.value.locationName);
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = data.value.locationName;
-    this.masterdata.userType = data.value.type.toLowerCase(); 
-   
+    this.masterdata.userType = data.value.type.toLowerCase();
+
     if (data.valid === true) {
-        var locationmatch = await this.checkLocation(data.value.locationName);
-        if(locationmatch){
-            console.log('success');
-               this.router.navigate(["/contactinfo"]);  
-        } else{
-            console.log('else condition');
-            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
-        }    
+      var locationmatch = await this.checkLocation(data.value.locationName);
+      if (locationmatch) {
+        if (this.common.selectionType == 'Employee') {
+          this.common.name = this.masterdata.firstName + ' ' + this.masterdata.lastName;
+        }
+        this.router.navigate(["/contactinfo"]);
+      } else {
+        this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
+      }
     }
     else {
-        console.log('commented snack bar');
-  }
+    }
   }
 
-  checkLocation(locname){
-     
-      var locmatch:any;
-       for (let i = 0; i < this.totallocations.length; i++) {
-        if (
-          (this.totallocations[i] &&
-            this.totallocations[i].locationName == locname)) {
-          console.log("valid success");
-          locmatch=this.totallocations[i];
-          break;
-        } 
+  checkLocation(locname) {
+
+    var locmatch: any;
+    for (let i = 0; i < this.totallocations.length; i++) {
+      if (
+        (this.totallocations[i] &&
+          this.totallocations[i].locationName == locname)) {
+        locmatch = this.totallocations[i];
+        break;
       }
-      return locmatch;
+    }
+    return locmatch;
   }
   locationFilter() {
     this.updatelocations = this.filter(this.totallocations);
@@ -152,9 +134,9 @@ showme:Boolean;
   }
 
   selectUser(event) {
-    //console.log(event.value);
+    this.common.selectionType = this.type;
+    console.log(this.common.selectionType);
     window.localStorage.setItem("usertype", event.value);
     let usertype = window.localStorage.getItem("usertype");
-    console.log(usertype);
   }
 }
