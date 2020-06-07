@@ -66,7 +66,7 @@ console.log('Contact next || new page fix');
     }
     this.emailvalidation = false; // default we keep as false once the email is found in database records we make it to true
     var regexp = new RegExp(
-      "([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
+      "([A-Za-z_]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
     );
     if (regexp.test(EmailId)) {
       console.log(EmailId);
