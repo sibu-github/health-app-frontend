@@ -79,12 +79,10 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     }
       
     try {
-      let bh = await this.getlocation.getLocations();
-      console.log(bh);
-      console.log(bh.local.result);
+      let language = window.localStorage.getItem("language");
+      let bh = await this.getlocation.getLocations(language);
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
-      console.log(this.totallocations);
     } catch (err) {
       console.error(err);
     }
@@ -167,13 +165,14 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
       return locmatch;
   }
   locationFilter() {
+      console.log('locationFilter called')
     this.updatelocations = this.filter(this.totallocations);
   }
 
   filter(values) {
 
     return values.filter((location) =>
-      location.locationName.includes(this.locationName)
+      location.locationName.toLowerCase().includes(this.locationName.toLowerCase())
     );
   }
 }

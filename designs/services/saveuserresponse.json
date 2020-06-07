@@ -87,13 +87,16 @@
         "nodeType": "flow",
         "name": "sendingUserResponse",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiUrl",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiUrl"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "reqBody": "bh.input.formdata",
         "reqBodyObj": {
@@ -105,6 +108,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -112,6 +117,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 505,
@@ -215,7 +221,16 @@
         "name": "getLocations",
         "outputs": 1,
         "noerr": 0,
-        "inputVariables": [],
+        "inputVariables": [
+            {
+                "key": "locale",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
         "localVariables": [
             {
                 "key": "result",
@@ -246,7 +261,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "apiURL",
-        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation`;\n\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?locale=${bh.input.locale}`;\n\nconsole.log(bh.local.apiURL)\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
         "category": "Function",
         "x": 320,
         "y": 480,
@@ -266,14 +281,18 @@
         "nodeType": "flow",
         "name": "locationData",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -283,6 +302,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -290,6 +311,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 460,
@@ -402,14 +424,18 @@
         "nodeType": "flow",
         "name": "callAPIForUserSubmitted",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -419,6 +445,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -426,6 +454,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 525,
@@ -538,14 +567,18 @@
         "nodeType": "flow",
         "name": "callAPIGetToken",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -557,9 +590,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 520,
@@ -803,14 +838,18 @@
         "nodeType": "flow",
         "name": "callAPIGetJWT",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -822,9 +861,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 440,
