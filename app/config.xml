@@ -84,7 +84,9 @@
         <splash src="src/assets/iOS/Resources/splash/Default-Landscape@~ipadpro.png" />
         <splash src="src/assets/iOS/Resources/splash/Default-Portrait@2x~ipad.png" />
         <splash src="src/assets/iOS/Resources/splash/Default-Portrait~ipad.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default-Portrait@~ipadpro" />
+        <splash src="src/assets/iOS/Resources/splash/Default-Portrait@~ipadpro.png" />
+         <splash src="src/assets/iOS/Resources/splash/ Default@2x~ipad~anyany.png" />
+       
     
         <icon height="180" src="src/assets/iOS/Resources/icons/icon-60@3x.png" width="180" />
         <icon height="60" src="src/assets/iOS/Resources/icons/icon-60.png" width="60" />
