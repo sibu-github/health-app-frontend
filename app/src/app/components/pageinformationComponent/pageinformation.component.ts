@@ -81,6 +81,7 @@ showme:Boolean;
     //   this.locationName = "";
     //   this.type = "";
     // }
+    //Getting user types from legacy service and locations from DB
     try {
       this.usertypes = this.datash.getusertypes();
       console.log("uts", this.usertypes);

@@ -47,7 +47,7 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
         <mat-form-field style="width:100%;">
-          <mat-label>Classify User</mat-label>
+          <mat-label>{{locales.classifyuser}}</mat-label>
           <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
             <mat-option *ngFor="let user of usertypes" [value]="user.type">
               {{user.type}}
