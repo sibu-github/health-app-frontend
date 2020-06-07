@@ -60,34 +60,19 @@
         <preference name="FadeSplashScreen" value="false" />
         <preference name="AutoHideSplashScreen" value="false" />
         <resource-file src="GoogleService-Info.plist" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-568h@2x~iphone_640x1136.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-750@2x~iphone6-landscape_1334x750.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-750@2x~iphone6-portrait_750x1334.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-828@2x~iphoneXr-portrait_828x1792.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-1125@3x~iphoneX-portrait_1125x2436.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-1242@3x~iphone6s-landscape_2208x1242.png" />
-
-
-
-         <splash src="src/assets/iOS/Resources/splash/LaunchImage-1242@3x~iphone6s-portrait_1242x2208.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-1242@3x~iphoneXsMax-portrait_1242x2688.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-1792@2x~iphoneXr-landscape_1792x828.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-2436@3x~iphoneX-landscape_2436x1125.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage~ipad.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage~iphone_640x960.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage~iphone-320x480.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Landscape@2x~ipad_2048x1496.png" />
-
-         <splash src="src/assets/iOS/Resources/splash/LaunchImage-Landscape@2x~ipad_2048x1536.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Landscape@2x~ipad_2224x1668.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Landscape@2x~ipad_2732x2048.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Landscape~ipad_1024x748.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Landscape~ipad_1024x768.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Portrait@2x~ipad_1536x2008.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Portrait@2x~ipad_1668x2224.png" />
-        <splash src="src/assets/iOS/Resources/splash/LaunchImage-Portrait@2x~ipad_2048x2732.png" />
-         <splash src="src/assets/iOS/Resources/splash/  LaunchImage-Portrait~ipad_768x1024.png" />
+        <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
+        <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
+        <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
+        <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
+        <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+        <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
+        <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
+        <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
+        <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
+        <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
+        <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
+        <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+        <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />
         <icon height="180" src="src/assets/iOS/Resources/icons/icon-60@3x.png" width="180" />
         <icon height="60" src="src/assets/iOS/Resources/icons/icon-60.png" width="60" />
         <icon height="120" src="src/assets/iOS/Resources/icons/icon-60@2x.png" width="120" />
