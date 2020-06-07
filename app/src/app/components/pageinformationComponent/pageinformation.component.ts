@@ -58,6 +58,7 @@ showme:Boolean;
         console.log('lang changes det',this.languageFilter);
     }
     this.languageFilter = false;
+    //this.show = false;
     
   }
   languages: any[] = [
