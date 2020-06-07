@@ -147,7 +147,7 @@
   margin-left: 15px;
 }
 .contact-info {
-  margin-left: 15px;
+  // margin-left: 15px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -159,7 +159,7 @@
 }
 
 .certify-info {
-  margin-left: 15px;
+  // margin-left: 15px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
@@ -465,4 +465,8 @@ vertical-align: bottom;
 
 bh-landingpage{
   display: block !important;
+}
+
+mat-radio-button{
+  margin-right: 1em;
 }

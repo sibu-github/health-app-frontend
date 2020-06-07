@@ -8,6 +8,7 @@ Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
 */
 import { masterdataService } from "../../services/masterdata/masterdata.service";
+import { commonService } from 'app/services/common/common.service';
 
 /*
 Legacy Service import Example :
@@ -28,9 +29,8 @@ export class contactinformationComponent extends NBaseComponent
   company: any; // kept for build error
   ingredioncontact: any; // kept for build error
   localdata: any;
-  constructor(private router: Router, private masterdata: masterdataService) {
+  constructor(private router: Router, private masterdata: masterdataService, private common: commonService) {
     super();
-console.log('Contact next || new page fix');
     // get the previously selected language from local storage
     // set the language if selected
     let language = window.localStorage.getItem("language");
@@ -45,17 +45,10 @@ console.log('Contact next || new page fix');
   }
 
   ngOnInit() {
-    // if (this.localdata && this.localdata.firstName) {
-    //   this.email = this.localdata.email;
-    //   this.phone = this.localdata.phone;
-    //   this.company = this.localdata.company;
-    //   this.ingredioncontact = this.localdata.ingredionContact;
-    // } else {
-    //   this.email = "";
-    //   this.phone = "";
-    //   this.company = "";
-    //   this.ingredioncontact = "";
-    // }
+    if (this.common.selectionType == 'Employee') {
+      this.company = "Ingredion"
+      this.ingredioncontact = this.common.name;
+    }
   }
 
   /**

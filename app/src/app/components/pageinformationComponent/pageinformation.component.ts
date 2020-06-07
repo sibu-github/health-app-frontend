@@ -10,6 +10,7 @@ import { servicename } from 'app/sd-services/servicename';
 */
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
+import { commonService } from 'app/services/common/common.service';
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -42,6 +43,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
 showme:Boolean;
   type: any;
   constructor(
+    private common: commonService,
     private router: Router,
     private datash: datasharingService,
     private getlocation: saveuserresponse,
@@ -70,24 +72,11 @@ showme:Boolean;
   ];
 
   doSomething(event) {
-    //console.log(event.value);
     window.localStorage.setItem("language", event.value);
     let language = window.localStorage.getItem("language");
-    console.log(language);
     this.localeService.language = language;
   }
   async ngOnInit() {
-    // if (this.localdata && this.localdata.firstName) {
-    //   this.firstname = this.localdata.firstName;
-    //   this.lastname = this.localdata.lastName;
-    //   this.locationName = this.localdata.locationName;
-    //   this.type = this.localdata.type.charAt(0).toUpperCase() + this.localdata.type.slice(1)
-    // } else {
-    //   this.firstname = "";
-    //   this.lastname = "";
-    //   this.locationName = "";
-    //   this.type = "";
-    // }
     try {
     //   this.usertypes = this.datash.getusertypes();
     //   console.log("uts", this.usertypes);
@@ -144,7 +133,6 @@ showme:Boolean;
 
       this.getAllLocations();   
     } catch (err) {
-      console.error(err);
     }
   }
 
@@ -159,8 +147,6 @@ showme:Boolean;
   async personalInfoSubmit(data) {
     this.validclick = true;
     this.showme = false;
-    console.log(data.value);
-    console.log(this.defaultLocationName, data.value.locationName);
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = this.locationName;
@@ -178,19 +164,18 @@ showme:Boolean;
     this.router.navigate(["/contactinfo"]);  
   }
 
-  checkLocation(locname){
-     
-      var locmatch:any;
-       for (let i = 0; i < this.totallocations.length; i++) {
-        if (
-          (this.totallocations[i] &&
-            this.totallocations[i].locationName == locname)) {
-          console.log("valid success");
-          locmatch=this.totallocations[i];
-          break;
-        } 
+  checkLocation(locname) {
+
+    var locmatch: any;
+    for (let i = 0; i < this.totallocations.length; i++) {
+      if (
+        (this.totallocations[i] &&
+          this.totallocations[i].locationName == locname)) {
+        locmatch = this.totallocations[i];
+        break;
       }
-      return locmatch;
+    }
+    return locmatch;
   }
 
 

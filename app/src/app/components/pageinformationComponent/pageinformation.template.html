@@ -1,72 +1,150 @@
-<div fxLayout="column wrap" style="width:100px;height:560px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-        <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="height :20px;width:80px;" width="50px"></div>
+<div fxLayout="row wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill fxHide.xs="true">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="height :20px;width:80px;" width="50px"></div>
+        </div>
       </div>
-      <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; letter-spacing: 0.5px; text-transform: capitalize;">
-          {{locales.personalinformation}}</label></div>
-      <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png" style="margin-left:15px;"></div>
     </div>
-  </div>
-  <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <form #personalInfo="ngForm" style="width:100%;height:100%;">
-        <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="firstname" name="firstname" type="text" placeholder="{{locales.firstname}}" required #FirstName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
+    <div fxLayout="row wrap" style="width:100%;padding-top: 4em; margin: 0 auto;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <mat-card style="margin: 0 auto;">
+        <mat-card-content>
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; letter-spacing: 0.5px; text-transform: capitalize;">
+                {{locales.personalinformation}}</label></div>
+            <div fxLayout="row wrap" style="width:20%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png"></div>
+            <div fxLayout="row wrap" style="width: 100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+              <form #personalInfo="ngForm" style="width:100%;height:100%;">
+                <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="firstname" name="firstname" type="text" placeholder="{{locales.firstname}}" required #FirstName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
 
-        </mat-form-field>
-        <div *ngIf="FirstName.errors  &amp;&amp;  (FirstName.dirty || FirstName.touched || validclick)" style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;">
-          <span *ngIf="FirstName.errors.required">
+                </mat-form-field>
+                <div *ngIf="FirstName.errors  &amp;&amp;  (FirstName.dirty || FirstName.touched || validclick)" style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;">
+                  <span *ngIf="FirstName.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.fir}}</small>
 
 </span><span *ngIf="FirstName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small>
 </span></div>
-        <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="lastname" name="lastname" type="text" placeholder="{{locales.lastname}}" required #LastName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
+                <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="lastname" name="lastname" type="text" placeholder="{{locales.lastname}}" required #LastName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
 
-        </mat-form-field>
-        <div *ngIf="LastName.errors  &amp;&amp;  (LastName.dirty || LastName.touched || validclick)">
-          <span *ngIf="LastName.errors.required">
+                </mat-form-field>
+                <div *ngIf="LastName.errors  &amp;&amp;  (LastName.dirty || LastName.touched || validclick)">
+                  <span *ngIf="LastName.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
-        <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="locationVal" name="locationVal" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" [matAutocomplete]="auto">
+                <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="locationVal" name="locationVal" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
 
-        </mat-form-field>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
-          <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
-            {{location.locationVal}}
-          </mat-option>
-        </mat-autocomplete>
-        <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick || showme)">
-          <span *ngIf="showme">
+                </mat-form-field>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
+                  <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+                    {{location.locationVal}}
+                  </mat-option>
+                </mat-autocomplete>
+                <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick || showme)">
+                  <span *ngIf="showme">
                 <small style="color:red;font-family:Poppins;font-style:normal;">Invalid Input</small></span><span *ngIf="location.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
-        <mat-form-field style="width:100%;">
-          <mat-label>{{locales.classifyUser}}</mat-label>
-          <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
-            <mat-option *ngFor="let user of usertypes" [value]="user.type">
-              {{user.viewValue}}
-            </mat-option>
-          </mat-select>
+                <mat-form-field style="width:100%;">
+                  <mat-label>Classify User</mat-label>
+                  <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
+                    <mat-option *ngFor="let user of usertypes" [value]="user.type">
+                      {{user.type}}
+                    </mat-option>
+                  </mat-select>
 
-          <div *ngIf="userType.errors &amp;&amp; (userType.dirty || userType.touched || validclick)">
-            <span *ngIf="userType.errors.required">
+                  <div *ngIf="userType.errors &amp;&amp; (userType.dirty || userType.touched || validclick)">
+                    <span *ngIf="userType.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">Usertype is required</small>
               </span>
 
+                  </div>
+                </mat-form-field>
+              </form>
+            </div>
+            <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
           </div>
-        </mat-form-field>
-      </form>
+        </mat-card-content>
+      </mat-card>
     </div>
-    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
-  <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top: 50px;margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
+</div>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxHide.gt-xs="true" fxFill>
+  <div fxLayout="column wrap" style="width:100px;height:560px;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+          <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="height :20px;width:80px;" width="50px"></div>
+        </div>
+        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; letter-spacing: 0.5px; text-transform: capitalize;">
+            {{locales.personalinformation}}</label></div>
+        <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png" style="margin-left:15px;"></div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <form #personalInfo="ngForm" style="width:100%;height:100%;">
+          <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="firstname" name="firstname" type="text" placeholder="{{locales.firstname}}" required #FirstName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
+
+          </mat-form-field>
+          <div *ngIf="FirstName.errors  &amp;&amp;  (FirstName.dirty || FirstName.touched || validclick)" style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;">
+            <span *ngIf="FirstName.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.fir}}</small>
+
+</span><span *ngIf="FirstName.errors.pattern">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small>
+</span></div>
+          <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="lastname" name="lastname" type="text" placeholder="{{locales.lastname}}" required #LastName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
+
+          </mat-form-field>
+          <div *ngIf="LastName.errors  &amp;&amp;  (LastName.dirty || LastName.touched || validclick)">
+            <span *ngIf="LastName.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
+          <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
+
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+              {{location.locationName}}
+            </mat-option>
+          </mat-autocomplete>
+          <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick || showme)">
+            <span *ngIf="showme">
+                <small style="color:red;font-family:Poppins;font-style:normal;">Invalid Input</small></span><span *ngIf="location.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
+                <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
+          <mat-form-field style="width:100%;">
+            <mat-label>{{locales.classifyUser}}</mat-label>
+            <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
+              <mat-option *ngFor="let user of usertypes" [value]="user.type">
+                {{user.viewValue}}
+              </mat-option>
+            </mat-select>
+
+            <div *ngIf="userType.errors &amp;&amp; (userType.dirty || userType.touched || validclick)">
+              <span *ngIf="userType.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">Usertype is required</small>
+              </span>
+
+            </div>
+          </mat-form-field>
+        </form>
+      </div>
+      <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    </div>
+    <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
+      <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top: 50px;margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
+    </div>
   </div>
 </div>
