@@ -45,8 +45,8 @@ export class saveuserresponse {
     }
   }
 
-  public async getLocations(...others) {
-    let bh = { input: {}, local: { result: undefined } };
+  public async getLocations(locale = '', ...others) {
+    let bh = { input: { locale: locale }, local: { result: undefined } };
     try {
       bh = this.sdService.__constructDefault(bh);
       bh = await this.sd_chnzbvsmBYvG8poP(bh);
@@ -221,7 +221,9 @@ export class saveuserresponse {
   }
   async sd_chnzbvsmBYvG8poP(bh) {
     try {
-      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation`;
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?locale=${bh.input.locale}`;
+
+      console.log(bh.local.apiURL);
 
       const jwtToken = window.localStorage.getItem('jwtToken');
       bh.local.headers = {

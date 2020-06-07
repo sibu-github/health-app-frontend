@@ -26,15 +26,24 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   validclick: Boolean;
   defaultLocationName;
   phone;
-  updatelocations: any;
-  totallocations: any;
-  locationName: any;
+
   type: any;
   buildingNo: string;
   floorNo: string;
   sectionNo: string;
   cubeNo: string;
   localdata: any;
+
+    // holds the display value
+    locationVal:string;
+    // holds the actual value
+    locationName:string;
+    // holds the list to be displayed
+    updatelocations: any;
+    // holds the list of all locations
+    totallocations: any;
+
+
   constructor(
     private router: Router,
     private userdataservice: userdetails,
@@ -52,102 +61,87 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     }
     // // for prepopulating the data
     let uResp = localStorage.getItem("userResponse");
+    console.log({uResp});
     if (uResp) {
       this.localdata = JSON.parse(uResp);
-    }
-    console.log(this.localdata);
-
-    this.defaultLocationName = localStorage.getItem('location');
-    this.phone = localStorage.getItem('phone');
-  }
-
-  async ngOnInit() {
-
-     if (this.localdata && this.localdata.locationName) {
-      this.locationName = this.localdata.locationName;
       this.phone = this.localdata.phone;
       this.buildingNo = this.localdata.buildingNo;
       this.sectionNo = this.localdata.sectionNo;
       this.floorNo = this.localdata.floorNo;
       this.cubeNo = this.localdata.cubeNo;
     }
-     else if(this.defaultLocationName && this.phone){
-      this.locationName = this.defaultLocationName;
-      this.phone = this.phone;
-    } else {
-        console.log('Enter Manually')
-    }
-      
-    try {
-      let bh = await this.getlocation.getLocations();
-      console.log(bh);
-      console.log(bh.local.result);
-      this.updatelocations = bh.local.result;
-      this.totallocations = this.updatelocations;
-      console.log(this.totallocations);
-    } catch (err) {
-      console.error(err);
-    }
+
+    this.setPhone();
+    this.setLocation();
   }
 
-  /**
-   * Function name: onSubmit
-   * @Input: JSON data {locationName, phone}
-   * @Output:JSON data { response 201 / error}
-   * @Desc: This function collects the locationname and phonenumber from user and posts into db
-   * @error: 500 Internal server error / 404 - method not found
-   */
- async onSubmit(data) {
-    this.validclick = true;
-    console.log(data.valid);
-   
-    if (data.valid === true) {
-    var locationmatch = await this.checkLocation(data.value.locationName);
-    
-        if(locationmatch)  {
-          console.log("valid success");
-
-          this.masterdata.locationName = data.value.locationName;
-          this.masterdata.phone = data.value.phone;
-          this.masterdata.locationNameTwo = data.value.locationName;
-          this.masterdata.userType = data.value.type;
-          this.masterdata.buildingNo = data.value.buildingNo;
-          this.masterdata.floorNo = data.value.floorNo;
-          this.masterdata.sectionNo = data.value.sectionNo;
-          this.masterdata.cubeNo = data.value.cubeNo;
-         
-          let confirmdetailsObj = {
-            email: localStorage.getItem("username"),
-            locationName: this.masterdata.locationName,
-            phone: this.masterdata.phone,
-            buildingNo: this.masterdata.buildingNo,
-            floorNo: this.masterdata.floorNo,
-            sectionNo: this.masterdata.sectionNo,
-            cubeNo: this.masterdata.cubeNo,
-          };
-
-          //calling confirm details api
-          this.userdataservice
-            .userDetails(confirmdetailsObj)
-            .then((result) => {
-              console.log(result);
-              this.router.navigate(["/healthinfo"]);
-            })
-            .catch((err) => {
-              console.log("error", err);
-            });
-
-          localStorage.setItem("locationName", confirmdetailsObj.locationName);
-          localStorage.setItem("phone", confirmdetailsObj.phone);
-
-        } else {
-            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
-         
+    // set the previously selected location from localstorage
+    setLocation(){
+        // first we check if user has made any selection when opened the app previously
+        // user selected location value will be stored in localstorage
+        // if found then we ignore the value coming from azure ad
+        let location = window.localStorage.getItem('selectedLocation');
+        if(location){
+            this.locationName = location;
+            return
         }
-      
-      this.validclick = false;
+        
+        // get the location coming from azure ad
+        // azure ad location is set in the local storage
+        location = window.localStorage.getItem('location');
+        if(location){
+           this.locationName = location; 
+        }
+        
     }
-  }
+
+    // set the previously selected location from localstorage
+    setPhone(){
+        // first we check if user has made any selection when opened the app previously
+        // user selected phone value will be stored in localstorage
+        // if found then we ignore the value coming from azure ad
+        let phone = window.localStorage.getItem('selectedPhone');
+        if(phone){
+            this.phone = phone;
+            return
+        }
+        
+        // get the phone coming from azure ad
+        // azure ad location is set in the local storage
+        phone = window.localStorage.getItem('phone');
+        if(phone){
+           this.phone = phone; 
+        }
+    }
+
+
+
+
+    async ngOnInit() {
+        this.getAllLocations();      
+    }
+
+    async getAllLocations(){
+        try{
+            let language = window.localStorage.getItem("language") || 'en';
+            let bh = await this.getlocation.getLocations(language);
+            if(bh && bh.local && bh.local.result){
+               this.updatelocations = bh.local.result;
+               this.totallocations = this.updatelocations; 
+               this.setLocationVal()
+            }
+        } catch(err){
+            console.error(err)
+        }
+    }
+
+    setLocationVal(){
+        if(!this.locationName){
+            return
+        }
+        let filtered = this.totallocations.filter(loc => loc.locationName === this.locationName)
+        this.locationVal = filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
+    }
 
 
  checkLocation(locname){
@@ -166,14 +160,80 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
       }
       return locmatch;
   }
+  
   locationFilter() {
+    // clear up this.locationName because user is changing value and 
+    // this.locationName still holds the old value
+    this.locationName = '';
     this.updatelocations = this.filter(this.totallocations);
   }
 
   filter(values) {
-
     return values.filter((location) =>
-      location.locationName.includes(this.locationName)
+      location.locationName.toLowerCase().includes(this.locationVal.toLowerCase())
     );
+  }
+
+    optionSelected(e){
+        const value = e.option.value;
+        this.locationName = value;
+        this.setLocationVal();
+    }
+
+
+  /**
+   * Function name: onSubmit
+   * @Input: JSON data {locationName, phone}
+   * @Output:JSON data { response 201 / error}
+   * @Desc: This function collects the locationname and phonenumber from user and posts into db
+   * @error: 500 Internal server error / 404 - method not found
+   */
+ async onSubmit(data) {
+    this.validclick = true;
+    console.log(data.valid);
+   
+    // when one or more fields have error, then exit   
+    if(!data.valid){
+        return;
+    }
+
+    // check if location is selected
+    if(!this.locationName){
+        this.datash.openSnackBar('Please select a location', "X");
+        return;
+    }
+
+    // otherwise save data
+    this.masterdata.locationName = this.locationName;
+    this.masterdata.phone = data.value.phone;
+    this.masterdata.locationNameTwo = this.locationName;
+    this.masterdata.userType = data.value.type;
+    this.masterdata.buildingNo = data.value.buildingNo;
+    this.masterdata.floorNo = data.value.floorNo;
+    this.masterdata.sectionNo = data.value.sectionNo;
+    this.masterdata.cubeNo = data.value.cubeNo;
+
+    localStorage.setItem("selectedLocation", this.locationName);
+    localStorage.setItem("selectedPhone", this.masterdata.phone);
+    this.validclick = false;
+
+
+
+    try {
+        let confirmdetailsObj = {
+            email: localStorage.getItem("username"),
+            locationName: this.masterdata.locationName,
+            phone: this.masterdata.phone,
+            buildingNo: this.masterdata.buildingNo,
+            floorNo: this.masterdata.floorNo,
+            sectionNo: this.masterdata.sectionNo,
+            cubeNo: this.masterdata.cubeNo,
+        };
+        //calling confirm details api
+        await this.userdataservice.userDetails(confirmdetailsObj);
+        this.router.navigate(["/healthinfo"]);
+    } catch(err){
+        console.error(err)
+    }
   }
 }

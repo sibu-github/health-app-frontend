@@ -24,16 +24,23 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   validclick: Boolean;
   defaultLocationName = "India";
   phone;
-  updatelocations: any;
-  totallocations: any;
-  locationName: any;
   firstName: any; // kept for build error
   lastName: any; // kept for build error
   firstname: any; // data binding
   lastname: any; // data binding
   usertypes: any; // list of user types data
-  //   localdata: any;
-  showme: Boolean;
+//   localdata: any;
+
+    // holds the display value
+    locationVal:string;
+    // holds the actual value
+    locationName:string;
+    // holds the list to be displayed
+    updatelocations: any;
+    // holds the list of all locations
+    totallocations: any;
+
+showme:Boolean;
   type: any;
   constructor(
     private common: commonService,
@@ -71,10 +78,60 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   }
   async ngOnInit() {
     try {
-      this.usertypes = this.datash.getusertypes();
-      let bh = await this.getlocation.getLocations();
-      this.updatelocations = bh.local.result;
-      this.totallocations = this.updatelocations;
+    //   this.usertypes = this.datash.getusertypes();
+    //   console.log("uts", this.usertypes);
+
+    const allUserTypes = {
+        en: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        es: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        pt: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        de: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        ko: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        th: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        "zh-CN": [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ]
+    }
+
+    let language = window.localStorage.getItem("language") || 'en';
+    this.usertypes = allUserTypes[language];
+
+        
+
+      this.getAllLocations();   
     } catch (err) {
     }
   }
@@ -92,22 +149,19 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     this.showme = false;
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
-    this.masterdata.locationName = data.value.locationName;
-    this.masterdata.userType = data.value.type.toLowerCase();
+    this.masterdata.locationName = this.locationName;
+    this.masterdata.userType = data.value.type.toLowerCase(); 
+   console.log(this.masterdata);
+    if(!data.valid){
+        return;
+    }
 
-    if (data.valid === true) {
-      var locationmatch = await this.checkLocation(data.value.locationName);
-      if (locationmatch) {
-        if (this.common.selectionType == 'Employee') {
-          this.common.name = this.masterdata.firstName + ' ' + this.masterdata.lastName;
-        }
-        this.router.navigate(["/contactinfo"]);
-      } else {
-        this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
-      }
+    if(!this.locationName){
+        this.datash.openSnackBar('Please select location', "X");
+        return;
     }
-    else {
-    }
+
+    this.router.navigate(["/contactinfo"]);  
   }
 
   checkLocation(locname) {
@@ -123,20 +177,56 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     }
     return locmatch;
   }
+
+
+  selectUser(event) {
+    //console.log(event.value);
+    window.localStorage.setItem("usertype", event.value);
+    let usertype = window.localStorage.getItem("usertype");
+    console.log(usertype);
+  }
+
+    async getAllLocations(){
+        try{
+            let language = window.localStorage.getItem("language") || 'en';
+            let bh = await this.getlocation.getLocations(language);
+            if(bh && bh.local && bh.local.result){
+               this.updatelocations = bh.local.result;
+               this.totallocations = this.updatelocations; 
+               this.setLocationVal()
+            }
+        } catch(err){
+            console.error(err)
+        }
+    }
+
+    setLocationVal(){
+        if(!this.locationName){
+            return
+        }
+        let filtered = this.totallocations.filter(loc => loc.locationName === this.locationName)
+        this.locationVal = filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
+    }
+
   locationFilter() {
+    // clear up this.locationName because user is changing value and 
+    // this.locationName still holds the old value
+    this.locationName = '';
     this.updatelocations = this.filter(this.totallocations);
   }
 
   filter(values) {
     return values.filter((location) =>
-      location.locationName.includes(this.locationName)
+      location.locationName.toLowerCase().includes(this.locationVal.toLowerCase())
     );
   }
 
-  selectUser(event) {
-    this.common.selectionType = this.type;
-    console.log(this.common.selectionType);
-    window.localStorage.setItem("usertype", event.value);
-    let usertype = window.localStorage.getItem("usertype");
-  }
+    optionSelected(e){
+        const value = e.option.value;
+        this.locationName = value;
+        this.setLocationVal();
+    }
+
+
+
 }
