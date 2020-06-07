@@ -32,6 +32,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   lastname: any; // data binding
   usertypes: any; // list of user types data
 //   localdata: any;
+showme:Boolean;
   type: any;
   constructor(
     private router: Router,
@@ -101,31 +102,45 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
    * @error: 500 Internal server error / 404 - method not found
    */
 
-  personalInfoSubmit(data) {
+  async personalInfoSubmit(data) {
     this.validclick = true;
+    this.showme = false;
     console.log(data.value);
     console.log(this.defaultLocationName, data.value.locationName);
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = data.value.locationName;
-    this.masterdata.userType = data.value.type.toLowerCase();
+    this.masterdata.userType = data.value.type.toLowerCase(); 
+   
     if (data.valid === true) {
-      for (let i = 0; i <= this.totallocations.length; i++) {
+        var locationmatch = await this.checkLocation(data.value.locationName);
+        if(locationmatch){
+            console.log('success');
+               this.router.navigate(["/contactinfo"]);  
+        } else{
+            console.log('else condition');
+            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
+        }    
+    }
+    else {
+        console.log('commented snack bar');
+  }
+  }
+
+  checkLocation(locname){
+     
+      var locmatch:any;
+       for (let i = 0; i < this.totallocations.length; i++) {
         if (
           (this.totallocations[i] &&
-            this.totallocations[i].locationName === this.locationName) ||
-          this.defaultLocationName === data.value.locationName
-        ) {
+            this.totallocations[i].locationName == locname)) {
           console.log("valid success");
-          this.router.navigate(["/contactinfo"]);
+          locmatch=this.totallocations[i];
           break;
         } 
       }
-      this.validclick = false;
-      // this.router.navigate(['/thankyou']);
-    }
+      return locmatch;
   }
-
   locationFilter() {
     this.updatelocations = this.filter(this.totallocations);
   }

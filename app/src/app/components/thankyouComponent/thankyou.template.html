@@ -11,17 +11,19 @@
           {{locales.thankyou}}</div>
       </div>
     </div>
-    <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
       <div style="margin-left: 37px;color: #283552;width:80%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
         {{locales.thankyoumessage}}</div>
     </div>
   </div>
-  <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
     <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; left: 28.6%; color: #283552;">
-        {{locales.submittedby}}
+      <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+      <div fxLayout="column wrap" style="width:100%;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; left: 28.6%; color: #283552;">
+          {{locales.submittedby}}
 
-        <div style="color: #283552;
+          <div style="color: #283552;
     text-align: center;
     letter-spacing: 0.5px;
     text-transform: capitalize;
@@ -32,8 +34,10 @@
     font-size: 15px;
     line-height: 30px;margin-top: 5px;margin-left:5px;">{{name}}</div>
 
-        <div style="font-size: 11px; margin-top: 10px; font-weight: 500;">{{today}}</div>
+          <div style="font-size: 11px; margin-top: 10px; font-weight: 500;">{{today}}</div>
+        </div>
       </div>
+      <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     </div>
   </div>
   <div fxLayout="column wrap" style="margin-top:175px;margin-bottom:30px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">

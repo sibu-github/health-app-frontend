@@ -21,6 +21,9 @@ export class datasharingService {
       {
         type: "Visitor",
       },
+      {
+        type: "Employee",
+      },
     ]);
     console.log("user name", this.usertypes[0].name);
   }

@@ -2,6 +2,7 @@
 import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { NSystemService } from 'neutrinos-seed-services';
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
@@ -26,17 +27,15 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./landingpage.template.html",
 })
 export class landingpageComponent extends NBaseComponent implements OnInit {
+    // get the instance of the SystemService to read environment variables
+  private systemService: NSystemService = NSystemService.getInstance();
   public href: string = "";
   public inAppBrowserRef: any;
   public defaultlang:string = 'en';
 
-// Ideally we should set all these properties in the environment and read it from there
-// keeping it as future refactoring task for now
-    private azureClientId:string = 'c4f2534b-88d8-4671-9804-495b19e235aa';
-    private azureAuthUrl:string = 'https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc/oauth2/v2.0/authorize';
-    private azureRedirectUrl:string = 'https://health-appuat.azurewebsites.net/logincomplete';
-    private azureScope:string = 'openid profile offline_access';
-    private azureResponseType:string = 'code';
+  public showSpinner:boolean = false;
+  
+
 
   constructor(private router: Router, 
             private masterdata: masterdataService,
@@ -44,7 +43,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
             private hrmailService:hrmailverifier,
             private _zone: NgZone) {
     super();
-
+    console.log('New Logo alignment fix');
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
 
     // get the previously selected language from local storage
@@ -63,6 +62,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   ngOnInit() { 
+    // call API to generate and new token and set in the localstorage
+    // Note: In case of non employee flow we are directly landing on this page
     this.getJWT();
   }
 
@@ -86,12 +87,12 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   languages: any[] = [
     { value: "en", viewValue: "English" },
-    { value: "es", viewValue: "Spanish" },
-    { value: "de", viewValue: "German" },
-    { value: "pt", viewValue: "Portuguese" },
-    { value: "ko", viewValue: "Korean" },
-    { value: "th", viewValue: "Thai" },
-    { value: "zh-CN", viewValue: "Chinese (Mandarin)" },
+    { value: "es", viewValue: "Español" },
+    { value: "de", viewValue: "Deutsche" },
+    { value: "pt", viewValue: "Português" },
+    { value: "ko", viewValue: "한국어" },
+    { value: "th", viewValue: "ไทย" },
+    { value: "zh-CN", viewValue: "中文（普通话)" },
   ];
 
 selectedObjects : any[];
@@ -109,6 +110,8 @@ selectedObjects : any[];
     console.log("Lets Starts is working");
     let accessToken = window.localStorage.getItem("accessToken");
     let refreshToken = window.localStorage.getItem("refreshToken");
+
+    this.showSpinner = true;
 
     console.log({ accessToken, refreshToken });
 
@@ -149,7 +152,7 @@ selectedObjects : any[];
 
   // callback for loadstart event inappbrowser
   onLoadStartCallback({ url }) {
-    const REDIRECT_URL = this.azureRedirectUrl;
+    const REDIRECT_URL = this.systemService.getVal('redirectURL');
     console.log("InAppBrowser load started...", url);
     if (url.indexOf(REDIRECT_URL) === 0) {
       console.log("loading recirect url");
@@ -163,11 +166,11 @@ selectedObjects : any[];
 
   // show the microsoft login window
   showLoginScreen() {
-    const CLIENT_ID = this.azureClientId;
-    const AUTH_URL = this.azureAuthUrl;
-    const REDIRECT_URL = this.azureRedirectUrl;
-    const SCOPE = this.azureScope;
-    const RESPONSE_TYPE = this.azureResponseType;
+    const CLIENT_ID = this.systemService.getVal('azureClientID');
+    const AUTH_URL = this.systemService.getVal('azureAuthURL');
+    const REDIRECT_URL = this.systemService.getVal('redirectURL');
+    const SCOPE = this.systemService.getVal('azureScopes');
+    const RESPONSE_TYPE = this.systemService.getVal('azureResponseType');
     const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
 
     // if document URL is starting with http then it is opened from browser
@@ -178,7 +181,7 @@ selectedObjects : any[];
       // route to personalinfo in that case
       if (document.URL.indexOf("/landpage") > 0) {
         this.router.navigate(["/personalinfo"]);
-      }
+      } 
     } else {
       console.log("From mobile");
       // keep the reference of this so that can be used from the event listener callback
@@ -208,23 +211,55 @@ selectedObjects : any[];
       }
 
         // call service to get accessToken, refreshToken and user details   
+        // set in the locastorage
         let bh = await this.userService.getTokenFromCode(code);
-        console.log(bh)
         this.setTokensNUserLocalStorage(bh);
-        console.log(bh)
+
         // call service to check if the user is a hradmin or not
-        if(bh.local && bh.local.result){
-            let email = bh.local.result.user.email
-            console.log({email})
-            let dt = await this.hrmailService.verifyEmail(email)
-            let pagename = '/confirmdetails'
-            if(dt && dt.local && dt.local.result && dt.local.result.Authorized =='true'){
-                pagename = "/optionpage";
-            }
-            this._zone.run(()=>{
-                this.router.navigate([pagename])
-            });
+        // if HRAdmin then we move to the optionpage 
+        let email = window.localStorage.getItem('email')
+        // if email is not found in the localstorage then exit
+        // something wrong happened in this scenario which should never happen
+        if(!email || email === 'undefined'){
+            this.showSpinner = false;
+            return;
         }
+
+        bh = await this.hrmailService.verifyEmail(email)
+        if(bh && bh.local && bh.local.result && bh.local.result.Authorized =='true'){
+            this._zone.run(()=>{
+                this.router.navigate(['/optionpage'])
+            });
+            return;
+        }
+
+
+        // ------------------- FIX: 4261 ------------------
+        // check if user has submitted data for the day 
+        // Note: for employee we check if the user has submitted data for the day already
+        // if yes we redirect to thank you page, otherwise redirect to landingpage
+        bh = await this.userService.getIfUserSubmitted(email);
+        console.log(bh);
+        let hasSubmitted = "no";
+        let colorCode = "green";
+        if (bh.local && bh.local.result) {
+            hasSubmitted = bh.local.result.updated;
+            colorCode = bh.local.result.colorCode;
+        }
+        // save the colorCode in localStorage
+        window.localStorage.setItem('colorCode', colorCode);
+        if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
+            this._zone.run(()=>{
+                this.router.navigate(['/thankyou'])
+            });
+            return;
+        }
+
+        //If none of the above condition is true then we 
+        // redirect to confirmDetails page as usual 
+        this._zone.run(()=>{
+            this.router.navigate(['/confirmdetails'])
+        });
 
     } catch (err) {
       console.error(err);
@@ -243,7 +278,7 @@ selectedObjects : any[];
       window.localStorage.setItem("firstName", bh.local.result.user.firstName);
       window.localStorage.setItem("lastName", bh.local.result.user.lastName);
       window.localStorage.setItem("location", bh.local.result.user.location);
-      window.localStorage.setItem("phone", bh.local.result.user.phone);
+      window.localStorage.setItem("phone", bh.local.result.user.phone.replace(' ', '')); // phone number received from AD contains space
       this.masterdata.email = bh.local.result.user.email;
     }
   }

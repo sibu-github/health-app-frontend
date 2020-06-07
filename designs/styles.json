@@ -53,9 +53,8 @@
         "mat-focused",
         "margin",
         "marginweb",
+        "mat-form-field-outline-thick",
         "mat-select-panel",
-        "mat-form-field-type-mat-select",
-        "mat-select-value",
-        "mat-select"
+        "ios-fix"
     ]
 }

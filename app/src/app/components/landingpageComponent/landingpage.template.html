@@ -1,43 +1,41 @@
-<div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <bh-logo></bh-logo>
-  <div fxLayout="row wrap" style="width:100%;height:60px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="60" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-      <mat-form-field style="width:50%;solid #5EA73E; ">
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <bh-logo></bh-logo>
+    <div fxLayout="row wrap" style="width:100%;  margin-bottom: -1.5em" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+        <mat-form-field>
 
-        <mat-select [(value)]="defaultlang" (selectionChange)="languageSelect($event)">
-          <mat-option *ngFor="let language of languages" [value]="language.value">
-            {{language.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+          <mat-form-field id="lang-select" appearance="outline">
+            <mat-select [(value)]="defaultlang" (selectionChange)="languageSelect($event)">
+              <mat-option *ngFor="let language of languages" [value]="language.value">
+                {{language.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     </div>
-    <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-  </div>
-  <div fxLayout="row wrap" style="width:100%; height:380px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="80" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Group1440.png" style="width:300px;height:400px;"></div>
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-  </div>
-  <div fxLayout="row wrap" style="width:100%; height:50px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="40" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-top:10px;color: #5EA73E;width:100%;height:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 15px; line-height: 30px;  text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
-        <button mat-button (click)="letStart()">{{locales.start}}
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </button></label></div>
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-  </div>
-  <div fxLayout="row wrap" style="width:100%; height:100px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%; height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="50" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
-          <div style="margin-bottom:60px;color: #25282B;align-items: center; letter-spacing: 0.2px;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px;">
-            {{locales.develop}}</div>
-        </div>
-        <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/logo031.png" style="width:80px;height:40px;"></div>
+    <div fxLayout="row wrap" style="width:100%; " fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+      <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="80" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Group1440.png" style="width:300px;height:400px;"></div>
+      <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    </div>
+    <div fxLayout="row wrap" style="width:100%; " fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="40" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <mat-progress-spinner style="margin-top:20px;margin-left:auto;margin-right:auto;" *ngIf="showSpinner" [mode]="&apos;indeterminate&apos;" color="primary" strokeWidth="2" [diameter]="25"></mat-progress-spinner><label *ngIf="!showSpinner" style="margin-top:10px;color: #5EA73E;width:100%;height:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 15px; line-height: 30px;  text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
+          <button mat-button (click)="letStart()">{{locales.start}}
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button></label>
       </div>
     </div>
-    <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="15" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="row wrap" style="width:100%; " fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="50" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
+        <div style="color: #25282B;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; ">
+          {{locales.develop}}</div>
+      </div>
+      <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/logo031.png"></div>
+    </div>
   </div>
 </div>

@@ -1185,7 +1185,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "width:100%;",
+                    "_value": "width:100%;padding-right: 1em;     padding-left: 1em;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -1197,7 +1197,7 @@
                 },
                 {
                     "_key": "fxFlex",
-                    "_value": "75",
+                    "_value": "",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -1251,7 +1251,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "width:100%;margin-left:15px;",
+                        "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -1263,7 +1263,7 @@
                     },
                     {
                         "_key": "fxFlex",
-                        "_value": "90",
+                        "_value": "100",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -3828,7 +3828,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "width:100%;height:20%;margin-top:40px;",
+                                "_value": "width:100%;height:20%;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -3858,13 +3858,13 @@
                             },
                             {
                                 "_key": "layoutAlign",
-                                "_value": "start",
+                                "_value": "end",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
                             {
                                 "_key": "pLayoutAlign",
-                                "_value": "stretch",
+                                "_value": "center",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -3887,7 +3887,7 @@
                             "designerReference": [
                                 {
                                     "_key": "style",
-                                    "_value": "color: #FFFFFF;margin-top: 0px;margin-left:185px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;",
+                                    "_value": "color: #FFFFFF;margin-top: 0px;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -3944,73 +3944,6 @@
                         }
                     }
                 }
-            },
-            "dc6e22ad-9d04-d569-9f69-d43eca3aac2b": {
-                "paletteKey": "FlexLayoutCol",
-                "parentEditorKey": "962bad69-366d-3c02-eb28-f12cdd07deae",
-                "designerReference": [
-                    {
-                        "_key": "componentLabel",
-                        "_value": "Column",
-                        "_type": "kv",
-                        "_attrDef": "p",
-                        "_useAsLabel": true
-                    },
-                    {
-                        "_key": "style",
-                        "_value": "width:100%;",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "class",
-                        "_value": "",
-                        "_type": "dav",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxFlex",
-                        "_value": "10",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "fxLayoutGap",
-                        "_value": "",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "wrap",
-                        "_value": "wrap",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "layoutAlign",
-                        "_value": "start",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "pLayoutAlign",
-                        "_value": "stretch",
-                        "_type": "a",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxShow]",
-                        "_value": "true",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    },
-                    {
-                        "_key": "[fxHide]",
-                        "_value": "false",
-                        "_type": "kv",
-                        "_attrDef": "p"
-                    }
-                ]
             }
         }
     }
