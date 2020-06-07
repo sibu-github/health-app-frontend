@@ -89,6 +89,7 @@
         "flno": "Numero de piso",
         "scno": "Ala / Número de sección",
         "cuno": "Cubo / Número de oficina",
-        "submittedby": "Presentado por"
+        "submittedby": "Presentado por",
+        "classifyUser": "Clasificar usuario"
     }
 }

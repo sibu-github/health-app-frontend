@@ -89,6 +89,7 @@
         "flno": "층수",
         "scno": "날개 / 섹션 번호",
         "cuno": "큐브 / 사무실 번호",
-        "submittedby": "에 의해 제출 된"
+        "submittedby": "에 의해 제출 된",
+        "classifyUser": "사용자 분류"
     }
 }

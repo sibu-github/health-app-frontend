@@ -89,6 +89,7 @@
         "flno": "Stockwerk Nummer",
         "scno": "Flügel- / Abschnittsnummer",
         "cuno": "Würfel- / Büronummer",
-        "submittedby": "Eingereicht von"
+        "submittedby": "Eingereicht von",
+        "classifyUser": "Benutzer klassifizieren"
     }
 }

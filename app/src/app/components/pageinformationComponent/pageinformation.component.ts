@@ -100,40 +100,40 @@ showme:Boolean;
             {type: "employee", viewValue: "Employee"}
         ],
         es: [
-            {type: "vendor", viewValue: "Vendor"},
-            {type: "customer", viewValue: "Customer"},
-            {type: "visitor", viewValue: "Visitor"},
-            {type: "employee", viewValue: "Employee"}
+            {type: "vendor", viewValue: "Vendedor"},
+            {type: "customer", viewValue: "Cliente"},
+            {type: "visitor", viewValue: "Visitante"},
+            {type: "employee", viewValue: "Empleado"}
         ],
         pt: [
-            {type: "vendor", viewValue: "Vendor"},
-            {type: "customer", viewValue: "Customer"},
-            {type: "visitor", viewValue: "Visitor"},
-            {type: "employee", viewValue: "Employee"}
+            {type: "vendor", viewValue: "Fornecedor"},
+            {type: "customer", viewValue: "Cliente"},
+            {type: "visitor", viewValue: "Visitante"},
+            {type: "employee", viewValue: "Empregado"}
         ],
         de: [
-            {type: "vendor", viewValue: "Vendor"},
-            {type: "customer", viewValue: "Customer"},
-            {type: "visitor", viewValue: "Visitor"},
-            {type: "employee", viewValue: "Employee"}
+            {type: "vendor", viewValue: "Verkäufer"},
+            {type: "customer", viewValue: "Kunde"},
+            {type: "visitor", viewValue: "Besucher"},
+            {type: "employee", viewValue: "Mitarbeiter"}
         ],
         ko: [
-            {type: "vendor", viewValue: "Vendor"},
-            {type: "customer", viewValue: "Customer"},
-            {type: "visitor", viewValue: "Visitor"},
-            {type: "employee", viewValue: "Employee"}
+            {type: "vendor", viewValue: "공급 업체"},
+            {type: "customer", viewValue: "고객"},
+            {type: "visitor", viewValue: "방문객"},
+            {type: "employee", viewValue: "종업원"}
         ],
         th: [
-            {type: "vendor", viewValue: "Vendor"},
-            {type: "customer", viewValue: "Customer"},
-            {type: "visitor", viewValue: "Visitor"},
-            {type: "employee", viewValue: "Employee"}
+            {type: "vendor", viewValue: "ผู้ขาย"},
+            {type: "customer", viewValue: "ลูกค้า"},
+            {type: "visitor", viewValue: "ผู้มาเยือน"},
+            {type: "employee", viewValue: "ลูกจ้าง"}
         ],
         "zh-CN": [
-            {type: "vendor", viewValue: "Vendor"},
-            {type: "customer", viewValue: "Customer"},
-            {type: "visitor", viewValue: "Visitor"},
-            {type: "employee", viewValue: "Employee"}
+            {type: "vendor", viewValue: "供应商"},
+            {type: "customer", viewValue: "顾客"},
+            {type: "visitor", viewValue: "游客"},
+            {type: "employee", viewValue: "雇员"}
         ]
     }
 

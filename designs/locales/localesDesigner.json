@@ -90,7 +90,8 @@
             "flno": "Floor Number",
             "scno": "Wing / Section Number",
             "cuno": "Cube / Office Number",
-            "submittedby": "Submitted By"
+            "submittedby": "Submitted By",
+            "classifyUser": "Classify User"
         }
     },
     "zh-CN": {
@@ -184,7 +185,8 @@
             "flno": "楼层号",
             "scno": "翼/科号",
             "cuno": "立方体/办公室编号",
-            "submittedby": "由...所提交"
+            "submittedby": "由...所提交",
+            "classifyUser": "分类用户"
         }
     },
     "zh-TW": {
@@ -278,7 +280,8 @@
             "flno": "樓層號",
             "scno": "翼/科號",
             "cuno": "立方體/辦公室編號",
-            "submittedby": "由...所提交"
+            "submittedby": "由...所提交",
+            "classifyUser": "分類用戶"
         }
     },
     "es": {
@@ -372,7 +375,8 @@
             "flno": "Numero de piso",
             "scno": "Ala / Número de sección",
             "cuno": "Cubo / Número de oficina",
-            "submittedby": "Presentado por"
+            "submittedby": "Presentado por",
+            "classifyUser": "Clasificar usuario"
         }
     },
     "pt": {
@@ -466,7 +470,8 @@
             "flno": "Número do andar",
             "scno": "Número da asa / seção",
             "cuno": "Número do cubo / escritório",
-            "submittedby": "Enviado por"
+            "submittedby": "Enviado por",
+            "classifyUser": "Classificar usuário"
         }
     },
     "ko": {
@@ -560,7 +565,8 @@
             "flno": "층수",
             "scno": "날개 / 섹션 번호",
             "cuno": "큐브 / 사무실 번호",
-            "submittedby": "에 의해 제출 된"
+            "submittedby": "에 의해 제출 된",
+            "classifyUser": "사용자 분류"
         }
     },
     "th": {
@@ -654,7 +660,8 @@
             "flno": "เลขที่ชั้น",
             "scno": "จำนวนปีก / ส่วน",
             "cuno": "หมายเลข Cube / สำนักงาน",
-            "submittedby": "ส่งมาโดย"
+            "submittedby": "ส่งมาโดย",
+            "classifyUser": "จำแนกผู้ใช้"
         }
     },
     "de": {
@@ -748,7 +755,8 @@
             "flno": "Stockwerk Nummer",
             "scno": "Flügel- / Abschnittsnummer",
             "cuno": "Würfel- / Büronummer",
-            "submittedby": "Eingereicht von"
+            "submittedby": "Eingereicht von",
+            "classifyUser": "Benutzer klassifizieren"
         }
     }
 }

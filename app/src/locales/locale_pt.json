@@ -89,6 +89,7 @@
         "flno": "Número do andar",
         "scno": "Número da asa / seção",
         "cuno": "Número do cubo / escritório",
-        "submittedby": "Enviado por"
+        "submittedby": "Enviado por",
+        "classifyUser": "Classificar usuário"
     }
 }

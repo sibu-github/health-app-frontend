@@ -89,6 +89,7 @@
         "flno": "Floor Number",
         "scno": "Wing / Section Number",
         "cuno": "Cube / Office Number",
-        "submittedby": "Submitted By"
+        "submittedby": "Submitted By",
+        "classifyUser": "Classify User"
     }
 }
