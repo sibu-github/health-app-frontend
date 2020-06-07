@@ -1368,7 +1368,6 @@
                         "paletteKey": "NG-Input",
                         "parentEditorKey": "2cec16d8-78e9-a2be-a445-1381fa270413",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1409,7 +1408,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "locationName",
+                                "_value": "locationVal",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1421,7 +1420,7 @@
                             },
                             {
                                 "_key": "name",
-                                "_value": "locationName",
+                                "_value": "locationVal",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -1561,7 +1560,6 @@
                         "paletteKey": "ng-autocomplete",
                         "parentEditorKey": "2cec16d8-78e9-a2be-a445-1381fa270413",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -1632,7 +1630,7 @@
                             },
                             {
                                 "_key": "(optionSelected)",
-                                "_value": "",
+                                "_value": "optionSelected($event)",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_complexity": "advanced"
@@ -1651,7 +1649,7 @@
                             },
                             {
                                 "_key": "optionView",
-                                "_value": "{{location.locationName}}",
+                                "_value": "{{location.locationVal}}",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -1681,7 +1679,6 @@
                         "paletteKey": "Html5",
                         "parentEditorKey": "2cec16d8-78e9-a2be-a445-1381fa270413",
                         "isAdvancedComponent": true,
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "style",
@@ -1874,7 +1871,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "5adfa72a-22a6-fad7-6583-d34a93c221de",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2067,7 +2063,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "d51152e2-9ba7-f9f4-55d9-5ff2cc2a7f0c",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -2094,7 +2089,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "5adfa72a-22a6-fad7-6583-d34a93c221de",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -2287,7 +2281,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "b7ae6f64-b7bd-2b7f-42e1-55f5e06f3ece",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",

@@ -23,15 +23,22 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   validclick: Boolean;
   defaultLocationName = "India";
   phone;
-  updatelocations: any;
-  totallocations: any;
-  locationName: any;
   firstName: any; // kept for build error
   lastName: any; // kept for build error
   firstname: any; // data binding
   lastname: any; // data binding
   usertypes: any; // list of user types data
 //   localdata: any;
+
+    // holds the display value
+    locationVal:string;
+    // holds the actual value
+    locationName:string;
+    // holds the list to be displayed
+    updatelocations: any;
+    // holds the list of all locations
+    totallocations: any;
+
 showme:Boolean;
   type: any;
   constructor(
@@ -82,13 +89,60 @@ showme:Boolean;
     //   this.type = "";
     // }
     try {
-      this.usertypes = this.datash.getusertypes();
-      console.log("uts", this.usertypes);
-      let bh = await this.getlocation.getLocations();
-      console.log(bh);
-      console.log(bh.local.result);
-      this.updatelocations = bh.local.result;
-      this.totallocations = this.updatelocations;
+    //   this.usertypes = this.datash.getusertypes();
+    //   console.log("uts", this.usertypes);
+
+    const allUserTypes = {
+        en: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        es: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        pt: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        de: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        ko: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        th: [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ],
+        "zh-CN": [
+            {type: "vendor", viewValue: "Vendor"},
+            {type: "customer", viewValue: "Customer"},
+            {type: "visitor", viewValue: "Visitor"},
+            {type: "employee", viewValue: "Employee"}
+        ]
+    }
+
+    let language = window.localStorage.getItem("language") || 'en';
+    this.usertypes = allUserTypes[language];
+
+        
+
+      this.getAllLocations();   
     } catch (err) {
       console.error(err);
     }
@@ -109,22 +163,19 @@ showme:Boolean;
     console.log(this.defaultLocationName, data.value.locationName);
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
-    this.masterdata.locationName = data.value.locationName;
+    this.masterdata.locationName = this.locationName;
     this.masterdata.userType = data.value.type.toLowerCase(); 
-   
-    if (data.valid === true) {
-        var locationmatch = await this.checkLocation(data.value.locationName);
-        if(locationmatch){
-            console.log('success');
-               this.router.navigate(["/contactinfo"]);  
-        } else{
-            console.log('else condition');
-            this.datash.openSnackBar('Please provide Exact location / select appropriate one', "X");
-        }    
+   console.log(this.masterdata);
+    if(!data.valid){
+        return;
     }
-    else {
-        console.log('commented snack bar');
-  }
+
+    if(!this.locationName){
+        this.datash.openSnackBar('Please select location', "X");
+        return;
+    }
+
+    this.router.navigate(["/contactinfo"]);  
   }
 
   checkLocation(locname){
@@ -141,15 +192,7 @@ showme:Boolean;
       }
       return locmatch;
   }
-  locationFilter() {
-    this.updatelocations = this.filter(this.totallocations);
-  }
 
-  filter(values) {
-    return values.filter((location) =>
-      location.locationName.includes(this.locationName)
-    );
-  }
 
   selectUser(event) {
     //console.log(event.value);
@@ -157,4 +200,48 @@ showme:Boolean;
     let usertype = window.localStorage.getItem("usertype");
     console.log(usertype);
   }
+
+    async getAllLocations(){
+        try{
+            let language = window.localStorage.getItem("language") || 'en';
+            let bh = await this.getlocation.getLocations(language);
+            if(bh && bh.local && bh.local.result){
+               this.updatelocations = bh.local.result;
+               this.totallocations = this.updatelocations; 
+               this.setLocationVal()
+            }
+        } catch(err){
+            console.error(err)
+        }
+    }
+
+    setLocationVal(){
+        if(!this.locationName){
+            return
+        }
+        let filtered = this.totallocations.filter(loc => loc.locationName === this.locationName)
+        this.locationVal = filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
+    }
+
+  locationFilter() {
+    // clear up this.locationName because user is changing value and 
+    // this.locationName still holds the old value
+    this.locationName = '';
+    this.updatelocations = this.filter(this.totallocations);
+  }
+
+  filter(values) {
+    return values.filter((location) =>
+      location.locationName.toLowerCase().includes(this.locationVal.toLowerCase())
+    );
+  }
+
+    optionSelected(e){
+        const value = e.option.value;
+        this.locationName = value;
+        this.setLocationVal();
+    }
+
+
+
 }

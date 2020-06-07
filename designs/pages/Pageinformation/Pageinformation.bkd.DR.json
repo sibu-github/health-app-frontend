@@ -2795,7 +2795,7 @@
                             },
                             {
                                 "_key": "[(ngModel)]",
-                                "_value": "locationName",
+                                "_value": "locationVal",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2807,7 +2807,7 @@
                             },
                             {
                                 "_key": "name",
-                                "_value": "locationName",
+                                "_value": "locationVal",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2936,12 +2936,6 @@
                                 "_attrDef": "c"
                             },
                             {
-                                "_key": "pattern",
-                                "_value": "[a-zA-Z-()0-9\\s]+$",
-                                "_type": "kv",
-                                "_attrDef": "c"
-                            },
-                            {
                                 "_key": "[matAutocomplete]",
                                 "_value": "auto",
                                 "_type": "kv",
@@ -3023,7 +3017,7 @@
                             },
                             {
                                 "_key": "(optionSelected)",
-                                "_value": "",
+                                "_value": "optionSelected($event)",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_complexity": "advanced"
@@ -3042,7 +3036,7 @@
                             },
                             {
                                 "_key": "optionView",
-                                "_value": "{{location.locationName}}",
+                                "_value": "{{location.locationVal}}",
                                 "_type": "a",
                                 "_attrDef": "p"
                             },
@@ -4147,7 +4141,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "  <mat-label>Classify User</mat-label>\r\n          <mat-select (selectionChange)=\"selectUser($event)\" #userType = ngModel [(ngModel)]=\"type\" name=\"type\" required>\r\n            <mat-option \r\n            *ngFor=\"let user of usertypes\" [value]=\"user.type\">\r\n            {{user.type}}\r\n            </mat-option>\r\n          </mat-select>\r\n\r\n           <div *ngIf=\"userType.errors && (userType.dirty || userType.touched || validclick)\">\r\n          <span *ngIf=\"userType.errors.required\">\r\n                <small style=\"color:red;font-family:Poppins;font-style:normal;\">Usertype is required</small>\r\n              </span>\r\n                \r\n          </div>",
+                                    "_value": "  <mat-label>Classify User</mat-label>\r\n          <mat-select (selectionChange)=\"selectUser($event)\" #userType = ngModel [(ngModel)]=\"type\" name=\"type\" required>\r\n            <mat-option \r\n            *ngFor=\"let user of usertypes\" [value]=\"user.type\">\r\n            {{user.viewValue}}\r\n            </mat-option>\r\n          </mat-select>\r\n\r\n           <div *ngIf=\"userType.errors && (userType.dirty || userType.touched || validclick)\">\r\n          <span *ngIf=\"userType.errors.required\">\r\n                <small style=\"color:red;font-family:Poppins;font-style:normal;\">Usertype is required</small>\r\n              </span>\r\n                \r\n          </div>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
