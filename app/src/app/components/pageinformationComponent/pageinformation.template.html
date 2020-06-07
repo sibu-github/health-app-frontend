@@ -37,7 +37,7 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
                 <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput [(ngModel)]="locationVal" name="locationVal" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
+                  <input matInput [(ngModel)]="locationVal" name="locationVal" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" [matAutocomplete]="auto">
 
                 </mat-form-field>
                 <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
@@ -54,7 +54,7 @@
                   <mat-label>Classify User</mat-label>
                   <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
                     <mat-option *ngFor="let user of usertypes" [value]="user.type">
-                      {{user.type}}
+                      {{user.viewValue}}
                     </mat-option>
                   </mat-select>
 
@@ -110,12 +110,12 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
           <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
+            <input matInput [(ngModel)]="locationVal" name="locationVal" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" [matAutocomplete]="auto">
 
           </mat-form-field>
-          <mat-autocomplete #auto="matAutocomplete">
+          <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event)">
             <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
-              {{location.locationName}}
+              {{location.locationVal}}
             </mat-option>
           </mat-autocomplete>
           <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick || showme)">
@@ -124,7 +124,8 @@
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
           <mat-form-field style="width:100%;">
-            <mat-label>{{locales.classifyUser}}</mat-label>
+            <!-- <mat-label>{{locales.classifyUser}}</mat-label> -->
+            <mat-label>ABCD</mat-label>
             <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
               <mat-option *ngFor="let user of usertypes" [value]="user.type">
                 {{user.viewValue}}

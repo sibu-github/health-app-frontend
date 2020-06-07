@@ -45,7 +45,7 @@ export class contactinformationComponent extends NBaseComponent
   }
 
   ngOnInit() {
-    if (this.common.selectionType == 'Employee') {
+    if (this.common.selectionType == 'employee') {
       this.company = "Ingredion"
       this.ingredioncontact = this.common.name;
     }

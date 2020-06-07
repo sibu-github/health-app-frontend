@@ -151,7 +151,7 @@ showme:Boolean;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = this.locationName;
     this.masterdata.userType = data.value.type.toLowerCase(); 
-   console.log(this.masterdata);
+//    console.log(this.masterdata);
     if(!data.valid){
         return;
     }
@@ -160,6 +160,10 @@ showme:Boolean;
         this.datash.openSnackBar('Please select location', "X");
         return;
     }
+
+    if (this.common.selectionType == 'employee') {
+          this.common.name = this.masterdata.firstName + ' ' + this.masterdata.lastName;
+        }
 
     this.router.navigate(["/contactinfo"]);  
   }
@@ -181,9 +185,12 @@ showme:Boolean;
 
   selectUser(event) {
     //console.log(event.value);
+    
     window.localStorage.setItem("usertype", event.value);
+    // console.log(event.value)
     let usertype = window.localStorage.getItem("usertype");
-    console.log(usertype);
+    this.common.selectionType = usertype;
+    // console.log(usertype);
   }
 
     async getAllLocations(){
@@ -192,6 +199,7 @@ showme:Boolean;
             let bh = await this.getlocation.getLocations(language);
             if(bh && bh.local && bh.local.result){
                this.updatelocations = bh.local.result;
+               console.log(this.updatelocations)
                this.totallocations = this.updatelocations; 
                this.setLocationVal()
             }
@@ -217,12 +225,13 @@ showme:Boolean;
 
   filter(values) {
     return values.filter((location) =>
-      location.locationName.toLowerCase().includes(this.locationVal.toLowerCase())
+      location.locationVal.toLowerCase().includes(this.locationVal.toLowerCase())
     );
   }
 
     optionSelected(e){
         const value = e.option.value;
+        console.log('optionSelected', value)
         this.locationName = value;
         this.setLocationVal();
     }
