@@ -8,14 +8,13 @@
         </div>
       </div>
     </div>
-    <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <mat-card>
+    <div fxLayout="row wrap" style="width:100%;padding-top: 4em; margin: 0 auto;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <mat-card style="margin: 0 auto;">
         <mat-card-content>
           <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
             <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; letter-spacing: 0.5px; text-transform: capitalize;">
                 {{locales.personalinformation}}</label></div>
-            <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; letter-spacing: 0.5px; text-transform: capitalize;">
-                {{locales.personalinformation}}</label></div>
+            <div fxLayout="row wrap" style="width:20%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png"></div>
             <div fxLayout="row wrap" style="width: 100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
               <form #personalInfo="ngForm" style="width:100%;height:100%;">
                 <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
@@ -68,13 +67,10 @@
                 </mat-form-field>
               </form>
             </div>
+            <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
           </div>
         </mat-card-content>
       </mat-card>
-    </div>
-    <div fxLayout="row wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top: 50px;margin-right:20px;color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;background: #5EA73E; box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); border-radius: 44px;" (click)="personalInfoSubmit(personalInfo)" type="submit">{{locales.cont}}</button></div>
     </div>
   </div>
 </div>
