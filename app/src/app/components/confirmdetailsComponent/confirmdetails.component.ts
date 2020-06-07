@@ -157,7 +157,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
           
         if (
           (this.totallocations[i] &&
-            this.totallocations[i].locationName == locname)) {
+            this.totallocations[i].locationName.toLowerCase() == locname.toLowerCase())) {
           console.log("valid success");
           locmatch=this.totallocations[i];
         
@@ -173,7 +173,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   filter(values) {
 
     return values.filter((location) =>
-      location.locationName.includes(this.locationName)
+      location.locationName.toLowerCase().includes(this.locationName.toLowerCase())
     );
   }
 }

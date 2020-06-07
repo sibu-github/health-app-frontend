@@ -32,22 +32,42 @@
           <span *ngIf="LastName.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lir}}</small></span><span *ngIf="LastName.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
-        <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
+        <div *ngIf="languageCode == &apos;en&apos;">
 
-        </mat-form-field>
-        <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
-            {{location.locationName}}
-          </mat-option>
-        </mat-autocomplete>
-        <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick || showme)">
-          <span *ngIf="showme">
+          <mat-form-field style="font-family:Poppins;font-style:normal;width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.Location}}" required #location="ngModel" (ngModelChange)="locationFilter()" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z-()0-9\s]+$" [matAutocomplete]="auto">
+
+          </mat-form-field>
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+              {{location.locationName}}
+            </mat-option>
+          </mat-autocomplete>
+          <div *ngIf="location.errors &amp;&amp; (location.dirty || location.touched || validclick || showme)">
+            <span *ngIf="showme">
                 <small style="color:red;font-family:Poppins;font-style:normal;">Invalid Input</small></span><span *ngIf="location.errors.required">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.lr}}</small></span><span *ngIf="location.errors.pattern">
                 <small style="color:red;font-family:Poppins;font-style:normal;">{{locales.pocs}}</small></span></div>
+        </div>
+        <div *ngIf="languageCode !== &apos;en&apos;">
+          <mat-form-field style="width:100%;">
+            <mat-label>{{locales.Location}}</mat-label>
+            <mat-select (selectionChange)="selectLocation($event)" #location ngModel name="locationName" required>
+              <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
+                {{location.locationName}}
+              </mat-option>
+            </mat-select>
+            <!-- 
+           <div *ngIf="userType.errors && (userType.dirty || userType.touched || validclick)">
+          <span *ngIf="userType.errors.required">
+                <small style="color:red;font-family:Poppins;font-style:normal;">Usertype is required</small>
+              </span>
+                
+          </div> -->
+          </mat-form-field>
+        </div>
         <mat-form-field style="width:100%;">
-          <mat-label>{{locales.classifyuser}}</mat-label>
+          <mat-label>{{locales.classsfiyuser}}</mat-label>
           <mat-select (selectionChange)="selectUser($event)" #userType="ngModel" [(ngModel)]="type" name="type" required>
             <mat-option *ngFor="let user of usertypes" [value]="user.type">
               {{user.type}}

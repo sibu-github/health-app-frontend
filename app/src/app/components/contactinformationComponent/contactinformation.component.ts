@@ -38,24 +38,20 @@ console.log('Contact next || new page fix');
       this.localeService.language = language;
     }
 
-    // let uResp = localStorage.getItem("userResponse");
-    // if (uResp) {
-    //   this.localdata = JSON.parse(uResp);
-    // }
+     let usertype = window.localStorage.getItem("usertype");
+    console.log(usertype);
+    if (usertype == 'Employee') {
+        let firstname = window.localStorage.getItem("firstname");
+        let lastname = window.localStorage.getItem("lastname");
+        this.ingredioncontact = firstname + ' ' + lastname;
+        console.log('ingredionContact.', this.ingredioncontact);
+    } else {
+        this.ingredioncontact = ''
+    }
   }
 
   ngOnInit() {
-    // if (this.localdata && this.localdata.firstName) {
-    //   this.email = this.localdata.email;
-    //   this.phone = this.localdata.phone;
-    //   this.company = this.localdata.company;
-    //   this.ingredioncontact = this.localdata.ingredionContact;
-    // } else {
-    //   this.email = "";
-    //   this.phone = "";
-    //   this.company = "";
-    //   this.ingredioncontact = "";
-    // }
+    
   }
 
   /**

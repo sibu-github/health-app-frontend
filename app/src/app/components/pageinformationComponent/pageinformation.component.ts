@@ -31,6 +31,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
   firstname: any; // data binding
   lastname: any; // data binding
   usertypes: any; // list of user types data
+  languageCode:any;
 //   localdata: any;
 showme:Boolean;
   type: any;
@@ -46,11 +47,11 @@ showme:Boolean;
     let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
+      this.languageCode = language;
+      console.log(this.languageCode);
     }
-    // let uResp = localStorage.getItem("userResponse");
-    // if (uResp) {
-    //   this.localdata = JSON.parse(uResp);
-    // }
+    this.languageCode= 'en';
+    
   }
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -85,8 +86,12 @@ showme:Boolean;
     try {
       this.usertypes = this.datash.getusertypes();
       console.log("uts", this.usertypes);
-      let bh = await this.getlocation.getLocations();
-      console.log(bh);
+      //let bh = await this.getlocation.getLocations();
+      let language = window.localStorage.getItem("language") || 'en' ;
+      console.log('languageKey', language);
+      let bh = await this.getlocation.getLangLocations(language);
+      console.log('bh', bh);
+      // console.log('bh', bh);
       console.log(bh.local.result);
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
@@ -108,6 +113,9 @@ showme:Boolean;
     this.showme = false;
     console.log(data.value);
     console.log(this.defaultLocationName, data.value.locationName);
+          // setting in localstorage
+   window.localStorage.setItem("firstname", data.value.firstname);
+   window.localStorage.setItem("lastname", data.value.lastname);
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = data.value.locationName;
@@ -134,7 +142,7 @@ showme:Boolean;
        for (let i = 0; i < this.totallocations.length; i++) {
         if (
           (this.totallocations[i] &&
-            this.totallocations[i].locationName == locname)) {
+            this.totallocations[i].locationName.toLowerCase() == locname.toLowerCase())) {
           console.log("valid success");
           locmatch=this.totallocations[i];
           break;
@@ -148,7 +156,7 @@ showme:Boolean;
 
   filter(values) {
     return values.filter((location) =>
-      location.locationName.includes(this.locationName)
+      location.locationName.toLowerCase().includes(this.locationName.toLowerCase())
     );
   }
 
@@ -157,5 +165,11 @@ showme:Boolean;
     window.localStorage.setItem("usertype", event.value);
     let usertype = window.localStorage.getItem("usertype");
     console.log(usertype);
+  }
+   selectLocation(event) {
+    console.log(event.value);
+    window.localStorage.setItem("locationName", event.value);
+    //let usertype = window.localStorage.getItem("usertype");
+    console.log(event.value);
   }
 }

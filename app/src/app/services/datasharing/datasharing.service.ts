@@ -10,7 +10,7 @@ export class datasharingService {
   constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
 
   getusertypes() {
-    // sample json data
+    // user types json data
     return (this.usertypes = [
       {
         type: "Vendor",

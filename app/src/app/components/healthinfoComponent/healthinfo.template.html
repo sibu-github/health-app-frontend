@@ -31,22 +31,22 @@
       </div>
     </div>
   </div>
-  <div fxLayout="row wrap" style="margin-top: 8px; max-height: 10%;width:100%;height:100%;margin-bottom:10px;" fxFlex="8" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="margin-top: 8px; max-height: 10%;width:100%;height:100%;margin-bottom:10px;" fxFlex="8" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="margin-right:10px;margin-leftt:10px;" fxFlex="80" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
-        <mat-radio-group style="margin-left:20px;" [(ngModel)]="selected1" (change)="onChangeRadioOne($event, 2)">
+        <mat-radio-group style="margin-left:20px;" [(ngModel)]="selected1" (change)="onChangeRadio($event, 1)">
           <mat-radio-button value="false" required>NO</mat-radio-button>
           <mat-radio-button value="true" required color="#5EA73E">YES</mat-radio-button>
         </mat-radio-group>
       </div>
     </div>
-    <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
+    <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" style="width:100%;height:100px;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;height:100%;" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false"><label style="color: #25282B;" class="text2">
         {{locales.question2}}</label></div>
   </div>
-  <div fxLayout="row wrap" style="width:100%; height:100%" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="row wrap" style="margin-top: 8px; max-height: 10%;width:100%;height:100%;margin-bottom:10px;" fxFlex="8" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="margin-right:10px;margin-leftt:10px;" fxFlex="80" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="100" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false">
         <mat-radio-group style="margin-left:20px;" [(ngModel)]="selected2" (change)="onChangeRadioTwo($event, 2)">
@@ -55,7 +55,6 @@
         </mat-radio-group>
       </div>
     </div>
-    <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
   </div>
   <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="50" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top:20px;" (click)="onBack()">
