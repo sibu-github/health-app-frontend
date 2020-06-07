@@ -3689,7 +3689,7 @@
                             },
                             {
                                 "_key": "placeholder",
-                                "_value": "{{locales.ingredoncontact}}",
+                                "_value": "Ingredion{{locales.ingredoncontact}}",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_useAsLabel": true

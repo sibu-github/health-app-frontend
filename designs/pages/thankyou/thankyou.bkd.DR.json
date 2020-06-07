@@ -1845,7 +1845,7 @@
                 },
                 {
                     "_key": "layoutAlign",
-                    "_value": "start",
+                    "_value": "center",
                     "_type": "a",
                     "_attrDef": "p"
                 },
@@ -1977,13 +1977,13 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "end",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "pLayoutAlign",
-                            "_value": "end",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -2007,7 +2007,7 @@
                         "designerReference": [
                             {
                                 "_key": "style",
-                                "_value": "font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; left: 28.6%; color: #283552;",
+                                "_value": "font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; color: #283552;",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -2186,31 +2186,6 @@
                                 "_visibility": false
                             }
                         ],
-                        "890f2fd6-bf26-655b-a046-64657109ee7b": {
-                            "paletteKey": "html-editor",
-                            "parentEditorKey": "248ff8f7-4ff7-fcf8-0858-d59cff7d01dd",
-                            "isAdvancedChildComponent": true,
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "html",
-                                    "_value": "{{locales.submittedby}}\r\n\r\n\r\n<div style=\"font-size: 11px; margin-top: 10px; font-weight: 500;\">{{today}}</div>\r\n",
-                                    "_type": "a",
-                                    "_attrDef": "p"
-                                }
-                            ]
-                        },
                         "522aabb5-f1b2-caf2-1da6-ff5abb2bd153": {
                             "paletteKey": "html-editor",
                             "parentEditorKey": "248ff8f7-4ff7-fcf8-0858-d59cff7d01dd",
@@ -2231,6 +2206,31 @@
                                 {
                                     "_key": "html",
                                     "_value": "<div style=\"color: #283552;\r\n    text-align: center;\r\n    letter-spacing: 0.5px;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    font-family: Poppins;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    font-size: 15px;\r\n    line-height: 30px;margin-top: 5px;margin-left:5px;\">{{name}}</div>\r\n",
+                                    "_type": "a",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        },
+                        "890f2fd6-bf26-655b-a046-64657109ee7b": {
+                            "paletteKey": "html-editor",
+                            "parentEditorKey": "248ff8f7-4ff7-fcf8-0858-d59cff7d01dd",
+                            "isAdvancedChildComponent": true,
+                            "designerReference": [
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "html",
+                                    "_value": "{{locales.submittedby}}\r\n\r\n\r\n<div style=\"font-size: 14px; margin-top: 10px; font-weight: bold;\">{{today}}</div>\r\n",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
