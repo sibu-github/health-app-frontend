@@ -163,6 +163,7 @@ showme:Boolean;
 
     if (this.common.selectionType == 'employee') {
           this.common.name = this.masterdata.firstName + ' ' + this.masterdata.lastName;
+          console.log(this.common.name)
         }
 
     this.router.navigate(["/contactinfo"]);  
@@ -190,6 +191,7 @@ showme:Boolean;
     // console.log(event.value)
     let usertype = window.localStorage.getItem("usertype");
     this.common.selectionType = usertype;
+    console.log(this.common.selectionType,'post cahnge' );
     // console.log(usertype);
   }
 
