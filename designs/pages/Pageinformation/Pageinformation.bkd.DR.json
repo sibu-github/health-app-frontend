@@ -2724,31 +2724,6 @@
                                     }
                                 ]
                             }
-                        },
-                        "006068ba-1ba4-f736-4ded-b9bd40120390": {
-                            "paletteKey": "html-editor",
-                            "parentEditorKey": "32ca5a70-e6f6-2306-5407-934893dce3c8",
-                            "isAdvancedChildComponent": true,
-                            "designerReference": [
-                                {
-                                    "_key": "style",
-                                    "_value": "",
-                                    "_type": "kv",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "class",
-                                    "_value": "",
-                                    "_type": "dav",
-                                    "_attrDef": "p"
-                                },
-                                {
-                                    "_key": "html",
-                                    "_value": "",
-                                    "_type": "a",
-                                    "_attrDef": "p"
-                                }
-                            ]
                         }
                     },
                     "a7e9d024-5b8e-0c0f-3bb9-63f09bda59d5": {
@@ -3903,7 +3878,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "  <mat-label>Classify User</mat-label>\r\n          <mat-select (selectionChange)=\"selectUser($event)\" [(ngModel)]=\"type\" name=\"type\">\r\n            <mat-option \r\n            *ngFor=\"let user of usertypes\" [value]=\"user.type\">\r\n            {{user.type}}\r\n            </mat-option>\r\n          </mat-select>",
+                                    "_value": "  <mat-label>{{locales.ClassifyUser}}</mat-label>\r\n          <mat-select (selectionChange)=\"selectUser($event)\" #userType=\"ngModel\" [(ngModel)]=\"type\" required  name=\"type\">\r\n            <mat-option \r\n            *ngFor=\"let user of usertypes\" [value]=\"user.type\">\r\n            {{user.type}}\r\n            </mat-option>\r\n          </mat-select>\r\n <div *ngIf=\"userType.errors &amp;&amp; (userType.dirty || userType.touched || validclick)\">\r\n          <span *ngIf=\"userType.errors.required\">\r\n                <small style=\"color:red;font-family:Poppins;font-style:normal;\">userType is required</small>\r\n          </span>\r\n        </div>",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }

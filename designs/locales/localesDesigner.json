@@ -96,7 +96,8 @@
             "lafq": "Let's answer few questions and inform our friends and families with our latest ground level Covid-19 updates from Ingredion Family and we believe \"We are in this together and we will get through this together\"",
             "Filters": "Filters",
             "ByDate": "By Date",
-            "Region": "Region"
+            "Region": "Region",
+            "ClassifyUser": "Classify User"
         }
     },
     "zh-CN": {
@@ -196,7 +197,8 @@
             "lafq": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
             "Filters": "筛选器",
             "ByDate": "按日期",
-            "Region": "区域"
+            "Region": "区域",
+            "ClassifyUser": "分类用户"
         }
     },
     "zh-TW": {
@@ -296,7 +298,8 @@
             "lafq": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
             "Filters": "篩選器",
             "ByDate": "按日期",
-            "Region": "區域"
+            "Region": "區域",
+            "ClassifyUser": "分類用戶"
         }
     },
     "es": {
@@ -396,7 +399,8 @@
             "lafq": "Respondamos algunas preguntas e informemos a nuestros amigos y familiares con nuestras últimas actualizaciones Covid-19 de nivel básico de Ingredion Family y creemos \"Estamos juntos en esto y lo superaremos juntos\"",
             "Filters": "Filtros",
             "ByDate": "Por fecha",
-            "Region": "Región"
+            "Region": "Región",
+            "ClassifyUser": "Clasificar usuario"
         }
     },
     "pt": {
@@ -496,7 +500,8 @@
             "lafq": "Vamos responder algumas perguntas e informar nossos amigos e familiares sobre as atualizações mais recentes da COVID-19, já que na Família Ingredion nós acreditamos que \"estamos todos unidos e vamos passar por isso juntos!\"",
             "Filters": "Filtros",
             "ByDate": "Por data",
-            "Region": "Região"
+            "Region": "Região",
+            "ClassifyUser": "Classificar usuário"
         }
     },
     "ko": {
@@ -596,7 +601,8 @@
             "lafq": "몇 가지 질문에 답하고, 친구들과 가족들에게 Ingredion Family 에 나온 Covid-19 관련 최신 업데이트 사항 알려주며, \"우리는 늘 함께이며, 모두 힘을 합쳐 이 문제를 해결할 것\"이라고 믿습니다.",
             "Filters": "필터",
             "ByDate": "날짜 별",
-            "Region": "지역"
+            "Region": "지역",
+            "ClassifyUser": "사용자 분류"
         }
     },
     "th": {
@@ -696,7 +702,8 @@
             "lafq": "ร่วมตอบคำถาม และบอกเพื่อน ๆ และครอบครัวของเราด้วยการให้ข้อมูลเกี่ยวกับโควิด-19 จากครอบครัวอินกริดิออน และเราเชื่อมั่นว่า \"เราอยู่ในสถานะการณ์นี้ด้วยกันและจะผ่านสิ่งนี้ไปด้วยกัน\"",
             "Filters": "ตัวกรอง",
             "ByDate": "ระบุวันที่",
-            "Region": "ภูมิภาค"
+            "Region": "ภูมิภาค",
+            "ClassifyUser": "จำแนกผู้ใช้"
         }
     },
     "de": {
@@ -796,7 +803,8 @@
             "lafq": "Beantworten wir einige Fragen und informieren Sie unsere Freunde und Familien mit unseren neuesten Covid-19-Updates von Ingredion Family. Wir glauben, dass wir zusammen dabei sind und dies gemeinsam schaffen werden.",
             "Filters": "Filter",
             "ByDate": "Nach Datum",
-            "Region": "Region"
+            "Region": "Region",
+            "ClassifyUser": "Benutzer klassifizieren"
         }
     }
 }
