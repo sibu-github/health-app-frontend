@@ -2,7 +2,7 @@ export const environment = {
     "name": "dev",
     "properties": {
         "production": false,
-        "ssdURL": "https://health-appprod.azurewebsites.net",
+        "ssdURL": "https://health-appdev.azurewebsites.net",
         "tenantName": "blucocoondigital",
         "appName": "health-app",
         "namespace": "com.blucocoondigital.health-app",
