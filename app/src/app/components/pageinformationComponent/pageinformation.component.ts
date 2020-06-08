@@ -81,6 +81,7 @@ showme:Boolean;
     //   this.locationName = "";
     //   this.type = "";
     // }
+    //Getting user types from legacy service and locations from DB
     try {
       this.usertypes = this.datash.getusertypes();
       console.log("uts", this.usertypes);
@@ -106,12 +107,17 @@ showme:Boolean;
     this.validclick = true;
     this.showme = false;
     console.log(data.value);
-    console.log(this.defaultLocationName, data.value.locationName);
+      // setting in localstorage
+   window.localStorage.setItem("firstname", data.value.firstname);
+   window.localStorage.setItem("lastname", data.value.lastname);
+   
     this.masterdata.firstName = data.value.firstname;
     this.masterdata.lastName = data.value.lastname;
     this.masterdata.locationName = data.value.locationName;
     this.masterdata.userType = data.value.type.toLowerCase(); 
    
+
+
     if (data.valid === true) {
         var locationmatch = await this.checkLocation(data.value.locationName);
         if(locationmatch){

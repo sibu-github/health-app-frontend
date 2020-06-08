@@ -97,7 +97,7 @@
             "Filters": "Filters",
             "ByDate": "By Date",
             "Region": "Region",
-            "ClassifyUser": "Classify User"
+            "classsfiyuser": "Classify User"
         }
     },
     "zh-CN": {
@@ -198,7 +198,7 @@
             "Filters": "筛选器",
             "ByDate": "按日期",
             "Region": "区域",
-            "ClassifyUser": "分类用户"
+            "classsfiyuser": "分类用户"
         }
     },
     "zh-TW": {
@@ -299,7 +299,7 @@
             "Filters": "篩選器",
             "ByDate": "按日期",
             "Region": "區域",
-            "ClassifyUser": "分類用戶"
+            "classsfiyuser": "分類用戶"
         }
     },
     "es": {
@@ -400,7 +400,7 @@
             "Filters": "Filtros",
             "ByDate": "Por fecha",
             "Region": "Región",
-            "ClassifyUser": "Clasificar usuario"
+            "classsfiyuser": "Clasificar usuario"
         }
     },
     "pt": {
@@ -501,7 +501,7 @@
             "Filters": "Filtros",
             "ByDate": "Por data",
             "Region": "Região",
-            "ClassifyUser": "Classificar usuário"
+            "classsfiyuser": "Classificar usuário"
         }
     },
     "ko": {
@@ -602,7 +602,7 @@
             "Filters": "필터",
             "ByDate": "날짜 별",
             "Region": "지역",
-            "ClassifyUser": "사용자 분류"
+            "classsfiyuser": "사용자 분류"
         }
     },
     "th": {
@@ -703,7 +703,7 @@
             "Filters": "ตัวกรอง",
             "ByDate": "ระบุวันที่",
             "Region": "ภูมิภาค",
-            "ClassifyUser": "จำแนกผู้ใช้"
+            "classsfiyuser": "จำแนกผู้ใช้"
         }
     },
     "de": {
@@ -804,7 +804,7 @@
             "Filters": "Filter",
             "ByDate": "Nach Datum",
             "Region": "Region",
-            "ClassifyUser": "Benutzer klassifizieren"
+            "classsfiyuser": "Benutzer klassifizieren"
         }
     }
 }

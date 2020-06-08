@@ -62,7 +62,11 @@ export class certifyinformationComponent extends NBaseComponent implements OnIni
                  this.masterdata.certifyInfoChecked = this.accept;
                 localStorage.setItem('certifyInfoName', data.value.signature);
                 localStorage.setItem('certifyInfoChecked', data.value.accept);
-
+                //Clearing user response in local storage once user 
+                window.localStorage.removeItem('val1');
+                window.localStorage.removeItem('val2');
+                window.localStorage.removeItem('val3');
+                window.localStorage.removeItem('addlinfo');
                 this.masterdata.userSubmit().then((resp)=>{
                     console.log('certt resp', resp);
 

@@ -38,24 +38,22 @@ export class contactinformationComponent extends NBaseComponent
       this.localeService.language = language;
     }
 
-    // let uResp = localStorage.getItem("userResponse");
-    // if (uResp) {
-    //   this.localdata = JSON.parse(uResp);
-    // }
+    let usertype = window.localStorage.getItem("usertype");
+    console.log(usertype);
+    if (usertype == 'Employee') {
+        let firstname = window.localStorage.getItem("firstname");
+        let lastname = window.localStorage.getItem("lastname");
+        this.ingredioncontact = firstname + ' ' + lastname;
+        console.log('ingredionContact.', this.ingredioncontact);
+    } else {
+        this.ingredioncontact = ''
+    }
+
+
   }
 
   ngOnInit() {
-    // if (this.localdata && this.localdata.firstName) {
-    //   this.email = this.localdata.email;
-    //   this.phone = this.localdata.phone;
-    //   this.company = this.localdata.company;
-    //   this.ingredioncontact = this.localdata.ingredionContact;
-    // } else {
-    //   this.email = "";
-    //   this.phone = "";
-    //   this.company = "";
-    //   this.ingredioncontact = "";
-    // }
+      
   }
 
   /**
@@ -70,7 +68,7 @@ export class contactinformationComponent extends NBaseComponent
     }
     this.emailvalidation = false; // default we keep as false once the email is found in database records we make it to true
     var regexp = new RegExp(
-      "([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
+      "([A-Z_a-z_]|[0-9])[_A-Z_a-z_0-9.]+[_A-Z_a-z_0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
     );
     if (regexp.test(EmailId)) {
       console.log(EmailId);

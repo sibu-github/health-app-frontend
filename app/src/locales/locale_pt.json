@@ -87,8 +87,8 @@
         "global": "Visão global",
         "bno": "Número do edifício",
         "flno": "Número do andar",
-        "scno": "Número da ala",
-        "cuno": "Número do escritório",
+        "scno": "Número da asa / seção",
+        "cuno": "Número do cubo / escritório",
         "submittedby": "Enviado por",
         "confirmphonenumber": "Confirmar seu número de telefone",
         "Individualdeclaration": "FORMULÁRIO DE DECLARAÇÃO INDIVIDUAL (2019 - Triagem coronavírus)",
@@ -96,6 +96,6 @@
         "Filters": "Filtros",
         "ByDate": "Por data",
         "Region": "Região",
-        "ClassifyUser": "Classificar usuário"
+        "classsfiyuser": "Classificar usuário"
     }
 }

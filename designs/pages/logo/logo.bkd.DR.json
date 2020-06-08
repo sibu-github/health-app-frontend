@@ -209,7 +209,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "align-self:center;width:80px;margin-top:10px;",
+                            "_value": "margin-left:25px;align-self:center;width:80px;margin-top:10px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -425,6 +425,7 @@
             "a930bc06-9200-c107-56a2-8679b77f9c46": {
                 "paletteKey": "FlexLayoutCol",
                 "parentEditorKey": "31e99ab6-c88a-f57c-c7c2-fac27d9f1863",
+                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -471,7 +472,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "center",
+                        "_value": "end",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -491,6 +492,7 @@
                 "5ba8c1e8-ca38-f742-c4ba-2fa4fbbcc609": {
                     "paletteKey": "NG-image",
                     "parentEditorKey": "a930bc06-9200-c107-56a2-8679b77f9c46",
+                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
