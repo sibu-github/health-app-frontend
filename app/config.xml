@@ -60,29 +60,36 @@
         <preference name="FadeSplashScreen" value="false" />
         <preference name="AutoHideSplashScreen" value="false" />
         <resource-file src="GoogleService-Info.plist" />
-        <splash src="src/assets/iOS/Resources/splash/Default@2x~iphone~anyany.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@2x~iphone~comany.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@2x~iphone~comcom.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@3x~iphone~anyany.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@3x~iphone~anycom.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@3x~iphone~comany.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@2x~ipad~anyany.png" />
-        <splash src="src/assets/iOS/Resources/splash/Default@2x~ipad~comany.png" />
-        <icon height="180" src="src/assets/iOS/Resources/icons/icon-60@3x.png" width="180" />
-        <icon height="60" src="src/assets/iOS/Resources/icons/icon-60.png" width="60" />
-        <icon height="120" src="src/assets/iOS/Resources/icons/icon-60@2x.png" width="120" />
-        <icon height="76" src="src/assets/iOS/Resources/icons/icon-76.png" width="76" />
-        <icon height="152" src="src/assets/iOS/Resources/icons/icon-76@2x.png" width="152" />
-        <icon height="40" src="src/assets/iOS/Resources/icons/icon-40.png" width="40" />
-        <icon height="80" src="src/assets/iOS/Resources/icons/icon-40@2x.png" width="80" />
-        <icon height="57" src="src/assets/iOS/Resources/icons/icon.png" width="57" />
-        <icon height="114" src="src/assets/iOS/Resources/icons/icon@2x.png" width="114" />
-        <icon height="72" src="src/assets/iOS/Resources/icons/icon-72.png" width="72" />
-        <icon height="144" src="src/assets/iOS/Resources/icons/icon-72@2x.png" width="144" />
-        <icon height="29" src="src/assets/iOS/Resources/icons/icon-small.png" width="29" />
-        <icon height="58" src="src/assets/iOS/Resources/icons/icon-small@2x.png" width="58" />
-        <icon height="50" src="src/assets/iOS/Resources/icons/icon-50.png" width="50" />
-        <icon height="100" src="src/assets/iOS/Resources/icons/icon-50@2x.png" width="100" />
+        <splash height="1136" src="src/assets/iOS/Resources/splash/Default-568h@2x~iphone.png" width="640" />
+        <splash height="1334" src="src/assets/iOS/Resources/splash/Default-667h.png" width="750" />
+        <splash height="2208" src="src/assets/iOS/Resources/splash/Default-736h.png" width="1242" />
+        <splash height="1242" src="src/assets/iOS/Resources/splash/Default-Landscape-736h.png" width="2208" />
+        <splash height="1536" src="src/assets/iOS/Resources/splash/Default-Landscape@2x~ipad.png" width="2048" />
+        <splash height="2048" src="src/assets/iOS/Resources/splash/Default-Landscape@~ipadpro.png" width="2732" />
+        <splash height="768" src="src/assets/iOS/Resources/splash/Default-Landscape~ipad.png" width="1024" />
+        <splash height="2048" src="src/assets/iOS/Resources/splash/Default-Portrait@2x~ipad.png" width="1536" />
+        <splash height="2732" src="src/assets/iOS/Resources/splash/Default-Portrait@~ipadpro.png" width="2048" />
+        <splash height="1024" src="src/assets/iOS/Resources/splash/Default-Portrait~ipad.png" width="768" />
+        <splash height="960" src="src/assets/iOS/Resources/splash/Default@2x~iphone.png" width="640" />
+        <splash height="480" src="src/assets/iOS/Resources/splash/Default~iphone.png" width="320" />
+        <splash height="2732" src="src/assets/iOS/Resources/splash/Default@2x~universal~anyany.png" width="2732" />
+    
+        <icon height="57" src="src/assets/iOS/Resources/icon/icon.png" width="57" />
+        <icon height="114" src="src/assets/iOS/Resources/icon/icon@2x.png" width="114" />
+        <icon height="40" src="src/assets/iOS/Resources/icon/icon-40.png" width="40" />
+        <icon height="80" src="src/assets/iOS/Resources/icon/icon-40@2x.png" width="80" />
+        <icon height="120" src="src/assets/iOS/Resources/icon/icon-40@3x.png" width="120" />
+        <icon height="50" src="src/assets/iOS/Resources/icon/icon-50.png" width="50" />
+        <icon height="100" src="src/assets/iOS/Resources/icon/icon-50@2x.png" width="100" />
+        <icon height="60" src="src/assets/iOS/Resources/icon/icon-60.png" width="60" />
+        <icon height="120" src="src/assets/iOS/Resources/icon/icon-60@2x.png" width="120" />
+        <icon height="180" src="src/assets/iOS/Resources/icon/icon-60@3x.png" width="180" />
+        <icon height="72" src="src/assets/iOS/Resources/icon/icon-72.png" width="72" />
+        <icon height="144" src="src/assets/iOS/Resources/icon/icon-72@2x.png" width="144" />
+        <icon height="76" src="src/assets/iOS/Resources/icon/icon-76.png" width="76" />
+        <icon height="152" src="src/assets/iOS/Resources/icon/icon-76@2x.png" width="152" />
+        <icon height="167" src="src/assets/iOS/Resources/icon/icon-83.5@2x.png" width="167" />
+        <icon height="1024" src="src/assets/iOS/Resources/icon/icon-1024.png" width="1024" />
         <config-file parent="UIFileSharingEnabled" target="*-Info.plist">
             <true />
         </config-file>
