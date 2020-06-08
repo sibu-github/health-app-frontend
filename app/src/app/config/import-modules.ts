@@ -46,6 +46,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatNativeDateModule} from '@angular/material';
 import { NeutrinosOAuthClientModule } from 'neutrinos-oauth-client';
 
+/**
+ * For Azure AD integration for login functionality
+ */
+import { MsalModule } from "@azure/msal-angular";
+
 
 /**
  * adding the environments into the window object
@@ -104,5 +109,30 @@ export const appImportModules: any = [
   }),
   NeutrinosModule,
   DependenciesModule,
-  NeutrinosOAuthClientModule
+  NeutrinosOAuthClientModule,
+  /**
+   * For Azure AD integration for login functionality
+   */
+  MsalModule.forRoot(
+    {
+      auth: {
+        clientId: environment.properties.azureClientID,
+        authority: environment.properties.azureAuthority,
+        redirectUri: environment.properties.redirectURL,
+      },
+      cache: {
+        cacheLocation: "localStorage",
+        storeAuthStateInCookie: true, // set to true for IE 11
+      },
+    },
+    {
+      popUp: true,
+      consentScopes: ["user.read", "openid", "profile"],
+      unprotectedResources: [],
+      protectedResourceMap: [
+        ["https://graph.microsoft.com/v1.0/me", ["user.read"]],
+      ],
+      extraQueryParameters: {},
+    }
+  ),
 ];

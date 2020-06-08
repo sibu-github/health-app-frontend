@@ -14,6 +14,7 @@ export const environment = {
         "azureAuthURL": "https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc/oauth2/v2.0/authorize",
         "redirectURL": "https://health-appuat.azurewebsites.net/logincomplete",
         "azureScopes": "openid profile offline_access",
-        "azureResponseType": "code"
+        "azureResponseType": "code",
+        "azureAuthority": "https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc"
     }
 }
