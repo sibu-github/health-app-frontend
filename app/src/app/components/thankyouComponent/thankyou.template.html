@@ -29,7 +29,7 @@
               <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
                 <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
                   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-                    <div style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px;  color: #283552;">
+                    <div style="margin-top:10px;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px;  color: #283552;">
                       {{locales.submittedby}}
 
                       <div style="color: #283552;
@@ -43,7 +43,7 @@
     font-size: 15px;
     line-height: 30px;">{{name}}</div>
 
-                      <div style="font-size: 11px;font-weight: 500;">{{today}}</div>
+                      <div style="font-size: 20px; margin-top:10px;font-weight: bold;">{{today}}</div>
                     </div>
                   </div>
                 </div>
@@ -69,17 +69,12 @@
   <div fxLayout="column wrap" style="min-height:100vh;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="row wrap" style="width:100%;" fxFlex="5" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     <bh-logo></bh-logo>
-    <div fxLayout="row wrap" style="margin-top:10px;padding-left:10px;padding-right:10px;" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="start none" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/ingredionlogo.png" style="width:60px;"></div>
-      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Carefirst.jpg" style="width:80px;"></div>
-      <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png"></div>
-    </div>
-    <div fxLayout="column wrap" style="margin-top:80px;" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="column wrap" style="margin-top:30px;" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="row wrap" style="padding:10px;" fxFlex="30" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
         <mat-icon class="bg-green done-icon" *ngIf="!isAmber">done</mat-icon>
         <mat-icon class="bg-amber done-icon" *ngIf="isAmber">done</mat-icon>
       </div>
-      <div fxLayout="row wrap" style="width:100%;padding:15px;" fxFlex="20" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="row wrap" style="width:100%;padding:20px;" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
           <div style="color: #283552;text-align: center; letter-spacing: 0.5px; text-transform: capitalize;width:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px;">
             {{locales.thankyou}}</div>
@@ -102,7 +97,7 @@
       <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
         <div fxLayout="column wrap" style="width:100%;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-          <div style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; left: 28.6%; color: #283552;">
+          <div style="font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; color: #283552;">
             {{locales.submittedby}}
 
             <div style="color: #283552;
@@ -116,7 +111,7 @@
     font-size: 15px;
     line-height: 30px;margin-top: 5px;margin-left:5px;">{{name}}</div>
 
-            <div style="font-size: 11px; margin-top: 10px; font-weight: 500;">{{today}}</div>
+            <div style="font-size: 20px; margin-top:10px;font-weight: bold;">{{today}}</div>
           </div>
         </div>
         <div fxLayout="column wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>

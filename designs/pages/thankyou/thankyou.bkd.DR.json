@@ -2011,7 +2011,7 @@
                                                 "designerReference": [
                                                     {
                                                         "_key": "style",
-                                                        "_value": "font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px;  color: #283552;",
+                                                        "_value": "margin-top:10px;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px;  color: #283552;",
                                                         "_type": "kv",
                                                         "_attrDef": "p"
                                                     },
@@ -2210,7 +2210,7 @@
                                                         },
                                                         {
                                                             "_key": "html",
-                                                            "_value": "{{locales.submittedby}}\r\n\r\n<div style=\"color: #283552;\r\n    text-align: center;\r\n    letter-spacing: 0.5px;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    font-family: Poppins;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    font-size: 15px;\r\n    line-height: 30px;\">{{name}}</div>\r\n\r\n<div style=\"font-size: 11px;font-weight: 500;\">{{today}}</div>\r\n",
+                                                            "_value": "{{locales.submittedby}}\r\n\r\n<div style=\"color: #283552;\r\n    text-align: center;\r\n    letter-spacing: 0.5px;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    font-family: Poppins;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    font-size: 15px;\r\n    line-height: 30px;\">{{name}}</div>\r\n\r\n<div style=\"font-size: 20px; margin-top:10px;font-weight: bold;\">{{today}}</div>\r\n",
                                                             "_type": "a",
                                                             "_attrDef": "p"
                                                         }
@@ -2630,6 +2630,32 @@
                                                     {
                                                         "_key": "html",
                                                         "_value": "{{locales.developedby}}",
+                                                        "_type": "a",
+                                                        "_attrDef": "p"
+                                                    }
+                                                ]
+                                            },
+                                            "f1fc66d1-2ec3-8e1e-9e82-181db4207f21": {
+                                                "paletteKey": "html-editor",
+                                                "parentEditorKey": "e436d544-786a-d9dc-d1c9-d78bccfc47a7",
+                                                "isAdvancedChildComponent": true,
+                                                "isCommented": "false",
+                                                "designerReference": [
+                                                    {
+                                                        "_key": "style",
+                                                        "_value": "",
+                                                        "_type": "kv",
+                                                        "_attrDef": "p"
+                                                    },
+                                                    {
+                                                        "_key": "class",
+                                                        "_value": "",
+                                                        "_type": "dav",
+                                                        "_attrDef": "p"
+                                                    },
+                                                    {
+                                                        "_key": "html",
+                                                        "_value": "",
                                                         "_type": "a",
                                                         "_attrDef": "p"
                                                     }
@@ -3103,7 +3129,7 @@
             "a6b2dd68-a368-e061-da58-be4b8184bc08": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "31838618-8ad2-8819-f578-33ec3c36655e",
-                "isCommented": "false",
+                "isCommented": "true",
                 "designerReference": [
                     {
                         "_key": "componentLabel",
@@ -3170,7 +3196,7 @@
                 "c52efd4c-ea38-42ef-e750-90d7bddc984c": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "a6b2dd68-a368-e061-da58-be4b8184bc08",
-                    "isCommented": "false",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -3237,7 +3263,7 @@
                     "44ae97b9-753f-3157-69e3-2bf53d2952b0": {
                         "paletteKey": "NG-image",
                         "parentEditorKey": "c52efd4c-ea38-42ef-e750-90d7bddc984c",
-                        "isCommented": "false",
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -3318,7 +3344,7 @@
                 "f0debc2d-373c-9c37-80c0-b0141c0fd3d0": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "a6b2dd68-a368-e061-da58-be4b8184bc08",
-                    "isCommented": "false",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -3385,7 +3411,7 @@
                     "282112e4-5517-cc57-3dd3-d59cd0e061cf": {
                         "paletteKey": "NG-image",
                         "parentEditorKey": "f0debc2d-373c-9c37-80c0-b0141c0fd3d0",
-                        "isCommented": "false",
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -3466,7 +3492,7 @@
                 "3f9eb84a-7b39-ec91-63ea-4265076779f9": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "a6b2dd68-a368-e061-da58-be4b8184bc08",
-                    "isCommented": "false",
+                    "isCommented": "true",
                     "designerReference": [
                         {
                             "_key": "componentLabel",
@@ -3533,7 +3559,7 @@
                     "a7e4854d-0e74-4155-c163-594b11771bb2": {
                         "paletteKey": "NG-image",
                         "parentEditorKey": "3f9eb84a-7b39-ec91-63ea-4265076779f9",
-                        "isCommented": "false",
+                        "isCommented": "true",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -3626,7 +3652,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "margin-top:80px;",
+                        "_value": "margin-top:30px;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -3855,7 +3881,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:100%;padding:15px;",
+                            "_value": "width:100%;padding:20px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -3867,7 +3893,7 @@
                         },
                         {
                             "_key": "fxFlex",
-                            "_value": "20",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -5033,7 +5059,7 @@
                             "designerReference": [
                                 {
                                     "_key": "style",
-                                    "_value": "font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; left: 28.6%; color: #283552;",
+                                    "_value": "font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; line-height: 16px; text-align: center; letter-spacing: 0.5px; margin-top:15px; position: absolute; color: #283552;",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -5232,7 +5258,7 @@
                                     },
                                     {
                                         "_key": "html",
-                                        "_value": "{{locales.submittedby}}\r\n\r\n<div style=\"color: #283552;\r\n    text-align: center;\r\n    letter-spacing: 0.5px;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    font-family: Poppins;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    font-size: 15px;\r\n    line-height: 30px;margin-top: 5px;margin-left:5px;\">{{name}}</div>\r\n\r\n<div style=\"font-size: 11px; margin-top: 10px; font-weight: 500;\">{{today}}</div>\r\n",
+                                        "_value": "{{locales.submittedby}}\r\n\r\n<div style=\"color: #283552;\r\n    text-align: center;\r\n    letter-spacing: 0.5px;\r\n    text-transform: capitalize;\r\n    width: 100%;\r\n    font-family: Poppins;\r\n    font-style: normal;\r\n    font-weight: 600;\r\n    font-size: 15px;\r\n    line-height: 30px;margin-top: 5px;margin-left:5px;\">{{name}}</div>\r\n\r\n<div style=\"font-size: 20px; margin-top:10px;font-weight: bold;\">{{today}}</div>\r\n",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     }
