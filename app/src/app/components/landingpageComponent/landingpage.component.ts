@@ -310,7 +310,12 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     }
   }
 
+  // subscribe to msal broadcast event
   subscribeToMsal() {
+    // if it is mobile app then we don't subscribe
+    if(this.isMobileApp){
+      return;
+    }
     console.log('subscribeToMsal')
     this.broadcastService.subscribe("msal:loginSuccess", this.onLoginSuccess);
   }
