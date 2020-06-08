@@ -221,7 +221,7 @@ export class saveuserresponse {
   }
   async sd_chnzbvsmBYvG8poP(bh) {
     try {
-      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?locale=${bh.input.locale}`;
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?languageKey=${bh.input.locale}`;
 
       console.log(bh.local.apiURL);
 

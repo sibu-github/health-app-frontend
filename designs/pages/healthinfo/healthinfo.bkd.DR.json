@@ -2689,7 +2689,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "width:100%; padding-left: 1em",
+                                        "_value": "width:100%; ",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },

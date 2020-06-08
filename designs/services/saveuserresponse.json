@@ -261,7 +261,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "apiURL",
-        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?locale=${bh.input.locale}`;\n\nconsole.log(bh.local.apiURL)\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?languageKey=${bh.input.locale}`;\n\nconsole.log(bh.local.apiURL)\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
         "category": "Function",
         "x": 320,
         "y": 480,
