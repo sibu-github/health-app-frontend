@@ -80,8 +80,8 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
       //  //q3
       this.q1postive = dashboard.local.result.q3Positive;
       this.q1negative = dashboard.local.result.q3Negative;
-
-      let bh = await this.getlocation.getLocations();
+        let locale = window.localStorage.getItem("language") || 'en'
+      let bh = await this.getlocation.getLocations(locale);
       console.log(bh);
       this.locationname = bh.local.result;
       // console.log(bh.local.result.length);
