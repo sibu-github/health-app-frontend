@@ -215,7 +215,7 @@
                     },
                     {
                         "_key": "src",
-                        "_value": "/assets/iOS/Resources/splash/Default-Portrait@~ipadpro.png",
+                        "_value": "/assets/iOS/Resources/splash/Default-736h.png",
                         "_type": "kv",
                         "_attrDef": "c"
                     }
