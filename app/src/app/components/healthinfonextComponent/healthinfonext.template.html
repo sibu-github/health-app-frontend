@@ -72,16 +72,13 @@
       </div>
       <div fxLayout="column wrap" class="question3" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     </div>
-    <div fxLayout="row wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-    <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="80" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%; padding-top: 1em; padding-left: 1em" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <mat-radio-group [(ngModel)]="selected3" (change)="onChangeRadio($event,3)">
           <mat-radio-button value="false" required>NO</mat-radio-button>
           <mat-radio-button value="true" required>YES</mat-radio-button>
         </mat-radio-group>
       </div>
-      <div fxLayout="column wrap" style="width:100%;" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
     </div>
     <div fxLayout="row wrap" style="width:100%;padding-top:10px;margin-left:10px;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <form class="example-form" #healthForm="ngForm" [hidden]="!enableTextArea" style="width:85%;">
