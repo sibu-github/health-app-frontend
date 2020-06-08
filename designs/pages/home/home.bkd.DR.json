@@ -161,7 +161,7 @@
                     },
                     {
                         "_key": "imgSrc",
-                        "_value": "",
+                        "_value": "/Android/res/drawable/screen2.png",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -212,12 +212,6 @@
                         "_value": "",
                         "_type": "kv",
                         "_attrDef": "p"
-                    },
-                    {
-                        "_key": "src",
-                        "_value": "/assets/iOS/Resources/splash/Default-736h.png",
-                        "_type": "kv",
-                        "_attrDef": "c"
                     }
                 ]
             }
