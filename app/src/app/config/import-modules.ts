@@ -116,9 +116,9 @@ export const appImportModules: any = [
   MsalModule.forRoot(
     {
       auth: {
-        clientId: environment.properties.azureClientID,
+        clientId: environment.properties.clientIdWebLogin,
         authority: environment.properties.azureAuthority,
-        redirectUri: environment.properties.redirectURL,
+        redirectUri: environment.properties.redirectUrlWebLogin,
       },
       cache: {
         cacheLocation: "localStorage",

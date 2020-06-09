@@ -189,6 +189,15 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   // open inappbrowser to show the login winoow
   openInAppBrowser() {
+    /**
+     * ===================================================================
+     * NOTE TO SELF: There are two sets client id and redirect url defined 
+     * in the environment. When we are launching login screen from mobile 
+     * app, we will use the client id pointing to the UAT environment.
+     * When we are launching the login screen from web browser we will
+     * use the client ID pointing to Prod env. 
+     * =================================================================
+     */
     const CLIENT_ID = this.systemService.getVal("azureClientID");
     const AUTH_URL = this.systemService.getVal("azureAuthURL");
     const REDIRECT_URL = this.systemService.getVal("redirectURL");
