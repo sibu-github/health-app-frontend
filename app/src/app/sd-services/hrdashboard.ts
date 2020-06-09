@@ -22,9 +22,9 @@ export class hrdashboard {
 
   //   service flows_hrdashboard
 
-  public async hrDashboard(body: any = undefined, ...others) {
+  public async hrDashboard(body: any = undefined, jwtToken = '', ...others) {
     let bh = {
-      input: { body: body },
+      input: { body: body, jwtToken: jwtToken },
       local: { result: undefined, apiURL: undefined }
     };
     try {
@@ -50,7 +50,7 @@ export class hrdashboard {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/dashboard`;
 
-      const jwtToken = window.localStorage.getItem('jwtToken');
+      const jwtToken = bh.input.jwtToken;
       bh.local.headers = {
         Authorization: jwtToken
       };

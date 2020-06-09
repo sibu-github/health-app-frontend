@@ -22,9 +22,9 @@ export class userdetails {
 
   //   service flows_userdetails
 
-  public async userDetails(data: any = undefined, ...others) {
+  public async userDetails(data: any = undefined, jwtToken = '', ...others) {
     let bh = {
-      input: { data: data },
+      input: { data: data, jwtToken: jwtToken },
       local: { result: undefined, apiURL: undefined }
     };
     try {
@@ -50,7 +50,7 @@ export class userdetails {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userinfo`;
 
-      const jwtToken = window.localStorage.getItem('jwtToken');
+      const jwtToken = bh.input.jwtToken;
       bh.local.headers = {
         Authorization: jwtToken
       };

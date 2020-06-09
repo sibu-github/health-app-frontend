@@ -26,6 +26,14 @@
                     "value": ""
                 },
                 "output": false
+            },
+            {
+                "key": "jwtToken",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
             }
         ],
         "localVariables": [
@@ -66,7 +74,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "apiURL",
-        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userinfo`;\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userinfo`;\n\nconst jwtToken = bh.input.jwtToken\nbh.local.headers = {\n    Authorization: jwtToken\n}",
         "category": "Function",
         "x": 325,
         "y": 120,
@@ -86,13 +94,16 @@
         "nodeType": "flow",
         "name": "confirmuserdetails",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "reqBody": "bh.input.data",
         "reqBodyObj": {
@@ -104,6 +115,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -111,6 +124,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 425,

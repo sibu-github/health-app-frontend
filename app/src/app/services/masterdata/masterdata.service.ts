@@ -2,6 +2,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
+import { NLocalStorageService } from "neutrinos-seed-services";
 @Injectable()
 export class masterdataService {
   public username: string;
@@ -36,7 +37,8 @@ export class masterdataService {
 
   constructor(
     private http: HttpClient,
-    private saveuserService: saveuserresponse
+    private saveuserService: saveuserresponse,
+    private nLocalStorage: NLocalStorageService
   ) {}
 
   // async userSubmit(){
@@ -125,11 +127,12 @@ export class masterdataService {
         ],
       };
       console.log(formdata);
-      localStorage.setItem("userResponse", JSON.stringify(formdata));
+      this.nLocalStorage.setValue("userResponse", JSON.stringify(formdata));
       var time = new Date().toLocaleDateString();
       console.log("time", time);
-      localStorage.setItem("lastResponse", time);
-      let bh = await this.saveuserService.saveUserData(formdata);
+      this.nLocalStorage.setValue("lastResponse", time);
+      let jwtToken = this.nLocalStorage.getValue('jwtToken')
+      let bh = await this.saveuserService.saveUserData(formdata, jwtToken);
       console.log(bh.local.result);
       return bh.local.result;
     } catch (err) {

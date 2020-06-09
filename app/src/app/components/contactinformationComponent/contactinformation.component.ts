@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 
 import { Router } from "@angular/router";
+import { NLocalStorageService } from 'neutrinos-seed-services';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -29,20 +30,22 @@ export class contactinformationComponent extends NBaseComponent
   company: any; // kept for build error
   ingredioncontact: any; // kept for build error
   localdata: any;
-  constructor(private router: Router, private masterdata: masterdataService, private common: commonService) {
+  constructor(private router: Router, private masterdata: masterdataService, private common: commonService,private nLocalStorage: NLocalStorageService) {
     super();
-    // get the previously selected language from local storage
-    // set the language if selected
-    let language = window.localStorage.getItem("language");
+    this.updateLocaleLanguage();
+  }
+
+  // get the previously selected language from local storage
+  // set the language if selected,
+  // by default set the language to English
+  updateLocaleLanguage() {
+    let language = this.nLocalStorage.getValue('language')
     if (language) {
       this.localeService.language = language;
-    }
-
-    // let uResp = localStorage.getItem("userResponse");
-    // if (uResp) {
-    //   this.localdata = JSON.parse(uResp);
-    // }
+    } 
   }
+
+
 
   ngOnInit() {
     if (this.common.selectionType == 'employee') {

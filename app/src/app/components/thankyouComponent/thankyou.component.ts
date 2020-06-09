@@ -4,6 +4,7 @@ import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { HostListener } from '@angular/core';
 import { PlatformLocation } from '@angular/common';
 import {Router} from '@angular/router';
+import { NLocalStorageService } from 'neutrinos-seed-services';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -65,32 +66,37 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     return dayStr;
   }
 
-  constructor(location: PlatformLocation, private router: Router) {
+  constructor(
+    location: PlatformLocation, 
+    private router: Router,
+    private nLocalStorage: NLocalStorageService
+) {
     super();
     // get the previously selected language from local storage
     // set the language if selected
-    let language = window.localStorage.getItem("language");
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
     }
 
     // get the color code from localstorage
-    let color = window.localStorage.getItem("colorCode");
+    let color = this.nLocalStorage.getValue("colorCode");
     this.isAmber = color === "amber";
   }
 
   ngOnInit() {
 
     // for prepopulating the data
-    let uResp = localStorage.getItem("userResponse");
+    let uResp = this.nLocalStorage.getValue("userResponse");
+    console.log(uResp);
     if (uResp) {
       this.localdata = JSON.parse(uResp);
     }
 
     console.log(this.localdata);
       // get firstName and lastName
-     let firstName =  localStorage.getItem("firstName");
-     let lastName = localStorage.getItem("lastName");
+     let firstName =  this.nLocalStorage.getValue("firstName");
+     let lastName = this.nLocalStorage.getValue("lastName");
      
      if(firstName !== null && lastName !== null) {
        console.log(firstName, lastName);

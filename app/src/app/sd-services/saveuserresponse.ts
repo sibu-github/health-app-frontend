@@ -22,9 +22,13 @@ export class saveuserresponse {
 
   //   service flows_saveuserresponse
 
-  public async saveUserData(formdata: any = undefined, ...others) {
+  public async saveUserData(
+    formdata: any = undefined,
+    jwtToken: any = undefined,
+    ...others
+  ) {
     let bh = {
-      input: { formdata: formdata },
+      input: { formdata: formdata, jwtToken: jwtToken },
       local: { result: undefined, apiUrl: '' }
     };
     try {
@@ -45,8 +49,11 @@ export class saveuserresponse {
     }
   }
 
-  public async getLocations(locale = '', ...others) {
-    let bh = { input: { locale: locale }, local: { result: undefined } };
+  public async getLocations(locale = '', jwtToken = '', ...others) {
+    let bh = {
+      input: { locale: locale, jwtToken: jwtToken },
+      local: { result: undefined }
+    };
     try {
       bh = this.sdService.__constructDefault(bh);
       bh = await this.sd_chnzbvsmBYvG8poP(bh);
@@ -65,9 +72,9 @@ export class saveuserresponse {
     }
   }
 
-  public async getIfUserSubmitted(email = '', apiURL = '', ...others) {
+  public async getIfUserSubmitted(email = '', jwtToken = '', ...others) {
     let bh = {
-      input: { email: email, apiURL: apiURL },
+      input: { email: email, jwtToken: jwtToken },
       local: { result: undefined }
     };
     try {
@@ -111,9 +118,9 @@ export class saveuserresponse {
     }
   }
 
-  public async getNewTokens(refreshToken = '', apiURL = '', ...others) {
+  public async getNewTokens(refreshToken = '', ...others) {
     let bh = {
-      input: { refreshToken: refreshToken, apiURL: apiURL },
+      input: { refreshToken: refreshToken },
       local: { result: undefined }
     };
     try {
@@ -159,7 +166,7 @@ export class saveuserresponse {
     try {
       bh.local.apiUrl = `${bh.system.environment.properties.ssdURL}/api/userResponse`;
 
-      const jwtToken = window.localStorage.getItem('jwtToken');
+      const jwtToken = bh.input.jwtToken;
       bh.local.headers = {
         Authorization: jwtToken
       };
@@ -223,12 +230,14 @@ export class saveuserresponse {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?locale=${bh.input.locale}`;
 
+      console.log(bh.input.jwtToken);
       console.log(bh.local.apiURL);
 
-      const jwtToken = window.localStorage.getItem('jwtToken');
       bh.local.headers = {
-        Authorization: jwtToken
+        Authorization: bh.input.jwtToken
       };
+
+      console.log(JSON.stringify(bh.local.headers));
       bh = await this.sd_CrsIy7P6IOcKj3sX(bh);
       //appendnew_next_sd_chnzbvsmBYvG8poP
       return bh;
@@ -270,9 +279,9 @@ export class saveuserresponse {
       const email = bh.input.email;
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;
 
-      const jwtToken = window.localStorage.getItem('jwtToken');
+      const jwtToken = bh.input.jwtToken;
       console.log('apiURL is ', bh.local.apiURL);
-      console.log('token is ', jwtToken);
+      console.log('token is ', bh.input.jwtToken);
 
       bh.local.headers = {
         Authorization: jwtToken

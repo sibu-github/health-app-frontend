@@ -26,6 +26,14 @@
                     "value": ""
                 },
                 "output": false
+            },
+            {
+                "key": "jwtToken",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
             }
         ],
         "localVariables": [
@@ -44,6 +52,14 @@
                     "value": ""
                 },
                 "output": true
+            },
+            {
+                "key": "token_key",
+                "defaultValue": {
+                    "type": "str",
+                    "value": "jwtToken"
+                },
+                "output": false
             }
         ],
         "accept_bh": false,
@@ -66,7 +82,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "apiURL",
-        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;\n\nconst jwtToken = window.localStorage.getItem('jwtToken')\nbh.local.headers = {\n    Authorization: jwtToken\n}",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;\n\nconsole.log('token value in the service is:', bh.input.jwtToken)\n\n\nbh.local.headers = {\n    Authorization: bh.input.jwtToken\n}\n\nconsole.log('auth headers is:', JSON.stringify(bh.local.headers))",
         "category": "Function",
         "x": 225,
         "y": 140,
@@ -86,14 +102,18 @@
         "nodeType": "flow",
         "name": "verifymail",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -103,6 +123,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -110,6 +132,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 365,

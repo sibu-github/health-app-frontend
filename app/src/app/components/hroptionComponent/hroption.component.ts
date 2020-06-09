@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { Router } from "@angular/router";
 import { saveuserresponse } from 'app/sd-services/saveuserresponse';
+import { NLocalStorageService } from 'neutrinos-seed-services';
 
 /*
 Client Service import Example:
@@ -21,7 +22,8 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class hroptionComponent extends NBaseComponent implements OnInit {
 
-    constructor(private userService: saveuserresponse,private router: Router) {
+    constructor(private userService: saveuserresponse,private router: Router, 
+        private nLocalStorage: NLocalStorageService) {
         super();
     }
 
@@ -30,9 +32,10 @@ export class hroptionComponent extends NBaseComponent implements OnInit {
     }
 
     navigateToEmp(){
-        const newusername = localStorage.getItem('username');
+        const newusername = this.nLocalStorage.getValue('username');
+        const jwtToken = this.nLocalStorage.getValue('jwtToken');
         console.log(newusername);
-        this.userService.getIfUserSubmitted(newusername).then((resp)=>{
+        this.userService.getIfUserSubmitted(newusername, jwtToken).then((resp)=>{
         console.log("newbh",resp);
         let hasSubmitted = "no";
         let colorCode = "green";
@@ -44,7 +47,7 @@ export class hroptionComponent extends NBaseComponent implements OnInit {
                 }
     
                 // save the colorCode in localStorage
-                window.localStorage.setItem('colorCode', colorCode);
+                this.nLocalStorage.setValue('colorCode', colorCode);
 
                 // when user already submitted show Thank You screen 
                 if (hasSubmitted === "yes") {

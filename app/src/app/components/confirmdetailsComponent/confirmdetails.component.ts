@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 
 import { Router } from "@angular/router";
-
+import { NLocalStorageService } from 'neutrinos-seed-services';
 import { datasharingService } from "app/services/datasharing/datasharing.service";
 import { userdetails } from "app/sd-services/userdetails";
 /*
@@ -50,17 +50,14 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     private getlocation: saveuserresponse,
     private datash: datasharingService,
     private masterdata: masterdataService,
-    private datasharingService: datasharingService
+    private datasharingService: datasharingService,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
-    // get the previously selected language from local storage
-    // set the language if selected
-    let language = window.localStorage.getItem("language");
-    if (language) {
-      this.localeService.language = language;
-    }
-    // // for prepopulating the data
-    let uResp = localStorage.getItem("userResponse");
+    this.updateLocaleLanguage();
+
+    // for prepopulating the data
+    let uResp = this.nLocalStorage.getValue('userResponse')
     console.log({uResp});
     if (uResp) {
       this.localdata = JSON.parse(uResp);
@@ -75,12 +72,23 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     this.setLocation();
   }
 
+  // get the previously selected language from local storage
+  // set the language if selected,
+  // by default set the language to English
+  updateLocaleLanguage() {
+    let language = this.nLocalStorage.getValue('language')
+    if (language) {
+      this.localeService.language = language;
+    } 
+  }
+
+
     // set the previously selected location from localstorage
     setLocation(){
         // first we check if user has made any selection when opened the app previously
         // user selected location value will be stored in localstorage
         // if found then we ignore the value coming from azure ad
-        let location = window.localStorage.getItem('selectedLocation');
+        let location = this.nLocalStorage.getValue('selectedLocation');
         if(location){
             this.locationName = location;
             return
@@ -88,7 +96,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
         
         // get the location coming from azure ad
         // azure ad location is set in the local storage
-        location = window.localStorage.getItem('location');
+        location = this.nLocalStorage.getValue('location');
         if(location){
            this.locationName = location; 
         }
@@ -100,7 +108,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
         // first we check if user has made any selection when opened the app previously
         // user selected phone value will be stored in localstorage
         // if found then we ignore the value coming from azure ad
-        let phone = window.localStorage.getItem('selectedPhone');
+        let phone = this.nLocalStorage.getValue('selectedPhone');
         if(phone){
             this.phone = phone;
             return
@@ -108,7 +116,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
         
         // get the phone coming from azure ad
         // azure ad location is set in the local storage
-        phone = window.localStorage.getItem('phone');
+        phone = this.nLocalStorage.getValue('phone');
         if(phone){
            this.phone = phone; 
         }
@@ -123,8 +131,9 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
 
     async getAllLocations(){
         try{
-            let language = window.localStorage.getItem("language") || 'en';
-            let bh = await this.getlocation.getLocations(language);
+            let language = this.nLocalStorage.getValue("language") || 'en';
+            let jwtToken = this.nLocalStorage.getValue('jwtToken')
+            let bh = await this.getlocation.getLocations(language, jwtToken);
             if(bh && bh.local && bh.local.result){
                this.updatelocations = bh.local.result;
                this.totallocations = this.updatelocations; 
@@ -213,15 +222,15 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     this.masterdata.sectionNo = data.value.sectionNo;
     this.masterdata.cubeNo = data.value.cubeNo;
 
-    localStorage.setItem("selectedLocation", this.locationName);
-    localStorage.setItem("selectedPhone", this.masterdata.phone);
+    this.nLocalStorage.setValue("selectedLocation", this.locationName);
+    this.nLocalStorage.setValue("selectedPhone", this.masterdata.phone);
     this.validclick = false;
 
 
 
     try {
         let confirmdetailsObj = {
-            email: localStorage.getItem("username"),
+            email: this.nLocalStorage.getValue("username"),
             locationName: this.masterdata.locationName,
             phone: this.masterdata.phone,
             buildingNo: this.masterdata.buildingNo,
@@ -230,7 +239,8 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
             cubeNo: this.masterdata.cubeNo,
         };
         //calling confirm details api
-        await this.userdataservice.userDetails(confirmdetailsObj);
+        let jwtToken = this.nLocalStorage.getValue('jwtToken')
+        await this.userdataservice.userDetails(confirmdetailsObj, jwtToken);
         this.router.navigate(["/healthinfo"]);
     } catch(err){
         console.error(err)

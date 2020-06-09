@@ -2,7 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-
+import { NLocalStorageService } from 'neutrinos-seed-services';
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 
@@ -26,7 +26,8 @@ export class homeComponent extends NBaseComponent implements OnInit {
   constructor(
     private userService: saveuserresponse,
     private hrmailService: hrmailverifier,
-    private router: Router
+    private router: Router,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
   }
@@ -37,6 +38,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       this.callAPI();
       return;
     }
+
     // when opened from the browser we show the landingpage straightway
     this.router.navigate(["/landingpage"]);
   }
@@ -60,7 +62,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
         // set the jwtToken in the localStorage so that can be used throughout the application
         if (jwtToken) {
-          window.localStorage.setItem("jwtToken", `Bearer ${jwtToken}`);
+          this.nLocalStorage.setValue('jwtToken', `Bearer ${jwtToken}`)
         }
       }
     } catch (err) {
@@ -74,8 +76,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
   async fetchUserResponse() {
     console.log("fetchUserResponse called");
     try {
-      const username = localStorage.getItem("username");
-      console.log(username);
+      const username = this.nLocalStorage.getValue("username");
+      const jwtToken = this.nLocalStorage.getValue('jwtToken')
+      console.log(username, jwtToken);
 
       // if the username is not stored in the localstorage
       // we show landingpage
@@ -93,7 +96,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       // If user chooses to conitune as employee thats when we check if he has
       // submitted data for the day already. The optionpage will also include the
       // logic for checking if the user has already submitted data for the day.
-      let dt = await this.hrmailService.verifyEmail(username);
+      let dt = await this.hrmailService.verifyEmail(username, jwtToken);
       if (
         dt &&
         dt.local &&
@@ -107,7 +110,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       // check if user has submitted data for the day
       // Note: for employee we check if the user has submitted data for the day already
       // if yes we redirect to thank you page, otherwise redirect to landingpage
-      const bh = await this.userService.getIfUserSubmitted(username);
+      const bh = await this.userService.getIfUserSubmitted(username, jwtToken);
       console.log(bh);
 
       let hasSubmitted = "no";
@@ -118,7 +121,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       }
 
       // save the colorCode in localStorage
-      window.localStorage.setItem("colorCode", colorCode);
+      this.nLocalStorage.setValue("colorCode", colorCode)
 
       // hide splash screen
       this.showSplash = false;

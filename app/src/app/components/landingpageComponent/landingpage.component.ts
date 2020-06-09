@@ -9,6 +9,9 @@ import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { BroadcastService, MsalService } from "@azure/msal-angular";
 
+import { NLocalStorageService } from 'neutrinos-seed-services';
+
+
 declare var cordova: any;
 /*
 Client Service import Example:
@@ -54,7 +57,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     private _zone: NgZone,
     private http: HttpClient,
     private broadcastService: BroadcastService,
-    private authService: MsalService
+    private authService: MsalService,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
     // bind callback function
@@ -70,13 +74,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // call API to generate and new token and set in the localstorage
     // Note: In case of non employee flow we are directly landing on this page
     this.getJWT();
+    
   }
 
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
   updateLocaleLanguage() {
-    let language = window.localStorage.getItem("language");
+    let language = this.nLocalStorage.getValue('language')
     if (language) {
       this.localeService.language = language;
       this.defaultlang = language;
@@ -104,7 +109,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         const jwtToken = bh.local.result.token;
         // set the jwtToken in the localStorage so that can be used throughout the application
         if (jwtToken) {
-          window.localStorage.setItem("jwtToken", `Bearer ${jwtToken}`);
+          this.nLocalStorage.setValue('jwtToken', `Bearer ${jwtToken}`)
         }
       }
     } catch (err) {
@@ -115,7 +120,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   //when user selects language, goes into below fun
   languageSelect({value}) {
-    window.localStorage.setItem("language", value);
+    this.nLocalStorage.setValue("language", value);
     this.localeService.language = value;
   }
 
@@ -156,8 +161,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   async letsStartMobile() {
     console.log("Lets Starts Mobile");
 
-    let accessToken = window.localStorage.getItem("accessToken");
-    let refreshToken = window.localStorage.getItem("refreshToken");
+    let accessToken = this.nLocalStorage.getValue("accessToken");
+    let refreshToken = this.nLocalStorage.getValue("refreshToken");
     this.showSpinner = true;
     console.log({ accessToken, refreshToken });
 
@@ -252,8 +257,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     console.log('checkIfHRAdmn')
     // call service to check if the user is a hradmin or not
     // if HRAdmin then we move to the optionpage
-    let email = window.localStorage.getItem("email");
-    let bh = await this.hrmailService.verifyEmail(email);
+    let email = this.nLocalStorage.getValue("email");
+    let jwtToken = this.nLocalStorage.getValue('jwtToken');
+    let bh = await this.hrmailService.verifyEmail(email, jwtToken);
     if (
       bh &&
       bh.local &&
@@ -276,8 +282,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // check if user has submitted data for the day
     // Note: for employee we check if the user has submitted data for the day already
     // if yes we redirect to thank you page, otherwise redirect to landingpage
-    let email = window.localStorage.getItem("email");
-    let bh = await this.userService.getIfUserSubmitted(email);
+    let email = this.nLocalStorage.getValue("email");
+    let jwtToken = this.nLocalStorage.getValue('jwtToken')
+    let bh = await this.userService.getIfUserSubmitted(email, jwtToken);
     console.log(bh);
     let hasSubmitted = "no";
     let colorCode = "green";
@@ -286,7 +293,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       colorCode = bh.local.result.colorCode;
     }
     // save the colorCode in localStorage
-    window.localStorage.setItem("colorCode", colorCode);
+    this.nLocalStorage.setValue("colorCode", colorCode);
     if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
       this._zone.run(() => {
         this.router.navigate(["/thankyou"]);
@@ -307,14 +314,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     console.log('setTokensNUserLocalStorage')
     if (bh.local && bh.local.result) {
       console.log(bh.local.result);
-      window.localStorage.setItem("accessToken", bh.local.result.accessToken);
-      window.localStorage.setItem("refreshToken", bh.local.result.refreshToken);
-      window.localStorage.setItem("email", bh.local.result.user.email);
-      window.localStorage.setItem("username", bh.local.result.user.email);
-      window.localStorage.setItem("firstName", bh.local.result.user.firstName);
-      window.localStorage.setItem("lastName", bh.local.result.user.lastName);
-      window.localStorage.setItem("location", bh.local.result.user.location);
-      window.localStorage.setItem("phone", bh.local.result.user.phone.replace(' ', '')); // phone number received from AD contains space
+      this.nLocalStorage.setValue("accessToken", bh.local.result.accessToken);
+      this.nLocalStorage.setValue("refreshToken", bh.local.result.refreshToken);
+      this.nLocalStorage.setValue("email", bh.local.result.user.email);
+      this.nLocalStorage.setValue("username", bh.local.result.user.email);
+      this.nLocalStorage.setValue("firstName", bh.local.result.user.firstName);
+      this.nLocalStorage.setValue("lastName", bh.local.result.user.lastName);
+      this.nLocalStorage.setValue("location", bh.local.result.user.location);
+      this.nLocalStorage.setValue("phone", bh.local.result.user.phone.replace(' ', '')); // phone number received from AD contains space
       this.masterdata.email = bh.local.result.user.email;
     }
   }
@@ -377,13 +384,13 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
     console.log(profile);
 
-    window.localStorage.setItem("email", profile.mail);
-    window.localStorage.setItem("username", profile.mail);
-    window.localStorage.setItem("username", profile.mail);
-    window.localStorage.setItem("firstName", profile.givenName);
-    window.localStorage.setItem("lastName", profile.surname);
-    window.localStorage.setItem("location", profile.officeLocation);
-    window.localStorage.setItem("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
+    this.nLocalStorage.setValue("email", profile.mail);
+    this.nLocalStorage.setValue("username", profile.mail);
+    this.nLocalStorage.setValue("username", profile.mail);
+    this.nLocalStorage.setValue("firstName", profile.givenName);
+    this.nLocalStorage.setValue("lastName", profile.surname);
+    this.nLocalStorage.setValue("location", profile.officeLocation);
+    this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
     this.masterdata.email = profile.mail;
   }  
 
@@ -396,8 +403,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // //when user selects lets starts button
     // async letStart() {
     //   console.log("Lets Starts is working");
-    //   let accessToken = window.localStorage.getItem("accessToken");
-    //   let refreshToken = window.localStorage.getItem("refreshToken");
+    //   let accessToken = this.nLocalStorage.getValue("accessToken");
+    //   let refreshToken = this.nLocalStorage.getValue("refreshToken");
   
     //   this.showSpinner = true;
   

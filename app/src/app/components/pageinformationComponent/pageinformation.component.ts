@@ -11,6 +11,7 @@ import { servicename } from 'app/sd-services/servicename';
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { commonService } from 'app/services/common/common.service';
+import { NLocalStorageService } from 'neutrinos-seed-services';
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -47,12 +48,13 @@ showme:Boolean;
     private router: Router,
     private datash: datasharingService,
     private getlocation: saveuserresponse,
-    private masterdata: masterdataService
+    private masterdata: masterdataService,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
     // get the previously selected language from local storage
     // set the language if selected
-    let language = window.localStorage.getItem("language");
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
     }
@@ -72,8 +74,8 @@ showme:Boolean;
   ];
 
   doSomething(event) {
-    window.localStorage.setItem("language", event.value);
-    let language = window.localStorage.getItem("language");
+    this.nLocalStorage.setValue("language", event.value);
+    let language = this.nLocalStorage.getValue("language");
     this.localeService.language = language;
   }
   async ngOnInit() {
@@ -126,7 +128,7 @@ showme:Boolean;
         ]
     }
 
-    let language = window.localStorage.getItem("language") || 'en';
+    let language = this.nLocalStorage.getValue("language") || 'en';
     this.usertypes = allUserTypes[language];
 
         
@@ -187,9 +189,9 @@ showme:Boolean;
   selectUser(event) {
     //console.log(event.value);
     
-    window.localStorage.setItem("usertype", event.value);
+    this.nLocalStorage.setValue("usertype", event.value);
     // console.log(event.value)
-    let usertype = window.localStorage.getItem("usertype");
+    let usertype = this.nLocalStorage.getValue("usertype");
     this.common.selectionType = usertype;
     console.log(this.common.selectionType,'post cahnge' );
     // console.log(usertype);
@@ -197,8 +199,9 @@ showme:Boolean;
 
     async getAllLocations(){
         try{
-            let language = window.localStorage.getItem("language") || 'en';
-            let bh = await this.getlocation.getLocations(language);
+            let language = this.nLocalStorage.getValue("language") || 'en';
+            let jwtToken = this.nLocalStorage.getValue('jwtToken')
+            let bh = await this.getlocation.getLocations(language, jwtToken);
             if(bh && bh.local && bh.local.result){
                this.updatelocations = bh.local.result;
                console.log(this.updatelocations)

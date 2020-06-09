@@ -2,6 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { NLocalStorageService } from 'neutrinos-seed-services';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -31,13 +32,14 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
   constructor(
     private router: Router,
     private masterdata: masterdataService,
-    private datasharingService: datasharingService
+    private datasharingService: datasharingService,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
     console.log('Health next || new page fix');
     //Getting the saved user responses and updating in the DOM
-      let select3 = window.localStorage.getItem("val3");
-      let addlinformation = window.localStorage.getItem("addlinfo");
+      let select3 = this.nLocalStorage.getValue("val3");
+      let addlinformation = this.nLocalStorage.getValue("addlinfo");
     if (select3) {
       console.log('select3',select3);
       this.selected3 = select3;
@@ -54,12 +56,12 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     }
     // get the previously selected language from local storage
     // set the language if selected
-    let language = window.localStorage.getItem("language");
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
     }
 
-    let uResp = localStorage.getItem("userResponse");
+    let uResp = this.nLocalStorage.getValue("userResponse");
     if (uResp) {
       this.localdata = JSON.parse(uResp);
     }
@@ -95,7 +97,7 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
       this.masterdata.questionId3 = questionIndex;
       this.masterdata.shortTextThree = this.shortTextThree;
 
-      localStorage.setItem(
+      this.nLocalStorage.setValue(
         "answer3",
         JSON.stringify({
           questionId: this.masterdata.questionId3,
@@ -115,12 +117,12 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
 
     if (this.val3 != undefined && (this.val3 || !this.val3)) {
       console.log(this.val3);
-      window.localStorage.setItem("val3",this.val3);
+      this.nLocalStorage.setValue("val3",this.val3);
       if (this.val3 == "true") {
         console.log(form.value.addlinfo, typeof(this.val3));
         if (this.val3 == "true" && form.value.addlinfo != undefined) {
             //storing the addinfo in local storage
-          window.localStorage.setItem("addlinfo",form.value.addlinfo);
+          this.nLocalStorage.setValue("addlinfo",form.value.addlinfo);
           this.router.navigate(["/certifyinfo"]);
         } else if (form.value.addlinfo == undefined) {
           this.datasharingService.openSnackBar("Please answer locations", "X");

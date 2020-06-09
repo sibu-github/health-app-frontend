@@ -1,6 +1,7 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
+import { NLocalStorageService } from 'neutrinos-seed-services';
 import { Observable } from "rxjs";
 import { map, startWith } from "rxjs/operators";
 import { FormControl } from "@angular/forms";
@@ -45,10 +46,11 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
 
   constructor(
     private hrdashboard: hrdashboard,
-    private getlocation: saveuserresponse
+    private getlocation: saveuserresponse,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
-    //      let language = window.localStorage.getItem('language');
+    //      let language = this.nLocalStorage.getValue('language');
     //  if(language){
 
     //         this.localeService.language = language;
@@ -68,7 +70,8 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
     //     map(value => this._filter(value))
     //   );
     try {
-      let dashboard = await this.hrdashboard.hrDashboard();
+      let jwtToken = this.nLocalStorage.getValue('jwtToken');
+      let dashboard = await this.hrdashboard.hrDashboard(null, jwtToken);
       console.log(dashboard.local.result.q1Positive);
       this.q2postive = dashboard.local.result.q2Positive;
       this.q2negative = dashboard.local.result.q2Negative;
@@ -80,8 +83,8 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
       //  //q3
       this.q1postive = dashboard.local.result.q3Positive;
       this.q1negative = dashboard.local.result.q3Negative;
-        let locale = window.localStorage.getItem("language") || 'en'
-      let bh = await this.getlocation.getLocations(locale);
+        let locale = this.nLocalStorage.getValue("language") || 'en';
+      let bh = await this.getlocation.getLocations(locale, jwtToken);
       console.log(bh);
       this.locationname = bh.local.result;
       // console.log(bh.local.result.length);
@@ -114,6 +117,7 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
   }
   //when location and fron & to date is selected will call for backend and only location filter as well
   async selected(data) {
+    let jwtToken = this.nLocalStorage.getValue('jwtToken');
     if (data.option.value) {
       if (this.fromDate && this.toDate) {
         console.log("with from & to Date");
@@ -121,7 +125,7 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
           locationName: data.option.value,
           fromDate: this.fromDate,
           toDate: this.toDate,
-        });
+        }, jwtToken);
         this.fromDate = "";
         this.toDate = "";
         console.log(dashboard.local.result.q1Positive);
@@ -136,9 +140,10 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
         this.q1postive = dashboard.local.result.q3Positive;
         this.q1negative = dashboard.local.result.q3Negative;
       } else {
+        let jwtToken = this.nLocalStorage.getValue('jwtToken');
         let dashboard = await this.hrdashboard.hrDashboard({
           locationName: data.option.value,
-        });
+        }, jwtToken);
         console.log(dashboard.local.result.q1Positive);
         this.q3postive = dashboard.local.result.q2Positive;
         this.q3negative = dashboard.local.result.q2Negative;
@@ -166,10 +171,11 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
 
     console.log(this.toDate);
     if (this.fromDate) {
+      let jwtToken = this.nLocalStorage.getValue('jwtToken');
       let dashboard = await this.hrdashboard.hrDashboard({
         toDate: this.toDate,
         fromDate: this.fromDate,
-      });
+      }, jwtToken);
       console.log(dashboard.local.result.q1Positive);
       this.q3postive = dashboard.local.result.q2Positive;
       this.q3negative = dashboard.local.result.q2Negative;

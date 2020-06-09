@@ -2,6 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
+import { NLocalStorageService } from 'neutrinos-seed-services';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -28,23 +29,32 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   constructor(
     private router: Router,
     private masterdata: masterdataService,
-    private datasharingService: datasharingService
+    private datasharingService: datasharingService,
+    private nLocalStorage: NLocalStorageService
   ) {
     super();
-    console.log('Health info new page fix');
-    // get the previously selected language from local storage
-    // set the language if selected
-    let language = window.localStorage.getItem("language");
-    if (language) {
-      this.localeService.language = language;
-    }
+    this.updateLocaleLanguage();
+
     //saving user responses in local storage
-    let uResp = localStorage.getItem("userResponse");
+    let uResp = this.nLocalStorage.getValue("userResponse");
     if (uResp) {
         console.log('userResponse', );
       this.localdata = JSON.parse(uResp);
     }
   }
+
+
+  // get the previously selected language from local storage
+  // set the language if selected,
+  // by default set the language to English
+  updateLocaleLanguage() {
+    let language = this.nLocalStorage.getValue('language')
+    if (language) {
+      this.localeService.language = language;
+    } 
+  }
+
+
   answer: string = "";
   answer2: string = "";
   //answer3: string = '';
@@ -55,8 +65,8 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   val2: any;
   ngOnInit() {
       //Getting the saved user responses and updating in the DOM
-      let select1 = window.localStorage.getItem("val1");
-      let select2 = window.localStorage.getItem("val2");
+      let select1 = this.nLocalStorage.getValue("val1");
+      let select2 = this.nLocalStorage.getValue("val2");
     if (select1) {
         console.log('select1',select1);
      this.selected1 = select1;
@@ -89,7 +99,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
       
       this.masterdata.questionId = questionIndex;
       this.masterdata.shortTextOne = this.shortTextOne;
-      localStorage.setItem(
+      this.nLocalStorage.setValue(
         "answer1",
         JSON.stringify({
           questionId: this.masterdata.questionId,
@@ -111,7 +121,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
       
       this.masterdata.questionId2 = questionIndex;
       this.masterdata.shortTextTwo = this.shortTextTwo;
-      localStorage.setItem(
+      this.nLocalStorage.setValue(
         "answer2",
         JSON.stringify({
           questionId: this.masterdata.questionId2,
@@ -128,8 +138,8 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   onNext() {
     console.log("val1", this.val1, "val2", this.val2);
     if (this.val1 && this.val2) {
-        window.localStorage.setItem("val1",this.val1);
-         window.localStorage.setItem("val2",this.val2);
+        this.nLocalStorage.setValue("val1",this.val1);
+        this.nLocalStorage.setValue("val2",this.val2);
       console.log(this.selected2);
       this.router.navigate(["/hinfonext"]);
     } else {
