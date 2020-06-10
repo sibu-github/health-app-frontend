@@ -44,6 +44,29 @@ export class userdetails {
       return await this.errorHandler(bh, e, 'sd_jATRPplELulU1IJj');
     }
   }
+
+  public async getUserDetails(email = '', jwtToken = '', ...others) {
+    let bh = {
+      input: { email: email, jwtToken: jwtToken },
+      local: { result: undefined }
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+      bh = await this.sd_QkvuJtnZXL26ylEC(bh);
+      //appendnew_next_getUserDetails
+      //Start formatting output variables
+      let outputVariables = {
+        input: {},
+        local: {
+          result: bh.local.result
+        }
+      };
+      //End formatting output variables
+      return outputVariables;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_F8kXV1H5BklAjGJT');
+    }
+  }
   //appendnew_flow_userdetails_Start
 
   async sd_9sGvXKpcJuz4o6iA(bh) {
@@ -98,6 +121,39 @@ export class userdetails {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_9bNLEihqbGQ8hBkz');
+    }
+  }
+  async sd_QkvuJtnZXL26ylEC(bh) {
+    try {
+      bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userdetails?email=${bh.input.email}`;
+
+      const jwtToken = bh.input.jwtToken;
+      bh.local.headers = {
+        Authorization: jwtToken
+      };
+      bh = await this.sd_W26Tgn4BzcQPGS3m(bh);
+      //appendnew_next_sd_QkvuJtnZXL26ylEC
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_QkvuJtnZXL26ylEC');
+    }
+  }
+  async sd_W26Tgn4BzcQPGS3m(bh) {
+    try {
+      let requestOptions = {
+        url: bh.local.apiURL,
+        method: 'get',
+        responseType: 'json',
+        reportProgress: undefined,
+        headers: bh.local.headers,
+        params: {},
+        body: undefined
+      };
+      bh.local.result = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_W26Tgn4BzcQPGS3m
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_W26Tgn4BzcQPGS3m');
     }
   }
   //appendnew_node

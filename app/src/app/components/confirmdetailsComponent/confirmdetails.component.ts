@@ -57,16 +57,26 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     this.updateLocaleLanguage();
 
     // for prepopulating the data
-    let uResp = this.nLocalStorage.getValue('userResponse')
-    console.log({uResp});
-    if (uResp) {
-      this.localdata = JSON.parse(uResp);
-      this.phone = this.localdata.phone;
-      this.buildingNo = this.localdata.buildingNo;
-      this.sectionNo = this.localdata.sectionNo;
-      this.floorNo = this.localdata.floorNo;
-      this.cubeNo = this.localdata.cubeNo;
+    try{
+      let uResp = this.nLocalStorage.getValue('userResponse')
+      console.log('uResp is:', JSON.stringify(uResp));
+      if(typeof uResp === 'string'){
+        this.localdata = JSON.parse(uResp)
+      } else {
+        this.localdata = uResp
+      }
+      if (uResp) {
+        this.localdata = JSON.parse(uResp);
+        this.phone = this.localdata.phone;
+        this.buildingNo = this.localdata.buildingNo;
+        this.sectionNo = this.localdata.sectionNo;
+        this.floorNo = this.localdata.floorNo;
+        this.cubeNo = this.localdata.cubeNo;
+      }
+    } catch(err){
+      console.error(err)
     }
+
 
     this.setPhone();
     this.setLocation();
@@ -126,8 +136,48 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
 
 
     async ngOnInit() {
-        this.getAllLocations();      
+        this.getAllLocations();     
+        this.getUserDetails(); 
     }
+
+    async getUserDetails(){
+      try {
+        let email = this.nLocalStorage.getValue('email') || 'sibaprasad.maiti@ingredion.com'
+        if(!email){
+          return
+        }
+        let jwtToken = this.nLocalStorage.getValue('jwtToken')
+        console.log('getUserDetails email: ', email);
+        console.log('getUserDetails jwtToken', jwtToken);
+        let bh = await this.userdataservice.getUserDetails(email, jwtToken)
+        console.log('getUserDetails response', bh)
+        if(bh && bh.local && bh.local.result){
+          console.log('getUserDetails response 2', bh.local.result)
+          // the response type is array and contains multiple objects
+          // there might be some issues with the user details saving API
+          // it is inserting data every time into the user details collection 
+          // instead of updating????
+          let {userdetails} = bh.local.result
+          if(Array.isArray(userdetails) && userdetails.length > 0){
+            console.log('set all values');
+            const user = userdetails[userdetails.length - 1];
+            this.locationName = user.locationName
+            this.phone = user.phone;
+            this.buildingNo = user.buildingNo;
+            this.sectionNo = user.sectionNo;
+            this.floorNo = user.floorNo;
+            this.cubeNo = user.cubeNo;
+            console.log('locationName is', this.locationName);
+            this.setLocationVal();
+          }
+        }  
+
+
+      } catch(err){
+        console.error(err)
+      }
+    }
+
 
     async getAllLocations(){
         try{
@@ -148,8 +198,10 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
         if(!this.locationName){
             return
         }
-        let filtered = this.totallocations.filter(loc => loc.locationName === this.locationName)
-        this.locationVal = filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
+        if(this.totallocations && this.totallocations.length > 0){
+          let filtered = this.totallocations.filter(loc => loc.locationName === this.locationName)
+          this.locationVal = filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
+        }
     }
 
 

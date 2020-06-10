@@ -62,8 +62,10 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     }
 
     let uResp = this.nLocalStorage.getValue("userResponse");
-    if (uResp) {
+    if (typeof uResp === 'string') {
       this.localdata = JSON.parse(uResp);
+    } else {
+      this.localdata = uResp;
     }
   }
 

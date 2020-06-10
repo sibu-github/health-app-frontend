@@ -84,7 +84,8 @@
             ]
         ],
         "generateNext": false,
-        "generated": true
+        "generated": true,
+        "serviceName": "userdetails"
     },
     {
         "id": "sd_b3dGX6U7nArDuByi",
@@ -168,6 +169,13 @@
         "outputs": 0,
         "logObject": "bh",
         "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            }
+        },
         "x": 505,
         "y": 260,
         "wires": [],
@@ -187,6 +195,117 @@
         "x": 545,
         "y": 120,
         "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_F8kXV1H5BklAjGJT",
+        "type": "Start",
+        "z": "sd_mpwKOTjyDhmhAAHS",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getUserDetails",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "jwtToken",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getUserDetails",
+        "category": "General",
+        "x": 200,
+        "y": 420,
+        "wires": [
+            [
+                "sd_QkvuJtnZXL26ylEC"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "userdetails"
+    },
+    {
+        "id": "sd_QkvuJtnZXL26ylEC",
+        "type": "Script",
+        "z": "sd_mpwKOTjyDhmhAAHS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "apiUrl",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userdetails?email=${bh.input.email}`;\n\nconst jwtToken = bh.input.jwtToken\nbh.local.headers = {\n    Authorization: jwtToken\n}",
+        "category": "Function",
+        "x": 340,
+        "y": 440,
+        "wires": [
+            [
+                "sd_W26Tgn4BzcQPGS3m"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_W26Tgn4BzcQPGS3m",
+        "type": "HttpRequest",
+        "z": "sd_mpwKOTjyDhmhAAHS",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "get Request",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.apiURL",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "apiURL"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headerMapping": "bh.local.headers",
+        "headerMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "headers"
+        },
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "category": "HTTP",
+        "x": 480,
+        "y": 480,
+        "wires": [
+            []
+        ],
         "generateNext": false,
         "generated": true
     }
