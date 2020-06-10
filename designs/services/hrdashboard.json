@@ -130,9 +130,7 @@
         "x": 365,
         "y": 80,
         "wires": [
-            [
-                "sd_YpkWzoDaVvv9eMUU"
-            ]
+            []
         ],
         "generateNext": false,
         "generated": true
@@ -157,7 +155,6 @@
         "x": 500,
         "y": 100,
         "wires": [],
-        "generateNext": false,
-        "generated": true
+        "generateNext": true
     }
 ]

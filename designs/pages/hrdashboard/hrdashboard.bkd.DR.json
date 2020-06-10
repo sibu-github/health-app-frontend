@@ -159,7 +159,6 @@
                 "paletteKey": "Html5",
                 "parentEditorKey": "66c1d0fc-44bb-b67a-5cbc-db55ff834ecc",
                 "isAdvancedComponent": true,
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -359,7 +358,6 @@
                     "paletteKey": "html-editor",
                     "parentEditorKey": "63c007de-bb3c-4dc4-dd5d-1be987460225",
                     "isAdvancedChildComponent": true,
-                    "isCommented": "false",
                     "designerReference": [
                         {
                             "_key": "style",
@@ -2682,7 +2680,7 @@
                     "_attrDef": "p"
                 },
                 {
-                    "_key": "fxLayout.xs",
+                    "_key": "fxLayout.lt-md",
                     "_value": "column",
                     "_type": "kv",
                     "_attrDef": "c"
@@ -2773,7 +2771,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width:100%; height:200px; margin:0; padding:0;",
+                            "_value": "width:100%; height:200px; margin:0; padding:0;min-width:300px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -4399,13 +4397,13 @@
                                 },
                                 {
                                     "_key": "layoutAlign",
-                                    "_value": "end",
+                                    "_value": "start",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "pLayoutAlign",
-                                    "_value": "end",
+                                    "_value": "start",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 },
@@ -4435,7 +4433,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "margin-right:10px;margin-top:20px;",
+                                        "_value": "margin-right:10px;margin-top:20px;max-width:100%;",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -4590,7 +4588,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width:100%; height:200px; margin:0; padding:0;",
+                            "_value": "width:100%; height:200px; margin:0; padding:0;min-width:300px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -6252,7 +6250,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "margin-right:10px;margin-top:20px;",
+                                        "_value": "margin-right:10px;margin-top:20px;max-width:100%;",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },
@@ -6407,7 +6405,7 @@
                     "designerReference": [
                         {
                             "_key": "style",
-                            "_value": "width:100%; height:200px; margin:0; padding:0;",
+                            "_value": "width:100%; height:200px; margin:0; padding:0;min-width:300px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -8033,13 +8031,13 @@
                                 },
                                 {
                                     "_key": "layoutAlign",
-                                    "_value": "end",
+                                    "_value": "start",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "pLayoutAlign",
-                                    "_value": "end",
+                                    "_value": "start",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 },
@@ -8069,7 +8067,7 @@
                                     },
                                     {
                                         "_key": "style",
-                                        "_value": "margin-right:10px;margin-top:40px;",
+                                        "_value": "margin-right:10px;margin-top:40px;max-width:100%;",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     },

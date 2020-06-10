@@ -73,21 +73,10 @@ export class hrdashboard {
         body: bh.input.body
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_YpkWzoDaVvv9eMUU(bh);
       //appendnew_next_sd_WgjyYUaFO0rOcUFb
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_WgjyYUaFO0rOcUFb');
-    }
-  }
-  async sd_YpkWzoDaVvv9eMUU(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-
-      //appendnew_next_sd_YpkWzoDaVvv9eMUU
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_YpkWzoDaVvv9eMUU');
     }
   }
   //appendnew_node

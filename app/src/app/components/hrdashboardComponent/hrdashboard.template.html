@@ -56,9 +56,9 @@
   <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false" *ngIf="isLoading">
     <mat-progress-spinner [mode]="&apos;indeterminate&apos;" color="primary" strokeWidth="2" [diameter]="25"></mat-progress-spinner>
   </div>
-  <div fxLayout="row wrap" style="width:100%;margin:10px;" fxFlex="50" fxLayoutGap="5px" fxLayoutAlign="space-around center" [fxShow]="true" [fxHide]="false" fxLayout.xs="column">
+  <div fxLayout="row wrap" style="width:100%;margin:10px;" fxFlex="50" fxLayoutGap="5px" fxLayoutAlign="space-around center" [fxShow]="true" [fxHide]="false" fxLayout.lt-md="column">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1">
-      <mat-card style="width:100%; height:200px; margin:0; padding:0;">
+      <mat-card style="width:100%; height:200px; margin:0; padding:0;min-width:300px;">
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-top:15px;margin-left:15px;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 18px; line-height: 27px; letter-spacing: 0.715116px; text-transform: uppercase;    color: #52575C;" class="hrqrtext">
             {{locales.hrq1}}</label></div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -74,12 +74,12 @@
                 {{q1negative}}</div>
             </div>
           </div>
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Group_1.png" style="margin-right:10px;margin-top:20px;"></div>
+          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Group_1.png" style="margin-right:10px;margin-top:20px;max-width:100%;"></div>
         </div>
       </mat-card>
     </div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1">
-      <mat-card style="width:100%; height:200px; margin:0; padding:0;">
+      <mat-card style="width:100%; height:200px; margin:0; padding:0;min-width:300px;">
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-top:15px;margin-left:15px;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 18px; line-height: 27px; letter-spacing: 0.715116px; text-transform: uppercase;    color: #52575C;" class="hrqrtext">
             {{locales.hrq2}}</label></div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -95,12 +95,12 @@
                 {{q2negative}}</div>
             </div>
           </div>
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Maskgroup.png" style="margin-right:10px;margin-top:20px;" width="100px"></div>
+          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Maskgroup.png" style="margin-right:10px;margin-top:20px;max-width:100%;" width="100px"></div>
         </div>
       </mat-card>
     </div>
     <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1">
-      <mat-card style="width:100%; height:200px; margin:0; padding:0;">
+      <mat-card style="width:100%; height:200px; margin:0; padding:0;min-width:300px;">
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-top:15px;margin-left:15px;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 18px; line-height: 27px; letter-spacing: 0.715116px; text-transform: uppercase;    color: #52575C;" class="hrqrtext">
             {{locales.hrq3}}</label></div>
         <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -116,7 +116,7 @@
                 {{q3negative}}</div>
             </div>
           </div>
-          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Frame.png" style="margin-right:10px;margin-top:40px;" width="100px"></div>
+          <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Frame.png" style="margin-right:10px;margin-top:40px;max-width:100%;" width="100px"></div>
         </div>
       </mat-card>
     </div>

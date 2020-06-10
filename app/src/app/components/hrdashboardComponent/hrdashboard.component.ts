@@ -66,17 +66,17 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
     let fromDate = null
     let toDate = null
     if(this.fromDate){
-      fromDate = this.fromDate.toISOString().substr(0, 10) + "T00:00:00.0Z"
+      fromDate = new Date(this.fromDate.toDateString() + ' 00:00:00').toISOString()
     }
     if(this.toDate){
-      toDate = this.toDate.toISOString().substr(0, 10) + "T23:59:59.999Z"
+      toDate = new Date(this.toDate.toDateString() + ' 23:59:59').toISOString()
     }
 
     try{
       let filter = {
         fromDate: fromDate, 
         toDate: toDate,
-        locationName: this.locationName || null // for any falsy value send nulls
+        locationName: this.locationName || null // for any falsy value send null
       }
       this.isLoading = true;
       let bh = await this.hrdashboard.hrDashboard(filter, this.jwtToken)
