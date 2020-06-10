@@ -1,28 +1,16 @@
-<div fxLayout="column wrap" style="display:flex; width:100%;height:100%;background-color:#F3F3F9;" fxFlex="100" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <div fxLayout="row wrap" style="width:100%; height:80px;" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="10" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%;height:100%" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/locod1.png" style="margin-left:5px;" width="60px"></div>
-      </div>
-    </div>
-    <div fxLayout="column wrap" style="width:100%;height:100%;align-items:center;" fxFlex="60" fxLayoutAlign="space-around center" [fxShow]="true" [fxHide]="false" fxHide.xs><label fxLayout fxHide.xs style="justify-content: space-evenly;margin-top:7px;color: #52575C;width:100%;height:100%;font-family: Poppins; font-style: normal; font-weight: 500; font-size: 30px; line-height: 51px; text-align: center; letter-spacing: 0.766667px; text-transform: uppercase;" class="alignhrtext">
-        {{locales.dashboard}}</label></div>
-    <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-      <div fxLayout="row wrap" style="width:100%;height:100%" fxLayoutGap="4px" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-        <div fxLayout="column wrap" fxFlex="33" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/layer21.png" width="25px"></div>
-        <div fxLayout="column wrap" fxFlex="33" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="width:111;height:25;" width="100px"></div>
-      </div>
-    </div>
-  </div>
+<div fxLayout="column wrap" style="display:flex; width:100%;height:100%;background-color:#F3F3F9;padding-top:1em;" fxFlex="100" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <bh-logo></bh-logo>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label fxLayout fxHide.xs style="justify-content:center;font-size:20px;">
+      {{locales.dashboard}}</label></div>
   <div fxLayout="row wrap" style="width:100%; height:100%;" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
-    <mat-card style="width:80%;background: #5EA73E; border-radius: 39.4615px;">
+    <mat-card style="width:80%;max-width:650px;background: #5EA73E; border-radius: 39.4615px;">
       <mat-card-content style="width:100%;">
         <div fxLayout="row wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
           <div fxLayout="column wrap" fxFlex="80" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
             <div style="color: #FFFFFF;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 18px; line-height: 47px; /* identical to box height */  letter-spacing: 0.789231px; text-transform: capitalize;">
               {{locales.hrwelcome}}</div>
             <div style="color: #FFFFFF;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 10px; line-height: 33px; letter-spacing: 0.789231px;">
-              {{locales.hrmessage2}}</div>
+              {{locales.hrmessage2}}.</div>
           </div>
           <div fxLayout="column wrap" fxFlex="20" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Group.png" width="100px"></div>
         </div>
@@ -32,7 +20,7 @@
   <div fxLayout="row wrap" style="margin-left:10px;" fxLayoutGap="10px" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false" fxLayout.xs="column" ngClass.xs="margin">
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <mat-form-field style="width:200px;background: #5EA73E; box-shadow: 0.709415px 4.9659px 14.8977px rgba(94, 167, 62, 0.2); border-radius: 22px;height:50px;" [appearance]="&apos;none&apos;">
-        <input matInput placeholder="From Date" [matDatepicker]="picker" (dateInput)="dateselected($event)" required [disabled]="false">
+        <input matInput placeholder="From Date" [matDatepicker]="picker" (dateInput)="dateselected($event)" [(ngModel)]="fromDate" required [disabled]="false">
         <mat-datepicker-toggle matSuffix [for]="picker" disabled="false">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
         </mat-datepicker-toggle>
@@ -42,7 +30,7 @@
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <mat-form-field style="width:200px;background: #5EA73E; box-shadow: 0.709415px 4.9659px 14.8977px rgba(94, 167, 62, 0.2); border-radius: 22px;height:50px;" [appearance]="&apos;none&apos;">
-        <input matInput placeholder="To Date" [matDatepicker]="picker1" (dateInput)="toDateSelected($event)" required [disabled]="false">
+        <input matInput placeholder="To Date" [matDatepicker]="picker1" (dateInput)="dateselected($event)" [(ngModel)]="toDate" required [disabled]="false">
         <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
         </mat-datepicker-toggle>
@@ -54,7 +42,7 @@
       <form>
 
         <mat-form-field style="width:200px;background: #5EA73E; box-shadow: 0.709415px 4.9659px 14.8977px rgba(94, 167, 62, 0.2); border-radius: 22px;height:50px;font-family:Poppins;font-style:normal;" [appearance]="&apos;none&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="{{locales.confirmlocation}}" required #location="ngModel" pattern="[a-zA-Z0-9\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}" (ngModelChange)="locationFilter()" [matAutocomplete]="auto">
+          <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="Location" required #location="ngModel" pattern="[a-zA-Z0-9\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}" (ngModelChange)="locationFilter()" [matAutocomplete]="auto">
           <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
         </mat-form-field>
         <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
@@ -64,6 +52,9 @@
         </mat-autocomplete>
       </form>
     </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false" *ngIf="isLoading">
+    <mat-progress-spinner [mode]="&apos;indeterminate&apos;" color="primary" strokeWidth="2" [diameter]="25"></mat-progress-spinner>
   </div>
   <div fxLayout="row wrap" style="width:100%;margin:10px;" fxFlex="50" fxLayoutGap="5px" fxLayoutAlign="space-around center" [fxShow]="true" [fxHide]="false" fxLayout.xs="column">
     <div fxLayout="column wrap" style="width:100%;" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" fxFlexOrder fxFlexOrder.xs="1">

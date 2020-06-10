@@ -2,8 +2,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { NLocalStorageService } from 'neutrinos-seed-services';
-import { Observable } from "rxjs";
-import { map, startWith } from "rxjs/operators";
 import { FormControl } from "@angular/forms";
 /*
 Client Service import Example:
@@ -32,17 +30,16 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
   q3postive: number;
   q3negative: number;
   location: any[];
-  fromDate: any;
-  toDate: any;
+  fromDate: any ;
+  toDate: any ;
   newarr = [];
   updatelocations: any;
   totallocations: any;
   locationName: any;
   date: any;
-
   myControl: FormControl;
-
-  filteredOptions: Observable<string[]>;
+  jwtToken:string;
+  isLoading:boolean = false;
 
   constructor(
     private hrdashboard: hrdashboard,
@@ -51,113 +48,91 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
   ) {
     super();
     this.localeService.language = "en";
+    this.getToken();
+    this.setFromAndToDate();
   }
 
-  async ngOnInit() {
+  setFromAndToDate(){
+    this.fromDate = new Date()
+    this.toDate = new Date()
+  }
+
+
+  getToken(){
+    this.jwtToken = this.nLocalStorage.getValue('jwtToken');
+  }
+
+  async getDashboardData(){
+    let fromDate = null
+    let toDate = null
+    if(this.fromDate){
+      fromDate = this.fromDate.toISOString().substr(0, 10) + "T00:00:00.0Z"
+    }
+    if(this.toDate){
+      toDate = this.toDate.toISOString().substr(0, 10) + "T23:59:59.999Z"
+    }
+
+    try{
+      let filter = {
+        fromDate: fromDate, 
+        toDate: toDate,
+        locationName: this.locationName || null // for any falsy value send nulls
+      }
+      this.isLoading = true;
+      let bh = await this.hrdashboard.hrDashboard(filter, this.jwtToken)
+      if(bh && bh.local && bh.local.result){
+        this.q1postive = bh.local.result.q1Positive
+        this.q1negative = bh.local.result.q1Negative
+        this.q2postive = bh.local.result.q2Positive
+        this.q2negative = bh.local.result.q2Negative
+        this.q3postive = bh.local.result.q3Positive
+        this.q3negative = bh.local.result.q3Negative
+      }
+      this.isLoading = false;
+    } catch(err){
+      console.error(err)
+      this.isLoading = false;
+    }
+  }
+
+  async getLocations(){
     try {
-      let jwtToken = this.nLocalStorage.getValue('jwtToken');
-      let dashboard = await this.hrdashboard.hrDashboard(null, jwtToken);
-      this.q2postive = dashboard.local.result.q2Positive;
-      this.q2negative = dashboard.local.result.q2Negative;
-
-      //  //q2
-      this.q3postive = dashboard.local.result.q3Positive;
-      this.q3negative = dashboard.local.result.q3Negative;
-
-      //  //q3
-      this.q1postive = dashboard.local.result.q3Positive;
-      this.q1negative = dashboard.local.result.q3Negative;
-        let locale = this.nLocalStorage.getValue("language") || 'en';
-      let bh = await this.getlocation.getLocations(locale, jwtToken);
+      let locale = this.nLocalStorage.getValue("language") || 'en';
+      let bh = await this.getlocation.getLocations(locale, this.jwtToken);
       this.locationname = bh.local.result;
       this.location = this.newarr;
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
-    } catch (err) {
-      console.error(err);
+    } catch(err){
+      console.error(err)
     }
   }
+
+  async ngOnInit() {
+    await this.getLocations()
+    await this.getDashboardData()
+  }
+
   locationFilter() {
     this.updatelocations = this.filter(this.totallocations);
   }
 
   filter(values) {
     return values.filter((location) =>
-      location.locationName.includes(this.locationName)
+      location.locationName.toLowerCase().includes(this.locationName.toLowerCase())
     );
   }
-  //when location and fron & to date is selected will call for backend and only location filter as well
+
+
+  // callback function for location autocomplete optionSelected
   async selected(data) {
-    let jwtToken = this.nLocalStorage.getValue('jwtToken');
-    if (data.option.value) {
-      if (this.fromDate && this.toDate) {
-        let dashboard = await this.hrdashboard.hrDashboard({
-          locationName: data.option.value,
-          fromDate: this.fromDate,
-          toDate: this.toDate,
-        }, jwtToken);
-        this.fromDate = "";
-        this.toDate = "";
-        this.q3postive = dashboard.local.result.q2Positive;
-        this.q3negative = dashboard.local.result.q2Negative;
-
-        //  //q2
-        this.q2postive = dashboard.local.result.q1Positive;
-        this.q2negative = dashboard.local.result.q1Negative;
-
-        //  //q3
-        this.q1postive = dashboard.local.result.q3Positive;
-        this.q1negative = dashboard.local.result.q3Negative;
-      } else {
-        let jwtToken = this.nLocalStorage.getValue('jwtToken');
-        let dashboard = await this.hrdashboard.hrDashboard({
-          locationName: data.option.value,
-        }, jwtToken);
-        this.q3postive = dashboard.local.result.q2Positive;
-        this.q3negative = dashboard.local.result.q2Negative;
-
-        //  //q2
-        this.q2postive = dashboard.local.result.q1Positive;
-        this.q2negative = dashboard.local.result.q1Negative;
-
-        //  //q3
-        this.q1postive = dashboard.local.result.q3Positive;
-        this.q1negative = dashboard.local.result.q3Negative;
-      }
-    } else {
-    }
+    this.locationName = data.option.value
+    this.getDashboardData();
   }
-  //When both fromDate and todate is selected it will call backend and update front end
-  async dateselected(datedata) {
-    this.fromDate = datedata.value.toISOString().substring(0, 10);
 
+  // dateInput callback for fromDate and toDate
+   dateselected() {
+     this.getDashboardData();
   }
-  async toDateSelected(datedata) {
-    this.toDate = datedata.value.toISOString().substring(0, 10);
-    if (this.fromDate) {
-      let jwtToken = this.nLocalStorage.getValue('jwtToken');
-      let dashboard = await this.hrdashboard.hrDashboard({
-        toDate: this.toDate,
-        fromDate: this.fromDate,
-      }, jwtToken);
-      this.q3postive = dashboard.local.result.q2Positive;
-      this.q3negative = dashboard.local.result.q2Negative;
 
-      //  //q2
-      this.q2postive = dashboard.local.result.q1Positive;
-      this.q2negative = dashboard.local.result.q1Negative;
-
-      //  //q3
-      this.q1postive = dashboard.local.result.q3Positive;
-      this.q1negative = dashboard.local.result.q3Negative;
-
-      //  let bh = await this.getlocation.getLocations()
-    } else {
-    }
-  }
-  // private _filter(value: string): string[] {
-  //   const filterValue = value.toLowerCase();
-
-  //   return this.newarr.filter(option => option.toLowerCase().includes(filterValue));
-  // }
 }

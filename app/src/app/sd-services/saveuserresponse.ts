@@ -253,21 +253,10 @@ export class saveuserresponse {
         body: undefined
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_i2UZMf57vKvaRxeM(bh);
       //appendnew_next_sd_CrsIy7P6IOcKj3sX
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_CrsIy7P6IOcKj3sX');
-    }
-  }
-  async sd_i2UZMf57vKvaRxeM(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-
-      //appendnew_next_sd_i2UZMf57vKvaRxeM
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_i2UZMf57vKvaRxeM');
     }
   }
   async sd_Og123zKXVRzX2ldq(bh) {
