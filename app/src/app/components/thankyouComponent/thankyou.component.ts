@@ -86,12 +86,17 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
 
   ngOnInit() {
 
+    try {
     // for prepopulating the data
     let uResp = this.nLocalStorage.getValue("userResponse");
     console.log(uResp);
     if (uResp) {
       this.localdata = JSON.parse(uResp);
     }
+    } catch(err){
+      console.error(err)
+    }
+
 
     console.log(this.localdata);
       // get firstName and lastName
