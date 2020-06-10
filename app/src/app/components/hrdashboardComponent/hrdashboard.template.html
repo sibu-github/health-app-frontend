@@ -20,7 +20,7 @@
   <div fxLayout="row wrap" style="margin-left:10px;" fxLayoutGap="10px" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false" fxLayout.xs="column" ngClass.xs="margin">
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <mat-form-field style="width:200px;background: #5EA73E; box-shadow: 0.709415px 4.9659px 14.8977px rgba(94, 167, 62, 0.2); border-radius: 22px;height:50px;" [appearance]="&apos;none&apos;">
-        <input matInput placeholder="From Date" [matDatepicker]="picker" (dateInput)="dateselected($event)" [(ngModel)]="fromDate" required [disabled]="false">
+        <input matInput placeholder="From Date" [matDatepicker]="picker" (dateInput)="dateselected()" [(ngModel)]="fromDate" required [disabled]="false">
         <mat-datepicker-toggle matSuffix [for]="picker" disabled="false">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
         </mat-datepicker-toggle>
@@ -30,7 +30,7 @@
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <mat-form-field style="width:200px;background: #5EA73E; box-shadow: 0.709415px 4.9659px 14.8977px rgba(94, 167, 62, 0.2); border-radius: 22px;height:50px;" [appearance]="&apos;none&apos;">
-        <input matInput placeholder="To Date" [matDatepicker]="picker1" (dateInput)="dateselected($event)" [(ngModel)]="toDate" required [disabled]="false">
+        <input matInput placeholder="To Date" [matDatepicker]="picker1" (dateInput)="dateselected()" [(ngModel)]="toDate" required [disabled]="false">
         <mat-datepicker-toggle matSuffix [for]="picker1" disabled="false">
           <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
         </mat-datepicker-toggle>

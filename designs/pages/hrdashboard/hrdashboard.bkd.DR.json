@@ -1459,7 +1459,7 @@
                         },
                         {
                             "_key": "(dateInput)",
-                            "_value": "dateselected($event)",
+                            "_value": "dateselected()",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -1765,7 +1765,7 @@
                         },
                         {
                             "_key": "(dateInput)",
-                            "_value": "dateselected($event)",
+                            "_value": "dateselected()",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
