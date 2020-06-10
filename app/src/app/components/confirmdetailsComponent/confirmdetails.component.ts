@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 
 import { Router } from "@angular/router";
-import { NLocalStorageService } from 'neutrinos-seed-services';
+import { NLocalStorageService } from "neutrinos-seed-services";
 import { datasharingService } from "app/services/datasharing/datasharing.service";
 import { userdetails } from "app/sd-services/userdetails";
 /*
@@ -34,15 +34,14 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   cubeNo: string;
   localdata: any;
 
-    // holds the display value
-    locationVal:string;
-    // holds the actual value
-    locationName:string;
-    // holds the list to be displayed
-    updatelocations: any;
-    // holds the list of all locations
-    totallocations: any;
-
+  // holds the display value
+  locationVal: string;
+  // holds the actual value
+  locationName: string;
+  // holds the list to be displayed
+  updatelocations: any;
+  // holds the list of all locations
+  totallocations: any;
 
   constructor(
     private router: Router,
@@ -57,13 +56,12 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     this.updateLocaleLanguage();
 
     // for prepopulating the data
-    try{
-      let uResp = this.nLocalStorage.getValue('userResponse')
-      console.log('uResp is:', JSON.stringify(uResp));
-      if(typeof uResp === 'string'){
-        this.localdata = JSON.parse(uResp)
+    try {
+      let uResp = this.nLocalStorage.getValue("userResponse");
+      if (typeof uResp === "string") {
+        this.localdata = JSON.parse(uResp);
       } else {
-        this.localdata = uResp
+        this.localdata = uResp;
       }
       if (uResp) {
         this.localdata = JSON.parse(uResp);
@@ -73,10 +71,9 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
         this.floorNo = this.localdata.floorNo;
         this.cubeNo = this.localdata.cubeNo;
       }
-    } catch(err){
-      console.error(err)
+    } catch (err) {
+      console.error(err);
     }
-
 
     this.setPhone();
     this.setLocation();
@@ -86,161 +83,150 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   // set the language if selected,
   // by default set the language to English
   updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue('language')
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
-    } 
+    }
   }
 
-
-    // set the previously selected location from localstorage
-    setLocation(){
-        // first we check if user has made any selection when opened the app previously
-        // user selected location value will be stored in localstorage
-        // if found then we ignore the value coming from azure ad
-        let location = this.nLocalStorage.getValue('selectedLocation');
-        if(location){
-            this.locationName = location;
-            return
-        }
-        
-        // get the location coming from azure ad
-        // azure ad location is set in the local storage
-        location = this.nLocalStorage.getValue('location');
-        if(location){
-           this.locationName = location; 
-        }
-        
+  // set the previously selected location from localstorage
+  setLocation() {
+    // first we check if user has made any selection when opened the app previously
+    // user selected location value will be stored in localstorage
+    // if found then we ignore the value coming from azure ad
+    let location = this.nLocalStorage.getValue("selectedLocation");
+    if (location) {
+      this.locationName = location;
+      return;
     }
 
-    // set the previously selected location from localstorage
-    setPhone(){
-        // first we check if user has made any selection when opened the app previously
-        // user selected phone value will be stored in localstorage
-        // if found then we ignore the value coming from azure ad
-        let phone = this.nLocalStorage.getValue('selectedPhone');
-        if(phone){
-            this.phone = phone;
-            return
-        }
-        
-        // get the phone coming from azure ad
-        // azure ad location is set in the local storage
-        phone = this.nLocalStorage.getValue('phone');
-        if(phone){
-           this.phone = phone; 
-        }
+    // get the location coming from azure ad
+    // azure ad location is set in the local storage
+    location = this.nLocalStorage.getValue("location");
+    if (location) {
+      this.locationName = location;
     }
-
-
-
-
-    async ngOnInit() {
-        this.getAllLocations();     
-        this.getUserDetails(); 
-    }
-
-    async getUserDetails(){
-      try {
-        let email = this.nLocalStorage.getValue('email') || 'sibaprasad.maiti@ingredion.com'
-        if(!email){
-          return
-        }
-        let jwtToken = this.nLocalStorage.getValue('jwtToken')
-        console.log('getUserDetails email: ', email);
-        console.log('getUserDetails jwtToken', jwtToken);
-        let bh = await this.userdataservice.getUserDetails(email, jwtToken)
-        console.log('getUserDetails response', bh)
-        if(bh && bh.local && bh.local.result){
-          console.log('getUserDetails response 2', bh.local.result)
-          // the response type is array and contains multiple objects
-          // there might be some issues with the user details saving API
-          // it is inserting data every time into the user details collection 
-          // instead of updating????
-          let {userdetails} = bh.local.result
-          if(Array.isArray(userdetails) && userdetails.length > 0){
-            console.log('set all values');
-            const user = userdetails[userdetails.length - 1];
-            this.locationName = user.locationName
-            this.phone = user.phone;
-            this.buildingNo = user.buildingNo;
-            this.sectionNo = user.sectionNo;
-            this.floorNo = user.floorNo;
-            this.cubeNo = user.cubeNo;
-            console.log('locationName is', this.locationName);
-            this.setLocationVal();
-          }
-        }  
-
-
-      } catch(err){
-        console.error(err)
-      }
-    }
-
-
-    async getAllLocations(){
-        try{
-            let language = this.nLocalStorage.getValue("language") || 'en';
-            let jwtToken = this.nLocalStorage.getValue('jwtToken')
-            let bh = await this.getlocation.getLocations(language, jwtToken);
-            if(bh && bh.local && bh.local.result){
-               this.updatelocations = bh.local.result;
-               this.totallocations = this.updatelocations; 
-               this.setLocationVal()
-            }
-        } catch(err){
-            console.error(err)
-        }
-    }
-
-    setLocationVal(){
-        if(!this.locationName){
-            return
-        }
-        if(this.totallocations && this.totallocations.length > 0){
-          let filtered = this.totallocations.filter(loc => loc.locationName === this.locationName)
-          this.locationVal = filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
-        }
-    }
-
-
- checkLocation(locname){
-      console.log('locname', locname);
-      var locmatch:any;
-       for (let i = 0; i < this.totallocations.length; i++) {
-          
-        if (
-          (this.totallocations[i] &&
-            this.totallocations[i].locationName == locname)) {
-          console.log("valid success");
-          locmatch=this.totallocations[i];
-        
-          break;
-        } 
-      }
-      return locmatch;
   }
-  
+
+  // set the previously selected location from localstorage
+  setPhone() {
+    // first we check if user has made any selection when opened the app previously
+    // user selected phone value will be stored in localstorage
+    // if found then we ignore the value coming from azure ad
+    let phone = this.nLocalStorage.getValue("selectedPhone");
+    if (phone) {
+      this.phone = phone;
+      return;
+    }
+
+    // get the phone coming from azure ad
+    // azure ad location is set in the local storage
+    phone = this.nLocalStorage.getValue("phone");
+    if (phone) {
+      this.phone = phone;
+    }
+  }
+
+  async ngOnInit() {
+    this.getAllLocations();
+    this.getUserDetails();
+  }
+
+  async getUserDetails() {
+    try {
+      let email =
+        this.nLocalStorage.getValue("email") ||
+        "sibaprasad.maiti@ingredion.com";
+      if (!email) {
+        return;
+      }
+      let jwtToken = this.nLocalStorage.getValue("jwtToken");
+      let bh = await this.userdataservice.getUserDetails(email, jwtToken);
+      if (bh && bh.local && bh.local.result) {
+        // the response type is array and contains multiple objects
+        // there might be some issues with the user details saving API
+        // it is inserting data every time into the user details collection
+        // instead of updating????
+        let { userdetails } = bh.local.result;
+        if (Array.isArray(userdetails) && userdetails.length > 0) {
+          const user = userdetails[userdetails.length - 1];
+          this.locationName = user.locationName;
+          this.phone = user.phone;
+          this.buildingNo = user.buildingNo;
+          this.sectionNo = user.sectionNo;
+          this.floorNo = user.floorNo;
+          this.cubeNo = user.cubeNo;
+          this.setLocationVal();
+        }
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async getAllLocations() {
+    try {
+      let language = this.nLocalStorage.getValue("language") || "en";
+      let jwtToken = this.nLocalStorage.getValue("jwtToken");
+      let bh = await this.getlocation.getLocations(language, jwtToken);
+      if (bh && bh.local && bh.local.result) {
+        this.updatelocations = bh.local.result;
+        this.totallocations = this.updatelocations;
+        this.setLocationVal();
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  setLocationVal() {
+    if (!this.locationName) {
+      return;
+    }
+    if (this.totallocations && this.totallocations.length > 0) {
+      let filtered = this.totallocations.filter(
+        (loc) => loc.locationName === this.locationName
+      );
+      this.locationVal =
+        filtered.length > 0 ? filtered[0].locationVal : this.locationVal;
+    }
+  }
+
+  checkLocation(locname) {
+    var locmatch: any;
+    for (let i = 0; i < this.totallocations.length; i++) {
+      if (
+        this.totallocations[i] &&
+        this.totallocations[i].locationName == locname
+      ) {
+        locmatch = this.totallocations[i];
+
+        break;
+      }
+    }
+    return locmatch;
+  }
+
   locationFilter() {
-    // clear up this.locationName because user is changing value and 
+    // clear up this.locationName because user is changing value and
     // this.locationName still holds the old value
-    this.locationName = '';
+    this.locationName = "";
     this.updatelocations = this.filter(this.totallocations);
   }
 
   filter(values) {
     return values.filter((location) =>
-      location.locationName.toLowerCase().includes(this.locationVal.toLowerCase())
+      location.locationName
+        .toLowerCase()
+        .includes(this.locationVal.toLowerCase())
     );
   }
 
-    optionSelected(e){
-        const value = e.option.value;
-        this.locationName = value;
-        this.setLocationVal();
-    }
-
+  optionSelected(e) {
+    const value = e.option.value;
+    this.locationName = value;
+    this.setLocationVal();
+  }
 
   /**
    * Function name: onSubmit
@@ -249,19 +235,18 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
    * @Desc: This function collects the locationname and phonenumber from user and posts into db
    * @error: 500 Internal server error / 404 - method not found
    */
- async onSubmit(data) {
+  async onSubmit(data) {
     this.validclick = true;
-    console.log(data.valid);
-   
-    // when one or more fields have error, then exit   
-    if(!data.valid){
-        return;
+
+    // when one or more fields have error, then exit
+    if (!data.valid) {
+      return;
     }
 
     // check if location is selected
-    if(!this.locationName){
-        this.datash.openSnackBar('Please select a location', "X");
-        return;
+    if (!this.locationName) {
+      this.datash.openSnackBar("Please select a location", "X");
+      return;
     }
 
     // otherwise save data
@@ -278,24 +263,22 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     this.nLocalStorage.setValue("selectedPhone", this.masterdata.phone);
     this.validclick = false;
 
-
-
     try {
-        let confirmdetailsObj = {
-            email: this.nLocalStorage.getValue("username"),
-            locationName: this.masterdata.locationName,
-            phone: this.masterdata.phone,
-            buildingNo: this.masterdata.buildingNo,
-            floorNo: this.masterdata.floorNo,
-            sectionNo: this.masterdata.sectionNo,
-            cubeNo: this.masterdata.cubeNo,
-        };
-        //calling confirm details api
-        let jwtToken = this.nLocalStorage.getValue('jwtToken')
-        await this.userdataservice.userDetails(confirmdetailsObj, jwtToken);
-        this.router.navigate(["/healthinfo"]);
-    } catch(err){
-        console.error(err)
+      let confirmdetailsObj = {
+        email: this.nLocalStorage.getValue("username"),
+        locationName: this.masterdata.locationName,
+        phone: this.masterdata.phone,
+        buildingNo: this.masterdata.buildingNo,
+        floorNo: this.masterdata.floorNo,
+        sectionNo: this.masterdata.sectionNo,
+        cubeNo: this.masterdata.cubeNo,
+      };
+      //calling confirm details api
+      let jwtToken = this.nLocalStorage.getValue("jwtToken");
+      await this.userdataservice.userDetails(confirmdetailsObj, jwtToken);
+      this.router.navigate(["/healthinfo"]);
+    } catch (err) {
+      console.error(err);
     }
   }
 }

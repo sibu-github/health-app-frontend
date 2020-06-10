@@ -2,7 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { NLocalStorageService } from 'neutrinos-seed-services';
+import { NLocalStorageService } from "neutrinos-seed-services";
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -37,24 +37,22 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
 
     //saving user responses in local storage
     let uResp = this.nLocalStorage.getValue("userResponse");
-    if (typeof uResp === 'string') {
+    if (typeof uResp === "string") {
       this.localdata = JSON.parse(uResp);
     } else {
       this.localdata = uResp;
     }
   }
 
-
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
   updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue('language')
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
-    } 
+    }
   }
-
 
   answer: string = "";
   answer2: string = "";
@@ -65,39 +63,24 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   val1: any;
   val2: any;
   ngOnInit() {
-      //Getting the saved user responses and updating in the DOM
-      let select1 = this.nLocalStorage.getValue("val1");
-      let select2 = this.nLocalStorage.getValue("val2");
+    //Getting the saved user responses and updating in the DOM
+    let select1 = this.nLocalStorage.getValue("val1");
+    let select2 = this.nLocalStorage.getValue("val2");
     if (select1) {
-        console.log('select1',select1);
-     this.selected1 = select1;
+      this.selected1 = select1;
       this.selected2 = select2;
-      this.val1= select1;
-      this.val2= select2;
+      this.val1 = select1;
+      this.val2 = select2;
     }
-      console.log('ngonit selected print', this.selected1);
-    // if (this.localdata && this.localdata.response.length > 0) {
-    //   this.answer = this.localdata.response[0].answer;
-    //   this.answer2 = this.localdata.response[1].answer;
-      // this.answer3 = this.localdata.response[2].answer;
-      //this.addlinfo = this.localdata.response[2].addlnfo;
-    // } else {
-    //   this.answer = "false";
-    //   this.answer2 = "false";
-      //  this.answer3 = 'false';
-    // }
   }
 
   onChangeRadio(e, questionIndex) {
-    console.log("onChangeRadio called...");
-    console.log("Question Index", questionIndex);
     this.val1 = e.value;
     this.answer = this.val1;
-    
-    console.log("ths.ans", this.val1);
+
     if (questionIndex == "1") {
       this.masterdata.answer1 = this.val1;
-      
+
       this.masterdata.questionId = questionIndex;
       this.masterdata.shortTextOne = this.shortTextOne;
       this.nLocalStorage.setValue(
@@ -111,15 +94,11 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     }
   }
   onChangeRadioTwo(e, questionIndex) {
-    console.log("onChangeRadio2 called...");
-    console.log("Question Index", questionIndex);
     this.val2 = e.value;
     this.answer = this.val2;
-    console.log("ths.ans", this.val2);
-
     if (questionIndex == "2") {
       this.masterdata.answer2 = this.val2;
-      
+
       this.masterdata.questionId2 = questionIndex;
       this.masterdata.shortTextTwo = this.shortTextTwo;
       this.nLocalStorage.setValue(
@@ -137,11 +116,9 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     this.router.navigate(["/landingpage"]);
   }
   onNext() {
-    console.log("val1", this.val1, "val2", this.val2);
     if (this.val1 && this.val2) {
-        this.nLocalStorage.setValue("val1",this.val1);
-        this.nLocalStorage.setValue("val2",this.val2);
-      console.log(this.selected2);
+      this.nLocalStorage.setValue("val1", this.val1);
+      this.nLocalStorage.setValue("val2", this.val2);
       this.router.navigate(["/hinfonext"]);
     } else {
       this.datasharingService.openSnackBar("Please answer for questions", "X");

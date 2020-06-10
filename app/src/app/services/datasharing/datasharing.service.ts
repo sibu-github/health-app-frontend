@@ -25,7 +25,6 @@ export class datasharingService {
         type: "Employee",
       },
     ]);
-    console.log("user name", this.usertypes[0].name);
   }
 
   openSnackBar(message: string, action: string) {

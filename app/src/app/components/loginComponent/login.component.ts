@@ -48,7 +48,6 @@ export class loginComponent extends NBaseComponent implements OnInit {
 
    login(form) {
     this.validclick = true;
-    console.log(form.value.email);
      if (form.valid === true) {
          this.masterdata.email = form.value.email;
          this.masterdata.password = form.value.password;
@@ -57,7 +56,6 @@ export class loginComponent extends NBaseComponent implements OnInit {
                 password: form.value.password,
             };
             this.hrmailService.verifyEmail(form.value.email).then((result) =>{
-                console.log("result",result, result.local.result.Authorized);
                 let response  = result;
                 if(response.local.result.Authorized == 'true') {
                     this.router.navigate(["/optionpage"]);
@@ -65,16 +63,14 @@ export class loginComponent extends NBaseComponent implements OnInit {
                     this.router.navigate(["/confirmdetails"]);
                 }
             }).catch((err)=>{
-                console.log('errr');
+                console.error('errr');
             })
             localStorage.setItem("username", this.masterdata.email);
             localStorage.setItem("password", this.masterdata.password);
             this.validclick = false;
      } else{
-         console.log('nvald')
      }
     
-    // console.log(this.masterdata);
    
   }
 
@@ -93,7 +89,6 @@ export class loginComponent extends NBaseComponent implements OnInit {
       "([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
     );
     if (regexp.test(EmailId)) {
-      console.log(EmailId);
     }
   }
 }

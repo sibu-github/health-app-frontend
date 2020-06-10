@@ -42,10 +42,10 @@ export class certifyinformationComponent extends NBaseComponent
   // set the language if selected,
   // by default set the language to English
   updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue('language')
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
-    } 
+    }
   }
 
   ngOnInit() {}
@@ -67,13 +67,13 @@ export class certifyinformationComponent extends NBaseComponent
       let certifyInfoChecked = this.accept;
       this.masterdata.certifyInfoName = data.value.signature;
       this.masterdata.certifyInfoChecked = this.accept;
-      this.nLocalStorage.setValue("certifyInfoName", data.value.signature)
+      this.nLocalStorage.setValue("certifyInfoName", data.value.signature);
       this.nLocalStorage.setValue("certifyInfoChecked", data.value.accept);
       //Clearing user response in local storage once user
-      this.nLocalStorage.remove("val1")
-      this.nLocalStorage.remove("val2")
-      this.nLocalStorage.remove("val3")
-      this.nLocalStorage.remove("addlinfo")
+      this.nLocalStorage.remove("val1");
+      this.nLocalStorage.remove("val2");
+      this.nLocalStorage.remove("val3");
+      this.nLocalStorage.remove("addlinfo");
       this.masterdata
         .userSubmit()
         .then((resp) => {
@@ -91,7 +91,7 @@ export class certifyinformationComponent extends NBaseComponent
           this.router.navigate(["/thankyou"]);
         })
         .catch((err) => {
-          console.log("cert err", err);
+          console.error("cert err", err);
         });
     } else {
       if (this.accept == undefined) {

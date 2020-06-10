@@ -3,14 +3,13 @@ import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { NSystemService } from 'neutrinos-seed-services';
+import { NSystemService } from "neutrinos-seed-services";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { BroadcastService, MsalService } from "@azure/msal-angular";
 
-import { NLocalStorageService } from 'neutrinos-seed-services';
-
+import { NLocalStorageService } from "neutrinos-seed-services";
 
 declare var cordova: any;
 /*
@@ -32,11 +31,11 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   private systemService: NSystemService = NSystemService.getInstance();
   public href: string = "";
   public inAppBrowserRef: any;
-  public defaultlang:string = 'en';
-  public showSpinner:boolean = false;
+  public defaultlang: string = "en";
+  public showSpinner: boolean = false;
   public isMobileApp: boolean = false;
   private isEmpLoggedIn: boolean = false;
-  
+
   // list all languages to be shown in the language selection drop down
   languages: any[] = [
     { value: "en", viewValue: "English" },
@@ -47,13 +46,13 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "th", viewValue: "ไทย" },
     { value: "zh-CN", viewValue: "中文（普通话)" },
   ];
-  selectedObjects : any[];
+  selectedObjects: any[];
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private masterdata: masterdataService,
-    private userService: saveuserresponse, 
-    private hrmailService:hrmailverifier,
+    private userService: saveuserresponse,
+    private hrmailService: hrmailverifier,
     private _zone: NgZone,
     private http: HttpClient,
     private broadcastService: BroadcastService,
@@ -70,23 +69,22 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.subscribeToMsal();
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     // call API to generate and new token and set in the localstorage
     // Note: In case of non employee flow we are directly landing on this page
     this.getJWT();
-    
   }
 
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
   updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue('language')
+    let language = this.nLocalStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
       this.defaultlang = language;
       return;
-    } 
+    }
     // set default language to english
     this.defaultlang = "en";
   }
@@ -94,11 +92,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   // check if opened from mobile app or from browser
   setIfMobileApp() {
     if (window["cordova"]) {
-      console.log('mobile app detected')
       this.isMobileApp = true;
     }
   }
-
 
   // get JWT token to make API call
   // in the non employee flow this is the starting page
@@ -109,7 +105,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         const jwtToken = bh.local.result.token;
         // set the jwtToken in the localStorage so that can be used throughout the application
         if (jwtToken) {
-          this.nLocalStorage.setValue('jwtToken', `Bearer ${jwtToken}`)
+          this.nLocalStorage.setValue("jwtToken", `Bearer ${jwtToken}`);
         }
       }
     } catch (err) {
@@ -117,21 +113,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     }
   }
 
-
   //when user selects language, goes into below fun
-  languageSelect({value}) {
+  languageSelect({ value }) {
     this.nLocalStorage.setValue("language", value);
     this.localeService.language = value;
   }
 
   //when user selects lets starts button
   async letStart() {
-    console.log("Lets Starts is working");
-
-    console.log("showSpinner", this.showSpinner);
-    console.log("isMobileApp", this.isMobileApp);
-    console.log("isEmpLoggedIn", this.isEmpLoggedIn);
-
     // when opened from browser
     // for non employee flow the url contains the string /landpage
     // route to personalinfo in that case
@@ -151,7 +140,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     if (this.isEmpLoggedIn) {
       this.checkIfHRAdmn();
       return;
-    } 
+    }
     // otherwise show login window
     this.loginEmp();
   }
@@ -159,12 +148,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   // let's start for Mobile App
   // we show inappbrowser here
   async letsStartMobile() {
-    console.log("Lets Starts Mobile");
-
     let accessToken = this.nLocalStorage.getValue("accessToken");
     let refreshToken = this.nLocalStorage.getValue("refreshToken");
     this.showSpinner = true;
-    console.log({ accessToken, refreshToken });
 
     // if accessToken and refreshToken already present in the localstorage
     // that means user has logged in before
@@ -173,9 +159,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // otherwise we will show the login screen again
     if (accessToken && refreshToken) {
       try {
-        console.log("trying to call refreshToken", refreshToken);
         const bh = await this.userService.getNewTokens(refreshToken);
-        console.log('getNewTokens', bh);
         // if we received new tokens then we auto login and directly
         // redirect to confirmDetails page
         if (bh && bh.local && bh.local.result && bh.local.result.accessToken) {
@@ -196,11 +180,11 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   openInAppBrowser() {
     /**
      * ===================================================================
-     * NOTE TO SELF: There are two sets client id and redirect url defined 
-     * in the environment. When we are launching login screen from mobile 
+     * NOTE TO SELF: There are two sets client id and redirect url defined
+     * in the environment. When we are launching login screen from mobile
      * app, we will use the client id pointing to the UAT environment.
      * When we are launching the login screen from web browser we will
-     * use the client ID pointing to Prod env. 
+     * use the client ID pointing to Prod env.
      * =================================================================
      */
     const CLIENT_ID = this.systemService.getVal("azureClientID");
@@ -216,16 +200,16 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.inAppBrowserRef = cordova.InAppBrowser.open(loginUrl, target, options);
 
     // register the loadstart event listener
-    this.inAppBrowserRef.addEventListener("loadstart", this.onLoadStartCallback);
+    this.inAppBrowserRef.addEventListener(
+      "loadstart",
+      this.onLoadStartCallback
+    );
   }
-
 
   // callback for loadstart event inappbrowser
   onLoadStartCallback({ url }) {
-    const REDIRECT_URL = this.systemService.getVal('redirectURL');
-    console.log("InAppBrowser load started...", url);
+    const REDIRECT_URL = this.systemService.getVal("redirectURL");
     if (url.indexOf(REDIRECT_URL) === 0) {
-      console.log("loading recirect url");
       const search = url.substring(REDIRECT_URL.length);
       const urlParams = new URLSearchParams(search);
       const code = urlParams.get("code");
@@ -236,14 +220,13 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   // on successful login
   async onSuccess(code) {
-    console.log("onSuccess called, code is: ", code);
     try {
       // if code is blank then exit
       if (!code) {
         return;
       }
 
-      // call service to get accessToken, refreshToken and user details   
+      // call service to get accessToken, refreshToken and user details
       // set in the locastorage
       let bh = await this.userService.getTokenFromCode(code);
       this.setTokensNUserLocalStorage(bh);
@@ -254,11 +237,10 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   async checkIfHRAdmn() {
-    console.log('checkIfHRAdmn')
     // call service to check if the user is a hradmin or not
     // if HRAdmin then we move to the optionpage
     let email = this.nLocalStorage.getValue("email");
-    let jwtToken = this.nLocalStorage.getValue('jwtToken');
+    let jwtToken = this.nLocalStorage.getValue("jwtToken");
     let bh = await this.hrmailService.verifyEmail(email, jwtToken);
     if (
       bh &&
@@ -275,17 +257,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.checkIfUserSubmittedData();
   }
 
-
   async checkIfUserSubmittedData() {
-    console.log('checkIfUserSubmittedData')
     // ------------------- FIX: 4261 ------------------
     // check if user has submitted data for the day
     // Note: for employee we check if the user has submitted data for the day already
     // if yes we redirect to thank you page, otherwise redirect to landingpage
     let email = this.nLocalStorage.getValue("email");
-    let jwtToken = this.nLocalStorage.getValue('jwtToken')
+    let jwtToken = this.nLocalStorage.getValue("jwtToken");
     let bh = await this.userService.getIfUserSubmitted(email, jwtToken);
-    console.log(bh);
     let hasSubmitted = "no";
     let colorCode = "green";
     if (bh.local && bh.local.result) {
@@ -308,12 +287,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     });
   }
 
-
   // set user details and tokens in localstorage
   setTokensNUserLocalStorage(bh) {
-    console.log('setTokensNUserLocalStorage')
     if (bh.local && bh.local.result) {
-      console.log(bh.local.result);
       this.nLocalStorage.setValue("accessToken", bh.local.result.accessToken);
       this.nLocalStorage.setValue("refreshToken", bh.local.result.refreshToken);
       this.nLocalStorage.setValue("email", bh.local.result.user.email);
@@ -321,7 +297,10 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       this.nLocalStorage.setValue("firstName", bh.local.result.user.firstName);
       this.nLocalStorage.setValue("lastName", bh.local.result.user.lastName);
       this.nLocalStorage.setValue("location", bh.local.result.user.location);
-      this.nLocalStorage.setValue("phone", bh.local.result.user.phone.replace(' ', '')); // phone number received from AD contains space
+      this.nLocalStorage.setValue(
+        "phone",
+        bh.local.result.user.phone.replace(" ", "")
+      ); // phone number received from AD contains space
       this.masterdata.email = bh.local.result.user.email;
     }
   }
@@ -329,24 +308,18 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   // subscribe to msal broadcast event
   subscribeToMsal() {
     // if it is mobile app then we don't subscribe
-    if(this.isMobileApp){
+    if (this.isMobileApp) {
       return;
     }
-    console.log('subscribeToMsal')
     this.broadcastService.subscribe("msal:loginSuccess", this.onLoginSuccess);
   }
 
-  async onLoginSuccess(payload){
-    console.log("login success");
-    console.log(payload);
+  async onLoginSuccess(payload) {
     await this.getProfile();
     await this.checkIfHRAdmn();
   }
 
-
-
   async checkAccount() {
-    console.log("check Account");
     if (this.isMobileApp) {
       return;
     }
@@ -361,18 +334,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   loginEmp() {
-    console.log("loginEmp");
     this.authService.loginPopup();
   }
 
-
   async getProfile() {
-    console.log("getProfile");
     const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me";
     const tokenResponse = await this.authService.acquireTokenSilent({
       scopes: ["user.read"],
     });
-    console.log(tokenResponse);
     let headers = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + tokenResponse.accessToken,
@@ -382,8 +351,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       .get(graphMeEndpoint, { headers })
       .toPromise();
 
-    console.log(profile);
-
     this.nLocalStorage.setValue("email", profile.mail);
     this.nLocalStorage.setValue("username", profile.mail);
     this.nLocalStorage.setValue("username", profile.mail);
@@ -392,93 +359,5 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.nLocalStorage.setValue("location", profile.officeLocation);
     this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
     this.masterdata.email = profile.mail;
-  }  
-
+  }
 }
-
-
-
-
-
-    // //when user selects lets starts button
-    // async letStart() {
-    //   console.log("Lets Starts is working");
-    //   let accessToken = this.nLocalStorage.getValue("accessToken");
-    //   let refreshToken = this.nLocalStorage.getValue("refreshToken");
-  
-    //   this.showSpinner = true;
-  
-    //   console.log({ accessToken, refreshToken });
-  
-    //   // if accessToken and refreshToken already present in the localstorage
-    //   // that means user has logged in before
-    //   // we will call Azure API and get new tokens using the old ones
-    //   // if the tokens are still valid then we will get new pair of tokens
-    //   // otherwise we will show the login screen again
-    //   if (accessToken && refreshToken) {
-    //     try {
-    //       console.log("trying to call refreshToken", refreshToken);
-    //       const bh = await this.userService.getNewTokens(refreshToken);
-    //       console.log(bh);
-    //       // if we received new tokens then we auto login and directly
-    //       // redirect to confirmDetails page
-    //       if (bh && bh.local && bh.local.result && bh.local.result.accessToken) {
-    //         this.setTokensNUserLocalStorage(bh);
-            
-    //       // call service to check if the user is a hradmin or not
-    //           let email = bh.local.result.user.email
-    //           console.log({email})
-    //           let dt = await this.hrmailService.verifyEmail(email)
-    //           let pagename = '/confirmdetails'
-    //           if(dt && dt.local && dt.local.result && dt.local.result.Authorized == 'true'){
-    //               pagename = "/optionpage";
-    //           }
-    //           this.router.navigate([pagename]);
-    //         return;
-    //       }
-    //     } catch (err) {
-    //       console.error(err);
-    //     }
-    //   }
-  
-    //   // otherwise we show login screen for user to login
-    //   this.showLoginScreen();
-    // }
-
-
-  //     // show the microsoft login window
-  // showLoginScreen() {
-  //   const CLIENT_ID = this.systemService.getVal('azureClientID');
-  //   const AUTH_URL = this.systemService.getVal('azureAuthURL');
-  //   const REDIRECT_URL = this.systemService.getVal('redirectURL');
-  //   const SCOPE = this.systemService.getVal('azureScopes');
-  //   const RESPONSE_TYPE = this.systemService.getVal('azureResponseType');
-  //   const loginUrl = `${AUTH_URL}?redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=${RESPONSE_TYPE}&client_id=${CLIENT_ID}`;
-
-  //   // if document URL is starting with http then it is opened from browser
-  //   // otherwise from mobile
-  //   if (document.URL.indexOf("http") === 0) {
-  //     console.log("From browser");
-  //     // for non employee flow the url contains the string /landpage
-  //     // route to personalinfo in that case
-  //     if (document.URL.indexOf("/landpage") > 0) {
-  //       this.router.navigate(["/personalinfo"]);
-  //     } 
-  //   } else {
-  //     console.log("From mobile");
-  //     // keep the reference of this so that can be used from the event listener callback
-  //     const options = "location=no,clearcache=yes,cleardata=yes";
-  //     const target = "_blank";
-  //     this.inAppBrowserRef = cordova.InAppBrowser.open(
-  //       loginUrl,
-  //       target,
-  //       options
-  //     );
-
-  //     // register the loadstart event listener
-  //     this.inAppBrowserRef.addEventListener(
-  //       "loadstart",
-  //       this.onLoadStartCallback
-  //     );
-  //   }
-  // }

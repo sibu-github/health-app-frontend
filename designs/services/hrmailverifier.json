@@ -82,7 +82,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "apiURL",
-        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;\n\nconsole.log('token value in the service is:', bh.input.jwtToken)\n\n\nbh.local.headers = {\n    Authorization: bh.input.jwtToken\n}\n\nconsole.log('auth headers is:', JSON.stringify(bh.local.headers))",
+        "script": "bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;\n\nbh.local.headers = {\n    Authorization: bh.input.jwtToken\n}\n\n",
         "category": "Function",
         "x": 225,
         "y": 140,

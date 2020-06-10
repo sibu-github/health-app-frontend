@@ -2,7 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { NLocalStorageService } from 'neutrinos-seed-services';
+import { NLocalStorageService } from "neutrinos-seed-services";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 
@@ -34,7 +34,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
   ngOnInit() {
     if (window["cordova"]) {
-      console.log("mobile app detected");
       this.callAPI();
       return;
     }
@@ -62,7 +61,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
         // set the jwtToken in the localStorage so that can be used throughout the application
         if (jwtToken) {
-          this.nLocalStorage.setValue('jwtToken', `Bearer ${jwtToken}`)
+          this.nLocalStorage.setValue("jwtToken", `Bearer ${jwtToken}`);
         }
       }
     } catch (err) {
@@ -74,11 +73,9 @@ export class homeComponent extends NBaseComponent implements OnInit {
   // if user has submitted already then we set showThankYou = true
   // otherwise showLanding = true
   async fetchUserResponse() {
-    console.log("fetchUserResponse called");
     try {
       const username = this.nLocalStorage.getValue("username");
-      const jwtToken = this.nLocalStorage.getValue('jwtToken')
-      console.log(username, jwtToken);
+      const jwtToken = this.nLocalStorage.getValue("jwtToken");
 
       // if the username is not stored in the localstorage
       // we show landingpage
@@ -111,7 +108,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
       // Note: for employee we check if the user has submitted data for the day already
       // if yes we redirect to thank you page, otherwise redirect to landingpage
       const bh = await this.userService.getIfUserSubmitted(username, jwtToken);
-      console.log(bh);
 
       let hasSubmitted = "no";
       let colorCode = "green";
@@ -121,7 +117,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       }
 
       // save the colorCode in localStorage
-      this.nLocalStorage.setValue("colorCode", colorCode)
+      this.nLocalStorage.setValue("colorCode", colorCode);
 
       // hide splash screen
       this.showSplash = false;

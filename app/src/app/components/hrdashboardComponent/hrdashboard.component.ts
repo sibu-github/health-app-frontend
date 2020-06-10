@@ -50,29 +50,13 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
     private nLocalStorage: NLocalStorageService
   ) {
     super();
-    //      let language = this.nLocalStorage.getValue('language');
-    //  if(language){
-
-    //         this.localeService.language = language;
-
-    //     }
     this.localeService.language = "en";
   }
 
   async ngOnInit() {
-    // console.log(date);
-    //   this.myControl = new FormControl();
-    //   console.log(this.myControl.valueChanges);
-    //   this.filteredOptions = this.myControl.valueChanges
-
-    //   .pipe(
-    //     startWith(''),
-    //     map(value => this._filter(value))
-    //   );
     try {
       let jwtToken = this.nLocalStorage.getValue('jwtToken');
       let dashboard = await this.hrdashboard.hrDashboard(null, jwtToken);
-      console.log(dashboard.local.result.q1Positive);
       this.q2postive = dashboard.local.result.q2Positive;
       this.q2negative = dashboard.local.result.q2Negative;
 
@@ -85,22 +69,10 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
       this.q1negative = dashboard.local.result.q3Negative;
         let locale = this.nLocalStorage.getValue("language") || 'en';
       let bh = await this.getlocation.getLocations(locale, jwtToken);
-      console.log(bh);
       this.locationname = bh.local.result;
-      // console.log(bh.local.result.length);
-      console.log("locationlist", this.locationname);
-
-      // for(let i = 0; i < this.locationname.length; i++){
-      //  console.log('forloop',this.locationname[i].locationName);
-      //  }
-      // this.locationname.forEach((item)=>{
-      //   //console.log(item);
-      //   this.newarr.push(item.locationName);
-      //    })
       this.location = this.newarr;
       this.updatelocations = bh.local.result;
       this.totallocations = this.updatelocations;
-      console.log("locationinput", this.locationName);
     } catch (err) {
       console.error(err);
     }
@@ -110,7 +82,6 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
   }
 
   filter(values) {
-    console.log(this.locationName);
     return values.filter((location) =>
       location.locationName.includes(this.locationName)
     );
@@ -120,7 +91,6 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
     let jwtToken = this.nLocalStorage.getValue('jwtToken');
     if (data.option.value) {
       if (this.fromDate && this.toDate) {
-        console.log("with from & to Date");
         let dashboard = await this.hrdashboard.hrDashboard({
           locationName: data.option.value,
           fromDate: this.fromDate,
@@ -128,7 +98,6 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
         }, jwtToken);
         this.fromDate = "";
         this.toDate = "";
-        console.log(dashboard.local.result.q1Positive);
         this.q3postive = dashboard.local.result.q2Positive;
         this.q3negative = dashboard.local.result.q2Negative;
 
@@ -144,7 +113,6 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
         let dashboard = await this.hrdashboard.hrDashboard({
           locationName: data.option.value,
         }, jwtToken);
-        console.log(dashboard.local.result.q1Positive);
         this.q3postive = dashboard.local.result.q2Positive;
         this.q3negative = dashboard.local.result.q2Negative;
 
@@ -157,26 +125,21 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
         this.q1negative = dashboard.local.result.q3Negative;
       }
     } else {
-      console.log("No Location is Selected ");
     }
   }
   //When both fromDate and todate is selected it will call backend and update front end
   async dateselected(datedata) {
     this.fromDate = datedata.value.toISOString().substring(0, 10);
 
-    console.log(this.fromDate);
   }
   async toDateSelected(datedata) {
     this.toDate = datedata.value.toISOString().substring(0, 10);
-
-    console.log(this.toDate);
     if (this.fromDate) {
       let jwtToken = this.nLocalStorage.getValue('jwtToken');
       let dashboard = await this.hrdashboard.hrDashboard({
         toDate: this.toDate,
         fromDate: this.fromDate,
       }, jwtToken);
-      console.log(dashboard.local.result.q1Positive);
       this.q3postive = dashboard.local.result.q2Positive;
       this.q3negative = dashboard.local.result.q2Negative;
 
@@ -190,7 +153,6 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
 
       //  let bh = await this.getlocation.getLocations()
     } else {
-      console.log("No From Date");
     }
   }
   // private _filter(value: string): string[] {

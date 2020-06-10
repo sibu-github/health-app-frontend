@@ -69,7 +69,6 @@ export class contactinformationComponent extends NBaseComponent
       "([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+.)+[a-z]{2,})"
     );
     if (regexp.test(EmailId)) {
-      console.log(EmailId);
     }
   }
 
@@ -82,7 +81,6 @@ export class contactinformationComponent extends NBaseComponent
    */
   contactSubmit(data) {
     this.validclick = true;
-    console.log(data.value);
     if (data.valid === true) {
       this.masterdata.email = data.value.email;
       this.masterdata.phone = data.value.phone;

@@ -50,13 +50,10 @@ export class hrmailverifier {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/admin?email=${bh.input.email}`;
 
-      console.log('token value in the service is:', bh.input.jwtToken);
-
       bh.local.headers = {
         Authorization: bh.input.jwtToken
       };
 
-      console.log('auth headers is:', JSON.stringify(bh.local.headers));
       bh = await this.sd_i08KsUu1AjUUxyYK(bh);
       //appendnew_next_sd_wLTtgZk5nDHcudhs
       return bh;

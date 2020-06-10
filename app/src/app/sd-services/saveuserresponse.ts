@@ -179,7 +179,7 @@ export class saveuserresponse {
   }
   async sd_yHzOyr3hOiBVBVi3(bh) {
     try {
-      console.log('httpformdata', bh.input.formdata);
+      // console.log('httpformdata', bh.input.formdata);
       bh = await this.sd_FcFvtFytCkN7uU9N(bh);
       //appendnew_next_sd_yHzOyr3hOiBVBVi3
       return bh;
@@ -230,14 +230,10 @@ export class saveuserresponse {
     try {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/getlocation?locale=${bh.input.locale}`;
 
-      console.log(bh.input.jwtToken);
-      console.log(bh.local.apiURL);
-
       bh.local.headers = {
         Authorization: bh.input.jwtToken
       };
 
-      console.log(JSON.stringify(bh.local.headers));
       bh = await this.sd_CrsIy7P6IOcKj3sX(bh);
       //appendnew_next_sd_chnzbvsmBYvG8poP
       return bh;
@@ -280,9 +276,6 @@ export class saveuserresponse {
       bh.local.apiURL = `${bh.system.environment.properties.ssdURL}/api/userflag?email=${email}`;
 
       const jwtToken = bh.input.jwtToken;
-      console.log('apiURL is ', bh.local.apiURL);
-      console.log('token is ', bh.input.jwtToken);
-
       bh.local.headers = {
         Authorization: jwtToken
       };
