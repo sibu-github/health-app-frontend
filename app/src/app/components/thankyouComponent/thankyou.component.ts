@@ -36,6 +36,9 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     const month = dt.getMonth();
     const year = dt.getFullYear();
     const dateStr = date < 10 ? "0" + date : date + "";
+    /**
+     * TODO: Rewrite this portion with switch case
+     */
     const monthStr =
       month === 0
         ? "JAN"
