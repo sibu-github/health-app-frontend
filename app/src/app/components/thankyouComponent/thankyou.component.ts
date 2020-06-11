@@ -89,8 +89,8 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
 
     console.log(this.localdata);
       // get firstName and lastName
-     let firstName =  localStorage.getItem("firstName") || 'Chiranjit';
-     let lastName = localStorage.getItem("lastName") || 'Nag';
+     let firstName =  localStorage.getItem("firstName") || '';
+     let lastName = localStorage.getItem("lastName") || '';
      
      if(firstName !== null && lastName !== null) {
        console.log(firstName, lastName);
