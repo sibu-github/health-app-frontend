@@ -98,8 +98,8 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     }
 
     // get firstName and lastName
-    let firstName = this.nLocalStorage.getValue("firstName");
-    let lastName = this.nLocalStorage.getValue("lastName");
+    let firstName = this.nLocalStorage.getValue("firstName") || '';
+    let lastName = this.nLocalStorage.getValue("lastName") || '';
 
     if (firstName !== null && lastName !== null) {
       this.name = firstName + " " + lastName;
