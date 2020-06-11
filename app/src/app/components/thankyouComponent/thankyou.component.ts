@@ -1,10 +1,9 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
-import { HostListener } from "@angular/core";
-import { PlatformLocation } from "@angular/common";
-import { Router } from "@angular/router";
-import { NLocalStorageService } from "neutrinos-seed-services";
+import { HostListener } from '@angular/core';
+import { PlatformLocation } from '@angular/common';
+import {Router} from '@angular/router';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -66,70 +65,61 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     return dayStr;
   }
 
-  constructor(
-    location: PlatformLocation,
-    private router: Router,
-    private nLocalStorage: NLocalStorageService
-  ) {
+  constructor(location: PlatformLocation, private router: Router) {
     super();
     // get the previously selected language from local storage
     // set the language if selected
-    let language = this.nLocalStorage.getValue("language");
+    let language = window.localStorage.getItem("language");
     if (language) {
       this.localeService.language = language;
     }
 
     // get the color code from localstorage
-    let color = this.nLocalStorage.getValue("colorCode");
+    let color = window.localStorage.getItem("colorCode");
     this.isAmber = color === "amber";
   }
 
   ngOnInit() {
-    try {
-      // for prepopulating the data
-      let uResp = this.nLocalStorage.getValue("userResponse");
-      if (typeof uResp === "string") {
-        this.localdata = JSON.parse(uResp);
-      } else {
-        this.localdata = uResp;
-      }
-    } catch (err) {
-      console.error(err);
+
+    // for prepopulating the data
+    let uResp = localStorage.getItem("userResponse");
+    if (uResp) {
+      this.localdata = JSON.parse(uResp);
     }
 
-    // get firstName and lastName
-    let firstName = this.nLocalStorage.getValue("firstName") || '';
-    let lastName = this.nLocalStorage.getValue("lastName") || '';
-
-    if (firstName !== null && lastName !== null) {
-      this.name = firstName + " " + lastName;
-    } else {
-      if (this.localdata.firstName && this.localdata.lastName)
-        this.name = this.localdata.firstName + " " + this.localdata.lastName;
-    }
+    console.log(this.localdata);
+      // get firstName and lastName
+     let firstName =  localStorage.getItem("firstName") || 'Chiranjit';
+     let lastName = localStorage.getItem("lastName") || 'Nag';
+     
+     if(firstName !== null && lastName !== null) {
+       console.log(firstName, lastName);
+         this.name = firstName + ' ' + lastName;
+          console.log(name);
+     } else {
+         if(this.localdata.firstName &&  this.localdata.lastName)   this.name = this.localdata.firstName + ' ' + this.localdata.lastName;
+     }
     // set today
     // new addon time AM/PM
     var time = new Date();
-    let timezone = time.toLocaleString("en-US", {
-      hour: "numeric",
-      minute: "numeric",
-      hour12: true,
-    });
-    this.today = this.getDay() + " " + timezone;
+    console.log("time", time);
+    let timezone = time.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+    this.today = this.getDay() + ' ' + timezone;
+    console.log(this.today);
   }
-  //press backbutton to exit app
-  //     document.addEventListener('deviceready', function() {
+    //press backbutton to exit app
+//     document.addEventListener('deviceready', function() {
 
-  //     document.addEventListener("backbutton", ShowExitDialog, false);
+//     document.addEventListener("backbutton", ShowExitDialog, false);
 
-  // }, false);
-  // function ShowExitDialog() {
-  //         navigator.notification.confirm(
-  //                 ("Do you want to Exit?"), // message
-  //                 alertexit, // callback
-  //                 'My APp', // title
-  //                 'YES,NO' // buttonName
-  //         );
+// }, false);
+// function ShowExitDialog() {
+//         navigator.notification.confirm(
+//                 ("Do you want to Exit?"), // message
+//                 alertexit, // callback
+//                 'My APp', // title
+//                 'YES,NO' // buttonName
+//         );
 
-  //     }
+//     }
 }
