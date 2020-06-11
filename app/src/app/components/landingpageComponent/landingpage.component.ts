@@ -63,6 +63,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // bind callback function
     this.onLoadStartCallback = this.onLoadStartCallback.bind(this);
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
+    this.onLoginFailure = this.onLoginFailure.bind(this);
     this.updateLocaleLanguage();
     this.setIfMobileApp();
     this.checkAccount();
@@ -332,11 +333,19 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       return;
     }
     this.broadcastService.subscribe("msal:loginSuccess", this.onLoginSuccess);
+    this.broadcastService.subscribe("msal:loginFailure", this.onLoginFailure);
   }
 
   async onLoginSuccess(payload) {
     await this.getProfile();
     await this.checkIfHRAdmn();
+  }
+
+  async onLoginFailure(err){
+    // when user manually closed the login popup
+    if(typeof err === 'object' && err.error === 'user_cancelled'){
+      this.showSpinner = false;
+    }
   }
 
   async checkAccount() {
