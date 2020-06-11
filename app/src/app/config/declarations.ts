@@ -9,12 +9,15 @@ import { NMapComponent } from "../n-components/nMapComponent/n-map.component";
 import { NLocaleResource } from "../n-services/n-localeResources.service";
 import { NAuthGuardService } from "neutrinos-seed-services";
 import { ArtImgSrcDirective } from "../directives/artImgSrc.directive";
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 window["neutrinos"] = {
   environments: environment,
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-storageService
+import { storageService } from '../services/storage/storage.service';
 //CORE_REFERENCE_IMPORT-commonService
 import { commonService } from '../services/common/common.service';
 //CORE_REFERENCE_IMPORT-testComponent
@@ -134,8 +137,11 @@ export const appProviders = [
     deps: [NDataSourceService],
     multi: true,
   },
+  NativeStorage,
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-storageService
+storageService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-commonService
 commonService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-masterdataService

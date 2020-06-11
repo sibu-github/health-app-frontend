@@ -2,9 +2,10 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { NLocalStorageService } from "neutrinos-seed-services";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
+
+import { storageService } from "../../services/storage/storage.service";
 
 /*
 Client Service import Example:
@@ -27,7 +28,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
     private userService: saveuserresponse,
     private hrmailService: hrmailverifier,
     private router: Router,
-    private nLocalStorage: NLocalStorageService
+    private localStorage: storageService
   ) {
     super();
   }
@@ -61,7 +62,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
         // set the jwtToken in the localStorage so that can be used throughout the application
         if (jwtToken) {
-          this.nLocalStorage.setValue("jwtToken", `Bearer ${jwtToken}`);
+          await this.localStorage.setValue("jwtToken", `Bearer ${jwtToken}`);
         }
       }
     } catch (err) {
@@ -74,8 +75,8 @@ export class homeComponent extends NBaseComponent implements OnInit {
   // otherwise showLanding = true
   async fetchUserResponse() {
     try {
-      const username = this.nLocalStorage.getValue("username");
-      const jwtToken = this.nLocalStorage.getValue("jwtToken");
+      const username = await this.localStorage.getValue("username");
+      const jwtToken = await this.localStorage.getValue("jwtToken");
 
       // if the username is not stored in the localstorage
       // we show landingpage
@@ -117,7 +118,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       }
 
       // save the colorCode in localStorage
-      this.nLocalStorage.setValue("colorCode", colorCode);
+      await this.localStorage.setValue("colorCode", colorCode);
 
       // hide splash screen
       this.showSplash = false;

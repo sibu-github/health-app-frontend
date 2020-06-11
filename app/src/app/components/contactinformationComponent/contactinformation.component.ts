@@ -3,13 +3,13 @@ import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 
 import { Router } from "@angular/router";
-import { NLocalStorageService } from 'neutrinos-seed-services';
+import { storageService } from "../../services/storage/storage.service";
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
 */
 import { masterdataService } from "../../services/masterdata/masterdata.service";
-import { commonService } from 'app/services/common/common.service';
+import { commonService } from "app/services/common/common.service";
 
 /*
 Legacy Service import Example :
@@ -30,7 +30,12 @@ export class contactinformationComponent extends NBaseComponent
   company: any; // kept for build error
   ingredioncontact: any; // kept for build error
   localdata: any;
-  constructor(private router: Router, private masterdata: masterdataService, private common: commonService,private nLocalStorage: NLocalStorageService) {
+  constructor(
+    private router: Router,
+    private masterdata: masterdataService,
+    private common: commonService,
+    private localStorage: storageService
+  ) {
     super();
     this.updateLocaleLanguage();
   }
@@ -38,18 +43,16 @@ export class contactinformationComponent extends NBaseComponent
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
-  updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue('language')
+  async updateLocaleLanguage() {
+    let language = await this.localStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
-    } 
+    }
   }
 
-
-
   ngOnInit() {
-    if (this.common.selectionType == 'employee') {
-      this.company = "Ingredion"
+    if (this.common.selectionType === "employee") {
+      this.company = "Ingredion";
       this.ingredioncontact = this.common.name;
     }
   }

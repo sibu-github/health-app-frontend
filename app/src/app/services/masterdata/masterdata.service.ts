@@ -53,7 +53,7 @@ export class masterdataService {
       let formdata = {
         type: this.userType,
         locationName: this.locationName,
-        email: this.email || localStorage.getItem('email'),
+        email: this.email || localStorage.getItem("email"),
         phone: localStorage.getItem("phone"),
         firstName: this.firstName,
         lastName: this.lastName,
@@ -86,7 +86,7 @@ export class masterdataService {
       this.nLocalStorage.setValue("userResponse", JSON.stringify(formdata));
       var time = new Date().toLocaleDateString();
       this.nLocalStorage.setValue("lastResponse", time);
-      let jwtToken = this.nLocalStorage.getValue('jwtToken')
+      let jwtToken = this.nLocalStorage.getValue("jwtToken");
       let bh = await this.saveuserService.saveUserData(formdata, jwtToken);
       return bh.local.result;
     } catch (err) {
@@ -94,4 +94,3 @@ export class masterdataService {
     }
   }
 }
-

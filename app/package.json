@@ -37,7 +37,9 @@
     "@angular/platform-browser-dynamic": "8.2.0",
     "@angular/router": "8.2.0",
     "@azure/msal-angular": "1.0.0",
+    "@ionic-native/core": "5.26.0",
     "@ionic-native/ionic-webview": "5.26.0",
+    "@ionic-native/native-storage": "5.26.0",
     "@swimlane/ngx-charts": "12.0.1",
     "android-versions": "1.4.0",
     "chart.js": "2.8.0",
@@ -111,7 +113,8 @@
       "com.cordova.plugins.cookiemaster": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-wkwebview-engine": {},
-      "cordova-plugin-wkwebviewxhrfix": {}
+      "cordova-plugin-wkwebviewxhrfix": {},
+      "cordova-plugin-nativestorage": {}
     }
   }
 }

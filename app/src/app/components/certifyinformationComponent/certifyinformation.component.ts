@@ -2,7 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { NLocalStorageService } from "neutrinos-seed-services";
+import { storageService } from "../../services/storage/storage.service";
 
 import { datasharingService } from "app/services/datasharing/datasharing.service";
 /*
@@ -31,7 +31,7 @@ export class certifyinformationComponent extends NBaseComponent
     private masterdata: masterdataService,
     private saveuserService: saveuserresponse,
     private datasharingService: datasharingService,
-    private nLocalStorage: NLocalStorageService
+    private localStorage: storageService
   ) {
     super();
 
@@ -41,8 +41,8 @@ export class certifyinformationComponent extends NBaseComponent
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
-  updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue("language");
+  async updateLocaleLanguage() {
+    let language = await this.localStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
     }
@@ -58,7 +58,7 @@ export class certifyinformationComponent extends NBaseComponent
    * @error: 500 Internal server error / 404 - method not found
    */
 
-  signSubmit(data) {
+  async signSubmit(data) {
     this.validclick = true;
     if (data.valid === true) {
       this.validclick = false;
@@ -67,25 +67,29 @@ export class certifyinformationComponent extends NBaseComponent
       let certifyInfoChecked = this.accept;
       this.masterdata.certifyInfoName = data.value.signature;
       this.masterdata.certifyInfoChecked = this.accept;
-      this.nLocalStorage.setValue("certifyInfoName", data.value.signature);
-      this.nLocalStorage.setValue("certifyInfoChecked", data.value.accept);
+      await this.localStorage.setValue("certifyInfoName", data.value.signature);
+      await this.localStorage.setValue("certifyInfoChecked", data.value.accept);
       //Clearing user response in local storage once user
-      this.nLocalStorage.remove("val1");
-      this.nLocalStorage.remove("val2");
-      this.nLocalStorage.remove("val3");
-      this.nLocalStorage.remove("addlinfo");
+
+      /**
+       * Need to refactor this code to remove all values at once
+       */
+      await this.localStorage.remove("val1");
+      await this.localStorage.remove("val2");
+      await this.localStorage.remove("val3");
+      await this.localStorage.remove("addlinfo");
       this.masterdata
         .userSubmit()
-        .then((resp) => {
+        .then(async (resp) => {
           // get the color code for thank you page
           let isGreen = true;
           if (resp && resp.response) {
             isGreen = resp.response.every((v) => v.answer === false);
           }
           if (isGreen) {
-            this.nLocalStorage.setValue("colorCode", "green");
+            await this.localStorage.setValue("colorCode", "green");
           } else {
-            this.nLocalStorage.setValue("colorCode", "amber");
+            await this.localStorage.setValue("colorCode", "amber");
           }
           // navigate to the thankyou page
           this.router.navigate(["/thankyou"]);

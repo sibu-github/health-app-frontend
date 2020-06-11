@@ -2,7 +2,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
-import { NLocalStorageService } from "neutrinos-seed-services";
+import { storageService } from "../../services/storage/storage.service";
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -30,13 +30,16 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     private router: Router,
     private masterdata: masterdataService,
     private datasharingService: datasharingService,
-    private nLocalStorage: NLocalStorageService
+    private localStorage: storageService
   ) {
     super();
     this.updateLocaleLanguage();
+    this.getUserResponse();
+  }
 
+  async getUserResponse() {
     //saving user responses in local storage
-    let uResp = this.nLocalStorage.getValue("userResponse");
+    let uResp = await this.localStorage.getValue("userResponse");
     if (typeof uResp === "string") {
       this.localdata = JSON.parse(uResp);
     } else {
@@ -47,8 +50,8 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
-  updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue("language");
+  async updateLocaleLanguage() {
+    let language = await this.localStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
     }
@@ -63,9 +66,13 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   val1: any;
   val2: any;
   ngOnInit() {
+    this.getVals();
+  }
+
+  async getVals() {
     //Getting the saved user responses and updating in the DOM
-    let select1 = this.nLocalStorage.getValue("val1");
-    let select2 = this.nLocalStorage.getValue("val2");
+    let select1 = await this.localStorage.getValue("val1");
+    let select2 = await this.localStorage.getValue("val2");
     if (select1) {
       this.selected1 = select1;
       this.selected2 = select2;
@@ -74,7 +81,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     }
   }
 
-  onChangeRadio(e, questionIndex) {
+  async onChangeRadio(e, questionIndex) {
     this.val1 = e.value;
     this.answer = this.val1;
 
@@ -83,7 +90,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
 
       this.masterdata.questionId = questionIndex;
       this.masterdata.shortTextOne = this.shortTextOne;
-      this.nLocalStorage.setValue(
+      this.localStorage.setValue(
         "answer1",
         JSON.stringify({
           questionId: this.masterdata.questionId,
@@ -93,7 +100,8 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
       );
     }
   }
-  onChangeRadioTwo(e, questionIndex) {
+
+  async onChangeRadioTwo(e, questionIndex) {
     this.val2 = e.value;
     this.answer = this.val2;
     if (questionIndex == "2") {
@@ -101,7 +109,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
 
       this.masterdata.questionId2 = questionIndex;
       this.masterdata.shortTextTwo = this.shortTextTwo;
-      this.nLocalStorage.setValue(
+      await this.localStorage.setValue(
         "answer2",
         JSON.stringify({
           questionId: this.masterdata.questionId2,
@@ -115,10 +123,11 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   onBack() {
     this.router.navigate(["/landingpage"]);
   }
-  onNext() {
+
+  async onNext() {
     if (this.val1 && this.val2) {
-      this.nLocalStorage.setValue("val1", this.val1);
-      this.nLocalStorage.setValue("val2", this.val2);
+      await this.localStorage.setValue("val1", this.val1);
+      await this.localStorage.setValue("val2", this.val2);
       this.router.navigate(["/hinfonext"]);
     } else {
       this.datasharingService.openSnackBar("Please answer for questions", "X");

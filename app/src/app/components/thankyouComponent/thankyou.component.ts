@@ -4,7 +4,7 @@ import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { HostListener } from "@angular/core";
 import { PlatformLocation } from "@angular/common";
 import { Router } from "@angular/router";
-import { NLocalStorageService } from "neutrinos-seed-services";
+import { storageService } from "../../services/storage/storage.service";
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -69,24 +69,31 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
   constructor(
     location: PlatformLocation,
     private router: Router,
-    private nLocalStorage: NLocalStorageService
+    private localStorage: storageService
   ) {
     super();
-    // get the previously selected language from local storage
-    // set the language if selected
-    let language = this.nLocalStorage.getValue("language");
+    this.updateLocaleLanguage();
+  }
+
+  // get the previously selected language from local storage
+  // set the language if selected,
+  // by default set the language to English
+  async updateLocaleLanguage() {
+    let language = await this.localStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
     }
+  }
 
+  async getColorCode() {
     // get the color code from localstorage
-    let color = this.nLocalStorage.getValue("colorCode");
+    let color = await this.localStorage.getValue("colorCode");
     this.isAmber = color === "amber";
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     //saving user responses in local storage
-    let uResp = this.nLocalStorage.getValue("userResponse");
+    let uResp = await this.localStorage.getValue("userResponse");
     if (typeof uResp === "string") {
       this.localdata = JSON.parse(uResp);
     } else {
@@ -94,8 +101,8 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     }
 
     // get firstName and lastName
-    let firstName = this.nLocalStorage.getValue("firstName");
-    let lastName = this.nLocalStorage.getValue("lastName");
+    let firstName = await this.localStorage.getValue("firstName");
+    let lastName = await this.localStorage.getValue("lastName");
 
     if (firstName && lastName) {
       this.name = firstName + " " + lastName;

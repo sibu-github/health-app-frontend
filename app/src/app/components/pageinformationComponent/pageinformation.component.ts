@@ -11,7 +11,7 @@ import { servicename } from 'app/sd-services/servicename';
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { masterdataService } from "../../services/masterdata/masterdata.service";
 import { commonService } from "app/services/common/common.service";
-import { NLocalStorageService } from "neutrinos-seed-services";
+import { storageService } from "../../services/storage/storage.service";
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
@@ -43,26 +43,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
 
   showme: Boolean;
   type: any;
-  constructor(
-    private common: commonService,
-    private router: Router,
-    private datash: datasharingService,
-    private getlocation: saveuserresponse,
-    private masterdata: masterdataService,
-    private nLocalStorage: NLocalStorageService
-  ) {
-    super();
-    // get the previously selected language from local storage
-    // set the language if selected
-    let language = this.nLocalStorage.getValue("language");
-    if (language) {
-      this.localeService.language = language;
-    }
-    // let uResp = localStorage.getItem("userResponse");
-    // if (uResp) {
-    //   this.localdata = JSON.parse(uResp);
-    // }
-  }
+
   languages: any[] = [
     { value: "en", viewValue: "English" },
     { value: "es", viewValue: "Spanish" },
@@ -73,11 +54,34 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
   ];
 
-  doSomething(event) {
-    this.nLocalStorage.setValue("language", event.value);
-    let language = this.nLocalStorage.getValue("language");
+  constructor(
+    private common: commonService,
+    private router: Router,
+    private datash: datasharingService,
+    private getlocation: saveuserresponse,
+    private masterdata: masterdataService,
+    private localStorage: storageService
+  ) {
+    super();
+    this.updateLocaleLanguage();
+  }
+
+  // get the previously selected language from local storage
+  // set the language if selected,
+  // by default set the language to English
+  async updateLocaleLanguage() {
+    let language = await this.localStorage.getValue("language");
+    if (language) {
+      this.localeService.language = language;
+    }
+  }
+
+  async doSomething(event) {
+    await this.localStorage.setValue("language", event.value);
+    let language = await this.localStorage.getValue("language");
     this.localeService.language = language;
   }
+
   async ngOnInit() {
     try {
       //   this.usertypes = this.datash.getusertypes();
@@ -127,7 +131,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
         ],
       };
 
-      let language = this.nLocalStorage.getValue("language") || "en";
+      let language = (await this.localStorage.getValue("language")) || "en";
       this.usertypes = allUserTypes[language];
 
       this.getAllLocations();
@@ -180,16 +184,16 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     return locmatch;
   }
 
-  selectUser(event) {
-    this.nLocalStorage.setValue("usertype", event.value);
-    let usertype = this.nLocalStorage.getValue("usertype");
+  async selectUser(event) {
+    await this.localStorage.setValue("usertype", event.value);
+    let usertype = await this.localStorage.getValue("usertype");
     this.common.selectionType = usertype;
   }
 
   async getAllLocations() {
     try {
-      let language = this.nLocalStorage.getValue("language") || "en";
-      let jwtToken = this.nLocalStorage.getValue("jwtToken");
+      let language = (await this.localStorage.getValue("language")) || "en";
+      let jwtToken = await this.localStorage.getValue("jwtToken");
       let bh = await this.getlocation.getLocations(language, jwtToken);
       if (bh && bh.local && bh.local.result) {
         this.updatelocations = bh.local.result;

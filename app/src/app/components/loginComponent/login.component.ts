@@ -27,7 +27,7 @@ export class loginComponent extends NBaseComponent implements OnInit {
     private router: Router,
     private masterdata: masterdataService,
     private saveuserService: saveuserresponse,
-    private hrmailService:hrmailverifier
+    private hrmailService: hrmailverifier
   ) {
     super();
     let language = window.localStorage.getItem("language");
@@ -36,50 +36,45 @@ export class loginComponent extends NBaseComponent implements OnInit {
     }
   }
 
-    showInAppBrowser(){
-        
-    }
-
-
-
+  showInAppBrowser() {}
 
   ngOnInit() {}
 
-
-   login(form) {
+  login(form) {
     this.validclick = true;
-     if (form.valid === true) {
-         this.masterdata.email = form.value.email;
-         this.masterdata.password = form.value.password;
-            let formdata = {
-                username: form.value.email,
-                password: form.value.password,
-            };
-            this.hrmailService.verifyEmail(form.value.email).then((result) =>{
-                let response  = result;
-                if(response.local.result.Authorized == 'true') {
-                    this.router.navigate(["/optionpage"]);
-                } else {
-                    this.router.navigate(["/confirmdetails"]);
-                }
-            }).catch((err)=>{
-                console.error('errr');
-            })
-            localStorage.setItem("username", this.masterdata.email);
-            localStorage.setItem("password", this.masterdata.password);
-            this.validclick = false;
-     } else{
-     }
-    
-   
+    if (form.valid === true) {
+      this.masterdata.email = form.value.email;
+      this.masterdata.password = form.value.password;
+      let formdata = {
+        username: form.value.email,
+        password: form.value.password,
+      };
+      this.hrmailService
+        .verifyEmail(form.value.email)
+        .then((result) => {
+          let response = result;
+          if (response.local.result.Authorized == "true") {
+            this.router.navigate(["/optionpage"]);
+          } else {
+            this.router.navigate(["/confirmdetails"]);
+          }
+        })
+        .catch((err) => {
+          console.error("errr");
+        });
+      localStorage.setItem("username", this.masterdata.email);
+      localStorage.setItem("password", this.masterdata.password);
+      this.validclick = false;
+    } else {
+    }
   }
 
-/**
+  /**
    * Function Name: onBlurEmail
    * Input: Email
    * Output: Boolean true or false
    *
-*/
+   */
   onBlurEmail(email) {
     if (email) {
       var EmailId = email.toString().toLowerCase();

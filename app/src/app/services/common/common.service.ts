@@ -1,8 +1,8 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class commonService {
-    selectionType;
-    name = '';
+  selectionType;
+  name = "";
 }

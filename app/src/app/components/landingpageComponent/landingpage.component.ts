@@ -9,7 +9,7 @@ import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { BroadcastService, MsalService } from "@azure/msal-angular";
 
-import { NLocalStorageService } from "neutrinos-seed-services";
+import { storageService } from "../../services/storage/storage.service";
 
 declare var cordova: any;
 /*
@@ -57,7 +57,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     private http: HttpClient,
     private broadcastService: BroadcastService,
     private authService: MsalService,
-    private nLocalStorage: NLocalStorageService
+    private localStorage: storageService
   ) {
     super();
     // bind callback function
@@ -78,8 +78,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
-  updateLocaleLanguage() {
-    let language = this.nLocalStorage.getValue("language");
+  async updateLocaleLanguage() {
+    let language = await this.localStorage.getValue("language");
     if (language) {
       this.localeService.language = language;
       this.defaultlang = language;
@@ -105,7 +105,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         const jwtToken = bh.local.result.token;
         // set the jwtToken in the localStorage so that can be used throughout the application
         if (jwtToken) {
-          this.nLocalStorage.setValue("jwtToken", `Bearer ${jwtToken}`);
+          await this.localStorage.setValue("jwtToken", `Bearer ${jwtToken}`);
         }
       }
     } catch (err) {
@@ -114,8 +114,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   //when user selects language, goes into below fun
-  languageSelect({ value }) {
-    this.nLocalStorage.setValue("language", value);
+  async languageSelect({ value }) {
+    await this.localStorage.setValue("language", value);
     this.localeService.language = value;
   }
 
@@ -148,8 +148,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   // let's start for Mobile App
   // we show inappbrowser here
   async letsStartMobile() {
-    let accessToken = this.nLocalStorage.getValue("accessToken");
-    let refreshToken = this.nLocalStorage.getValue("refreshToken");
+    let accessToken = await this.localStorage.getValue("accessToken");
+    let refreshToken = await this.localStorage.getValue("refreshToken");
     this.showSpinner = true;
 
     // if accessToken and refreshToken already present in the localstorage
@@ -239,8 +239,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   async checkIfHRAdmn() {
     // call service to check if the user is a hradmin or not
     // if HRAdmin then we move to the optionpage
-    let email = this.nLocalStorage.getValue("email");
-    let jwtToken = this.nLocalStorage.getValue("jwtToken");
+    let email = await this.localStorage.getValue("email");
+    let jwtToken = await this.localStorage.getValue("jwtToken");
     let bh = await this.hrmailService.verifyEmail(email, jwtToken);
     if (
       bh &&
@@ -262,8 +262,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // check if user has submitted data for the day
     // Note: for employee we check if the user has submitted data for the day already
     // if yes we redirect to thank you page, otherwise redirect to landingpage
-    let email = this.nLocalStorage.getValue("email");
-    let jwtToken = this.nLocalStorage.getValue("jwtToken");
+    let email = await this.localStorage.getValue("email");
+    let jwtToken = await this.localStorage.getValue("jwtToken");
     let bh = await this.userService.getIfUserSubmitted(email, jwtToken);
     let hasSubmitted = "no";
     let colorCode = "green";
@@ -272,7 +272,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       colorCode = bh.local.result.colorCode;
     }
     // save the colorCode in localStorage
-    this.nLocalStorage.setValue("colorCode", colorCode);
+    await this.localStorage.setValue("colorCode", colorCode);
     if (hasSubmitted === "yes" || hasSubmitted === "Yes") {
       this._zone.run(() => {
         this.router.navigate(["/thankyou"]);
@@ -288,16 +288,36 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   // set user details and tokens in localstorage
-  setTokensNUserLocalStorage(bh) {
+  async setTokensNUserLocalStorage(bh) {
     if (bh.local && bh.local.result) {
-      this.nLocalStorage.setValue("accessToken", bh.local.result.accessToken);
-      this.nLocalStorage.setValue("refreshToken", bh.local.result.refreshToken);
-      this.nLocalStorage.setValue("email", bh.local.result.user.email);
-      this.nLocalStorage.setValue("username", bh.local.result.user.email);
-      this.nLocalStorage.setValue("firstName", bh.local.result.user.firstName);
-      this.nLocalStorage.setValue("lastName", bh.local.result.user.lastName);
-      this.nLocalStorage.setValue("location", bh.local.result.user.location);
-      this.nLocalStorage.setValue(
+      /**
+       * TODO: Need to refactor this portion of code,
+       * we need a way to store all values at once in the
+       * localstorage,
+       */
+      await this.localStorage.setValue(
+        "accessToken",
+        bh.local.result.accessToken
+      );
+      await this.localStorage.setValue(
+        "refreshToken",
+        bh.local.result.refreshToken
+      );
+      await this.localStorage.setValue("email", bh.local.result.user.email);
+      await this.localStorage.setValue("username", bh.local.result.user.email);
+      await this.localStorage.setValue(
+        "firstName",
+        bh.local.result.user.firstName
+      );
+      await this.localStorage.setValue(
+        "lastName",
+        bh.local.result.user.lastName
+      );
+      await this.localStorage.setValue(
+        "location",
+        bh.local.result.user.location
+      );
+      await this.localStorage.setValue(
         "phone",
         bh.local.result.user.phone.replace(" ", "")
       ); // phone number received from AD contains space
@@ -350,14 +370,20 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     const profile: any = await this.http
       .get(graphMeEndpoint, { headers })
       .toPromise();
-
-    this.nLocalStorage.setValue("email", profile.mail);
-    this.nLocalStorage.setValue("username", profile.mail);
-    this.nLocalStorage.setValue("username", profile.mail);
-    this.nLocalStorage.setValue("firstName", profile.givenName);
-    this.nLocalStorage.setValue("lastName", profile.surname);
-    this.nLocalStorage.setValue("location", profile.officeLocation);
-    this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
+    /**
+     * Need to refactor this portion of the code,
+     * we need a way to store all values in the localStorage in a single call
+     */
+    await this.localStorage.setValue("email", profile.mail);
+    await this.localStorage.setValue("username", profile.mail);
+    await this.localStorage.setValue("username", profile.mail);
+    await this.localStorage.setValue("firstName", profile.givenName);
+    await this.localStorage.setValue("lastName", profile.surname);
+    await this.localStorage.setValue("location", profile.officeLocation);
+    await this.localStorage.setValue(
+      "phone",
+      profile.mobilePhone.replace(" ", "")
+    ); // phone number received from AD contains space
     this.masterdata.email = profile.mail;
   }
 }
