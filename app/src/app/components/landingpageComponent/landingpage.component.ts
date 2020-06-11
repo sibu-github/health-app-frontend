@@ -163,8 +163,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         // if we received new tokens then we auto login and directly
         // redirect to confirmDetails page
         if (bh && bh.local && bh.local.result && bh.local.result.accessToken) {
-          this.setTokensNUserLocalStorage(bh);
-          this.checkIfHRAdmn();
+          await this.setTokensNUserLocalStorage(bh);
+          await this.checkIfHRAdmn();
           return;
         }
       } catch (err) {
@@ -229,8 +229,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       // call service to get accessToken, refreshToken and user details
       // set in the locastorage
       let bh = await this.userService.getTokenFromCode(code);
-      this.setTokensNUserLocalStorage(bh);
-      this.checkIfHRAdmn();
+      await this.setTokensNUserLocalStorage(bh);
+      await this.checkIfHRAdmn();
     } catch (err) {
       console.error(err);
     }
