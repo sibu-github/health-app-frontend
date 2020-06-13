@@ -4033,13 +4033,15 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "width:100px; height:50px;",
+                                    "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [
+                                        "bcd-logo"
+                                    ],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },

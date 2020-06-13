@@ -55,6 +55,8 @@
         "marginweb",
         "mat-form-field-outline-thick",
         "mat-select-panel",
-        "ios-fix"
+        "ios-fix",
+        "thankyou-btm-logo",
+        "bcd-logo"
     ]
 }

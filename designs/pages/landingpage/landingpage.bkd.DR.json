@@ -2474,7 +2474,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "bcd-logo"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
