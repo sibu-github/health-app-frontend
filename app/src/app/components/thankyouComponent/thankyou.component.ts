@@ -72,7 +72,7 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
   constructor(
     location: PlatformLocation,
     private router: Router,
-    private masterData : masterdataService,
+    public masterData: masterdataService,
     private logoutService: logoutService,
     private nLocalStorage: NLocalStorageService
   ) {
