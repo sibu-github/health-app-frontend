@@ -28,7 +28,7 @@ declare let cordova: any;
 export class homeComponent extends NBaseComponent implements OnInit {
   showSplash: boolean = true;
   showThankYou: boolean = false;
-  baseUrl = "http://localhost:3000/api/"
+  baseUrl = "https://health-appprod.azurewebsites.net/api/"
 
   constructor(
     private userService: saveuserresponse,
@@ -44,7 +44,13 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
   ngOnInit() {
     if (window["cordova"]) {
-      this.versionCheck();
+      try {
+        this.versionCheck();
+      } catch (error) {
+        console.error(error);
+        return
+      }
+    
       this.callAPI();
       return;
 
@@ -55,23 +61,17 @@ export class homeComponent extends NBaseComponent implements OnInit {
   }
 
   // version check api call implemented by dinesh kumar
+  
+  
   async versionCheck() {
+    let androidData = {};
     if (cordova.platformId == "android") {
       console.log("inside android platfrom", cordova.platformId);
       this.http.post(this.baseUrl +"getAndroidVersion" ,{appId: 'com.blucocoondigital.healthapp'}).subscribe((res: any) => {
-      // let htppHeaders = new HttpHeaders();
-      // htppHeaders = htppHeaders.set('clinic', "mycarespot");
-      // this.http.post("https://mycarespot.com/api/api/getAndroidVersionInfo", { appId: 'com.rafael.IonicMyCareSpot' }, { headers: htppHeaders }).subscribe((res: any) => {
-        let androidData = {};
         androidData = res.data;
         androidData['isAndroid'] = true;
         console.log("check for data comming for verison", res);
         cordova.getAppVersion.getVersionNumber().then(buildNo => {
-          console.log("check for the verson installed", buildNo);
-          console.log("checl for type build installed", typeof buildNo);
-          console.log("check for the build in playstore", res.data.version);
-          console.log("check for the build in typeof build in playstore", typeof res.data.version);
-
           if (res.data.version > buildNo) {
             const dialogRef = this.dialog.open(modelpoupComponent, {
               data: {
@@ -79,9 +79,6 @@ export class homeComponent extends NBaseComponent implements OnInit {
               }
             });
             dialogRef.disableClose = true;
-            // dialogRef.afterClosed().subscribe(result => {
-            //   console.log('The dialog was closed');
-            // });
           }
         });
       })
@@ -90,48 +87,24 @@ export class homeComponent extends NBaseComponent implements OnInit {
       this.http.get("https://itunes.apple.com/lookup?bundleId=com.rafael.healthMyCareSpot").subscribe((res: any) => {
         console.log("check for data comming for verison", res.results);
 
-        // this.appVersion.getVersionNumber().then(buildNo =>{
-        //   console.log("check for the verson installed", buildNo);
-        //   console.log("checl for type build", typeof buildNo);
-        //   console.log("check for the build in appstore",res.results[0].version);
+        cordova.appVersion.getVersionNumber().then(buildNo =>{
+          console.log("check for the verson installed", buildNo);
+          console.log("checl for type build", typeof buildNo);
+          console.log("check for the build in appstore",res.results[0].version);
 
-        // if(res.results[0].version > buildNo){
-        //   let versionModel = this.modalCtrl.create(VersionAlertPage,{ versionData: res.results[0]})
-        //   versionModel.present();
-        // }
-        // });
+        if(res.results[0].version > buildNo){
+          const dialogRef = this.dialog.open(modelpoupComponent, {
+            data: {
+              versionData: androidData
+            }
+          });
+          dialogRef.disableClose = true;
+        }
+        });
       })
     }
-    //       const dialogRef = this.dialog.open(modelpoupComponent,{height: '400px',
-    //       width: '600px',
-
-    //     });
-    // dialogRef.disableClose = true;
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log(`Dialog result: ${result}`);
-    // });
+   
   }
-  // call API
-
-  //  getPlatform() {
-  //   var userAgent = navigator.userAgent || navigator.vendor 
-
-  //       // Windows Phone must come first because its UA also contains "Android"
-  //     if (/windows phone/i.test(userAgent)) {
-  //         return "Windows Phone";
-  //     }
-
-  //     if (/android/i.test(userAgent)) {
-  //         return "Android";
-  //     }
-
-  //     // iOS detection from: http://stackoverflow.com/a/9039885/177710
-  //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-  //         return "iOS";
-  //     }
-
-  //     return "unknown";
-  // }
   async callAPI() {
     try {
       await this.getJWT();
