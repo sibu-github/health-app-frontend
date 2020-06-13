@@ -54,27 +54,6 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
   ) {
     super();
     this.updateLocaleLanguage();
-
-    // for prepopulating the data
-    try {
-      let uResp = this.nLocalStorage.getValue("userResponse");
-      if (typeof uResp === "string") {
-        this.localdata = JSON.parse(uResp);
-      } else {
-        this.localdata = uResp;
-      }
-      if (uResp) {
-        this.localdata = JSON.parse(uResp);
-        this.phone = this.localdata.phone;
-        this.buildingNo = this.localdata.buildingNo;
-        this.sectionNo = this.localdata.sectionNo;
-        this.floorNo = this.localdata.floorNo;
-        this.cubeNo = this.localdata.cubeNo;
-      }
-    } catch (err) {
-      console.error(err);
-    }
-
     this.setPhone();
     this.setLocation();
   }
@@ -134,9 +113,7 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
 
   async getUserDetails() {
     try {
-      let email =
-        this.nLocalStorage.getValue("email") ||
-        "sibaprasad.maiti@ingredion.com";
+      let email = this.nLocalStorage.getValue("email");
       if (!email) {
         return;
       }
@@ -228,6 +205,20 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
     this.setLocationVal();
   }
 
+  populateLocationName() {
+    // if value is not entered in the input box then exit
+    if (!this.locationVal) {
+      return;
+    }
+
+    let match = this.totallocations.filter(
+      (loc) =>
+        loc.locationVal.toLowerCase() === this.locationVal.toLocaleLowerCase()
+    );
+    this.locationName =
+      match.length > 0 ? match[0].locationName : this.locationName;
+  }
+
   /**
    * Function name: onSubmit
    * @Input: JSON data {locationName, phone}
@@ -243,9 +234,14 @@ export class confirmdetailsComponent extends NBaseComponent implements OnInit {
       return;
     }
 
+    // if user has typed the location
+    if (this.locationVal && !this.locationName) {
+      this.populateLocationName();
+    }
+
     // check if location is selected
     if (!this.locationName) {
-      this.datash.openSnackBar("Please select a location", "X");
+      this.datash.openSnackBar("Please select a valid location", "X");
       return;
     }
 
