@@ -1,10 +1,15 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Inject } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { modelpoupComponent } from '../modelpoupComponent/modelpoup.component';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+
+
 
 /*
 Client Service import Example:
@@ -15,7 +20,7 @@ import { servicename } from 'app/sd-services/servicename';
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
 */
-
+declare let cordova: any;
 @Component({
   selector: "bh-home",
   templateUrl: "./home.template.html",
@@ -23,26 +28,83 @@ import { HeroService } from '../../services/hero/hero.service';
 export class homeComponent extends NBaseComponent implements OnInit {
   showSplash: boolean = true;
   showThankYou: boolean = false;
+  baseUrl = "https://health-appprod.azurewebsites.net/api/"
+
   constructor(
     private userService: saveuserresponse,
     private hrmailService: hrmailverifier,
     private router: Router,
-    private nLocalStorage: NLocalStorageService
+    private nLocalStorage: NLocalStorageService,
+    public dialog: MatDialog,
+    private http: HttpClient,
+
   ) {
     super();
   }
 
   ngOnInit() {
     if (window["cordova"]) {
+      try {
+        this.versionCheck();
+      } catch (error) {
+        console.error(error);
+        return
+      }
+    
       this.callAPI();
       return;
+
     }
 
     // when opened from the browser we show the landingpage straightway
     this.router.navigate(["/landingpage"]);
   }
 
-  // call API
+  // version check api call implemented by dinesh kumar
+  
+  
+  async versionCheck() {
+    let androidData = {};
+    if (cordova.platformId == "android") {
+      console.log("inside android platfrom", cordova.platformId);
+      this.http.post(this.baseUrl +"getAndroidVersion" ,{appId: 'com.blucocoondigital.healthapp'}).subscribe((res: any) => {
+        androidData = res.data;
+        androidData['isAndroid'] = true;
+        console.log("check for data comming for verison", res);
+        cordova.getAppVersion.getVersionNumber().then(buildNo => {
+          if (res.data.version > buildNo) {
+            const dialogRef = this.dialog.open(modelpoupComponent, {
+              data: {
+                versionData: androidData
+              }
+            });
+            dialogRef.disableClose = true;
+          }
+        });
+      })
+    } else {
+      console.log("inside ios platform", cordova.platformId);
+      this.http.get("https://itunes.apple.com/lookup?bundleId=com.rafael.healthMyCareSpot").subscribe((res: any) => {
+        console.log("check for data comming for verison", res.results);
+
+        cordova.appVersion.getVersionNumber().then(buildNo =>{
+          console.log("check for the verson installed", buildNo);
+          console.log("checl for type build", typeof buildNo);
+          console.log("check for the build in appstore",res.results[0].version);
+
+        if(res.results[0].version > buildNo){
+          const dialogRef = this.dialog.open(modelpoupComponent, {
+            data: {
+              versionData: androidData
+            }
+          });
+          dialogRef.disableClose = true;
+        }
+        });
+      })
+    }
+   
+  }
   async callAPI() {
     try {
       await this.getJWT();
@@ -133,3 +195,5 @@ export class homeComponent extends NBaseComponent implements OnInit {
     }
   }
 }
+
+

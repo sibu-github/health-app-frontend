@@ -9,6 +9,7 @@
     <access origin="*" />
     <allow-navigation href="*" />
     <allow-intent href="http://*/*" />
+    <allow-intent href="http://localhost:8080" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
