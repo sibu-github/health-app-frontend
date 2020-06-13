@@ -7,6 +7,7 @@ import { NLocalStorageService } from "neutrinos-seed-services";
 export class masterdataService {
   public username: string;
 
+  isHR = false;
   public password: string;
   public answer1: string;
   public answer2: string;

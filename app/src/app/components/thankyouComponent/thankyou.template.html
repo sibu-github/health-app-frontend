@@ -1,6 +1,6 @@
 <div fxLayout="row wrap" style="width: 100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill fxHide.xs="true">
   <div fxLayout="column wrap" style="min-height:100vh;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" style="cursor: pointer;" class="thankyou-btm-logo" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" (click)="logout()">
+    <div fxLayout="row wrap" style="cursor: pointer;" class="thankyou-btm-logo" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
           <div style="color: #25282B;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 14px; line-height: 16px;">
@@ -14,8 +14,8 @@
       <mat-card style="margin: 0 auto;">
         <mat-card-content>
           <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
-            <div fxLayout="row wrap" style="width: 100%;" class="paddin-btm-1em" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
-              <mat-icon class="logout-icon" [ngClass]="{&apos;logout-amber-icon&apos;:isAmber, &apos;logout-green-icon&apos;:!isAmber}">power_settings_new</mat-icon>
+            <div fxLayout="row wrap" style="width: 100%;" class="paddin-btm-1em" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false" *ngIf="masterData.isHR">
+              <mat-icon class="logout-icon" [ngClass]="{&apos;logout-amber-icon&apos;:isAmber, &apos;logout-green-icon&apos;:!isAmber}" (click)="logout()">power_settings_new</mat-icon>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
               <mat-icon class="bg-green done-icon" *ngIf="!isAmber">done</mat-icon>

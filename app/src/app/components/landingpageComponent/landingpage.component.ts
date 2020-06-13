@@ -252,6 +252,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       bh.local.result.Authorized == "true"
     ) {
       this._zone.run(() => {
+        this.masterdata.isHR = true;
         this.router.navigate(["/optionpage"]);
       });
       return;

@@ -208,12 +208,6 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
-                    },
-                    {
-                        "_key": "(click)",
-                        "_value": "logout()",
-                        "_type": "kv",
-                        "_attrDef": "c"
                     }
                 ],
                 "a8934efe-6aa0-cb05-8bee-539a411bf310": {
@@ -1567,6 +1561,12 @@
                                         "_value": "false",
                                         "_type": "kv",
                                         "_attrDef": "p"
+                                    },
+                                    {
+                                        "_key": "*ngIf",
+                                        "_value": "masterData.isHR",
+                                        "_type": "kv",
+                                        "_attrDef": "c"
                                     }
                                 ],
                                 "a9fa9542-85f1-269f-47c0-17aab1400a67": {
@@ -1609,6 +1609,12 @@
                                         {
                                             "_key": "[ngClass]",
                                             "_value": "{'logout-amber-icon':isAmber, 'logout-green-icon':!isAmber}",
+                                            "_type": "kv",
+                                            "_attrDef": "c"
+                                        },
+                                        {
+                                            "_key": "(click)",
+                                            "_value": "logout()",
                                             "_type": "kv",
                                             "_attrDef": "c"
                                         }

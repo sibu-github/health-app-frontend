@@ -6,6 +6,8 @@ import { PlatformLocation } from "@angular/common";
 import { Router } from "@angular/router";
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { logoutService } from 'app/services/logout/logout.service';
+import { masterdataService } from 'app/services/masterdata/masterdata.service';
+
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -70,6 +72,7 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
   constructor(
     location: PlatformLocation,
     private router: Router,
+    private masterData : masterdataService,
     private logoutService: logoutService,
     private nLocalStorage: NLocalStorageService
   ) {
