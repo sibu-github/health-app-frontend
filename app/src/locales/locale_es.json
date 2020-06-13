@@ -91,6 +91,7 @@
         "cuno": "Cubo / Número de oficina",
         "submittedby": "Presentado por",
         "classifyUser": "Clasificar usuario",
-        "ingredion": "Ingredion"
+        "ingredion": "Ingredion",
+        "closeError": "El usuario canceló el inicio de sesión"
     }
 }

@@ -10,6 +10,7 @@ import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { BroadcastService, MsalService } from "@azure/msal-angular";
 
 import { NLocalStorageService } from "neutrinos-seed-services";
+import { MatSnackBar } from '@angular/material';
 
 declare var cordova: any;
 /*
@@ -53,6 +54,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     private masterdata: masterdataService,
     private userService: saveuserresponse,
     private hrmailService: hrmailverifier,
+    private snackBar: MatSnackBar,
     private _zone: NgZone,
     private http: HttpClient,
     private broadcastService: BroadcastService,
@@ -223,6 +225,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     try {
       // if code is blank then exit
       if (!code) {
+        console.log('called');
         return;
       }
 
@@ -312,6 +315,12 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       return;
     }
     this.broadcastService.subscribe("msal:loginSuccess", this.onLoginSuccess);
+    this.broadcastService.subscribe("msal:loginFailure", payload => {
+      this.showSpinner = false;
+      if (payload['_error']) {
+        this.snackBar.open(this.locales['closeError'], 'Ok');
+      }
+    });
   }
 
   async onLoginSuccess(payload) {

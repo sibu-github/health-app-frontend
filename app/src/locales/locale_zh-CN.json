@@ -91,6 +91,7 @@
         "cuno": "立方体/办公室编号",
         "submittedby": "由...所提交",
         "classifyUser": "分类用户",
-        "ingredion": "侵略"
+        "ingredion": "侵略",
+        "closeError": "用户取消了登录"
     }
 }

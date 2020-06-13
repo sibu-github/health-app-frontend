@@ -91,6 +91,7 @@
         "cuno": "Número do cubo / escritório",
         "submittedby": "Enviado por",
         "classifyUser": "Classificar usuário",
-        "ingredion": "Ingrediente"
+        "ingredion": "Ingrediente",
+        "closeError": "O usuário cancelou o login"
     }
 }

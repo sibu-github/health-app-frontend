@@ -91,6 +91,7 @@
         "cuno": "Cube / Office Number",
         "submittedby": "Submitted By",
         "classifyUser": "Classify User",
-        "ingredion": "Ingredion"
+        "ingredion": "Ingredion",
+        "closeError": "User Cancelled the Login"
     }
 }

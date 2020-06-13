@@ -91,6 +91,7 @@
         "cuno": "Würfel- / Büronummer",
         "submittedby": "Eingereicht von",
         "classifyUser": "Benutzer klassifizieren",
-        "ingredion": "Zutat"
+        "ingredion": "Zutat",
+        "closeError": "Benutzer hat die Anmeldung abgebrochen"
     }
 }

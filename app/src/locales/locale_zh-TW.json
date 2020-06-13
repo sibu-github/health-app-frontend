@@ -91,6 +91,7 @@
         "cuno": "立方體/辦公室編號",
         "submittedby": "由...所提交",
         "classifyUser": "分類用戶",
-        "ingredion": "侵略"
+        "ingredion": "侵略",
+        "closeError": "用戶取消了登錄"
     }
 }

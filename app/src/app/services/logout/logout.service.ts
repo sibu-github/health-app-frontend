@@ -1,13 +1,15 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE CLASS NAME*/
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { NLocalStorageService } from "neutrinos-seed-services";
+
 
 @Injectable()
 export class logoutService {
-    constructor(private router: Router) { }
+    constructor(private router: Router, private nLocalStorage: NLocalStorageService) { }
 
     logout() {
-        console.log('called');
-        this.router.navigate(['/landpage']);
+        this.nLocalStorage.clearLocalStorage();
+        this.router.navigate(['/landingpage']);
     }
 }

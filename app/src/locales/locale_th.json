@@ -91,6 +91,7 @@
         "cuno": "หมายเลข Cube / สำนักงาน",
         "submittedby": "ส่งมาโดย",
         "classifyUser": "จำแนกผู้ใช้",
-        "ingredion": "Ingredion"
+        "ingredion": "Ingredion",
+        "closeError": "ผู้ใช้ยกเลิกการเข้าสู่ระบบ"
     }
 }

@@ -92,7 +92,8 @@
             "cuno": "Cube / Office Number",
             "submittedby": "Submitted By",
             "classifyUser": "Classify User",
-            "ingredion": "Ingredion"
+            "ingredion": "Ingredion",
+            "closeError": "User Cancelled the Login"
         }
     },
     "zh-CN": {
@@ -188,7 +189,8 @@
             "cuno": "立方体/办公室编号",
             "submittedby": "由...所提交",
             "classifyUser": "分类用户",
-            "ingredion": "侵略"
+            "ingredion": "侵略",
+            "closeError": "用户取消了登录"
         }
     },
     "zh-TW": {
@@ -284,7 +286,8 @@
             "cuno": "立方體/辦公室編號",
             "submittedby": "由...所提交",
             "classifyUser": "分類用戶",
-            "ingredion": "侵略"
+            "ingredion": "侵略",
+            "closeError": "用戶取消了登錄"
         }
     },
     "es": {
@@ -380,7 +383,8 @@
             "cuno": "Cubo / Número de oficina",
             "submittedby": "Presentado por",
             "classifyUser": "Clasificar usuario",
-            "ingredion": "Ingredion"
+            "ingredion": "Ingredion",
+            "closeError": "El usuario canceló el inicio de sesión"
         }
     },
     "pt": {
@@ -476,7 +480,8 @@
             "cuno": "Número do cubo / escritório",
             "submittedby": "Enviado por",
             "classifyUser": "Classificar usuário",
-            "ingredion": "Ingrediente"
+            "ingredion": "Ingrediente",
+            "closeError": "O usuário cancelou o login"
         }
     },
     "ko": {
@@ -572,7 +577,8 @@
             "cuno": "큐브 / 사무실 번호",
             "submittedby": "에 의해 제출 된",
             "classifyUser": "사용자 분류",
-            "ingredion": "인 그리 디언"
+            "ingredion": "인 그리 디언",
+            "closeError": "사용자가 로그인을 취소했습니다"
         }
     },
     "th": {
@@ -668,7 +674,8 @@
             "cuno": "หมายเลข Cube / สำนักงาน",
             "submittedby": "ส่งมาโดย",
             "classifyUser": "จำแนกผู้ใช้",
-            "ingredion": "Ingredion"
+            "ingredion": "Ingredion",
+            "closeError": "ผู้ใช้ยกเลิกการเข้าสู่ระบบ"
         }
     },
     "de": {
@@ -764,7 +771,8 @@
             "cuno": "Würfel- / Büronummer",
             "submittedby": "Eingereicht von",
             "classifyUser": "Benutzer klassifizieren",
-            "ingredion": "Zutat"
+            "ingredion": "Zutat",
+            "closeError": "Benutzer hat die Anmeldung abgebrochen"
         }
     }
 }

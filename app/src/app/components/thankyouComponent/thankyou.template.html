@@ -14,6 +14,9 @@
       <mat-card style="margin: 0 auto;">
         <mat-card-content>
           <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" style="width: 100%;" class="paddin-btm-1em" fxLayoutAlign="end end" [fxShow]="true" [fxHide]="false">
+              <mat-icon class="logout-icon" [ngClass]="{&apos;logout-amber-icon&apos;:isAmber, &apos;logout-green-icon&apos;:!isAmber}">power_settings_new</mat-icon>
+            </div>
             <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">
               <mat-icon class="bg-green done-icon" *ngIf="!isAmber">done</mat-icon>
               <mat-icon class="bg-amber done-icon" *ngIf="isAmber">done</mat-icon>

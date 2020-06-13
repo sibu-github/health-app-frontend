@@ -91,6 +91,7 @@
         "cuno": "큐브 / 사무실 번호",
         "submittedby": "에 의해 제출 된",
         "classifyUser": "사용자 분류",
-        "ingredion": "인 그리 디언"
+        "ingredion": "인 그리 디언",
+        "closeError": "사용자가 로그인을 취소했습니다"
     }
 }
