@@ -5,6 +5,7 @@ import { HostListener } from "@angular/core";
 import { PlatformLocation } from "@angular/common";
 import { Router } from "@angular/router";
 import { NLocalStorageService } from "neutrinos-seed-services";
+import { logoutService } from 'app/services/logout/logout.service';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -40,28 +41,28 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
       month === 0
         ? "JAN"
         : month === 1
-        ? "FEB"
-        : month === 2
-        ? "MAR"
-        : month === 3
-        ? "APR"
-        : month === 4
-        ? "MAY"
-        : month === 5
-        ? "JUN"
-        : month === 6
-        ? "JUL"
-        : month === 7
-        ? "AUG"
-        : month === 8
-        ? "SEP"
-        : month === 9
-        ? "OCT"
-        : month === 10
-        ? "NOV"
-        : month === 11
-        ? "DEC"
-        : "";
+          ? "FEB"
+          : month === 2
+            ? "MAR"
+            : month === 3
+              ? "APR"
+              : month === 4
+                ? "MAY"
+                : month === 5
+                  ? "JUN"
+                  : month === 6
+                    ? "JUL"
+                    : month === 7
+                      ? "AUG"
+                      : month === 8
+                        ? "SEP"
+                        : month === 9
+                          ? "OCT"
+                          : month === 10
+                            ? "NOV"
+                            : month === 11
+                              ? "DEC"
+                              : "";
     const dayStr = dateStr + "-" + monthStr + "-" + year;
     return dayStr;
   }
@@ -69,6 +70,7 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
   constructor(
     location: PlatformLocation,
     private router: Router,
+    private logoutService: logoutService,
     private nLocalStorage: NLocalStorageService
   ) {
     super();
@@ -113,4 +115,9 @@ export class thankyouComponent extends NBaseComponent implements OnInit {
     });
     this.today = this.getDay() + " " + timezone;
   }
+
+  logout() {
+    this.logoutService.logout();
+  }
+
 }

@@ -155,7 +155,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "",
+                        "_value": "cursor: pointer;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -208,6 +208,12 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "logout()",
+                        "_type": "kv",
+                        "_attrDef": "c"
                     }
                 ],
                 "a8934efe-6aa0-cb05-8bee-539a411bf310": {

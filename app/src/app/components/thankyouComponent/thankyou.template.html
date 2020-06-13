@@ -1,6 +1,6 @@
 <div fxLayout="row wrap" style="width: 100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill fxHide.xs="true">
   <div fxLayout="column wrap" style="min-height:100vh;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" class="thankyou-btm-logo" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="cursor: pointer;" class="thankyou-btm-logo" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false" (click)="logout()">
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
           <div style="color: #25282B;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 14px; line-height: 16px;">
