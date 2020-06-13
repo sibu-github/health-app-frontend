@@ -62,6 +62,10 @@
             "component": "hroptionComponent"
         },
         {
+            "component": "modelpoupComponent",
+            "path": "model"
+        },
+        {
             "path": "''",
             "redirectTo": "/home",
             "pathMatch": "full",

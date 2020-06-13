@@ -69,11 +69,11 @@ export const appImportModules: any = [
   NgxChartsModule,
   ChartsModule,
   HttpClientModule,
+  MatDialogModule,
   /**
    * Angular material components
    */
-  MatMenuModule,
-  MatDialogModule,
+ 
   MatSnackBarModule,
   MatTooltipModule,
   MatIconModule,

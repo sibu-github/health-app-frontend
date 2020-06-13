@@ -1,0 +1,37 @@
+<header>
+  <strong class="update-head">New Update Available!</strong>
+</header>
+<div  class="alertStyle">
+  <div class="mat-dialog-container">
+    <!-- <p>
+      What's new with the latest build:-
+      {{versionData?.releaseNotes}}
+    </p> -->
+    <div id="ios" *ngIf="!versionData?.isAndroid">
+      <span class="watsnew">
+        <strong>WHAT'S NEW</strong>
+      </span>
+      <p>{{versionData?.releaseNotes}}</p>
+      <span>Please Click the link to get
+        the latest version of {{versionData?.version}}
+      </span>
+      <button color="primary"><a class="updatelink" href="{{versionData?.trackViewUrl}}" target="_blank"
+          rel="noopener noreferrer">Update Now</a>
+      </button>
+    </div>
+    <div id="android" *ngIf="versionData?.isAndroid">
+      <span>
+        <strong>WHAT'S NEW</strong>
+      </span>
+      <p>{{versionData?.recentChanges}}</p>
+      <span>Please Click the link to get
+        the latest version of {{versionData?.version}}
+      </span>
+      <!-- <button color="primary"><a class="updatelink" href="{{versionData?.url}}" target="_blank"
+            rel="noopener noreferrer">Update Now</a>
+        </button> -->
+      <button class=" btn btn-default"><a class="updatelink" href="{{versionData?.url}}" rel="noopener noreferrer">Update Now</a>
+      </button>
+    </div>
+  </div>
+</div>
