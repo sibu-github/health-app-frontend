@@ -78,28 +78,19 @@ export class homeComponent extends NBaseComponent implements OnInit {
   }
 
   async checkVersionAndroid(){
-    console.log('checkVersionAndroid')
     try {
       const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
       const appName = await cordova.getAppVersion.getAppName()
       let packageName = await cordova.getAppVersion.getPackageName()
-      console.log({currentAppVersion,  packageName})
-      // For testing -- remove this line
-      packageName = 'co.blucocoondigital.healthapp'
       const url:string = `${environment.properties.ssdURL}/api/getAndroidVersion`
       const payload:object = {appId: packageName}
-      console.log({url, payload})
       const res:any = await (this.http.post(url, payload).toPromise())
-      console.log('API response is:', res)
       let data = {
         appName,
         version: res.data .version,
         appUrl: res.data.url
       }
-      console.log('current app version is:', currentAppVersion, ' app version in play store is:', data.version)
-      // if(versionData.version > currentAppVersion){
-      //  For testing -- remove this line
-      if(data.version >= currentAppVersion){
+      if(data.version > currentAppVersion){
         this.openVersionAlert(data)
       }
       return true
@@ -114,10 +105,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
       const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
       const appName = await cordova.getAppVersion.getAppName()
       let packageName = await cordova.getAppVersion.getPackageName()
-      console.log({currentAppVersion,  packageName})
-      console.log({currentAppVersion})
       const iTuneURL:string = `https://itunes.apple.com/lookup?bundleId=${packageName}`
-      // const iTuneURL:string = `https://itunes.apple.com/lookup?bundleId=com.rafael.healthMyCareSpot`
       const res:any = await this.http.get(iTuneURL).toPromise()
       if(!res || !res.results || res.results.length < 1){
         return false

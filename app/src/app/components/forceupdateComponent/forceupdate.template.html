@@ -2,7 +2,7 @@
   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="row wrap" class="padding-b5 example-full-width" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div>
-        <span class="fu-title">New version available! </span>
+        <span class="fu-title">{{appName}}</span>
 
       </div>
     </div>
@@ -15,7 +15,7 @@
     </div>
     <div fxLayout="row wrap" class="fu-msg example-full-width" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div>
-        Please click the button below to get the latest version of {{version}}</div>
+        Please upgrade the Ingredion Care First app to version {{version}}</div>
     </div>
     <div fxLayout="row wrap" class="example-full-width" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="updateApp()">Update</button></div>
   </div>

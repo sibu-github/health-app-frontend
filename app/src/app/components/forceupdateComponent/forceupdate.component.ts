@@ -19,6 +19,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 export class forceupdateComponent extends NBaseComponent implements OnInit {
     version = '';
+    appName = '';
     updates = [];
     appUrl = '';
     constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
@@ -28,7 +29,8 @@ export class forceupdateComponent extends NBaseComponent implements OnInit {
     ngOnInit() {
         console.log("versionData in model popup--------",  JSON.stringify(this.data));
         this.version = this.data.version 
-        this.updates.push(this.data.appName)
+        this.appName = this.data.appName
+        this.updates.push('New version available.')
         this.appUrl = this.data.appUrl
     }
 
