@@ -21,9 +21,7 @@
             "azureResponseType": "both",
             "azureAuthority": "both",
             "clientIdWebLogin": "both",
-            "redirectUrlWebLogin": "both",
-            "appIdAndroid": "both",
-            "appIdIos": "both"
+            "redirectUrlWebLogin": "both"
         }
     },
     "dev": {
@@ -48,9 +46,7 @@
             "azureResponseType": "code",
             "azureAuthority": "https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc",
             "clientIdWebLogin": "a88cc2a4-ee56-4244-aa32-153fe32ba9fc",
-            "redirectUrlWebLogin": "https://carefirst-appprod.azurewebsites.net/logincomplete",
-            "appIdAndroid": "co.blucocoondigital.healthapp",
-            "appIdIos": "com.blucocoondigital.healthapp"
+            "redirectUrlWebLogin": "https://carefirst-appprod.azurewebsites.net/logincomplete"
         }
     },
     "prod": {
@@ -75,9 +71,7 @@
             "azureResponseType": "code",
             "azureAuthority": "https://login.microsoftonline.com/8d88c9c2-2058-486d-9cd4-2fc9010326bc",
             "clientIdWebLogin": "a88cc2a4-ee56-4244-aa32-153fe32ba9fc",
-            "redirectUrlWebLogin": "https://carefirst-appprod.azurewebsites.net/logincomplete",
-            "appIdAndroid": "co.blucocoondigital.healthapp",
-            "appIdIos": "com.blucocoondigital.healthapp"
+            "redirectUrlWebLogin": "https://carefirst-appprod.azurewebsites.net/logincomplete"
         }
     }
 }
