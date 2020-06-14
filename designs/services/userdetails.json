@@ -131,9 +131,7 @@
         "x": 425,
         "y": 120,
         "wires": [
-            [
-                "sd_K3ODbZQfLJ4SsrAR"
-            ]
+            []
         ],
         "generateNext": false,
         "generated": true
@@ -195,8 +193,7 @@
         "x": 545,
         "y": 120,
         "wires": [],
-        "generateNext": false,
-        "generated": true
+        "generateNext": true
     },
     {
         "id": "sd_F8kXV1H5BklAjGJT",
@@ -275,14 +272,18 @@
         "nodeType": "flow",
         "name": "get Request",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
+        "urlValue": "",
         "urlMapping": "bh.local.apiURL",
         "urlMappingObj": {
             "mapVarType": "bh.local",
             "mapVarValue": "apiURL"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "bh",
             "mapVarValue": ""
@@ -292,6 +293,8 @@
             "mapVarType": "bh.local",
             "mapVarValue": "result"
         },
+        "headers": [],
+        "headersObj": {},
         "headerMapping": "bh.local.headers",
         "headerMappingObj": {
             "mapVarType": "bh.local",
@@ -299,6 +302,7 @@
         },
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "category": "HTTP",
         "x": 480,

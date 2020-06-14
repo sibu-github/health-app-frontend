@@ -96,21 +96,10 @@ export class userdetails {
         body: bh.input.data
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_K3ODbZQfLJ4SsrAR(bh);
       //appendnew_next_sd_b3dGX6U7nArDuByi
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_b3dGX6U7nArDuByi');
-    }
-  }
-  async sd_K3ODbZQfLJ4SsrAR(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh);
-
-      //appendnew_next_sd_K3ODbZQfLJ4SsrAR
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_K3ODbZQfLJ4SsrAR');
     }
   }
   async sd_9bNLEihqbGQ8hBkz(bh) {

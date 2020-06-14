@@ -199,21 +199,10 @@ export class saveuserresponse {
         body: bh.input.formdata
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_xpG8uIqE7dWEgS0F(bh);
       //appendnew_next_sd_FcFvtFytCkN7uU9N
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_FcFvtFytCkN7uU9N');
-    }
-  }
-  async sd_xpG8uIqE7dWEgS0F(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh);
-
-      //appendnew_next_sd_xpG8uIqE7dWEgS0F
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_xpG8uIqE7dWEgS0F');
     }
   }
   async sd_edbqgcUOheevvEDW(bh) {
@@ -287,21 +276,10 @@ export class saveuserresponse {
         body: undefined
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_OhLN2vw7EWihaLcR(bh);
       //appendnew_next_sd_DIoisxysFNjLhDvY
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_DIoisxysFNjLhDvY');
-    }
-  }
-  async sd_OhLN2vw7EWihaLcR(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-
-      //appendnew_next_sd_OhLN2vw7EWihaLcR
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_OhLN2vw7EWihaLcR');
     }
   }
   async sd_dSeRMJ9WXtUgRhgs(bh) {
@@ -327,21 +305,10 @@ export class saveuserresponse {
         body: undefined
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_jChj41xC9Yu5CC1V(bh);
       //appendnew_next_sd_2UzkbppxpPiv9cll
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_2UzkbppxpPiv9cll');
-    }
-  }
-  async sd_jChj41xC9Yu5CC1V(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-
-      //appendnew_next_sd_jChj41xC9Yu5CC1V
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_jChj41xC9Yu5CC1V');
     }
   }
   async sd_5g1JuQUdOxhsYmxt(bh) {
@@ -368,21 +335,10 @@ export class saveuserresponse {
         body: undefined
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_YvPDbvTSCW4vRzYR(bh);
       //appendnew_next_sd_87BdheXEiwUyIEnE
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_87BdheXEiwUyIEnE');
-    }
-  }
-  async sd_YvPDbvTSCW4vRzYR(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-
-      //appendnew_next_sd_YvPDbvTSCW4vRzYR
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_YvPDbvTSCW4vRzYR');
     }
   }
   async sd_rSSMnXmptoPq7M9Q(bh) {
@@ -408,21 +364,10 @@ export class saveuserresponse {
         body: undefined
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_tQgpJA9E5zmnKKbI(bh);
       //appendnew_next_sd_fHgOvd8rOGF2t5Sc
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_fHgOvd8rOGF2t5Sc');
-    }
-  }
-  async sd_tQgpJA9E5zmnKKbI(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh.local.result);
-
-      //appendnew_next_sd_tQgpJA9E5zmnKKbI
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_tQgpJA9E5zmnKKbI');
     }
   }
   //appendnew_node

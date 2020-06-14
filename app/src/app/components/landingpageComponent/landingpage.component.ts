@@ -8,9 +8,9 @@ import { masterdataService } from "../../services/masterdata/masterdata.service"
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { BroadcastService, MsalService } from "@azure/msal-angular";
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from "@angular/material/dialog";
 import { NLocalStorageService } from "neutrinos-seed-services";
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from "@angular/material";
 
 declare var cordova: any;
 /*
@@ -226,7 +226,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     try {
       // if code is blank then exit
       if (!code) {
-        console.log('called');
         return;
       }
 
@@ -317,10 +316,10 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       return;
     }
     this.broadcastService.subscribe("msal:loginSuccess", this.onLoginSuccess);
-    this.broadcastService.subscribe("msal:loginFailure", payload => {
+    this.broadcastService.subscribe("msal:loginFailure", (payload) => {
       this.showSpinner = false;
-      if (payload['_error']) {
-        this.snackBar.open(this.locales['closeError'], 'Ok');
+      if (payload["_error"]) {
+        this.snackBar.open(this.locales["closeError"], "Ok");
       }
     });
   }
@@ -371,5 +370,4 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
     this.masterdata.email = profile.mail;
   }
-
 }

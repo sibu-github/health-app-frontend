@@ -5,15 +5,14 @@ import { Router } from "@angular/router";
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from "@angular/material/dialog";
 // import { modelpoupComponent } from '../modelpoupComponent/modelpoup.component';
-import { forceupdateComponent } from '../forceupdateComponent/forceupdate.component';
+import { forceupdateComponent } from "../forceupdateComponent/forceupdate.component";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
-import { NSystemService } from 'neutrinos-seed-services';
-import { environment } from '../../../environments/environment'
-import { database } from 'firebase';
-
+import { NSystemService } from "neutrinos-seed-services";
+import { environment } from "../../../environments/environment";
+import { database } from "firebase";
 
 /*
 Client Service import Example:
@@ -33,9 +32,8 @@ export class homeComponent extends NBaseComponent implements OnInit {
   showSplash: boolean = true;
   showThankYou: boolean = false;
 
-  private isVersionOutdated:boolean = false;
+  private isVersionOutdated: boolean = false;
   private systemService = NSystemService.getInstance();
-
 
   constructor(
     private userService: saveuserresponse,
@@ -43,95 +41,90 @@ export class homeComponent extends NBaseComponent implements OnInit {
     private router: Router,
     private nLocalStorage: NLocalStorageService,
     public dialog: MatDialog,
-    private http: HttpClient,
-
+    private http: HttpClient
   ) {
     super();
   }
 
   async ngOnInit() {
     // when opened from the browser we show the landingpage straightway
-    if(this.systemService.deviceType === 'browser'){
+    if (this.systemService.deviceType === "browser") {
       this.router.navigate(["/landingpage"]);
-      return
+      return;
     }
-   
+
     // for mobile app
-    if(this.systemService.isAndroid() || this.systemService.isIOS()){
-      await this.versionCheck()
-      if(!this.isVersionOutdated){
-        await this.callAPI()
+    if (this.systemService.isAndroid() || this.systemService.isIOS()) {
+      await this.versionCheck();
+      if (!this.isVersionOutdated) {
+        await this.callAPI();
       }
     }
   }
 
   // version check api call implemented by dinesh kumar
   async versionCheck() {
-    if(this.systemService.isAndroid()){
-      return this.checkVersionAndroid()
+    if (this.systemService.isAndroid()) {
+      return this.checkVersionAndroid();
     }
 
-    if(this.systemService.isIOS()){
-      return this.checkIOSVersion()
+    if (this.systemService.isIOS()) {
+      return this.checkIOSVersion();
     }
-   
   }
 
-  async checkVersionAndroid(){
+  async checkVersionAndroid() {
     try {
-      const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
-      const appName = await cordova.getAppVersion.getAppName()
-      let packageName = await cordova.getAppVersion.getPackageName()
-      const url:string = `${environment.properties.ssdURL}/api/getAndroidVersion`
-      const payload:object = {appId: packageName}
-      const res:any = await (this.http.post(url, payload).toPromise())
+      const currentAppVersion = await cordova.getAppVersion.getVersionNumber();
+      const appName = await cordova.getAppVersion.getAppName();
+      let packageName = await cordova.getAppVersion.getPackageName();
+      const url: string = `${environment.properties.ssdURL}/api/getAndroidVersion`;
+      const payload: object = { appId: packageName };
+      const res: any = await this.http.post(url, payload).toPromise();
       let data = {
         appName,
-        version: res.data .version,
-        appUrl: res.data.url
+        version: res.data.version,
+        appUrl: res.data.url,
+      };
+      if (data.version > currentAppVersion) {
+        this.openVersionAlert(data);
       }
-      if(data.version > currentAppVersion){
-        this.openVersionAlert(data)
-      }
-      return true
-    } catch(err){
-      console.error(err)
+      return true;
+    } catch (err) {
+      console.error(err);
       return false;
     }
   }
 
-  async checkIOSVersion(){
-    try{
-      const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
-      const appName = await cordova.getAppVersion.getAppName()
-      let packageName = await cordova.getAppVersion.getPackageName()
-      const iTuneURL:string = `https://itunes.apple.com/lookup?bundleId=${packageName}`
-      const res:any = await this.http.get(iTuneURL).toPromise()
-      if(!res || !res.results || res.results.length < 1){
-        return false
+  async checkIOSVersion() {
+    try {
+      const currentAppVersion = await cordova.getAppVersion.getVersionNumber();
+      const appName = await cordova.getAppVersion.getAppName();
+      let packageName = await cordova.getAppVersion.getPackageName();
+      const iTuneURL: string = `https://itunes.apple.com/lookup?bundleId=${packageName}`;
+      const res: any = await this.http.get(iTuneURL).toPromise();
+      if (!res || !res.results || res.results.length < 1) {
+        return false;
       }
-      if(res.results[0].version > currentAppVersion){
+      if (res.results[0].version > currentAppVersion) {
         let data = {
           appName,
           version: res.results[0].version,
-          appUrl: res.results[0].trackViewUrl
-        }
-        this.openVersionAlert(data)
+          appUrl: res.results[0].trackViewUrl,
+        };
+        this.openVersionAlert(data);
       }
-    }catch(err){
-      console.error(err)
-      return false
+    } catch (err) {
+      console.error(err);
+      return false;
     }
   }
 
-
-  openVersionAlert(data){
-    this.isVersionOutdated = true
+  openVersionAlert(data) {
+    this.isVersionOutdated = true;
     const dialogRef = this.dialog.open(forceupdateComponent, { data });
     dialogRef.disableClose = true;
   }
-
-
 
   async callAPI() {
     try {
@@ -223,5 +216,3 @@ export class homeComponent extends NBaseComponent implements OnInit {
     }
   }
 }
-
-

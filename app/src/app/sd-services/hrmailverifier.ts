@@ -73,21 +73,10 @@ export class hrmailverifier {
         body: undefined
       };
       bh.local.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_r7yd10rK3zR6QVqO(bh);
       //appendnew_next_sd_i08KsUu1AjUUxyYK
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_i08KsUu1AjUUxyYK');
-    }
-  }
-  async sd_r7yd10rK3zR6QVqO(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), bh);
-
-      //appendnew_next_sd_r7yd10rK3zR6QVqO
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_r7yd10rK3zR6QVqO');
     }
   }
   //appendnew_node
