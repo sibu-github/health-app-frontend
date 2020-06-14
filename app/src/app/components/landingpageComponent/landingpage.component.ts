@@ -233,7 +233,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       // set in the locastorage
       let bh = await this.userService.getTokenFromCode(code);
       this.setTokensNUserLocalStorage(bh);
-      this.masterdata.isHR = true;
       this.checkIfHRAdmn();
     } catch (err) {
       console.error(err);
@@ -325,6 +324,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   }
 
   async onLoginSuccess(payload) {
+    this.masterdata.isHR = true;
     await this.getProfile();
     await this.checkIfHRAdmn();
   }
