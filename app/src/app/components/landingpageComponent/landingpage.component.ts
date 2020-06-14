@@ -8,9 +8,10 @@ import { masterdataService } from "../../services/masterdata/masterdata.service"
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { BroadcastService, MsalService } from "@azure/msal-angular";
-
+import { MatDialog } from '@angular/material/dialog';
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { MatSnackBar } from '@angular/material';
+import { forceupdateComponent } from '../forceupdateComponent/forceupdate.component';
 
 declare var cordova: any;
 /*
@@ -50,6 +51,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   selectedObjects: any[];
 
   constructor(
+    public dialog: MatDialog,
     private router: Router,
     private masterdata: masterdataService,
     private userService: saveuserresponse,
@@ -370,4 +372,14 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
     this.masterdata.email = profile.mail;
   }
+
+
+  forceUpdate() {
+    const dialogRef = this.dialog.open(forceupdateComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }

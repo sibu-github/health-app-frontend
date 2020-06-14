@@ -1,0 +1,22 @@
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill>
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" class="padding-b5 example-full-width" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div>
+        <span class="fu-title"> Whats New: </span>
+
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="fu-list example-full-width" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div>
+        <ul *ngFor="let update of updates">
+          <li>{{update}}</li>
+        </ul>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="fu-msg example-full-width" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+      <div>
+        Please click the button below to get the latest version of {{version}}</div>
+    </div>
+    <div fxLayout="row wrap" class="example-full-width" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><button mat-raised-button (click)="updateApp()">Update</button></div>
+  </div>
+</div>

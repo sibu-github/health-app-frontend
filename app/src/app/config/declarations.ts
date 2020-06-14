@@ -15,6 +15,8 @@ window["neutrinos"] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-forceupdateComponent
+import { forceupdateComponent } from '../components/forceupdateComponent/forceupdate.component';
 //CORE_REFERENCE_IMPORT-logoutService
 import { logoutService } from '../services/logout/logout.service';
 //CORE_REFERENCE_IMPORT-modelpoupComponent
@@ -79,6 +81,7 @@ export const appBootstrap: any = [LayoutComponent];
  */
 export const appEntryComponents: any = [
   //CORE_REFERENCE_PUSH_TO_ENTRY_ARRAY
+  forceupdateComponent
 ];
 
 /**
@@ -91,6 +94,8 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-forceupdateComponent
+forceupdateComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-modelpoupComponent
 modelpoupComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-testComponent

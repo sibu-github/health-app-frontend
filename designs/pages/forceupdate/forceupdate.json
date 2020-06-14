@@ -1,0 +1,14 @@
+{
+    "appPageId": "691c4eeb-2cf8-54cb-c332-2c73a0d254ca",
+    "appPageName": "forceupdate",
+    "componentName": "forceupdateComponent",
+    "selectorName": "bh-forceupdate",
+    "htmlFileName": "forceupdate.template.html",
+    "tsFileName": "forceupdate.component.ts",
+    "createDate": "2020-06-14T10:26:38.798Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}
