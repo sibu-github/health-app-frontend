@@ -54,8 +54,8 @@ export class masterdataService {
       let formdata = {
         type: this.userType,
         locationName: this.locationName,
-        email: this.email || localStorage.getItem('email'),
-        phone: localStorage.getItem("phone"),
+        email: this.email || this.nLocalStorage.getValue('email'),
+        phone: this.nLocalStorage.getValue("phone"),
         firstName: this.firstName,
         lastName: this.lastName,
         company: this.company,
