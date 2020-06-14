@@ -18,7 +18,7 @@ export class modelpoupComponent extends NBaseComponent implements OnInit {
 
     ngOnInit() {
         this.versionData = this.data.versionData;
-        console.log("versionData in model popup--------",  this.versionData);
+        console.log("versionData in model popup--------",  JSON.stringify(this.versionData));
     }
 
 }

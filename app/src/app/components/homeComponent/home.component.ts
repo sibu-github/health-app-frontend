@@ -9,6 +9,9 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { modelpoupComponent } from '../modelpoupComponent/modelpoup.component';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
+import { NSystemService } from 'neutrinos-seed-services';
+import { environment } from '../../../environments/environment'
+import { database } from 'firebase';
 
 
 /*
@@ -28,7 +31,10 @@ declare let cordova: any;
 export class homeComponent extends NBaseComponent implements OnInit {
   showSplash: boolean = true;
   showThankYou: boolean = false;
-  baseUrl = "https://health-appprod.azurewebsites.net/api/"
+
+  private isVersionOutdated:boolean = false;
+  private systemService = NSystemService.getInstance();
+
 
   constructor(
     private userService: saveuserresponse,
@@ -42,69 +48,89 @@ export class homeComponent extends NBaseComponent implements OnInit {
     super();
   }
 
-  ngOnInit() {
-    if (window["cordova"]) {
-      try {
-        this.versionCheck();
-      } catch (error) {
-        console.error(error);
-        return
-      }
-    
-      this.callAPI();
-      return;
-
-    }
-
+  async ngOnInit() {
     // when opened from the browser we show the landingpage straightway
-    this.router.navigate(["/landingpage"]);
+    if(this.systemService.deviceType === 'browser'){
+      this.router.navigate(["/landingpage"]);
+      return
+    }
+   
+    // for mobile app
+    if(this.systemService.isAndroid() || this.systemService.isIOS()){
+      await this.versionCheck()
+      if(!this.isVersionOutdated){
+        await this.callAPI()
+      }
+    }
   }
 
   // version check api call implemented by dinesh kumar
-  
-  
   async versionCheck() {
-    let androidData = {};
-    if (cordova.platformId == "android") {
-      console.log("inside android platfrom", cordova.platformId);
-      this.http.post(this.baseUrl +"getAndroidVersion" ,{appId: 'com.blucocoondigital.healthapp'}).subscribe((res: any) => {
-        androidData = res.data;
-        androidData['isAndroid'] = true;
-        console.log("check for data comming for verison", res);
-        cordova.getAppVersion.getVersionNumber().then(buildNo => {
-          if (res.data.version > buildNo) {
-            const dialogRef = this.dialog.open(modelpoupComponent, {
-              data: {
-                versionData: androidData
-              }
-            });
-            dialogRef.disableClose = true;
-          }
-        });
-      })
-    } else {
-      console.log("inside ios platform", cordova.platformId);
-      this.http.get("https://itunes.apple.com/lookup?bundleId=com.rafael.healthMyCareSpot").subscribe((res: any) => {
-        console.log("check for data comming for verison", res.results);
+    if(this.systemService.isAndroid()){
+      return this.checkVersionAndroid()
+    }
 
-        cordova.appVersion.getVersionNumber().then(buildNo =>{
-          console.log("check for the verson installed", buildNo);
-          console.log("checl for type build", typeof buildNo);
-          console.log("check for the build in appstore",res.results[0].version);
-
-        if(res.results[0].version > buildNo){
-          const dialogRef = this.dialog.open(modelpoupComponent, {
-            data: {
-              versionData: androidData
-            }
-          });
-          dialogRef.disableClose = true;
-        }
-        });
-      })
+    if(this.systemService.isIOS()){
+      return this.checkIOSVersion()
     }
    
   }
+
+  async checkVersionAndroid(){
+    console.log('checkVersionAndroid')
+    try {
+      const url:string = `${environment.properties.ssdURL}/api/getAndroidVersion`
+      const payload:object = {appId: environment.properties.appIdAndroid}
+      console.log({url, payload})
+      const res:any = await (this.http.post(url, payload).toPromise())
+      console.log('API response is:', res)
+      const  versionData = res.data 
+      versionData.isAndroid = true
+      console.log({versionData})
+      const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
+      const appName = await cordova.getAppVersion.getAppName()
+      const packageName = await cordova.getAppVersion.getPackageName()
+      console.log({currentAppVersion, appName, packageName})
+      if(versionData.version > currentAppVersion){
+        this.openVersionAlert(versionData)
+      }
+      return true
+    } catch(err){
+      console.error(err)
+      return false;
+    }
+  }
+
+  async checkIOSVersion(){
+    try{
+      const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
+      console.log({currentAppVersion})
+      const iTuneURL:string = `https://itunes.apple.com/lookup?bundleId=${environment.properties.appIdIos}`
+      // const iTuneURL:string = `https://itunes.apple.com/lookup?bundleId=com.rafael.healthMyCareSpot`
+      const res:any = await this.http.get(iTuneURL).toPromise()
+      if(!res || !res.results || res.results.length < 1){
+        return false
+      }
+      if(res.results[0].version > currentAppVersion){
+        const versionData:any = res.results[0]
+        versionData.isAndroid = false
+        this.openVersionAlert({versionData})
+      }
+    }catch(err){
+      console.error(err)
+      return false
+    }
+  }
+
+
+  openVersionAlert(data){
+    this.isVersionOutdated = true
+    const dialogRef = this.dialog.open(modelpoupComponent, { data });
+    dialogRef.disableClose = true;
+  }
+
+
+
   async callAPI() {
     try {
       await this.getJWT();
