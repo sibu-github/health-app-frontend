@@ -1,7 +1,7 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Inject } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
-
+import { MAT_DIALOG_DATA } from '@angular/material';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -18,13 +18,24 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 
 export class forceupdateComponent extends NBaseComponent implements OnInit {
-    version = 1.12;
-    updates = ["Bug fixes","New fixes","Server update"]
-    constructor() {
+    version = '';
+    updates = [];
+    appUrl = '';
+    constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
         super();
     }
 
     ngOnInit() {
-
+        console.log("versionData in model popup--------",  JSON.stringify(this.data));
+        this.version = this.data.version 
+        this.updates.push(this.data.appName)
+        this.appUrl = this.data.appUrl
     }
+
+    updateApp(){
+        if(this.appUrl){
+            window.open(this.appUrl, "_system");
+        }
+    }
+
 }

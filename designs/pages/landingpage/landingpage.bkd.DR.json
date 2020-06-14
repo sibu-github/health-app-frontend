@@ -2108,12 +2108,6 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
-                    },
-                    {
-                        "_key": "(click)",
-                        "_value": "forceUpdate()",
-                        "_type": "kv",
-                        "_attrDef": "c"
                     }
                 ],
                 "23cb1706-5fef-b172-9b53-bfcd684085a7": {

@@ -6,7 +6,8 @@ import { NLocalStorageService } from "neutrinos-seed-services";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrmailverifier } from "app/sd-services/hrmailverifier";
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { modelpoupComponent } from '../modelpoupComponent/modelpoup.component';
+// import { modelpoupComponent } from '../modelpoupComponent/modelpoup.component';
+import { forceupdateComponent } from '../forceupdateComponent/forceupdate.component';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 import { NSystemService } from 'neutrinos-seed-services';
@@ -80,6 +81,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
     console.log('checkVersionAndroid')
     try {
       const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
+      const appName = await cordova.getAppVersion.getAppName()
       let packageName = await cordova.getAppVersion.getPackageName()
       console.log({currentAppVersion,  packageName})
       // For testing -- remove this line
@@ -89,14 +91,16 @@ export class homeComponent extends NBaseComponent implements OnInit {
       console.log({url, payload})
       const res:any = await (this.http.post(url, payload).toPromise())
       console.log('API response is:', res)
-      const  versionData = res.data 
-      versionData.isAndroid = true
-      console.log({versionData})
-      console.log('current app version is:', currentAppVersion, ' app version in play store is:', versionData.version)
-      if(versionData.version > currentAppVersion){
+      let data = {
+        appName,
+        version: res.data .version,
+        appUrl: res.data.url
+      }
+      console.log('current app version is:', currentAppVersion, ' app version in play store is:', data.version)
+      // if(versionData.version > currentAppVersion){
       //  For testing -- remove this line
-      // if(versionData.version >= currentAppVersion){
-        this.openVersionAlert({versionData})
+      if(data.version >= currentAppVersion){
+        this.openVersionAlert(data)
       }
       return true
     } catch(err){
@@ -108,6 +112,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
   async checkIOSVersion(){
     try{
       const currentAppVersion = await cordova.getAppVersion.getVersionNumber()
+      const appName = await cordova.getAppVersion.getAppName()
       let packageName = await cordova.getAppVersion.getPackageName()
       console.log({currentAppVersion,  packageName})
       console.log({currentAppVersion})
@@ -118,9 +123,12 @@ export class homeComponent extends NBaseComponent implements OnInit {
         return false
       }
       if(res.results[0].version > currentAppVersion){
-        const versionData:any = res.results[0]
-        versionData.isAndroid = false
-        this.openVersionAlert({versionData})
+        let data = {
+          appName,
+          version: res.results[0].version,
+          appUrl: res.results[0].trackViewUrl
+        }
+        this.openVersionAlert(data)
       }
     }catch(err){
       console.error(err)
@@ -131,7 +139,7 @@ export class homeComponent extends NBaseComponent implements OnInit {
 
   openVersionAlert(data){
     this.isVersionOutdated = true
-    const dialogRef = this.dialog.open(modelpoupComponent, { data });
+    const dialogRef = this.dialog.open(forceupdateComponent, { data });
     dialogRef.disableClose = true;
   }
 

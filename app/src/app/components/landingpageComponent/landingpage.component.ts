@@ -11,7 +11,6 @@ import { BroadcastService, MsalService } from "@azure/msal-angular";
 import { MatDialog } from '@angular/material/dialog';
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { MatSnackBar } from '@angular/material';
-import { forceupdateComponent } from '../forceupdateComponent/forceupdate.component';
 
 declare var cordova: any;
 /*
@@ -371,15 +370,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.nLocalStorage.setValue("location", profile.officeLocation);
     this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
     this.masterdata.email = profile.mail;
-  }
-
-
-  forceUpdate() {
-    const dialogRef = this.dialog.open(forceupdateComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
   }
 
 }
