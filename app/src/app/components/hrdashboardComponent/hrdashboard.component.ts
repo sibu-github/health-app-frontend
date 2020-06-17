@@ -129,6 +129,12 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
     this.locationName = data.option.value
     this.getDashboardData();
   }
+   async clearValue(){
+     this.locationName='';
+     this.updatelocations = this.locationname;
+     this.totallocations = this.updatelocations;
+
+   }
 
   // dateInput callback for fromDate and toDate
    dateselected() {

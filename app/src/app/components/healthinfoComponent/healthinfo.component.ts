@@ -25,6 +25,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   // addlinfo= any;
   public selected1: string;
   public selected2: string;
+  public selected3 = true;
 
   constructor(
     private router: Router,
@@ -69,6 +70,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     if (select1) {
       this.selected1 = select1;
       this.selected2 = select2;
+      console.log('selected1', this.selected1);
       this.val1 = select1;
       this.val2 = select2;
     }

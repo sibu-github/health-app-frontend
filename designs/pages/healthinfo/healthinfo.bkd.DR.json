@@ -2877,6 +2877,7 @@
                                         "915794ae-6b32-c8de-0336-cf9c5525a1b4": {
                                             "paletteKey": "NG-RadioGroup",
                                             "parentEditorKey": "2fa1bda7-9f9c-3481-5a9b-7b08571faa0c",
+                                            "isCommented": "false",
                                             "designerReference": [
                                                 {
                                                     "_key": "componentLabel",
@@ -2949,6 +2950,7 @@
                                             "294c8264-6262-02dc-e706-57304e7382c9": {
                                                 "paletteKey": "NG-Radio",
                                                 "parentEditorKey": "915794ae-6b32-c8de-0336-cf9c5525a1b4",
+                                                "isCommented": "false",
                                                 "designerReference": [
                                                     {
                                                         "_key": "style",
@@ -3040,6 +3042,7 @@
                                             "02fd7420-db01-cdf3-53fa-43dd772e8157": {
                                                 "paletteKey": "NG-Radio",
                                                 "parentEditorKey": "915794ae-6b32-c8de-0336-cf9c5525a1b4",
+                                                "isCommented": "false",
                                                 "designerReference": [
                                                     {
                                                         "_key": "style",

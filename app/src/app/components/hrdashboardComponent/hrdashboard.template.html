@@ -45,7 +45,7 @@
           <input matInput [(ngModel)]="locationName" name="locationName" type="text" placeholder="Location" required #location="ngModel" pattern="[a-zA-Z0-9\s]+$" [ngModelOptions]="{updateOn:&apos;change&apos;}" (ngModelChange)="locationFilter()" [matAutocomplete]="auto">
           <mat-icon matSuffix>keyboard_arrow_down</mat-icon>
         </mat-form-field>
-        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-autocomplete #auto="matAutocomplete" (opened)="clearValue()" (optionSelected)="selected($event)">
           <mat-option *ngFor="let location of updatelocations" [value]="location.locationName">
             {{location.locationName}}
           </mat-option>
