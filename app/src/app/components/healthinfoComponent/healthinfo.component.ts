@@ -25,8 +25,9 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   // addlinfo= any;
   public selected1: string;
   public selected2: string;
-  public selected3 = true;
-
+  public selected3:string = 'true';
+  public answer: string = "";
+  public answer2: string = "";
   constructor(
     private router: Router,
     private masterdata: masterdataService,
@@ -55,8 +56,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     }
   }
 
-  answer: string = "";
-  answer2: string = "";
+  
   //answer3: string = '';
   shortTextOne = "had fever";
   shortTextTwo = "had Personal Contact";
@@ -67,12 +67,11 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     //Getting the saved user responses and updating in the DOM
     let select1 = this.nLocalStorage.getValue("val1");
     let select2 = this.nLocalStorage.getValue("val2");
-    if (select1) {
-      this.selected1 = select1;
-      this.selected2 = select2;
-      console.log('selected1', this.selected1);
-      this.val1 = select1;
-      this.val2 = select2;
+    if (select1 || select2) {
+      this.selected1 = select1.toString();
+      this.selected2 = select2.toString();
+      this.val1 = select1.toString();
+      this.val2 = select2.toString();
     }
   }
 
@@ -97,7 +96,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   }
   onChangeRadioTwo(e, questionIndex) {
     this.val2 = e.value;
-    this.answer = this.val2;
+    this.answer2 = this.val2;
     if (questionIndex == "2") {
       this.masterdata.answer2 = this.val2;
 
