@@ -47,7 +47,7 @@
             },
             {
                 "_key": "pLayoutAlign",
-                "_value": "stretch",
+                "_value": "start",
                 "_type": "a",
                 "_attrDef": "p"
             },
@@ -620,6 +620,12 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[ngClass]",
+                        "_value": "[ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                        "_type": "a",
+                        "_attrDef": "c"
                     }
                 ],
                 "7e1e18a1-b453-c5ef-b0d8-f8fdea46bd48": {
@@ -1212,7 +1218,7 @@
                                     },
                                     {
                                         "_key": "layoutAlign",
-                                        "_value": "start",
+                                        "_value": "end",
                                         "_type": "a",
                                         "_attrDef": "p"
                                     },
@@ -5288,6 +5294,12 @@
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "_visibility": false
+                                },
+                                {
+                                    "_key": "[ngClass]",
+                                    "_value": "[ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                                    "_type": "a",
+                                    "_attrDef": "c"
                                 }
                             ],
                             "eaf31827-b140-54c0-d1c1-3c1f3e30c52a": {
@@ -5529,6 +5541,12 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[ngClass]",
+                        "_value": "[ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                        "_type": "a",
+                        "_attrDef": "c"
                     }
                 ],
                 "9916b57b-8ea8-3bf7-ab2a-0542c0b71f43": {

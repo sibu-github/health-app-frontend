@@ -548,3 +548,80 @@ a{
   height: 3.1em;
   overflow-y: scroll;
 }
+
+.primary {
+    .mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: right!important;
+     
+}
+}
+.secondary {
+    .mat-form-field {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+     
+}
+}
+
+.declaration_container{
+    position: relative;
+    text-align: center;
+}
+
+.declaration_form{
+position: absolute;
+    left: 8.73%;
+    right: 8.43%;
+    top: 4.0%;
+    bottom: 83.36%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.449346px;
+    text-transform: capitalize;
+    flex: auto;
+    color: #283552;
+}
+
+.declaration_form2{
+position: absolute;
+    left: 5.73%;
+    right: 5.43%;
+    top: 15.0%;
+    bottom: 78.07%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 1.1em;
+    text-align: center;
+    letter-spacing: 0.001px;
+    text-transform: capitalize;
+
+}
+
+.declaration_message{
+position: absolute;
+    left: 5.83%;
+    right: 5.53%;
+    top: 22%;
+    bottom: 46.5%;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #283552;
+}
+
+.declaration_image{
+    width: 18.5em;
+    height: 22.7em;
+}

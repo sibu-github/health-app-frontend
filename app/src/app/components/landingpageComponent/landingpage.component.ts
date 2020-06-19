@@ -46,6 +46,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "ko", viewValue: "한국어" },
     { value: "th", viewValue: "ไทย" },
     { value: "zh-CN", viewValue: "中文（普通话)" },
+    {value:"ur",viewValue:"اردو"}
   ];
   selectedObjects: any[];
 

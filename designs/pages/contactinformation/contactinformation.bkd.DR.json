@@ -1294,6 +1294,12 @@
                                             "_value": "ngForm",
                                             "_type": "kv",
                                             "_attrDef": "c"
+                                        },
+                                        {
+                                            "_key": "[ngClass]",
+                                            "_value": " [ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                                            "_type": "a",
+                                            "_attrDef": "c"
                                         }
                                     ],
                                     "73544c5b-30d4-74bc-35ea-561263cf63ba": {
@@ -6535,6 +6541,12 @@
                                 "_key": "#contactInfo",
                                 "_value": "ngForm",
                                 "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "[ngClass]",
+                                "_value": " [ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                                "_type": "a",
                                 "_attrDef": "c"
                             }
                         ],

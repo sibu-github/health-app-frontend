@@ -24,6 +24,7 @@ import { HeroService } from '../../services/hero/hero.service';
 export class pageinformationComponent extends NBaseComponent implements OnInit {
   validclick: Boolean;
   defaultLocationName = "India";
+  languageclass:Boolean;  //language flag to check for urdu
   phone;
   firstName: any; // kept for build error
   lastName: any; // kept for build error
@@ -71,6 +72,7 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     { value: "th", viewValue: "Thai" },
     { value: "zh-CN", viewValue: "Chinese (Mandarian)" },
     // {value: 'zh-TW', viewValue: 'CHINESE (TRADITIONAL)'}
+    {value:"ur",viewValue:"Urdu"},
   ];
 
   doSomething(event) {
@@ -125,6 +127,12 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
           { type: "visitor", viewValue: "游客" },
           { type: "employee", viewValue: "雇员" },
         ],
+        "ur":[
+          { type: "vendor", viewValue: "فروش" },
+          { type: "customer", viewValue: "صارف" },
+          { type: "visitor", viewValue: "زائرین" },
+          { type: "employee", viewValue: "ملازم" },
+        ]
       };
 
       let language = this.nLocalStorage.getValue("language") || "en";
@@ -232,4 +240,18 @@ export class pageinformationComponent extends NBaseComponent implements OnInit {
     this.locationName = value;
     this.setLocationVal();
   }
+
+
+  //checking for urdu language
+  languageClass(){
+  let language=this.nLocalStorage.getValue("language") || "en";
+  if(language === "ur"){
+      return true;
+  }else{
+      return false;
 }
+}
+
+
+}
+

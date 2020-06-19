@@ -106,5 +106,11 @@
         "componentName": "forceupdateComponent",
         "isEntry": false,
         "createDate": "2020-06-14T10:26:38.798Z"
+    },
+    "a85168be-7f0e-c59d-74ec-f5689956b43e": {
+        "appPageName": "languageTestpage",
+        "componentName": "languagetestpageComponent",
+        "isEntry": false,
+        "createDate": "2020-06-16T07:49:16.243Z"
     }
 }

@@ -66,6 +66,10 @@
             "path": "model"
         },
         {
+            "path": "languagetest",
+            "component": "languagetestpageComponent"
+        },
+        {
             "path": "''",
             "redirectTo": "/home",
             "pathMatch": "full",
