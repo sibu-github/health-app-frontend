@@ -67,7 +67,7 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     //Getting the saved user responses and updating in the DOM
     let select1 = this.nLocalStorage.getValue("val1");
     let select2 = this.nLocalStorage.getValue("val2");
-    if (select1 || select2) {
+    if (select1 || select2 || !select1) {
       this.selected1 = select1.toString();
       this.selected2 = select2.toString();
       this.val1 = select1.toString();
@@ -114,7 +114,11 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
   }
 
   onBack() {
-    this.router.navigate(["/landingpage"]);
+       if (window["cordova"]) {
+      this.router.navigate(["/landingpage"]);
+    }
+    this.router.navigate(["/landpage"]);
+    
   }
   onNext() {
     if (this.val1 && this.val2) {
