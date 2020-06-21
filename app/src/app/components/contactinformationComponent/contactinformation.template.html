@@ -20,7 +20,7 @@
             <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
               <form #contactInfo="ngForm" [ngClass]=" languageClass()? &apos;primary&apos; : &apos;secondary&apos;" style="width:100%;height:100%;">
                 <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                  <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" pattern="([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+\.)+[a-z]{2,})" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)">
+                  <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)" [pattern]="emailPattern">
 
                 </mat-form-field>
                 <div *ngIf="EmailId.errors &amp;&amp; (EmailId.dirty || EmailId.touched || validclick)">
@@ -56,7 +56,10 @@
             <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="space-around stretch" [fxShow]="true" [fxHide]="false">
               <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false"><button mat-button style="margin-top:20px;" (click)="navigatePrev()">
                   <mat-icon>keyboard_arrow_left</mat-icon>{{locales.back}}
-                </button></div>
+                </button>
+                <div>
+                </div>
+              </div>
               <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start end" [fxShow]="true" [fxHide]="false"><button mat-button style="color: #FFFFFF;height: 60px;width: 134px;font-family: Poppins; font-style: normal; font-weight: 600;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2); background:#5EA73E;border-radius: 44px;" (click)="contactSubmit(contactInfo)">{{locales.cont}}</button></div>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
@@ -90,7 +93,7 @@
       <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <form #contactInfo="ngForm" [ngClass]=" languageClass()? &apos;primary&apos; : &apos;secondary&apos;" style="width:100%;height:100%;">
           <mat-form-field style="width:100%;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" pattern="([A-Za-z]|[0-9])[A-Za-z0-9.]+[A-Za-z0-9]@((?:[-a-z0-9]+\.)+[a-z]{2,})" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)">
+            <input matInput [(ngModel)]="email" name="email" type="text" placeholder="{{locales.Email}}" required #EmailId="ngModel" oninput="this.value = this.value.toLowerCase()" [ngModelOptions]="{ updateOn:change}" (keyup)="onBlurEmail(EmailId)" [pattern]="emailPattern">
 
           </mat-form-field>
           <div *ngIf="EmailId.errors &amp;&amp; (EmailId.dirty || EmailId.touched || validclick)">

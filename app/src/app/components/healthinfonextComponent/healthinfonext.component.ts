@@ -39,9 +39,9 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     //Getting the saved user responses and updating in the DOM
     let select3 = this.nLocalStorage.getValue("val3");
     let addlinformation = this.nLocalStorage.getValue("addlinfo");
-    if (select3) {
-      this.selected3 = select3;
-      this.val3 = select3;
+    if (select3 || !select3) {
+      this.selected3 = select3.toString();
+      this.val3 = select3.toString();
       if (this.val3 == "true") {
         this.enableTextArea = true;
         this.name = addlinformation;

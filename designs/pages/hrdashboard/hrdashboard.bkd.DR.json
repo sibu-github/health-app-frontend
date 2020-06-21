@@ -2431,7 +2431,7 @@
                             },
                             {
                                 "_key": "(opened)",
-                                "_value": "",
+                                "_value": "clearValue()",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_complexity": "advanced"
