@@ -92,6 +92,11 @@
         "submittedby": "Presentado por",
         "classifyUser": "Clasificar usuario",
         "ingredion": "Ingredion",
-        "closeError": "El usuario canceló el inicio de sesión"
+        "closeError": "El usuario canceló el inicio de sesión",
+        "cpn": "Confirmar número de teléfono",
+        "declarationForm": "FORMULÁRIO DE DECLARAÇÃO",
+        "declarationMessage": "Ayúdanos a responder las siguienets preguntas y comaprte con tus amigos y familiares las últimas actualizaciones sobre Covid-19 de Ingredion Family y recuerda que \"estamos juntos en esto y lo superaremos juntos\"",
+        "filters": "filtros",
+        "declarationForm2": "(Detección de coronavirus de novela 2019)"
     }
 }

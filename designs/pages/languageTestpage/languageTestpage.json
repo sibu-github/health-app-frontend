@@ -1,0 +1,14 @@
+{
+    "appPageId": "a85168be-7f0e-c59d-74ec-f5689956b43e",
+    "appPageName": "languageTestpage",
+    "componentName": "languagetestpageComponent",
+    "selectorName": "bh-languagetestpage",
+    "htmlFileName": "languagetestpage.template.html",
+    "tsFileName": "languagetestpage.component.ts",
+    "createDate": "2020-06-16T07:49:16.243Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

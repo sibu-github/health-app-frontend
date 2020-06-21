@@ -93,7 +93,12 @@
             "submittedby": "Submitted By",
             "classifyUser": "Classify User",
             "ingredion": "Ingredion",
-            "closeError": "User Cancelled the Login"
+            "closeError": "User Cancelled the Login",
+            "cpn": "Confirm Phone Number",
+            "declarationForm": "INDIVIDUAL DECLARATION FORM ",
+            "declarationMessage": "Let's answer few questions and inform our friends and families with our latest ground level Covid-19 updates from Ingredion Family and we believe \"We are in this together and we will get through this together\"",
+            "filters": "filters",
+            "declarationForm2": "(2019-Novel Coronavirus Screening)"
         }
     },
     "zh-CN": {
@@ -190,7 +195,12 @@
             "submittedby": "由...所提交",
             "classifyUser": "分类用户",
             "ingredion": "侵略",
-            "closeError": "用户取消了登录"
+            "closeError": "用户取消了登录",
+            "cpn": "确认电话号码",
+            "declarationForm": "个人声明表",
+            "declarationMessage": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
+            "filters": "过滤器",
+            "declarationForm2": "（2019-小说冠状病毒筛选）"
         }
     },
     "zh-TW": {
@@ -287,7 +297,12 @@
             "submittedby": "由...所提交",
             "classifyUser": "分類用戶",
             "ingredion": "侵略",
-            "closeError": "用戶取消了登錄"
+            "closeError": "用戶取消了登錄",
+            "cpn": "确认电话号码",
+            "declarationForm": "個人聲明表",
+            "declarationMessage": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
+            "filters": "過濾器",
+            "declarationForm2": "（2019-小說冠狀病毒篩選）"
         }
     },
     "es": {
@@ -384,7 +399,12 @@
             "submittedby": "Presentado por",
             "classifyUser": "Clasificar usuario",
             "ingredion": "Ingredion",
-            "closeError": "El usuario canceló el inicio de sesión"
+            "closeError": "El usuario canceló el inicio de sesión",
+            "cpn": "Confirmar número de teléfono",
+            "declarationForm": "FORMULÁRIO DE DECLARAÇÃO",
+            "declarationMessage": "Ayúdanos a responder las siguienets preguntas y comaprte con tus amigos y familiares las últimas actualizaciones sobre Covid-19 de Ingredion Family y recuerda que \"estamos juntos en esto y lo superaremos juntos\"",
+            "filters": "filtros",
+            "declarationForm2": "(Detección de coronavirus de novela 2019)"
         }
     },
     "pt": {
@@ -481,7 +501,12 @@
             "submittedby": "Enviado por",
             "classifyUser": "Classificar usuário",
             "ingredion": "Ingrediente",
-            "closeError": "O usuário cancelou o login"
+            "closeError": "O usuário cancelou o login",
+            "cpn": "Confirmar número de telefone",
+            "declarationForm": "FORMULÁRIO DE DECLARAÇÃO INDIVIDUAL",
+            "declarationMessage": "Vamos responder algumas perguntas e informar nossos amigos e familiares sobre as atualizações mais recentes da COVID-19, já que na Família Ingredion nós acreditamos que \"estamos todos unidos e vamos passar por isso juntos!\"",
+            "filters": "filtros",
+            "declarationForm2": "(2019-Novo rastreio de coronavírus)"
         }
     },
     "ko": {
@@ -578,7 +603,12 @@
             "submittedby": "에 의해 제출 된",
             "classifyUser": "사용자 분류",
             "ingredion": "인 그리 디언",
-            "closeError": "사용자가 로그인을 취소했습니다"
+            "closeError": "사용자가 로그인을 취소했습니다",
+            "cpn": "전화 번호 확인",
+            "declarationForm": "개인별 체크 양식",
+            "declarationMessage": "몇 가지 질문에 답하고, 친구들과 가족들에게 Ingredion Family 에 나온 Covid-19 관련 최신 업데이트 사항 알려주며, \"우리는 늘 함께이며, 모두 힘을 합쳐 이 문제를 해결할 것\"이라고 믿습니다.",
+            "filters": "필터",
+            "declarationForm2": "(2019- 노벨 코로나 바이러스 검사)"
         }
     },
     "th": {
@@ -675,7 +705,12 @@
             "submittedby": "ส่งมาโดย",
             "classifyUser": "จำแนกผู้ใช้",
             "ingredion": "Ingredion",
-            "closeError": "ผู้ใช้ยกเลิกการเข้าสู่ระบบ"
+            "closeError": "ผู้ใช้ยกเลิกการเข้าสู่ระบบ",
+            "cpn": "ยืนยันหมายเลขโทรศัพท์",
+            "declarationForm": "แบบฟอร์มการยืนยันข้อมูลรายบุคคล",
+            "declarationMessage": "ร่วมตอบคำถาม และบอกเพื่อน ๆ และครอบครัวของเราด้วยการให้ข้อมูลเกี่ยวกับโควิด-19 จากครอบครัวอินกริดิออน และเราเชื่อมั่นว่า \"เราอยู่ในสถานะการณ์นี้ด้วยกันและจะผ่านสิ่งนี้ไปด้วยกัน\"",
+            "filters": "ฟิลเตอร์",
+            "declarationForm2": "(2019- การคัดกรอง Coronavirus นวนิยาย)"
         }
     },
     "de": {
@@ -772,7 +807,114 @@
             "submittedby": "Eingereicht von",
             "classifyUser": "Benutzer klassifizieren",
             "ingredion": "Zutat",
-            "closeError": "Benutzer hat die Anmeldung abgebrochen"
+            "closeError": "Benutzer hat die Anmeldung abgebrochen",
+            "cpn": "Telefonnummer bestätigen",
+            "declarationForm": "INDIVIDUELLES ERKLÄRUNGSFORMULAR",
+            "declarationMessage": "Beantworten wir einige Fragen und informieren Sie unsere Freunde und Familien mit unseren neuesten Covid-19-Updates von Ingredion Family. Wir glauben, dass wir zusammen dabei sind und dies gemeinsam schaffen werden.",
+            "filters": "Filter",
+            "declarationForm2": "(2019-Novel Coronavirus Screening)"
+        }
+    },
+    "ur": {
+        "localeId": "ur",
+        "localeName": "Urdu",
+        "isDefaultLanguage": false,
+        "properties": {
+            "yes": "جی ہاں",
+            "FirstName": "پہلا نام",
+            "LastName": "آخری نام",
+            "Location": "مقام",
+            "ClassifyYourself": "اپنے آپ کو درجہ بند کریں",
+            "Continue": "جاری رہے",
+            "loginmessage": "آپ کے اکاؤنٹ میں لاگ ان کریں!",
+            "username": "صارف نام",
+            "password": "پاس ورڈ",
+            "rememberme": "مجھے پہچانتے ہو",
+            "forgotpassword": "پاسورڈ بھول گے؟",
+            "dashboard": "ڈیش بورڈ",
+            "hrwelcome": "ہیلو HR ایڈمن!",
+            "hrmessage2": "یہ آپ کے علاقے کے ل employees مجموعی طور پر ملازمین کا صحت کا ریکارڈ ہے",
+            "start": "شروع کرتے ہیں",
+            "develop": "تیار کردہ",
+            "healthinformation": "صحت سے متعلق معلومات",
+            "question1": "1. کیا آپ کو درج ذیل میں سے کوئی علامت ہے؟",
+            "fever": "* آخری 72 گھنٹوں کے اندر بخار؟",
+            "cough": "* پچھلے 14 دنوں میں کھانسی ، سانس کی قلت ، یا سانس لینے میں دشواری؟",
+            "chills": "* پچھلے 14 دنوں میں سردی لگ رہی ہے ، پٹھوں میں درد ، سر درد ، گلے کی سوزش ، یا ذائقہ یا بو کا نیا نقصان؟",
+            "choose": "براہ کرم NO کا انتخاب کریں ، اگر آپ کو لگتا ہے کہ آپ کے علامات COVID-19 کے علاوہ کسی موجودہ حالت کی وجہ سے ہیں۔",
+            "question2": "Have. کیا آپ گذشتہ 14 دن کے اندر قریبی ذاتی رابطہ میں رہے ہیں ، کون ہے جو کوایوڈ 19 کا ایک مشتبہ معاملہ ہے جس کی جانچ پڑتال کے نتائج صحت سے متعلقہ فراہم کنندہ کے زیر التواء یا تصدیق شدہ ہیں؟",
+            "no": "نہیں",
+            "thankyoumessage": "اپنی صحت سے متعلق معلومات فراہم کرنے کے ل!! ہم آپ کی کوشش کی تعریف کرتے ہیں۔",
+            "thankyou": "شکریہ",
+            "developedby": "تیار کردہ بذریعہ",
+            "login": "لاگ ان کریں",
+            "travel": "سفر کا انکشاف",
+            "question3": "you. کیا آپ ، یا کسی کے ساتھ آپ کا گذشتہ 14 دن کے اندر سفر ہوا ہے؟ اگر ایسا ہے تو ، براہ کرم کن مقامات کی فہرست بنائیں",
+            "inputhelp": "واشنگٹن ، اسپرنگ فیلڈ ، فرینکلن اور گرین ول",
+            "back": "پیچھے",
+            "continue": "جاری رہے",
+            "Personalinformation": "ذاتی معلومات",
+            "firstname": "پہلا نام",
+            "pocs": "صرف حرف حرف کی اجازت ہے",
+            "lir": "آخری نام ضروری ہے",
+            "lastname": "آخری نام",
+            "cont": "جاری رہے",
+            "sir": "سائن ان کی ضرورت ہے",
+            "Signatureinvalid": "دستخط غلط ہے",
+            "certconf": "میں تصدیق کرتا ہوں کہ اس درخواست میں جمع کرائی جانے والی معلومات میرے بہترین علم کے مطابق صحیح اور درست ہے اور میں انگریڈین کو قبول کرتا ہوں",
+            "terms": "اصطلاحات اور ضوابط",
+            "termsmessage": "اگر مذکورہ بالا سوالوں میں سے کسی کا جواب ہاں میں ہے تو ، اس شخص کو مطلع کریں جس نے آپ کو یہ فارم دیا تھا۔ وہ وضاحت کرے گا کہ آپ کس طرح اضافی معلومات فراہم کرسکتے ہیں۔ آپ جو اضافی معلومات فراہم کرتے ہیں اس پر انحصار کرتے ہوئے ، آپ کو آن سائٹ کی اجازت ہوسکتی ہے۔ اگر آپ اضافی معلومات فراہم کرنا چاہتے ہیں تو ، براہ کرم اس فارم کے پچھلے حصے پر اپنی رابطہ کی معلومات فراہم کریں۔ اسکریننگ کے ان طریق کار کے ایک حصے کے طور پر ، ہم آپ سے سفر اور صحت سے متعلق معلومات اکٹھا کریں گے ، بشمول آپ کا درجہ حرارت اور کسی COVID-19 جیسے علامات کے بارے میں معلومات یا آپ یا آپ کے اہل خانہ نے جو تجربہ کیا ہے ، ہم ان معلومات کو استعمال کریں گے۔ محفوظ کام کی جگہ کو یقینی بنانا ، صحت عامہ کی اپنی ذمہ داریوں کو پورا کرنا ، اور / یا صحت سے متعلق فوائد کا انتظام",
+            "Submit": "میں تصدیق اور جمع کرواتا ہوں",
+            "confirmlocation": "مقام کی تصدیق کریں",
+            "Signature": "دستخط",
+            "certifyinfo": "معلومات کی تصدیق کریں",
+            "eir": "ای میل آئی ڈی کی ضرورت ہے",
+            "pclph": "براہ کرم اپنے موجودہ مقام اور فون نمبر کی تازہ کاری کریں",
+            "cd": "تفصیلات کی تصدیق کریں",
+            "gcn": "انگریزین نام کی ضرورت ہے",
+            "cn": "کمپنی کا نام ضروری ہے",
+            "poc": "براہ کرم صرف حرف درج کریں",
+            "lr": "جگہ ضروری ہے",
+            "pnrl": "فون نمبر میں صرف کم سے کم 5 ہندسوں اور زیادہ سے زیادہ 12 ہندسوں پر مشتمل ہونا چاہئے",
+            "pnr": "فون نمبر کی ضرورت ہے",
+            "Emailidinvalid": "ای میل غلط ہے",
+            "locationrequire": "مقام مطلوب ہے",
+            "contactinfo": "رابطے کی معلومات",
+            "phone": "فون نمبر",
+            "Email": "ای میل اڈریس",
+            "companyname": "کمپنی کا نام",
+            "ingredoncontact": "انجریڈین رابطہ",
+            "fir": "پہلا نام ضروری ہے",
+            "personalinformation": "ذاتی معلومات",
+            "hrq1": "حال ہی میں بخار ہوا تھا",
+            "hrq2": "کوڈ ملزم سے رابطہ تھا",
+            "hrq3": "بیرون ملک سفر کیا",
+            "positive": "مثبت",
+            "negative": "منفی",
+            "classifyyourself": "اپنے آپ کو درجہ بند کریں",
+            "pep": "براہ کرم پاس ورڈ درج کریں",
+            "chooseopt": "جاری رکھنے کے لئے اختیارات کا انتخاب کریں",
+            "lase": "بطور ملازم جاری رکھیں",
+            "lahr": "بطور HR جاری رکھیں",
+            "fromdate": "اس تاریخ سے",
+            "todate": "آج تک",
+            "byregion": "بذریعہ ریجن",
+            "countrywise": "ملک وار",
+            "plantlocation": "پلانٹ + مقام",
+            "global": "عالمی",
+            "bno": "بلڈنگ نمبر",
+            "flno": "منزل نمبر",
+            "scno": "ونگ / سیکشن نمبر",
+            "cuno": "مکعب / آفس نمبر",
+            "submittedby": "کی طرف سے پیش",
+            "classifyUser": "صارف کی درجہ بندی کریں",
+            "ingredion": "اجزاء",
+            "closeError": "صارف نے لاگ ان منسوخ کردیا",
+            "cpn": "فون نمبر کی تصدیق کریں",
+            "declarationForm": "اندرونی تعی FORن کا فارم",
+            "declarationMessage": "آئیے کچھ سوالات کے جوابات دیں اور اپنے دوستوں اور کنبہوں کو انگیرینون فیملی کی تازہ ترین زمینی سطح کی کوویڈ۔",
+            "filters": "فلٹرز",
+            "declarationForm2": "(2019-ناول کورونا وائرس اسکریننگ)"
         }
     }
 }

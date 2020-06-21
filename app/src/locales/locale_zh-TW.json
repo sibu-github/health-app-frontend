@@ -92,6 +92,11 @@
         "submittedby": "由...所提交",
         "classifyUser": "分類用戶",
         "ingredion": "侵略",
-        "closeError": "用戶取消了登錄"
+        "closeError": "用戶取消了登錄",
+        "cpn": "确认电话号码",
+        "declarationForm": "個人聲明表",
+        "declarationMessage": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
+        "filters": "過濾器",
+        "declarationForm2": "（2019-小說冠狀病毒篩選）"
     }
 }

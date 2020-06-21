@@ -94,4 +94,15 @@ export class contactinformationComponent extends NBaseComponent
   navigatePrev() {
     this.router.navigate(["/personalinfo"]);
   }
+
+ //checking for urdu language
+  languageClass(){
+  let language=this.nLocalStorage.getValue("language") || "en";
+  if(language === "ur"){
+      return true;
+  }else{
+      return false;
+}
+}
+
 }

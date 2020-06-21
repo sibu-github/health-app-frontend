@@ -92,6 +92,11 @@
         "submittedby": "Eingereicht von",
         "classifyUser": "Benutzer klassifizieren",
         "ingredion": "Zutat",
-        "closeError": "Benutzer hat die Anmeldung abgebrochen"
+        "closeError": "Benutzer hat die Anmeldung abgebrochen",
+        "cpn": "Telefonnummer bestätigen",
+        "declarationForm": "INDIVIDUELLES ERKLÄRUNGSFORMULAR",
+        "declarationMessage": "Beantworten wir einige Fragen und informieren Sie unsere Freunde und Familien mit unseren neuesten Covid-19-Updates von Ingredion Family. Wir glauben, dass wir zusammen dabei sind und dies gemeinsam schaffen werden.",
+        "filters": "Filter",
+        "declarationForm2": "(2019-Novel Coronavirus Screening)"
     }
 }

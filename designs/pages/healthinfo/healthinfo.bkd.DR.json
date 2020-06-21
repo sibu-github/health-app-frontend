@@ -561,6 +561,12 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[ngClass]",
+                        "_value": "[ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                        "_type": "a",
+                        "_attrDef": "c"
                     }
                 ],
                 "b8c4ee11-e1b3-9a42-946d-966a93741657": {
@@ -6279,6 +6285,12 @@
                         "_value": "false",
                         "_type": "kv",
                         "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[ngClass]",
+                        "_value": "[ngClass]=\" languageClass()? 'primary' : 'secondary'\"",
+                        "_type": "a",
+                        "_attrDef": "c"
                     }
                 ],
                 "c9ccc01b-0a08-b2d5-bc37-317474897b9f": {

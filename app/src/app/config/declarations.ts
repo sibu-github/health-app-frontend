@@ -15,6 +15,8 @@ window["neutrinos"] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-languagetestpageComponent
+import { languagetestpageComponent } from '../components/languagetestpageComponent/languagetestpage.component';
 //CORE_REFERENCE_IMPORT-forceupdateComponent
 import { forceupdateComponent } from '../components/forceupdateComponent/forceupdate.component';
 //CORE_REFERENCE_IMPORT-logoutService
@@ -94,6 +96,8 @@ export const appDeclarations = [
   NMapComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-languagetestpageComponent
+languagetestpageComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-forceupdateComponent
 forceupdateComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-modelpoupComponent
@@ -165,5 +169,5 @@ commonService,
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [{path: 'home', component: homeComponent},{path: 'hrlogin', component: hrloginComponent},{path: 'hrdashboard', component: hrdashboardComponent},{path: 'landingpage', component: landingpageComponent},{path: 'healthinfo', component: healthinfoComponent},{path: 'thankyou', component: thankyouComponent},{path: 'login', component: loginComponent},{path: 'splash', component: splashComponent},{path: 'personalinfo', component: pageinformationComponent},{path: 'contactinfo', component: contactinformationComponent},{path: 'certifyinfo', component: certifyinformationComponent},{path: 'confirmdetails', component: confirmdetailsComponent},{path: 'hinfonext', component: healthinfonextComponent,
-children: []},{path: 'landpage', component: landingpageComponent},{path: 'optionpage', component: hroptionComponent},{path: 'model', component: modelpoupComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+children: []},{path: 'landpage', component: landingpageComponent},{path: 'optionpage', component: hroptionComponent},{path: 'model', component: modelpoupComponent},{path: 'languagetest', component: languagetestpageComponent},{path: '', redirectTo: '/home', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

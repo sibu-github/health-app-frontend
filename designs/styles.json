@@ -57,6 +57,26 @@
         "mat-select-panel",
         "ios-fix",
         "thankyou-btm-logo",
-        "bcd-logo"
+        "bcd-logo",
+        "paddin-btm-1em",
+        "logout-green-icon",
+        "logout-amber-icon",
+        "mat-dialog-container",
+        "update-head",
+        "updatelink",
+        "alertStyle",
+        "btn",
+        "watsnew",
+        "fu-title",
+        "padding-b5",
+        "fu-msg",
+        "fu-list",
+        "primary",
+        "secondary",
+        "declaration_container",
+        "declaration_form",
+        "declaration_form2",
+        "declaration_message",
+        "declaration_image"
     ]
 }

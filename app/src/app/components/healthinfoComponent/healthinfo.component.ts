@@ -124,4 +124,15 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
       this.datasharingService.openSnackBar("Please answer for questions", "X");
     }
   }
+
+  //checking for urdu language
+  languageClass(){
+  let language=this.nLocalStorage.getValue("language") || "en";
+  if(language === "ur"){
+      return true;
+  }else{
+      return false;
+}
+}
+
 }

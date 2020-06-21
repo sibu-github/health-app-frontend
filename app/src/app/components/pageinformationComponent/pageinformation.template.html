@@ -1,4 +1,4 @@
-<div fxLayout="row wrap" style="width:100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" fxFill fxHide.xs="true">
+<div fxLayout="row wrap" style="width:100%" fxLayoutAlign="start start" [fxShow]="true" [fxHide]="false" fxFill fxHide.xs="true">
   <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
     <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
       <div fxLayout="column wrap" style="width:100px;height:100%;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
@@ -8,14 +8,14 @@
         </div>
       </div>
     </div>
-    <div fxLayout="row wrap" style="width:100%;padding-top: 4em; margin: 0 auto;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%;padding-top: 4em; margin: 0 auto;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" [ngClass]=" languageClass()? &apos;primary&apos; : &apos;secondary&apos;">
       <mat-card style="margin: 0 auto;">
         <mat-card-content>
           <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
             <div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; letter-spacing: 0.5px; text-transform: capitalize;">
                 {{locales.personalinformation}}</label></div>
             <div fxLayout="row wrap" style="width:20%;" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png"></div>
-            <div fxLayout="row wrap" style="width: 100%" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+            <div fxLayout="row wrap" style="width: 100%" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false">
               <form #personalInfo="ngForm" style="width:100%;height:100%;">
                 <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
                   <input matInput [(ngModel)]="firstname" name="firstname" type="text" placeholder="{{locales.firstname}}" required #FirstName="ngModel" [ngModelOptions]="{updateOn:&apos;change&apos;}" pattern="[a-zA-Z\s]+$">
@@ -82,12 +82,12 @@
           <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="70" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"></div>
           <div fxLayout="column wrap" style="width:100%;height:100%;" fxFlex="30" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="height :20px;width:80px;" width="50px"></div>
         </div>
-        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; letter-spacing: 0.5px; text-transform: capitalize;">
+        <div fxLayout="row wrap" style="width:100%;height:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label [ngClass]=" languageClass()? &apos;primary&apos; : &apos;secondary&apos;" style="margin-left:15px;color: #283552;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 20px; line-height: 30px; letter-spacing: 0.5px; text-transform: capitalize;">
             {{locales.personalinformation}}</label></div>
         <div fxLayout="row wrap" style="width:100%;" fxFlex="20" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Images\step1.png" style="margin-left:15px;"></div>
       </div>
     </div>
-    <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%;height:400px;" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false" [ngClass]=" languageClass()? &apos;primary&apos; : &apos;secondary&apos;">
       <div fxLayout="column wrap" style="width:100%;height:100%;margin-left:15px;" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <form #personalInfo="ngForm" style="width:100%;height:100%;">
           <mat-form-field style="width:100%;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 13px; line-height: 19px; letter-spacing: 0.5px;" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
