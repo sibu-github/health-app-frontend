@@ -30,6 +30,7 @@ export class contactinformationComponent extends NBaseComponent
   company: any; // kept for build error
   ingredioncontact: any; // kept for build error
   localdata: any;
+  emailPattern = "^([a-zA-Z0-9\.-_]+)@([a-z0-9\-]+).([a-z]{2,8}).([a-z]{2,8})$";
   constructor(private router: Router, private masterdata: masterdataService, private common: commonService,private nLocalStorage: NLocalStorageService) {
     super();
     this.updateLocaleLanguage();
