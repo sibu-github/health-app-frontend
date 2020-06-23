@@ -20,12 +20,15 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./hroption.template.html",
 })
 export class hroptionComponent extends NBaseComponent implements OnInit {
+      public defaultlang: string = "en";
+
   constructor(
     private userService: saveuserresponse,
     private router: Router,
     private nLocalStorage: NLocalStorageService
   ) {
     super();
+    this.updateLocaleLanguage()
   }
 
   ngOnInit() {}
@@ -61,5 +64,19 @@ export class hroptionComponent extends NBaseComponent implements OnInit {
 
   navigateToHR() {
     this.router.navigate(["/hrdashboard"]);
+  }
+
+   // get the previously selected language from local storage
+  // set the language if selected,
+  // by default set the language to English
+  updateLocaleLanguage() {
+    let language = this.nLocalStorage.getValue("language");
+    if (language) {
+      this.localeService.language = language;
+      this.defaultlang = language;
+      return;
+    }
+    // set default language to english
+    this.defaultlang = "en";
   }
 }
