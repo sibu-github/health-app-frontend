@@ -27,7 +27,7 @@
     "dev": {
         "name": "dev",
         "properties": {
-            "production": false,
+            "production": "true",
             "ssdURL": "https://health-appdev.azurewebsites.net",
             "tenantName": "blucocoondigital",
             "appName": "health-app",
@@ -52,7 +52,7 @@
     "prod": {
         "name": "prod",
         "properties": {
-            "production": true,
+            "production": "false",
             "ssdURL": "https://health-appdev.azurewebsites.net",
             "tenantName": "blucocoondigital",
             "appName": "health-app",
