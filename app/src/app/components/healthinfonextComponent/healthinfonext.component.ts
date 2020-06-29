@@ -21,12 +21,10 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./healthinfonext.template.html",
 })
 export class healthinfonextComponent extends NBaseComponent implements OnInit {
-  answer: string = "";
+  public answer: string="";
   addlinfo: any;
-  shortTextThree = "Travelled Outside Country";
-  enableTextArea: Boolean = false;
-  val3: any;
-  public selected3: string;
+  shortTextThree = "Travelled Outside Country";  
+  public selected3: string="";
   localdata: any;
   name = "";
   constructor(
@@ -37,18 +35,18 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
   ) {
     super();
     //Getting the saved user responses and updating in the DOM
-    let select3 = this.nLocalStorage.getValue("val3");
-    let addlinformation = this.nLocalStorage.getValue("addlinfo");
-    if (select3) {
-      this.selected3 = select3.toString();
-      this.val3 = select3.toString();
-      if (this.val3 == "true") {
-        this.enableTextArea = true;
-        this.name = addlinformation;
-      } else {
-        this.enableTextArea = false;
-      }
-    }
+    // let select3 = this.nLocalStorage.getValue("val3");
+    // let addlinformation = this.nLocalStorage.getValue("addlinfo");
+    // if (select3|| !select3) {
+    //   this.selected3 = select3.toString();
+    //   this.val3 = select3.toString();
+    //   if (this.val3 == "true") {
+    //     this.enableTextArea = true;
+    //     this.name = addlinformation;
+    //   } else {
+    //     this.enableTextArea = false;
+    //   }
+    // }
     // get the previously selected language from local storage
     // set the language if selected
     let language = this.nLocalStorage.getValue("language");
@@ -64,7 +62,22 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
     }
   }
 
+enableTextArea: Boolean = false;
+  val3: any;
   ngOnInit() {
+//Getting the saved user responses and updating in the DOM
+    let select3 = this.nLocalStorage.getValue("val3");
+    let addlinformation = this.nLocalStorage.getValue("addlinfo");
+    if (select3 || !select3) {
+      this.selected3 = select3.toString();
+      this.val3 = select3.toString();
+      if (this.val3 == "true") {
+        this.enableTextArea = true;
+        this.name = addlinformation;
+      } else {
+        this.enableTextArea = false;
+      }
+    }
     if (this.localdata && this.localdata.response.length > 0) {
       this.answer = this.localdata.response[2].answer;
       this.addlinfo = this.localdata.response[2].addlnfo;
@@ -104,7 +117,6 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
   }
   onNext(form) {
     this.masterdata.addlInfo = form.value.addlinfo;
-
     if (this.val3 != undefined && (this.val3 || !this.val3)) {
       this.nLocalStorage.setValue("val3", this.val3);
       if (this.val3 == "true") {
@@ -112,12 +124,13 @@ export class healthinfonextComponent extends NBaseComponent implements OnInit {
           //storing the addinfo in local storage
           this.nLocalStorage.setValue("addlinfo", form.value.addlinfo);
           this.router.navigate(["/certifyinfo"]);
-        } else if (form.value.addlinfo == undefined) {
+        } else if (form.value.addlinfo == undefined ) {
           this.datasharingService.openSnackBar("Please answer locations", "X");
         }
-      } else {
-        this.router.navigate(["/certifyinfo"]);
-      }
+       } 
+    else {
+         this.router.navigate(["/certifyinfo"]);
+       }
     } else {
       this.datasharingService.openSnackBar("Please select option ", "X");
     }

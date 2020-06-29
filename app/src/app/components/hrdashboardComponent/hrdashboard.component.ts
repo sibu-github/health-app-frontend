@@ -6,14 +6,19 @@ import { FormControl } from "@angular/forms";
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
-
 */
+//importing the logout service 
+import { logoutService } from 'app/services/logout/logout.service';
+
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { hrdashboard } from "app/sd-services/hrdashboard";
 /*
 Legacy Service import Example :
 import { HeroService } from '../../services/hero/hero.service';
 */
+//declaring the cordova variable
+declare var cordova: any;
+
 
 @Component({
   selector: "bh-hrdashboard",
@@ -44,7 +49,9 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
   constructor(
     private hrdashboard: hrdashboard,
     private getlocation: saveuserresponse,
-    private nLocalStorage: NLocalStorageService
+    private nLocalStorage: NLocalStorageService,
+    private logoutService: logoutService
+
   ) {
     super();
     this.localeService.language = "en";
@@ -140,5 +147,20 @@ export class hrdashboardComponent extends NBaseComponent implements OnInit {
    dateselected() {
      this.getDashboardData();
   }
+//displaying the logout button
+displayLogOut(){
+    if (window["cordova"]) {
+      return false;
+    }else{
+        return true;
+    }
+
+}
+
+//logout functionality
+logout(){
+this.logoutService.logout();
+}
+
 
 }

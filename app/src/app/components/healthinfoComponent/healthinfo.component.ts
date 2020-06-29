@@ -23,8 +23,8 @@ import { masterdataService } from "../../services/masterdata/masterdata.service"
 export class healthinfoComponent extends NBaseComponent implements OnInit {
   localdata: any;
   // addlinfo= any;
-  public selected1: string;
-  public selected2: string;
+  public selected1: string= "";
+  public selected2: string="";
   public selected3:string = 'true';
   public answer: string = "";
   public answer2: string = "";
@@ -113,12 +113,16 @@ export class healthinfoComponent extends NBaseComponent implements OnInit {
     }
   }
 
+/**bug fix */
+/** else condition missing and also redirecting to the confirmDetails page for mobile app and personalinfo page for web app*/
   onBack() {
        if (window["cordova"]) {
-      this.router.navigate(["/landingpage"]);
-    }
-    this.router.navigate(["/landpage"]);
-    
+      //this.router.navigate(["/landingpage"]);
+      this.router.navigate(["/confirmdetails"]);
+    }else{
+    //this.router.navigate(["/landpage"]);
+    this.router.navigate(["/personalinfo"]);
+  }
   }
   onNext() {
     if (this.val1 && this.val2) {
