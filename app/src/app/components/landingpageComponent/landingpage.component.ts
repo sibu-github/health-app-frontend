@@ -245,6 +245,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // if HRAdmin then we move to the optionpage
     let email = this.nLocalStorage.getValue("email");
     let jwtToken = this.nLocalStorage.getValue("jwtToken");
+    if(email!=null){
     let bh = await this.hrmailService.verifyEmail(email, jwtToken);
     if (
       bh &&
@@ -256,6 +257,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
         this.router.navigate(["/optionpage"]);
       });
       return;
+    }
     }
     // if the user is not HR Admin then check for employee
     this.checkIfUserSubmittedData();
@@ -363,7 +365,6 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     const profile: any = await this.http
       .get(graphMeEndpoint, { headers })
       .toPromise();
-
     this.nLocalStorage.setValue("email", profile.mail);
     this.nLocalStorage.setValue("username", profile.mail);
     this.nLocalStorage.setValue("username", profile.mail);

@@ -8,9 +8,9 @@ import {  MsalService } from "@azure/msal-angular";
 export class logoutService {
     constructor(private router: Router, private nLocalStorage: NLocalStorageService,private authService: MsalService,) { }
 
-    logout() {
-        this.authService.logout();
-        this.nLocalStorage.clearLocalStorage();
-        this.router.navigate(['/landingpage']);
+  async  logout() {
+       await this.authService.logout();
+       await this.nLocalStorage.clearLocalStorage();
+       await this.router.navigate(['/landingpage']);
     }
 }
