@@ -1,10 +1,6 @@
 <div fxLayout="column wrap" style="display:flex; width:100%; height:100%;padding-top:1em;" fxFlex="100" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <div fxLayout="row wrap" fxFlex="90" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/locod1.png" style="align-self:center;width:80px;padding-left:1em"></div>
-    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Carefirst.jpg" style="align-self:center;height: 60px;"></div>
-    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Fit4digital.png" style="align-self:center; width: 100px;"></div>
-    <div fxLayout="row wrap" fxLayoutAlign="end center" [fxShow]="true" [fxHide]="false" *ngIf="displayLogOut()"><img imgSrc="Web/logout.png" style="padding-right:2em;max-width:80%;" (click)="logout()"></div>
-  </div>
+  <bh-logo></bh-logo>
+  <div fxLayout="row wrap" fxLayoutAlign="end start" [fxShow]="true" [fxHide]="false" *ngIf="displayLogOut()"><img imgSrc="Web/logout.png" alt="logout button" style="padding-right: 2em; max-width: 3.5em;position: fixed;top: 10%;right: 1em;" (click)="logout()" title="logout button"></div>
   <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><label fxLayout fxHide.xs style="justify-content:center;font-size:20px;">
       {{locales.dashboard}}</label></div>
   <div fxLayout="row wrap" style="width:100%; height:100%;" fxLayoutAlign="center stretch" [fxShow]="true" [fxHide]="false">

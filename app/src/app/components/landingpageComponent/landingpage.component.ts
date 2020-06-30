@@ -301,10 +301,12 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       this.nLocalStorage.setValue("firstName", bh.local.result.user.firstName);
       this.nLocalStorage.setValue("lastName", bh.local.result.user.lastName);
       this.nLocalStorage.setValue("location", bh.local.result.user.location);
+      if(bh.local.result.user.phone!=null){
       this.nLocalStorage.setValue(
         "phone",
         bh.local.result.user.phone.replace(" ", "")
       ); // phone number received from AD contains space
+      }
       this.masterdata.email = bh.local.result.user.email;
     }
   }
@@ -368,7 +370,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.nLocalStorage.setValue("firstName", profile.givenName);
     this.nLocalStorage.setValue("lastName", profile.surname);
     this.nLocalStorage.setValue("location", profile.officeLocation);
+    if(profile.mobilePhone!=null){
     this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
+    }
     this.masterdata.email = profile.mail;
   }
 }
