@@ -35,7 +35,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   public defaultlang: string = "en";
   public showSpinner: boolean = false;
   public isMobileApp: boolean = false;
-  private isEmpLoggedIn: boolean = false;
+  public isEmpLoggedIn: boolean = false;
 
   // list all languages to be shown in the language selection drop down
   languages: any[] = [

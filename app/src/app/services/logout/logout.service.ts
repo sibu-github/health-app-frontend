@@ -6,10 +6,10 @@ import { NLocalStorageService } from "neutrinos-seed-services";
 
 @Injectable()
 export class logoutService {
-    constructor(private router: Router, private nLocalStorage: NLocalStorageService) { }
+    constructor(private router: Router, public nLocalStorage: NLocalStorageService) { }
 
     logout() {
-        this.nLocalStorage.clearLocalStorage();
-        this.router.navigate(['/landingpage']);
-    }
+    this.nLocalStorage.clearLocalStorage();
+    this.router.navigate(['/landingpage']);
+    } 
 }
