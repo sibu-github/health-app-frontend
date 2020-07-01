@@ -52,6 +52,7 @@ import { NeutrinosOAuthClientModule } from 'neutrinos-oauth-client';
 import { MsalModule } from "@azure/msal-angular";
 
 
+
 /**
  * adding the environments into the window object
 */
@@ -119,6 +120,7 @@ export const appImportModules: any = [
         clientId: environment.properties.clientIdWebLogin,
         authority: environment.properties.azureAuthority,
         redirectUri: environment.properties.redirectUrlWebLogin,
+        postLogoutRedirectUri: `${new URL(window.location.href).origin}/landingpage`
       },
       cache: {
         cacheLocation: "localStorage",
