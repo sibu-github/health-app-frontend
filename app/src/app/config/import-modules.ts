@@ -120,7 +120,7 @@ export const appImportModules: any = [
         clientId: environment.properties.clientIdWebLogin,
         authority: environment.properties.azureAuthority,
         redirectUri: environment.properties.redirectUrlWebLogin,
-        postLogoutRedirectUri: `${new URL(window.location.href).origin}/landingpage`
+        postLogoutRedirectUri: environment.properties.postLogoutRedirectUri
       },
       cache: {
         cacheLocation: "localStorage",
