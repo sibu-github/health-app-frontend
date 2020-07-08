@@ -97,6 +97,8 @@
         "declarationForm": "个人声明表",
         "declarationMessage": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
         "filters": "过滤器",
-        "declarationForm2": "（2019-小说冠状病毒筛选）"
+        "declarationForm2": "（2019-小说冠状病毒筛选）",
+        "viewTravelHealthNotice": "查看旅行健康通知（来自CDC）",
+        "viewSymptoms": "查看冠状病毒症状（来自CDC）"
     }
 }

@@ -97,6 +97,8 @@
         "declarationForm": "INDIVIDUAL DECLARATION FORM ",
         "declarationMessage": "Let's answer few questions and inform our friends and families with our latest ground level Covid-19 updates from Ingredion Family and we believe \"We are in this together and we will get through this together\"",
         "filters": "filters",
-        "declarationForm2": "(2019-Novel Coronavirus Screening)"
+        "declarationForm2": "(2019-Novel Coronavirus Screening)",
+        "viewTravelHealthNotice": "View Travel Health Notices (from CDC)",
+        "viewSymptoms": "View Coronavirus Symptoms (from CDC)"
     }
 }

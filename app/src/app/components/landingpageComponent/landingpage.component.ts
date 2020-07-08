@@ -1,5 +1,5 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit, AfterViewInit, NgZone } from "@angular/core";
+import { Component, OnInit, AfterViewInit, NgZone, ViewChild } from "@angular/core";
 import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
@@ -11,6 +11,10 @@ import { BroadcastService, MsalService } from "@azure/msal-angular";
 import { MatDialog } from "@angular/material/dialog";
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { MatSnackBar } from "@angular/material";
+
+import {cdclinksComponent} from '../cdclinksComponent/cdclinks.component'
+
+
 
 declare var cordova: any;
 /*
@@ -25,7 +29,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 @Component({
   selector: "bh-landingpage",
-  templateUrl: "./landingpage.template.html",
+  templateUrl: "./landingpage.template.html"
 })
 export class landingpageComponent extends NBaseComponent implements OnInit {
   // get the instance of the SystemService to read environment variables
@@ -49,6 +53,9 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     {value:"ur",viewValue:"اردو"}
   ];
   selectedObjects: any[];
+
+  @ViewChild(cdclinksComponent, {static: false}) cdclink: cdclinksComponent ; 
+
 
   constructor(
     public dialog: MatDialog,
@@ -121,6 +128,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
   languageSelect({ value }) {
     this.nLocalStorage.setValue("language", value);
     this.localeService.language = value;
+    this.cdclink.onChangeLanguage(value);
   }
 
   //when user selects lets starts button

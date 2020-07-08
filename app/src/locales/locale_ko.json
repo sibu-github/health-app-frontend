@@ -97,6 +97,8 @@
         "declarationForm": "개인별 체크 양식",
         "declarationMessage": "몇 가지 질문에 답하고, 친구들과 가족들에게 Ingredion Family 에 나온 Covid-19 관련 최신 업데이트 사항 알려주며, \"우리는 늘 함께이며, 모두 힘을 합쳐 이 문제를 해결할 것\"이라고 믿습니다.",
         "filters": "필터",
-        "declarationForm2": "(2019- 노벨 코로나 바이러스 검사)"
+        "declarationForm2": "(2019- 노벨 코로나 바이러스 검사)",
+        "viewTravelHealthNotice": "여행 건강 고지 사항보기 (CDC에서)",
+        "viewSymptoms": "CDC에서 코로나 바이러스 증상보기"
     }
 }

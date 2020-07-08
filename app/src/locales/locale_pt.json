@@ -97,6 +97,8 @@
         "declarationForm": "FORMULÁRIO DE DECLARAÇÃO INDIVIDUAL",
         "declarationMessage": "Vamos responder algumas perguntas e informar nossos amigos e familiares sobre as atualizações mais recentes da COVID-19, já que na Família Ingredion nós acreditamos que \"estamos todos unidos e vamos passar por isso juntos!\"",
         "filters": "filtros",
-        "declarationForm2": "(2019-Novo rastreio de coronavírus)"
+        "declarationForm2": "(2019-Novo rastreio de coronavírus)",
+        "viewTravelHealthNotice": "Exibir avisos de saúde de viagens (do CDC)",
+        "viewSymptoms": "Exibir sintomas de coronavírus (do CDC)"
     }
 }

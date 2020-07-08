@@ -98,7 +98,9 @@
             "declarationForm": "INDIVIDUAL DECLARATION FORM ",
             "declarationMessage": "Let's answer few questions and inform our friends and families with our latest ground level Covid-19 updates from Ingredion Family and we believe \"We are in this together and we will get through this together\"",
             "filters": "filters",
-            "declarationForm2": "(2019-Novel Coronavirus Screening)"
+            "declarationForm2": "(2019-Novel Coronavirus Screening)",
+            "viewTravelHealthNotice": "View Travel Health Notices (from CDC)",
+            "viewSymptoms": "View Coronavirus Symptoms (from CDC)"
         }
     },
     "zh-CN": {
@@ -200,7 +202,9 @@
             "declarationForm": "个人声明表",
             "declarationMessage": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
             "filters": "过滤器",
-            "declarationForm2": "（2019-小说冠状病毒筛选）"
+            "declarationForm2": "（2019-小说冠状病毒筛选）",
+            "viewTravelHealthNotice": "查看旅行健康通知（来自CDC）",
+            "viewSymptoms": "查看冠状病毒症状（来自CDC）"
         }
     },
     "zh-TW": {
@@ -302,7 +306,9 @@
             "declarationForm": "個人聲明表",
             "declarationMessage": "让我们回答几个问题，并向我们的朋友和家人介绍来自宜瑞安大家庭最新的Covid-19疫情信息，我们相信“只要我们在一起，我们将一起度过难关”。",
             "filters": "過濾器",
-            "declarationForm2": "（2019-小說冠狀病毒篩選）"
+            "declarationForm2": "（2019-小說冠狀病毒篩選）",
+            "viewTravelHealthNotice": "查看旅行健康通知（來自CDC）",
+            "viewSymptoms": "查看冠狀病毒症狀（來自CDC）"
         }
     },
     "es": {
@@ -404,7 +410,9 @@
             "declarationForm": "FORMULÁRIO DE DECLARAÇÃO",
             "declarationMessage": "Ayúdanos a responder las siguienets preguntas y comaprte con tus amigos y familiares las últimas actualizaciones sobre Covid-19 de Ingredion Family y recuerda que \"estamos juntos en esto y lo superaremos juntos\"",
             "filters": "filtros",
-            "declarationForm2": "(Detección de coronavirus de novela 2019)"
+            "declarationForm2": "(Detección de coronavirus de novela 2019)",
+            "viewTravelHealthNotice": "Ver avisos de salud de viaje (de los CDC)",
+            "viewSymptoms": "Ver los síntomas del coronavirus (de los CDC)"
         }
     },
     "pt": {
@@ -506,7 +514,9 @@
             "declarationForm": "FORMULÁRIO DE DECLARAÇÃO INDIVIDUAL",
             "declarationMessage": "Vamos responder algumas perguntas e informar nossos amigos e familiares sobre as atualizações mais recentes da COVID-19, já que na Família Ingredion nós acreditamos que \"estamos todos unidos e vamos passar por isso juntos!\"",
             "filters": "filtros",
-            "declarationForm2": "(2019-Novo rastreio de coronavírus)"
+            "declarationForm2": "(2019-Novo rastreio de coronavírus)",
+            "viewTravelHealthNotice": "Exibir avisos de saúde de viagens (do CDC)",
+            "viewSymptoms": "Exibir sintomas de coronavírus (do CDC)"
         }
     },
     "ko": {
@@ -608,7 +618,9 @@
             "declarationForm": "개인별 체크 양식",
             "declarationMessage": "몇 가지 질문에 답하고, 친구들과 가족들에게 Ingredion Family 에 나온 Covid-19 관련 최신 업데이트 사항 알려주며, \"우리는 늘 함께이며, 모두 힘을 합쳐 이 문제를 해결할 것\"이라고 믿습니다.",
             "filters": "필터",
-            "declarationForm2": "(2019- 노벨 코로나 바이러스 검사)"
+            "declarationForm2": "(2019- 노벨 코로나 바이러스 검사)",
+            "viewTravelHealthNotice": "여행 건강 고지 사항보기 (CDC에서)",
+            "viewSymptoms": "CDC에서 코로나 바이러스 증상보기"
         }
     },
     "th": {
@@ -710,7 +722,9 @@
             "declarationForm": "แบบฟอร์มการยืนยันข้อมูลรายบุคคล",
             "declarationMessage": "ร่วมตอบคำถาม และบอกเพื่อน ๆ และครอบครัวของเราด้วยการให้ข้อมูลเกี่ยวกับโควิด-19 จากครอบครัวอินกริดิออน และเราเชื่อมั่นว่า \"เราอยู่ในสถานะการณ์นี้ด้วยกันและจะผ่านสิ่งนี้ไปด้วยกัน\"",
             "filters": "ฟิลเตอร์",
-            "declarationForm2": "(2019- การคัดกรอง Coronavirus นวนิยาย)"
+            "declarationForm2": "(2019- การคัดกรอง Coronavirus นวนิยาย)",
+            "viewTravelHealthNotice": "ดูประกาศเกี่ยวกับสุขภาพการเดินทาง (จาก CDC)",
+            "viewSymptoms": "ดูอาการ Coronavirus (จาก CDC)"
         }
     },
     "de": {
@@ -812,7 +826,9 @@
             "declarationForm": "INDIVIDUELLES ERKLÄRUNGSFORMULAR",
             "declarationMessage": "Beantworten wir einige Fragen und informieren Sie unsere Freunde und Familien mit unseren neuesten Covid-19-Updates von Ingredion Family. Wir glauben, dass wir zusammen dabei sind und dies gemeinsam schaffen werden.",
             "filters": "Filter",
-            "declarationForm2": "(2019-Novel Coronavirus Screening)"
+            "declarationForm2": "(2019-Novel Coronavirus Screening)",
+            "viewTravelHealthNotice": "Reisehinweise anzeigen (von CDC)",
+            "viewSymptoms": "Coronavirus-Symptome anzeigen (von CDC)"
         }
     },
     "ur": {
@@ -914,7 +930,9 @@
             "declarationForm": "انفرادی اعلامیہ فارم",
             "declarationMessage": "آئیے کچھ سوالات کے جوابات دیں اور اپنے دوستوں اور کنبہوں کو انگیرینون فیملی کی تازہ ترین زمینی سطح کی کوویڈ۔",
             "filters": "فلٹرز",
-            "declarationForm2": "(2019-ناول کورونا وائرس اسکریننگ)"
+            "declarationForm2": "(2019-ناول کورونا وائرس اسکریننگ)",
+            "viewTravelHealthNotice": "ٹریول ہیلتھ نوٹس دیکھیں (سی ڈی سی سے)",
+            "viewSymptoms": "کورونا وائرس کی علامات دیکھیں (سی ڈی سی سے)"
         }
     }
 }
