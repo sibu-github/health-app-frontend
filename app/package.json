@@ -1,6 +1,6 @@
 {
   "name": "health-app",
-  "version": "1.0.1",
+  "version": "1.0.22",
   "studioVersion": "7.1.0",
   "scripts": {
     "ng": "ng",
