@@ -1,0 +1,14 @@
+{
+    "appPageId": "3f627ac8-b102-6175-ced1-8cde992e7b70",
+    "appPageName": "cdclinks",
+    "componentName": "cdclinksComponent",
+    "selectorName": "bh-cdclinks",
+    "htmlFileName": "cdclinks.template.html",
+    "tsFileName": "cdclinks.component.ts",
+    "createDate": "2020-07-08T14:49:52.477Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

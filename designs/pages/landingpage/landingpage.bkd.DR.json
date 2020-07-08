@@ -2877,6 +2877,31 @@
                     }
                 }
             },
+            "4a3cb2a6-17a6-3670-1b17-33050b46d0e4": {
+                "paletteKey": "NEUTRINOS_VIEW_cdclinks",
+                "parentEditorKey": "f8bfce91-3064-da07-6d93-ec36b44ac1b8",
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "cdclinks",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ]
+            },
             "c191d360-60d0-1444-c4b8-b15722e54a8c": {
                 "paletteKey": "FlexLayoutRow",
                 "parentEditorKey": "f8bfce91-3064-da07-6d93-ec36b44ac1b8",

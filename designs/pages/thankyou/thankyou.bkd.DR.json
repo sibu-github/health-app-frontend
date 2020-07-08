@@ -3516,7 +3516,32 @@
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     }
-                                ]
+                                ],
+                                "adf65170-e467-9d79-5f64-678e1dd74193": {
+                                    "paletteKey": "NEUTRINOS_VIEW_cdclinks",
+                                    "parentEditorKey": "de931a09-2d2b-7f2a-fcd3-8e79e40e18a1",
+                                    "designerReference": [
+                                        {
+                                            "_key": "componentLabel",
+                                            "_value": "cdclinks",
+                                            "_type": "kv",
+                                            "_attrDef": "p",
+                                            "_useAsLabel": true
+                                        },
+                                        {
+                                            "_key": "style",
+                                            "_value": "",
+                                            "_type": "kv",
+                                            "_attrDef": "p"
+                                        },
+                                        {
+                                            "_key": "class",
+                                            "_value": "",
+                                            "_type": "dav",
+                                            "_attrDef": "p"
+                                        }
+                                    ]
+                                }
                             }
                         }
                     }
@@ -6363,7 +6388,32 @@
                                 "_type": "kv",
                                 "_attrDef": "p"
                             }
-                        ]
+                        ],
+                        "d2c4050c-f169-2f92-8a00-cc194bb0d7d7": {
+                            "paletteKey": "NEUTRINOS_VIEW_cdclinks",
+                            "parentEditorKey": "6e333d1a-064e-d1d0-8cbc-5db1abf94cbd",
+                            "designerReference": [
+                                {
+                                    "_key": "componentLabel",
+                                    "_value": "cdclinks",
+                                    "_type": "kv",
+                                    "_attrDef": "p",
+                                    "_useAsLabel": true
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "class",
+                                    "_value": "",
+                                    "_type": "dav",
+                                    "_attrDef": "p"
+                                }
+                            ]
+                        }
                     }
                 }
             }
