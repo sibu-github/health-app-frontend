@@ -2819,7 +2819,7 @@
                             "designerReference": [
                                 {
                                     "_key": "style",
-                                    "_value": "",
+                                    "_value": "color: #FFFFFF; height: 48px;width: 134px;font-family:Poppins;font-style: normal;font-weight: 600;background: #5EA73E;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2);border-radius: 44px; ",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2831,7 +2831,7 @@
                                 },
                                 {
                                     "_key": "buttonname",
-                                    "_value": "{{locales.start}}<mat-icon>keyboard_arrow_right</mat-icon>",
+                                    "_value": "{{locales.start}}<mat-icon >keyboard_arrow_right</mat-icon>",
                                     "_type": "a",
                                     "_attrDef": "p",
                                     "_useAsLabel": true
@@ -2890,7 +2890,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "",
+                        "_value": "position:absolute; bottom:1%;left:48%;right:50%;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
@@ -2926,7 +2926,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "start",
+                        "_value": "end",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -3265,7 +3265,7 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "center",
+                            "_value": "end",
                             "_type": "a",
                             "_attrDef": "p"
                         },

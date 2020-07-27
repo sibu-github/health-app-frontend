@@ -35,17 +35,17 @@
     <div fxLayout="row wrap" style="width:100%; " fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
       <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="40" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
         <mat-progress-spinner style="margin-top:20px;margin-left:auto;margin-right:auto;" *ngIf="showSpinner" [mode]="&apos;indeterminate&apos;" color="primary" strokeWidth="2" [diameter]="25"></mat-progress-spinner><label *ngIf="!showSpinner" style="margin-top:10px;color: #5EA73E;width:100%;height:100%;font-family: Poppins; font-style: normal; font-weight: 600; font-size: 15px; line-height: 30px;  text-align: center; letter-spacing: 0.5px; text-transform: capitalize;">
-          <button mat-button (click)="letStart()">{{locales.start}}
+          <button mat-button style="color: #FFFFFF; height: 48px;width: 134px;font-family:Poppins;font-style: normal;font-weight: 600;background: #5EA73E;box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2);border-radius: 44px; " (click)="letStart()">{{locales.start}}
             <mat-icon>keyboard_arrow_right</mat-icon>
           </button></label>
       </div>
     </div>
-    <div fxLayout="row wrap" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="position:absolute; bottom:1%;left:48%;right:50%;" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
       <div fxLayout="column wrap" style="width:100%; height:100%;" fxFlex="50" fxLayoutAlign="center end" [fxShow]="true" [fxHide]="false">
         <div style="color: #25282B;font-family: Poppins; font-style: normal; font-weight: normal; font-size: 11px; ">
           {{locales.develop}}</div>
       </div>
-      <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/logo031.png" class="bcd-logo"></div>
+      <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="end start" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/logo031.png" class="bcd-logo"></div>
     </div>
   </div>
 </div>
