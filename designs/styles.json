@@ -77,6 +77,8 @@
         "declaration_form",
         "declaration_form2",
         "declaration_message",
-        "declaration_image"
+        "declaration_image",
+        "landing_page_start_button",
+        "landing_page_bcd_logo"
     ]
 }
