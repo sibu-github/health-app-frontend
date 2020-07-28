@@ -152,6 +152,15 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       this.checkIfHRAdmn();
       return;
     }
+
+    if(!!this.authService.getAccount()){
+      this.onLoginSuccess(null)
+      return
+    }
+
+
+
+
     // otherwise show login window
     this.loginEmp();
   }
@@ -360,13 +369,21 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     try {
       tokenResponse = await this.authService.acquireTokenSilent({scopes: ["user.read"]})
     } catch(err){
-      try {
-        tokenResponse = await this.authService.acquireTokenPopup({scopes: ["user.read"]})
-      } catch(err1){
-        console.error(err1)
-        this.snackBar.open("Unable to acquire Access Token", "Ok")
+      if(err.name === "InteractionRequiredAuthError"){
+        try {
+          tokenResponse = await this.authService.acquireTokenPopup({scopes: ["user.read"]})
+        } catch(err1){
+          console.log(err1.desc)
+          this.snackBar.open("Unable to acquire Access Token. Automatic popup opening is blocked by the browser. Please click on Let's Start again.", "Ok")
+          this.showSpinner = false
+          throw err1
+        }
+      } else {
+        this.snackBar.open("Unable to acquire Access Token. Please try again.", "Ok")
         this.showSpinner = false
+        throw err
       }
+
     }
     let headers = new HttpHeaders({
       "Content-Type": "application/json",
