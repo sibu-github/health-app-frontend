@@ -754,7 +754,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "width:100%;  margin-bottom: -1.5em",
+                        "_value": "width:100%;  margin-bottom: -2.5em",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
