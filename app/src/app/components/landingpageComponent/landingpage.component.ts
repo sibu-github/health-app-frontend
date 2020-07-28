@@ -12,9 +12,8 @@ import { MatDialog } from "@angular/material/dialog";
 import { NLocalStorageService } from "neutrinos-seed-services";
 import { MatSnackBar } from "@angular/material";
 
-import {cdclinksComponent} from '../cdclinksComponent/cdclinks.component'
-
-
+import { cdclinksComponent } from "../cdclinksComponent/cdclinks.component";
+import { commonService } from "app/services/common/common.service";
 
 declare var cordova: any;
 /*
@@ -29,7 +28,7 @@ import { HeroService } from '../../services/hero/hero.service';
 
 @Component({
   selector: "bh-landingpage",
-  templateUrl: "./landingpage.template.html"
+  templateUrl: "./landingpage.template.html",
 })
 export class landingpageComponent extends NBaseComponent implements OnInit {
   // get the instance of the SystemService to read environment variables
@@ -50,12 +49,11 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     { value: "ko", viewValue: "한국어" },
     { value: "th", viewValue: "ไทย" },
     { value: "zh-CN", viewValue: "中文（普通话)" },
-    {value:"ur",viewValue:"اردو"}
+    { value: "ur", viewValue: "اردو" },
   ];
   selectedObjects: any[];
 
-  @ViewChild(cdclinksComponent, {static: false}) cdclink: cdclinksComponent ; 
-
+  @ViewChild(cdclinksComponent, { static: false }) cdclink: cdclinksComponent;
 
   constructor(
     public dialog: MatDialog,
@@ -65,6 +63,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     private hrmailService: hrmailverifier,
     private snackBar: MatSnackBar,
     private _zone: NgZone,
+    private common: commonService,
     private http: HttpClient,
     private broadcastService: BroadcastService,
     private authService: MsalService,
@@ -212,10 +211,7 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     this.inAppBrowserRef = cordova.InAppBrowser.open(loginUrl, target, options);
 
     // register the loadstart event listener
-    this.inAppBrowserRef.addEventListener(
-      "loadstart",
-      this.onLoadStartCallback
-    );
+    this.inAppBrowserRef.addEventListener("loadstart", this.onLoadStartCallback);
   }
 
   // callback for loadstart event inappbrowser
@@ -253,19 +249,20 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     // if HRAdmin then we move to the optionpage
     let email = this.nLocalStorage.getValue("email");
     let jwtToken = this.nLocalStorage.getValue("jwtToken");
-    if(email!=null){
-    let bh = await this.hrmailService.verifyEmail(email, jwtToken);
-    if (
-      bh &&
-      bh.local &&
-      bh.local.result &&
-      bh.local.result.Authorized == "true"
-    ) {
-      this._zone.run(() => {
-        this.router.navigate(["/optionpage"]);
-      });
-      return;
-    }
+    /**
+     * Fix: 4684, From optionpage HR Admin is redirected to landingpage
+     * when "Continue As Employee" is selected, If option is already selected
+     * then we don't redirect to the same optionpage again.
+     */
+    if (email && !this.common.hrOptionSelected) {
+      let bh = await this.hrmailService.verifyEmail(email, jwtToken);
+      if (bh && bh.local && bh.local.result && bh.local.result.Authorized == "true") {
+        this._zone.run(() => {
+          this.common.fromLandingPage = true
+          this.router.navigate(["/optionpage"]);
+        });
+        return;
+      }
     }
     // if the user is not HR Admin then check for employee
     this.checkIfUserSubmittedData();
@@ -311,11 +308,8 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
       this.nLocalStorage.setValue("firstName", bh.local.result.user.firstName);
       this.nLocalStorage.setValue("lastName", bh.local.result.user.lastName);
       this.nLocalStorage.setValue("location", bh.local.result.user.location);
-      if(bh.local.result.user.phone!=null){
-      this.nLocalStorage.setValue(
-        "phone",
-        bh.local.result.user.phone.replace(" ", "")
-      ); // phone number received from AD contains space
+      if (bh.local.result.user.phone != null) {
+        this.nLocalStorage.setValue("phone", bh.local.result.user.phone.replace(" ", "")); // phone number received from AD contains space
       }
       this.masterdata.email = bh.local.result.user.email;
     }
@@ -362,25 +356,32 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
 
   async getProfile() {
     const graphMeEndpoint = "https://graph.microsoft.com/v1.0/me";
-    const tokenResponse = await this.authService.acquireTokenSilent({
-      scopes: ["user.read"],
-    });
+    let tokenResponse
+    try {
+      tokenResponse = await this.authService.acquireTokenSilent({scopes: ["user.read"]})
+    } catch(err){
+      try {
+        tokenResponse = await this.authService.acquireTokenPopup({scopes: ["user.read"]})
+      } catch(err1){
+        console.error(err1)
+        this.snackBar.open("Unable to acquire Access Token", "Ok")
+        this.showSpinner = false
+      }
+    }
     let headers = new HttpHeaders({
       "Content-Type": "application/json",
       Authorization: "Bearer " + tokenResponse.accessToken,
     });
 
-    const profile: any = await this.http
-      .get(graphMeEndpoint, { headers })
-      .toPromise();
+    const profile: any = await this.http.get(graphMeEndpoint, { headers }).toPromise();
     this.nLocalStorage.setValue("email", profile.mail);
     this.nLocalStorage.setValue("username", profile.mail);
     this.nLocalStorage.setValue("username", profile.mail);
     this.nLocalStorage.setValue("firstName", profile.givenName);
     this.nLocalStorage.setValue("lastName", profile.surname);
     this.nLocalStorage.setValue("location", profile.officeLocation);
-    if(profile.mobilePhone!=null){
-    this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
+    if (profile.mobilePhone != null) {
+      this.nLocalStorage.setValue("phone", profile.mobilePhone.replace(" ", "")); // phone number received from AD contains space
     }
     this.masterdata.email = profile.mail;
   }

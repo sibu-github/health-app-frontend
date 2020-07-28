@@ -4,6 +4,7 @@ import { NBaseComponent } from "../../../../../app/baseClasses/nBase.component";
 import { Router } from "@angular/router";
 import { saveuserresponse } from "app/sd-services/saveuserresponse";
 import { NLocalStorageService } from "neutrinos-seed-services";
+import { commonService } from "app/services/common/common.service";
 
 /*
 Client Service import Example:
@@ -20,15 +21,16 @@ import { HeroService } from '../../services/hero/hero.service';
   templateUrl: "./hroption.template.html",
 })
 export class hroptionComponent extends NBaseComponent implements OnInit {
-      public defaultlang: string = "en";
+  public defaultlang: string = "en";
 
   constructor(
     private userService: saveuserresponse,
     private router: Router,
+    private common: commonService,
     private nLocalStorage: NLocalStorageService
   ) {
     super();
-    this.updateLocaleLanguage()
+    this.updateLocaleLanguage();
   }
 
   ngOnInit() {}
@@ -55,7 +57,17 @@ export class hroptionComponent extends NBaseComponent implements OnInit {
           this.router.navigate(["/thankyou"]);
           return;
         }
-        this.router.navigate(["/confirmdetails"]);
+
+        /**
+         * Fix: 4684 - If user hasn't selected "Continue As Employee" before then we first
+         * redirect to landingpage. Then from the landingpage goes to ConfirmDetails page.
+         */
+        this.common.hrOptionSelected = true;
+        if (!this.common.fromLandingPage) {
+          this.router.navigate(["/landingpage"]);
+        } else {
+          this.router.navigate(["/confirmdetails"]);
+        }
       })
       .catch((err) => {
         console.error(err);
@@ -66,7 +78,7 @@ export class hroptionComponent extends NBaseComponent implements OnInit {
     this.router.navigate(["/hrdashboard"]);
   }
 
-   // get the previously selected language from local storage
+  // get the previously selected language from local storage
   // set the language if selected,
   // by default set the language to English
   updateLocaleLanguage() {
