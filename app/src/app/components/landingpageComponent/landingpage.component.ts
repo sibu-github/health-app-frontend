@@ -360,8 +360,13 @@ export class landingpageComponent extends NBaseComponent implements OnInit {
     try {
       tokenResponse = await this.authService.acquireTokenSilent({scopes: ["user.read"]})
     } catch(err){
-      console.error(err)
-      console.log(err.name)
+      try {
+        tokenResponse = await this.authService.acquireTokenPopup({scopes: ["user.read"]})
+      } catch(err1){
+        console.error(err1)
+        this.snackBar.open("Unable to acquire Access Token", "Ok")
+        this.showSpinner = false
+      }
     }
     let headers = new HttpHeaders({
       "Content-Type": "application/json",
