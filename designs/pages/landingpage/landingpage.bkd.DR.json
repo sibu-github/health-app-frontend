@@ -2825,7 +2825,9 @@
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [
+                                        "landing_page_start_button"
+                                    ],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -2921,7 +2923,9 @@
                     },
                     {
                         "_key": "class",
-                        "_value": [],
+                        "_value": [
+                            "landing_page_bcd_logo"
+                        ],
                         "_type": "dav",
                         "_attrDef": "p"
                     },
@@ -2951,7 +2955,7 @@
                     },
                     {
                         "_key": "pLayoutAlign",
-                        "_value": "start",
+                        "_value": "end",
                         "_type": "a",
                         "_attrDef": "p"
                     },
@@ -3011,7 +3015,7 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "center",
+                            "_value": "end",
                             "_type": "a",
                             "_attrDef": "p"
                         },
