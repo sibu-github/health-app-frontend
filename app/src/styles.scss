@@ -615,15 +615,15 @@ position: absolute;
     font-family: Poppins;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 10px;
+    line-height: 12px;
     text-align: center;
     color: #283552;
 }
 
 .declaration_image{
-    width: 18.5em;
-    height: 22.7em;
+    width: 17.5em;
+    height: 20.5em;
 }
 
 
@@ -633,19 +633,18 @@ position: absolute;
 .landing_page_start_button{
   color: #FFFFFF;
     height: 38px;
-    width: 134px;
+    max-width: 175px;
     font-family: Poppins;
     font-style: normal;
     font-weight: 400;
     background: #5EA73E;
-    box-shadow: 1.13333px 7.93333px 23.8px rgba(94, 167, 62, 0.2);
     border-radius: 44px!important;
 }
 
 
 //4972 logo styling 
 .landing_page_bcd_logo{
-    position: absolute;
+    position:fixed;
     bottom: 1%;
     left: 41%;
     right: 40%;

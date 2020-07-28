@@ -77,7 +77,7 @@
             "designerReference": [
                 {
                     "_key": "style",
-                    "_value": "font-size: 12px; padding-top:10px;text-align:center;",
+                    "_value": "font-size: 12px; padding-top:2px;text-align:center;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -275,7 +275,7 @@
                     },
                     {
                         "_key": "html",
-                        "_value": "<div style=\"padding-bottom: 10px;\">\n<a href=\"https://wwwnc.cdc.gov/travel/notices\" target=\"_blank\">{{locales.viewTravelHealthNotice}}</a>\n</div>",
+                        "_value": "<div style=\"padding-bottom: 0.5px;\">\n<a href=\"https://wwwnc.cdc.gov/travel/notices\" target=\"_blank\">{{locales.viewTravelHealthNotice}}</a>\n</div>",
                         "_type": "a",
                         "_attrDef": "p"
                     }
@@ -386,7 +386,7 @@
             "designerReference": [
                 {
                     "_key": "style",
-                    "_value": "font-size: 12px; padding-top:10px;text-align:center;",
+                    "_value": "font-size: 12px; padding-top:2px;text-align:center;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -584,7 +584,7 @@
                     },
                     {
                         "_key": "html",
-                        "_value": "<div style=\"padding-bottom: 10px;\">\n<a href=\"#\" onclick=\"window.open('https://wwwnc.cdc.gov/travel/notices', '_system'); return false;\">{{locales.viewTravelHealthNotice}}</a>\n</div>",
+                        "_value": "<div style=\"padding-bottom: 0.5px;\">\n<a href=\"#\" onclick=\"window.open('https://wwwnc.cdc.gov/travel/notices', '_system'); return false;\">{{locales.viewTravelHealthNotice}}</a>\n</div>",
                         "_type": "a",
                         "_attrDef": "p"
                     }
