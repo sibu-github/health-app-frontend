@@ -628,6 +628,14 @@ position: absolute;
     max-width: 20em;
 }
 
+@media screen and (max-height: 660px) {
+    .declaration_image {
+        max-height: 45vh;
+    }
+}
+
+
+
 
 //<<4791 and 4792 fix>>//
 
