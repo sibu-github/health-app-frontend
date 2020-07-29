@@ -624,6 +624,7 @@ position: absolute;
 .declaration_image{
     width: 17.5em;
     height: 20.5em;
+    max-height: 45vh;
 }
 
 
@@ -644,8 +645,13 @@ position: absolute;
 
 //4972 logo styling 
 .landing_page_bcd_logo{
-    position:fixed;
-    bottom: 1%;
-    left: 41%;
-    right: 40%;
+    // position:fixed;
+    // bottom: 1%;
+    // left: 41%;
+    // right: 40%;
+    margin-top: auto;
+}
+
+bh-landingpage {
+    height: 100%;
 }
