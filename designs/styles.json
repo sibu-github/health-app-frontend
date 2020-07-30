@@ -79,6 +79,7 @@
         "declaration_message",
         "declaration_image",
         "landing_page_start_button",
-        "landing_page_bcd_logo"
+        "landing_page_bcd_logo",
+        "image-container"
     ]
 }
