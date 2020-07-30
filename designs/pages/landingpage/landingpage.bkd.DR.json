@@ -2314,7 +2314,7 @@
                     },
                     {
                         "_key": "style",
-                        "_value": "",
+                        "_value": "margin-top:auto;margin-bottom:auto;",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
