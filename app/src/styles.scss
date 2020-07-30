@@ -466,6 +466,7 @@ vertical-align: bottom;
 
 bh-landingpage{
   display: block !important;
+  height: 100%;
 }
 
 mat-radio-button{
@@ -569,6 +570,7 @@ a{
 .declaration_container{
     position: relative;
     text-align: center;
+    height: 100%;
 }
 
 .declaration_form{
@@ -622,8 +624,9 @@ position: absolute;
 }
 
 .declaration_image{
-    width: 17.5em;
-    height: 20.5em;
+    // width: 17.5em;
+    // height: 20.5em;
+    height: 100%;
 }
 
 
@@ -644,8 +647,21 @@ position: absolute;
 
 //4972 logo styling 
 .landing_page_bcd_logo{
-    position:fixed;
-    bottom: 1%;
-    left: 41%;
-    right: 40%;
+    // position:fixed;
+    // bottom: 1%;
+    // left: 41%;
+    // right: 40%;
+    margin-top: auto;
 }
+
+.image-container {
+    height: 50vh;
+}
+
+
+// @media screen and (max-height: 660px){
+//     .image-container{
+//         height: 45vh;
+//     }
+// }
+
