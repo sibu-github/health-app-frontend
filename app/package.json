@@ -65,7 +65,7 @@
     "neutrinos-module": "0.0.38-beta.5",
     "neutrinos-oauth-client": "1.1.0",
     "ng2-charts": "1.6.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.14.1",
     "phonegap-plugin-multidex": "1.0.0",
     "rxjs": "6.5.2",
     "rxjs-compat": "6.5.5",
